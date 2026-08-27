@@ -1,0 +1,63 @@
+\NeedsTeXFormat{LaTeX2e}[1994/12/01]
+\ProvidesPackage{TitleSpanish}
+
+%%%%%%%%% KIT title page %%%%%%%%
+
+\def\title#1{\gdef\@title{#1}}
+\def\author#1{\gdef\@author{#1}}
+\def\birthplace#1{\gdef\@birthplace{#1}}
+\def\dateOfPrint#1{\gdef\@dateOfPrint{#1}}
+\def\dateOfDefense#1{\gdef\@dateOfDefense{#1}}
+\def\referee#1{\gdef\@referee{#1}}
+\def\refinst#1{\gdef\@refinst{#1}}
+\def\coref#1{\gdef\@coref{#1}}
+\def\corefinst#1{\gdef\@corefinst{#1}}
+\def\supervisor#1{\gdef\@supervisor{#1}}
+\def\supervinst#1{\gdef\@supervinst{#1}}
+
+\newenvironment{TitleSpanish}{}{\makeTitleSpanish}
+
+\long\def\makeTitleSpanish{
+  \thispagestyle{empty}
+  \onecolumn
+  \vspace{-2.0cm}
+  \begin{center}
+  \huge\bfseries\@title\par
+  \vspace{2cm}
+  \large\normalfont{Tesis enviada para optar por el título de}\par
+  \vspace{0.2cm}
+  \Large\bfseries{Doctor en Astrofísica}\par
+  \vspace{0.2cm}
+  \large\normalfont{del Instituto de Tecnología "Prof. Jorge A. Sábato" de la}\par
+  \vspace{0.2cm}
+  \large\normalfont{Universidad Nacional de San Martín (UNSAM)}\par
+  \vspace{0.2cm}
+ \large\normalfont{y del}\par
+   \vspace{0.2cm}
+  \large\normalfont{Karlsruher Institut f\"ur Technologie (KIT)}\par
+  \vspace{1cm}
+  \large\normalfont{por}\par
+  \vspace{1cm}
+  \LARGE\bfseries\@author\par
+  \vspace{0.2cm}
+  \large\normalfont{de }\@birthplace\par
+  \vspace{4cm}
+  \end{center}
+%   \flushleft\large\normalfont{Tag der m\"undlichen Pr\"ufung: }\@dateOfDefense
+%   \flushleft\large\normalfont{Referent: }\@referee\normalfont{, }\@refinst
+%   \flushleft\large\normalfont{Korreferent: }\@coref\normalfont{, }\@corefinst
+%   \flushleft\large\normalfont{Betreuer: }\@supervisor\normalfont{, }\@supervinst
+  \flushleft\large\normalfont{Fecha de la defensa oral: }\@dateOfDefense
+%  \flushleft\large\normalfont{Druckdatum dieser Version: }\@dateOfPrint
+  \flushleft\large\normalfont{Director: }\@referee
+  \flushleft\large\normalfont{Co-director: }\@coref
+  \flushleft\large\normalfont{Colaborador: }\@supervisor
+  \vspace{1cm}
+  \begin{center}
+  \large\normalfont\@dateOfPrint
+  \end{center}
+  \newpage
+  \thispagestyle{empty}
+  \phantom{.}
+  \newpage
+}
