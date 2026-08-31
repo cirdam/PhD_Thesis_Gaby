@@ -67,7 +67,7 @@ This requires not only a reliable event reconstruction, but also a careful chara
 This chapter introduces the main elements that define the dataset used in this work.
 It begins with the hierarchical trigger chain, from the local station triggers to the selection of physical events, described in \cref{sec:triggers}.
 \cref{sec:efficiency} addresses the trigger efficiency and establishes the energy threshold above which the exposure can be treated as purely geometrical.
-The discussion closes with the stability and operational history of the array in \cref{sec:stability}, which provides the basis for the exposure calculation used in the spectrum measurement.
+The discussion closes with the stability and operational history of the array in \cref{sec:stability}, which provides the basis for the exposure calculation in \cref{sec:efficiency} used in the spectrum measurement.
 
 \section{The Surface Detector Triggers}
 \label{sec:triggers}
@@ -284,19 +284,39 @@ The total acquisition time lost in during the bad periods correspond to 169.6 we
 % It can be seen that there is a difference in the trend of the bias for events before and after Dec. 2017.
 % This coincides with the relocation of first Chichino and then Guili.
 % For this reason, events before Jan. 2018 weren't considered in the spectrum presented at ICRC 2023.
-The proper acquisition of events is monitored in the T2Life files which
-The number of active hexagons is checked every minute to calculate the exposure.
-The accumulated exposure s the sum of the number of hexagons for each minutes times the effective 6T5 area of the hexagon,
+
+\section{Exposure of the \sd{433}}
+With the results from previous sections, the question of the exposure can finally be tackled.
+When the detector is in the full efficiency regime, the acceptance of the detector becomes independent of the energy and mass of the particle and the zenith angle.
+In this way, the aperture of the detector can be calculated as the effective area of the detector integrated over solid angle.
+Given the 6T5 condition, the effective area of the hexagons can be calculated as the surface where the station with the maximum signal is the closest one.
+This is analogous to the Weigner-Seitz cell used in Solid State Physics.
+For a triangular array, this corresponds to a hexagon with radius $r=\sqrt{d/2}$, where $d=\SI{433}{m}$ is the distance between detectors. 
+The effective aperture per hexagon is then
+\begin{align}
+    A_\text{6T5}=\frac{\sqrt{3}}{2}d^2\pi(\sin^2\theta_\text{max}-\sin^2\theta_\text{min}) =\SI{0.255}{\km\squared\sr\yr}. 
+\end{align}
+
+The effective number number of active hexagons, $N_\text{hex}$, is calculated for every minute from the T2life files.
+With this, the differential exposure then becomes trivial, 
 \begin{align}
     \epsilon=N_\text{hex}A_{\text{6T5}},
 \end{align}
-where $A_\text{6T5}=0.17$\,km for the \sd{433}.
+and the total exposure is the integral over time.
 
+The accumulated exposure of each individual hexagon is shown in \cref{fig:exposure} where hexagons are designated with the name of the central station.
+It can be seen that the hexagons centered around Guili Jr., Pipi Jr., and Catherina were deployed in May 2019, completing the current seven array configuration.
+
+The total accumulated exposure for zenith angle $\leq40^\circ$, shown in black, is \totalExposure after the removal of bad periods. With this, the raw spectrum in each energy bin,
+\begin{align}
+    J_\text{raw}(E)=\frac{N}{\varepsilon\Delta E},
+\end{align}
+can be determined. Where $N$ denotes the number of events and $\Delta E$ is the energy width of the bin.
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{figures/chapter_data/acumulated_exposure.pdf}
+    \includegraphics[width=\linewidth]{figures/chapter_data/acumulated_exposure.pdf}
     \caption{Left: Accumulated exposure for the \sd{433} for the data period. The total accumulated exposure for the spectrum is $\epsilon=2.77\,\text{km}^2\text{sr\,yr}$. Right: Number of active hexagons for the array. The shaded time intervals denote the periods of bad acquisition that are removed.}
-    \label{fig:placeholder}
+    \label{fig:exposure}
 \end{figure}
 
 
