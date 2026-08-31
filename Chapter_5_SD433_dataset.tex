@@ -166,7 +166,7 @@ Below this threshold, the probability of detecting and reconstructing a shower d
 However, this effects are only taken into account for the unfolding correction to remove the detector influence on the spectrum.
 For this reason, the definition of the dataset used in this work requires the identification of a threshold above which the detector can be treated as fully efficient. :contentReference[oaicite:0]{index=0}
 
-The efficiency of the \sd{433} array was studied in detail in Ref.~\cite{Rodriguez:2024Efficiency}, using simulated showers and validating the results with measured data.
+The efficiency of the \sd{433} array was studied in detail in Ref.~\cite{GAP:Rodriguez:2024:efficiency}, using simulated showers and validating the results with measured data.
 For this, CORSIKA simulations were used using EPOS-LHC as the high energy hadronic model and FLUKA for the lower energies.
 Seven primary masses were simulated and reconstructed. 
 Also, a combined mass result was estimated using the \gls{gsf} mix.
@@ -205,9 +205,9 @@ As an additional cross-check, the spatial distribution of the data reconstructed
 This test was carried out using events reconstructed with zenith lower than\(\SI{40}{\degree}\).
 If the detector is fully efficient and the selected events are isotropically distributed, the reconstructed cores are expected to populate the 6T5 area uniformly.
 The position of the hottest station is subtracted to condense the array into a single hexagon.
-After that, a 2D histogram of the core position is done, the bin size is chosen to be compatible with the resolution of the detector \cite{Gap_Nico_resolucion}.
+After that, a 2D histogram of the core position is done, the bin size is chosen to be compatible with the resolution of the detector \cite{GAP:Gonzalez:2020:geometry}.
 To conserve the symmetry of the array, hexagonal binning was chosen.
-The outermost bins close to the 6T5 hexagon border are excluded since events reconstructed close to it can fall on either side of the boundary and introduce border effects, biassing the efficiency estimation. % TODO: refine wording once the final implementation details of the binning study are fixed.
+The outermost bins close to the 6T5 hexagon border are excluded since events reconstructed close to it can fall on either side of the boundary and introduce border effects, biasing the efficiency estimation. % TODO: refine wording once the final implementation details of the binning study are fixed.
 \cref{fig:sd433_core_maps} shows the histogram of the difference from the average number of reconstructed cores , weighted by the dispersion to highlight deviations,
 \begin{align}
     \Delta n_{i} = \frac{n_i-n_{avg}}{\sigma_n}.
@@ -249,14 +249,33 @@ The deviance decreases with increasing threshold and falls below unity at \(\lg(
 \end{figure}
 
 For this reason, in the following, \(\lg(E/\mathrm{eV}) = 16.8\) is adopted as the full-efficiency threshold for the \sd{433} dataset.
-Above this energy, the exposure can be calculated from the purely geometrical aperture of the array.
+Above this energy, the exposure can be calculated from the purely geometric aperture of the array.
 
 \section{Array stability}
 
-The \sd{433} started as a single hexagon around the Tina Turner station in 2014. 
-Later, 12 more stations were gradually included between 2017 and 2019 to form the current 7-hexagon configuration, as it is shown in \cref{fig:array.}
-The \sd{433} presented problems also with the flagging of silent stations as described in Ref. \cref{GAP:Roncoroni:2022}.
-This led to a lower-than-expected number of 6T5 events.
+In 2014, the \sd{433} started as a single hexagon around the Tina Turner.
+Later, between 2017 and 2019, 12 more stations were gradually included to form the current 7-hexagon configuration, as it is shown in \cref{fig:array}.
+Two of the stations of the first hexagon, Chichino Jr. and Guili Jr. were relocated at the end of 2017 to get them to a position closer to the designed one.
+In 2018, it was discovered by Roncoroni et al. \cite{GAP:Roncoroni:2022}. that the non-triggered stations from the \sd{433} were incorrectly flagged during the CDAS merge and the 6T5 condition could not be properly evaluated leading to a very low number of 6T5 events.
+After the replacement of the \sd{750} radios, it was possible to include the non-triggered stations via the \textit{fast CDAS} trigger algorithm, normalizing the acquisition after July 1st. 2018.
+In the top panel of \cref{fig:event_rate} the daily number of events is shown after the fast CDAS algorithm was deployed.
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/chapter_data/event_rate.pdf}
+    \caption{Daily 6T5 event rate for the \sd{433} from the inclusion of the fast CDAS algorithm up to the end of Phase I when the electronics upgrade started. In the bottom plot, the event rate is normalized by the number of active hexagons calculated from the T2life file. The average event rate is also shown.}
+    \label{fig:event_rate}
+\end{figure}
+When normalizing by the number of active hexagons an average of 6.77 events per day per hexagon that fulfil the 6T5 condition are expected with a $\sigma=1.84$.
+Even though the duty cycle of the surface detector is ~100\%, some periods of bad data acquisition are expected.
+These periods are found evaluating the time between successive events.
+Assuming that the number of expected events follow a Poisson distribution, the probability of observing a time interval $t>T$,
+\begin{align}
+    P(t>T)=e^{-FA\,T},
+\end{align}
+is given by the expected number of events per unit of time and area, $F$, the affective area of active hexagons between the two events.
+An unstable period can be declared when the probability $P(T)$ is lower than a threshold, $\alpha$, calculated from deviations of more than $2\sigma$ of an exponential model, obtaining $\alpha=10^{-2.5}$\cite{GAP:Gonzalez:2022:exposure}.
+The periods with a $P(T)<\alpha$, denominated \textit{bad periods}, are shaded in figure \cref{fig:event_rate}.
+The total acquisition time lost in during the bad periods correspond to 169.6 weeks of the total 1269, around $13.37\%$.
 
 % However, in December 2017, it was noticed that the positions of two of the stations of the first crown, Chichino and Guili, were  35 and 75\,m away from the expected position respectively.
 % These stations were then relocated to correct their positions.
@@ -275,7 +294,7 @@ where $A_\text{6T5}=0.17$\,km for the \sd{433}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{figures/chapter_data/hexagons_BP}
+    \includegraphics[width=0.75\linewidth]{figures/chapter_data/acumulated_exposure.pdf}
     \caption{Left: Accumulated exposure for the \sd{433} for the data period. The total accumulated exposure for the spectrum is $\epsilon=2.77\,\text{km}^2\text{sr\,yr}$. Right: Number of active hexagons for the array. The shaded time intervals denote the periods of bad acquisition that are removed.}
     \label{fig:placeholder}
 \end{figure}
