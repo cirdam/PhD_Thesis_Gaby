@@ -1,0 +1,92 @@
+\label{chap:sdpectrum}
+\selectlanguage{english}
+
+With the developed energy reconstruction from the previous chapter and the proper determination of the full efficiency to have a proper estimation of the exposure, this chapter focuses on the measuerment of the cosmic ray spectrum with the \sd{433}.
+For this, \cref{sec:raw_spectrum} is devoted to the construction of the raw spectrum. 
+After this, the forward-folding formalism is presented in order to fit the spectrum and properly measure the second knee in the cosmic ray spectrum.
+Several checks were developed to assess the robustnes of the method and to understand the impact of the different detector characteristics.
+In \cref{sec:unfolded_spectrum}, the unfolded spectrum is shown and the robustness of the measurement of the second knee is studied.
+Finally, in ~\cref{sec:systematics} the impact of the different sources of systematics is assessed to give a complete picture of the measuerment of the spectrum and the second knee.
+
+\section{Raw spectrum}
+\label{sec:raw_spectrum}
+
+With the recorded events with the \sd{433} between July 1 2018 and December 21 2021 the cosmic ray flux can start to be estimated.
+A histogram of the energy of the events, allows to estimate the raw flux of cosmic rays,
+\begin{align}
+    J_{i}^\text{raw}(E)=\frac{N_i}{\varepsilon\Delta E_i},
+\end{align}
+where $N_i$ is the number of events in energy bin $i$, $\Delta E_i$ is the width of the energy bin and $\varepsilon$ is the exposure. 
+As was determined in \cref{sec:exposure}, the $\varepsilon=2.77\mathrm{\,km^2\,sr\,yr}$ is independent of the energy in the range of energies studied.
+~\cref{fig:raw_spectrum} shows the raw spectrum together with the $1-\sigma$ Poisson confidence interval. The number at each datapoint show the number of events in that bin.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/chapter_spectrum/sd433_raw_spectrum.pdf}
+    \caption{Raw cosmic ray flux measured with the \sd{433}. The datapoints show the raw flux.
+    The errorbars represent the $1-\sigma$ Poisson confidence interval. The number of events is also shown in text for each bin.}
+    \label{fig:placeholder}
+\end{figure}
+The cosmic-ray flux spans many decades in energy roughly following power law with a spectral index $\gamma\sim3$.
+Because of this, it is usual for the flux to be shown multiplied by $E^3$ to highlight the different features where $\gamma$ changes.
+\cref{fig:raw_spectrum_e3} shows the \sd{433} spectrum multiplied by $E^3$, where a change in the slope of the flux around $\lg(E/\text{eV})\sim17.3$ giving a hint of the presence of the second knee.
+
+
+\section{Forward folding}
+\label{forward_folding}
+
+To properly characterize the features of the spectrum, the influence of the detector in the measurement has to be taken into account.
+Many experiments resource to an unfolding procedure ~\cite{Book:Cowan:Statistics}.
+However, this methods need an external regularization to be included for the statistical fluctuations not being catastrophically increased.
+Because of this, the Pierre Auger Collaboration instead relies on a forward folding procedure to \textit{fold} the model with the detector and match the data.
+This method has the advantage of being self regularized.
+The response matrix of the detector is built to fold the response from the \textit{true energy space}, $j$,  into de \textit{detector energy space}, $i$,
+\begin{align}
+    R_{ij}=\frac{
+    \int\limits_{\Delta E_i}\text{d}E_i
+    \int\limits_{\Delta E_j}\text{d}E_j\,J(E_j)\epsilon(E_j)\kappa(E_i|E_j,\sigma,b)
+    }{
+    \int\limits_{\Delta E_j}\text{d}E_j\,J(E_j)
+    }.
+    \label{eq:migration_matrix}
+\end{align}
+where $\kappa(E_i))|E_j,\sigma,b)$ is the response function of the detector and $J(E)$ is the modeled cosmic ray spectrum.
+For the \gls{sd} ,we model the response function as,
+\begin{align}
+    \kappa(E_i|E_j,\sigma,b)=
+    \frac{1}{\sqrt{2\pi\sigma(E_j)}}
+    \exp-\left[
+          \frac{(E_i-E_j(1+b(E_j)))²}{2\pi\sigma^2(E_j)}
+    \right]
+\end{align}
+\noindent with a Gaussian distribution with mean value $E_j(1+b(E))$ shifted by the bias of the detector,$b(E)$ and standard deviation $\sigma(E)$.
+The values for $b(E)$ and $\sigma(E)$ are the ones determined by the simulations in \cref{chapter:reconstruction}.
+When the detector is fully efficient, the migration matrix represents the probability of an event with true energy $E_j$ to be detected in the bin with energy $E_i$.
+Given that the bias vanishes as the energy increases the response function is dominated by the resolution of the detector.
+At the highest energies, the relative resolution is dominated by the shower-to-shower fluctuations, and the matrix becomes diagonal. %Find better wording because it's not exactly diagonal
+From a spectrum model with a set of free parameters $\mathbf{s}$, the expected number of events on a bin,
+\begin{align}
+\mu=\int\limits_{\Delta E}\text{d}E\,J(E|\mathbf{s}),
+\end{align}
+Via the migration matrix this expected number of events can be folded by the detector response,
+\begin{align}
+\nu_i=\sum\limits_jR_{ij}\mu_j.
+\end{align}
+To estimate the set of parameters, $\mathbf{s}$, a Poisson likelihood fit can be performed. 
+For each bin, the log-Poisson likelihood is defined,
+\begin{align*}
+\mathcal{L}_i=\ln(\psi_i^2/\psi^2_{min})=-2\left[(\nu_i-n_i)-n_i\ln(\nu_i/n_i)\right],
+\end{align*}
+where $n_i$ is the reconstructed number of events on the energy bin $i$.
+By varying the set of free parameters, $\mathbf{s}$, the combined likelihood, $\mathcal{L}=\sum\limits_i\mathcal{L_i}$, is minimized.
+This method presents the challenge that the migration matrix depends explicitly on the spectrum model that is used, so it has to be recalculated at each step.
+However, given that the spectrum falls sharply as $\sim E^3$ of the energy, if the binning in the true space is fine enough, the response function and efficiency can be considered constant within each bin and removed from the integral.
+In this way, the dependence of $J(E|\mathbf{s})$ is the same in the numerator and denominator of \cref{eq:migration_matrix} and the explicit dependence vanishes.
+Then, the approximated migration matrix simplifies to
+\begin{align}
+    R_{ij}=\int\limits_{\Delta E_ij}\text{d}E_i\,\kappa(E_i|E_j,\sigma,b)\epsilon(E_j).
+\end{align}
+For this reason, the binning in the reconstructed energy space is chosen as $\Delta\lg(E_i/\text{eV})=0.1$ to be compatible with the resolution of the detector, but the binning in the true energy space is chosen as $\Delta\lg(E_j/\text{eV})=0.1$.
+
+% To assess the robustness of this method, different numbers of checks were done
+% By using toy Monte-Carlo simulations, the 
+
