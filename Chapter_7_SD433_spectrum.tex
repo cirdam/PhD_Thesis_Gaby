@@ -84,8 +84,38 @@ In this way, the dependence of $J(E|\mathbf{s})$ is the same in the numerator an
 Then, the approximated migration matrix simplifies to
 \begin{align}
     R_{ij}=\int\limits_{\Delta E_ij}\text{d}E_i\,\kappa(E_i|E_j,\sigma,b)\epsilon(E_j).
+    \label{eq:matrix_approx}
 \end{align}
-For this reason, the binning in the reconstructed energy space is chosen as $\Delta\lg(E_i/\text{eV})=0.1$ to be compatible with the resolution of the detector, but the binning in the true energy space is chosen as $\Delta\lg(E_j/\text{eV})=0.1$.
+For this reason, the binning in the reconstructed energy space is chosen as $\Delta\lg(E_i/\text{eV})=0.1$ to be compatible with the resolution of the detector, but the binning in the true energy space is chosen as $\Delta\lg(E_j/\text{eV})=0.01$.
+The migration matrix for the \sd{433} is shown in \cref{fig:migration_matrix}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/chapter_spectrum/sd433_migration_matrix.pdf}
+    \caption{Migration matrix for the \sd{433}. The red dashed line indicates the full efficiency threshold. The identity is also shown in white}
+    \label{fig:migration_matrix}
+\end{figure}
+At the lowest energies, since the resolution is lower, contributions from neighbouring bins becomes more relevant.
+The red dashed line signals the full efficiency threshold for the array.
+To avoid border effects, the migration matrix is calculated for energies below full efficiency. The probability of events not being detected is compensated with the efficiency parametrization from \cref{chap:sd433}.
+However, the contribution from events below full efficiency comes approximately only from two bins below. %improve wording.
+At the highest energies, the matrix becomes independent of the energy due to the dominance of the shower-to-shower fluctuations in the resolution.
+
+To assess the impact of using the approximated matrix, a power-law spectrum was assumed with a slope $\gamma=-3$, $J(E)=J_0E^{\gamma}$.
+The expected number of folded events, $\nu_i$, is calculated using both migration matrices, $R^{\text{approx}}_{ij}$ and $R^{\text{exact}}_{ij}$.
+\cref{fig:nu_ratio} shows the relative difference between the expected number of events calculated with the approximate and exact methods.
+The difference between the two is negligible in the whole energy range.
+For this reason, the approximated method is chosen for the forward-folding of the spectrum to avoid making a priori assumptions for the spectrum shape and parameters, and recalculating the matrix in each iteration of the fit.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/chapter_spectrum/nu_ratio.pdf}
+    \caption{Percent difference between the folded number of events using the migration matrix from \cref{eq:migration_matrix} and the approximated matrix \cref{eq:migration_approx}.}
+    \label{fig:nu_ratio}
+\end{figure}
+ 
+
+
+
 
 % To assess the robustness of this method, different numbers of checks were done
 % By using toy Monte-Carlo simulations, the 
