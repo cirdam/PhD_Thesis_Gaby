@@ -8,6 +8,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[ngerman,english]{babel}
 \usepackage{microtype}
+\usepackage{subfiles}
 \microtypecontext{spacing=nonfrench}
 \SetTracking{encoding={*}, shape=sc}{40}
 \usepackage{indentfirst}
@@ -251,9 +252,7 @@
 % \label{chapter:Energy_reconstruction}
 % \input chapter_6_Energy_reconstruction
 
-\chapter{The SD-433 Energy spectrum}
-\label{chapter:SD433_Spectrum}
-\input Chapter_7_SD433_spectrum
+\subfile{Chapter_7_SD433_spectrum}
 
 % \chapter{The SD-750}
 % \label{chapter:SD-750}
