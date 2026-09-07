@@ -112,11 +112,18 @@ For this reason, the approximated method is chosen for the forward-folding of th
     \caption{Percent difference between the folded number of events using the migration matrix from \cref{eq:migration_matrix} and the approximated matrix \cref{eq:migration_approx}.}
     \label{fig:nu_ratio}
 \end{figure}
- 
+
+Once the set of best fit parameters are determined, the correction factors are used,
+\begin{align}
+    c_i=\mu_i/\nu_i.
+    \label{eq:correction_factor}
+\end{align}
+ to estimate the unfolded cosmic ray flux, $J_i=c_iJ_{\text{raw}}$.
+
 
 
 
 
 % To assess the robustness of this method, different numbers of checks were done
-% By using toy Monte-Carlo simulations, the 
+% By using toy Monte-Carflo simulations, the 
 
