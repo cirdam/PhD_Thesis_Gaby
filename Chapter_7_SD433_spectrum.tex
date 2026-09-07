@@ -23,7 +23,7 @@ As was determined in \cref{sec:exposure}, the $\varepsilon=2.77\mathrm{\,km^2\,s
     \centering
     \includegraphics[width=0.75\linewidth]{figures/chapter_spectrum/sd433_raw_spectrum.pdf}
     \caption{Raw cosmic ray flux measured with the \sd{433}. The datapoints show the raw flux.
-    The errorbars represent the $1-\sigma$ Poisson confidence interval. The number of events is also shown in text for each bin.}
+    The uncertainty bars represent the $1-\sigma$ Poisson confidence interval. The number of events is also shown in text for each bin.}
     \label{fig:placeholder}
 \end{figure}
 The cosmic-ray flux spans many decades in energy roughly following power law with a spectral index $\gamma\sim3$.
@@ -39,18 +39,19 @@ Many experiments resource to an unfolding procedure ~\cite{Book:Cowan:Statistics
 However, this methods need an external regularization to be included for the statistical fluctuations not being catastrophically increased.
 Because of this, the Pierre Auger Collaboration instead relies on a forward folding procedure to \textit{fold} the model with the detector and match the data.
 This method has the advantage of being self regularized.
-The response matrix of the detector is built to fold the response from the \textit{true energy space}, $j$,  into de \textit{detector energy space}, $i$,
+To do this, the expected number of events for a given spectrum model, $J(E)$, is folded via a migration matrix that takes into account the detector response.
+The response matrix of the detector is built to fold the response in the \textit{true energy space}, $j$,  into de \textit{detector energy space}, $i$,
 \begin{align}
     R_{ij}=\frac{
     \int\limits_{\Delta E_i}\text{d}E_i
     \int\limits_{\Delta E_j}\text{d}E_j\,J(E_j)\epsilon(E_j)\kappa(E_i|E_j,\sigma,b)
     }{
     \int\limits_{\Delta E_j}\text{d}E_j\,J(E_j)
-    }.
+    }
     \label{eq:migration_matrix}
 \end{align}
-where $\kappa(E_i))|E_j,\sigma,b)$ is the response function of the detector and $J(E)$ is the modeled cosmic ray spectrum.
-For the \gls{sd} ,we model the response function as,
+where $\kappa(E_i))|E_j,\sigma,b)$ is the response function of the detector.
+Using the resolution, $\sigma(E)$, and bias, $b(E)$ from ~\cref{chap:energy_reconstruction}, the resolution function of the \gls{sd} is modeled as a Gaussian distribution,
 \begin{align}
     \kappa(E_i|E_j,\sigma,b)=
     \frac{1}{\sqrt{2\pi\sigma(E_j)}}
@@ -58,10 +59,10 @@ For the \gls{sd} ,we model the response function as,
           \frac{(E_i-E_j(1+b(E_j)))²}{2\pi\sigma^2(E_j)}
     \right]
 \end{align}
-\noindent with a Gaussian distribution with mean value $E_j(1+b(E))$ shifted by the bias of the detector,$b(E)$ and standard deviation $\sigma(E)$.
-The values for $b(E)$ and $\sigma(E)$ are the ones determined by the simulations in \cref{chapter:reconstruction}.
-When the detector is fully efficient, the migration matrix represents the probability of an event with true energy $E_j$ to be detected in the bin with energy $E_i$.
-Given that the bias vanishes as the energy increases the response function is dominated by the resolution of the detector.
+\noindent with mean value $E_j(1+b(E))$ and standard deviation $\sigma(E)$.
+Given that the bias vanishes as the energy increases, the response function is dominated by the resolution of the detector.
+
+When the detector is fully efficient, the migration matrix reduces to the probability of an event with true energy $E_j$ to be detected in the bin with energy $E_i$.
 At the highest energies, the relative resolution is dominated by the shower-to-shower fluctuations, and the matrix becomes diagonal. %Find better wording because it's not exactly diagonal
 From a spectrum model with a set of free parameters $\mathbf{s}$, the expected number of events on a bin,
 \begin{align}
@@ -72,7 +73,7 @@ Via the migration matrix this expected number of events can be folded by the det
 \nu_i=\sum\limits_jR_{ij}\mu_j.
 \end{align}
 To estimate the set of parameters, $\mathbf{s}$, a Poisson likelihood fit can be performed. 
-For each bin, the log-Poisson likelihood is defined,
+For each bin in the reconstructed energy space, the log-Poisson likelihood is defined,
 \begin{align*}
 \mathcal{L}_i=\ln(\psi_i^2/\psi^2_{min})=-2\left[(\nu_i-n_i)-n_i\ln(\nu_i/n_i)\right],
 \end{align*}
@@ -86,22 +87,24 @@ Then, the approximated migration matrix simplifies to
     R_{ij}=\int\limits_{\Delta E_ij}\text{d}E_i\,\kappa(E_i|E_j,\sigma,b)\epsilon(E_j).
     \label{eq:matrix_approx}
 \end{align}
-For this reason, the binning in the reconstructed energy space is chosen as $\Delta\lg(E_i/\text{eV})=0.1$ to be compatible with the resolution of the detector, but the binning in the true energy space is chosen as $\Delta\lg(E_j/\text{eV})=0.01$.
-The migration matrix for the \sd{433} is shown in \cref{fig:migration_matrix}.
+
+In order to test the robustness of this approximation, a the binning in the true energy space is chosen as $\Delta\lg(E_j/\text{eV})=0.01$ while the binning in the reconstructed energy space is chosen as $\Delta\lg(E_i/\text{eV})=0.1$ to be compatible with the resolution of the detector.
+
+The approximated migration matrix for the \sd{433} is shown in \cref{fig:migration_matrix} together with the full efficiency threshold represented by the red dashed line.
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figures/chapter_spectrum/sd433_migration_matrix.pdf}
     \caption{Migration matrix for the \sd{433}. The red dashed line indicates the full efficiency threshold. The identity is also shown in white}
     \label{fig:migration_matrix}
 \end{figure}
-At the lowest energies, since the resolution is lower, contributions from neighbouring bins becomes more relevant.
-The red dashed line signals the full efficiency threshold for the array.
-To avoid border effects, the migration matrix is calculated for energies below full efficiency. The probability of events not being detected is compensated with the efficiency parametrization from \cref{chap:sd433}.
+At the lowest energies, since the resolution is lower, contributions from further bins become more relevant.
+To avoid border effects, the migration matrix is calculated for energies below full efficiency. 
+The probability of events not being detected is also compensated with the efficiency parametrization from \cref{chap:sd433}.
 However, the contribution from events below full efficiency comes approximately only from two bins below. %improve wording.
 At the highest energies, the matrix becomes independent of the energy due to the dominance of the shower-to-shower fluctuations in the resolution.
 
 To assess the impact of using the approximated matrix, a power-law spectrum was assumed with a slope $\gamma=-3$, $J(E)=J_0E^{\gamma}$.
-The expected number of folded events, $\nu_i$, is calculated using both migration matrices, $R^{\text{approx}}_{ij}$ and $R^{\text{exact}}_{ij}$.
+The expected number of folded events, $\nu_i$, was calculated using both migration matrices, $R^{\text{approx}}_{ij}$ and $R^{\text{exact}}_{ij}$.
 \cref{fig:nu_ratio} shows the relative difference between the expected number of events calculated with the approximate and exact methods.
 The difference between the two is negligible in the whole energy range.
 For this reason, the approximated method is chosen for the forward-folding of the spectrum to avoid making a priori assumptions for the spectrum shape and parameters, and recalculating the matrix in each iteration of the fit.
@@ -113,12 +116,21 @@ For this reason, the approximated method is chosen for the forward-folding of th
     \label{fig:nu_ratio}
 \end{figure}
 
-Once the set of best fit parameters are determined, the correction factors are used,
+Once the set of best fit parameters is determined, the correction factors,
 \begin{align}
-    c_i=\mu_i/\nu_i.
+    c_i=\mu_i/\nu_i,
     \label{eq:correction_factor}
 \end{align}
- to estimate the unfolded cosmic ray flux, $J_i=c_iJ_{\text{raw}}$.
+ are used to estimate the unfolded cosmic ray flux, $J_i=c_iJ_{\text{raw}}$.
+
+Given the low statistics at the highest energy range from the spectrum, the maximum energy used for the fit was $\lg(E\text{eV})=18.5$, just below the next spectral feature, the ankle.
+In order to test the presence of a knee-like structure in the spectrum, a simple power law spectrum was performed,
+\begin{align}
+    J(E)=J_0(E)^{-\gamma},
+\end{align}
+where the normalization constant, $J_0$, and spectral index $\gamma$ where left as free parameters.
+The obtained spectrum is shown in the supplementary material in \cref{app:chap_spectrum}.
+The obtained $D^2/\text{dof}=39.91/13$, yields a p-value of $\qty{4e-4}$.
 
 
 
