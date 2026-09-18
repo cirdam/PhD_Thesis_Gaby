@@ -325,7 +325,7 @@ In this way, the aperture of the detector can be calculated as the effective are
 % This is analogous to the Weigner-Seitz cell used in Solid State Physics.
 For a triangular array with a distance between detectors $d=\SI{433}{m}$, the effective 6T5 area corresponds to a hexagon with a surface 
 \begin{align}
-    S_{\mathrm{hex}}=\frac{\sqrt{3}}{2}d^2=\SI{0.162}{\km\sq}.
+    S_{\mathrm{hex}}=\frac{\sqrt{3}}{2}d^2=\SI{0.162}{\km\squared}.
 \end{align}
 The aperture is then obtained by integrating over the solid angle,
 \begin{align}
@@ -343,7 +343,7 @@ and the total exposure is the integral over the acquisition time and excluding t
 The accumulated exposure of each individual hexagon is shown in \cref{fig:exposure}, where each hexagon is designated with the name of its central station.
 It can be seen that the hexagons centered around Guili Jr., Pipi Jr., and Catherina were deployed in May 2019, completing the current seven array configuration.
 
-The total accumulated exposure for zenith angle $\leq40^\circ$, shown in black, is \totalExposure after the removal of bad periods. With this, the raw spectrum in each energy bin,
+The total accumulated exposure for zenith angle $\leq40^\circ$, shown in black, is \SDFourThreeThreeExposure after the removal of bad periods. With this, the raw spectrum in each energy bin,
 \begin{align}
     J_\text{raw}(E)=\frac{N}{\varepsilon\Delta E},
 \end{align}
@@ -356,7 +356,7 @@ can be determined. Where $N$ denotes the number of events and $\Delta E$ is the 
 \end{figure}
 
 Applying the 6T5 quality condition, the energy threshold $\lg(E/\mathrm{eV}) \geq 16.8$, and the zenith-angle selection $0^\circ \leq \theta < 40^\circ$ yields\SDFourThreeThreeNEvents events between 1 July 2018, when the fast-CDAS algorithm was deployed, and 21 December 2021, when the electronics upgrade began.
-After excluding the identified bad-acquisition periods, the accumulated exposure is  \SDFourThreeThreeExposureValue, corresponding to a live-time
+After excluding the identified bad-acquisition periods, the accumulated exposure is  \SDFourThreeThreeExposure, corresponding to a live-time
 fraction of $86.63\%$.
 This defines the final \sd{433} dataset used for the energy-spectrum
 measurement.

@@ -150,7 +150,7 @@ In order to test the presence of a knee-like structure in the spectrum, a simple
 \end{align}
 where the normalization constant, $J_0$, and spectral index $\gamma$ where left as free parameters.
 The obtained spectrum is shown in the supplementary material in \cref{app:chap_spectrum}.
-However, with a Poisson deviance, $D^2/\text{dof}=39.91/15$, the null hypothesis of the simple power law with can be discarded with a significance of $\sim\num{4e-4}$.
+However, with a Poisson deviance, $D^2/\text{dof}=39.91/15$, the null hypothesis of the simple power law with can be discarded with a significance of $\sim\num\{4e-4}$.
 This is in accordance with the result published in Ref. ~\cite{PierreAuger:2021InfillSpectrum}, where a soft turn-down of the spectrum is seen but the second knee cannot be charaterized.
 As a consequence, a broken power law with a soft transition is used,
 \begin{align}
@@ -180,13 +180,12 @@ The piled up distribution of the fitted values show that with the statistics pre
 To assess the impact of omega, a set of 10,000 spectra of 40,000 events were generated using a $\omega_{01}=0.25$ (a soft transition) and fitted using a fixed value of 0.05 (hard transition).
 Histograms of the fitted $\lg(E_{01})$, $\gamma_0$ and $\gamma_1$ are shown in \cref{fig:omega_wrong} together with its median and the injected values.
 The result from the simulations show that the impact of using a wrong $\omega_{01}$ value in the fit is within the statistical uncertainty of the fit.
-Because of this, a fixed $\omega_{01}$ of 0.05 is chosen for the fit, leaving this parameter to be properly constrained in \cref{chap:combined_spectrum} when including the much greater statistic of the \sd{750 }in the bins around the second knee.
+Because of this, a fixed $\omega_{01}$ of 0.05 is chosen, leaving this parameter to be properly constrained in \cref{chap:combined_spectrum} when including the much greater statistic of the \sd{750} in the bins around the second knee.
 
 With the fixed value of the transition width, the forward-folded fit was performed once more, obtaining an energy of \secondKneeEnergy, \gammaZero and \gammaOne.
 
-
-
-
+To assess the stability of the second knee position, the fit was repeated increasing the minimum energy.
+The result is consistent up to $\lg(E_{\text{min}}/\mathrm{eV})=17.2$ when the quality of the fit is greatly degraded. The results for the spectral parameters can be found in \cref{appendix_chapter_spectrum}.
 
 
 
@@ -199,6 +198,52 @@ With the fixed value of the transition width, the forward-folded fit was perform
 \section{Spectrum systematics}
 \label{sec:spectrum_systematics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To understand the robustness of the measurement of the Second Knee, the different sources of systematics were evaluated using the forward-folding machinery deveolped in the last section.
+The main source of systematic uncertainty arises from the $\sim14\%$ energy systematic inherited from the \sd{750} calibration using the FD.
+Other sources are included in the assumptions in the detector behavior used in the construction of the migration matrix, such as the primary composition used in the bias, efficiency and resolution and the systematic uncertainty in the calibration parameters from \cref{chapter:reconstruction}.
+These different sources were treated as uncorrelated and the impact in both the flux and the spectral parameters was studied.
+After that the quadratic sum of the different contributions allow to construct the proper systematic uncertainty in the measurement.
+Also, the systematic uncertainty from the $\omega_{01}$ assumption is studied in order to see the impact in the second knee.
+
+\subsection{FD energy systematic}
+
+The impact of the FD energy scale can be treated using forward-folding and can also be derived analytically.
+Assuming a change in  energy, $E'=(1+\delta)E$ where $\delta=\pm0.14$, using the change of variable theorem for a distribution,
+\begin{align}
+    J'(E')=J(E)\left|\frac{dE}{dE'}\right|
+\end{align}
+where $J(E)$ and $J'(E')$ are the flux measured on the $E$ and $E'$ energy scales respectively.
+Given a power law spectrum, $J(E)=J_0E^{\gamma}$, the change in the spectrum becomes,
+\begin{align}
+\frac{\Delta J}{J}=(1+\delta)^{\gamma-1}-1,
+\label{eq:energy_systematic_pl}
+\end{align}
+giving an upper limit of $+35\%$ $-29\%$ for $\gamma=3.35$.
+The same derivation can be done for \cref{eq:bplwst}, giving
+\begin{align}
+\frac{\Delta J(E)}{J(E)}
+=
+\frac{1}{1+\delta}
+\frac{
+J\left(\frac{E}{1+\delta}\right)
+}{
+J(E)
+}
+-1
+\label{eq:energy_systematic_bplwst}
+\end{align}.
+
+The change in the flux that arises from the FD energy scale is shown in \cref{fig:energy_systematic}. 
+The red line shows the expression derived in \cref{eq:energy_systematic_bplwst} together with the difference by changing the energy of all events by $\delta$ in green.
+To estimate the change in the spectrum with the forward-folding procedure, the energy of each event is shifted in $\delta$.
+The migration matrix, however, doesn't change because the change.
+Both results agree very well and at the maximum and minimum energies agree with the expected results for a simple power law from \cref{eq:enegy_systematic_pl}
+
+The changes in $\gamma_0$ and $\gamma_1$ are consistent with numerical differences, in accordance with what is expected, given that an uniform change in energy doesn't impact in the slope of the spectrum.
+However, the change in $E_{01}$ is a little smaller than the expected $\delta$.
+Although, to be conservative, the systematic assign for this parameter is $\delta$.
+The unfolded spectra for the events changed in energy is shown in \cref{appendix_chapter_spectrum} together with the full set of fitted parameters.
 
 
 
