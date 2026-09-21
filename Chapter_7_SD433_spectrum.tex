@@ -24,7 +24,7 @@ A histogram of the energy of the events, allows to estimate the raw flux of cosm
     J_{i}^\text{raw}(E)=\frac{N_i}{\varepsilon\Delta E_i},
 \end{align}
 where $N_i$ is the number of events in energy bin $i$, $\Delta E_i$ is the width of the energy bin and $\varepsilon$ is the exposure. 
-As was determined in \cref{sec:exposure}, the $\varepsilon=2.77\mathrm{\,km^2\,sr\,yr}$ is independent of the energy in the range of energies studied.
+As determined in \cref{sec:exposure}, the exposure, $\varepsilon$, is \SDFourThreeThreeExposure and is independent of energy over the range considered here.
 ~\cref{fig:raw_spectrum} shows the raw spectrum together with the $1-\sigma$ Poisson confidence interval. The number at each datapoint show the number of events in that bin.
 \begin{figure}
     \centering
@@ -150,18 +150,18 @@ In order to test the presence of a knee-like structure in the spectrum, a simple
 \end{align}
 where the normalization constant, $J_0$, and spectral index $\gamma$ where left as free parameters.
 The obtained spectrum is shown in the supplementary material in \cref{app:chap_spectrum}.
-However, with a Poisson deviance, $D^2/\text{dof}=39.91/15$, the null hypothesis of the simple power law with can be discarded with a significance of $\sim\num\{4e-4}$.
+However, with a Poisson deviance of $D^2/\text{dof}=39.91/15$, the simple-power-law hypothesis is rejected with a $p$-value of $\num{4.68e-4}$.
 This is in accordance with the result published in Ref. ~\cite{PierreAuger:2021InfillSpectrum}, where a soft turn-down of the spectrum is seen but the second knee cannot be charaterized.
 As a consequence, a broken power law with a soft transition is used,
 \begin{align}
     J(E)=J_0\left(
     \frac{E}{10^{17}\,\text{eV}}
-    \right)^{\gamma_0}
+    \right)^{-\gamma_0}
     \left[
     1+\left(
     \frac{E}{E_{01}}
     \right)^{\frac{1}{\omega_{01}}}
-    \right]^{(\gamma_1-\gamma_0)\omega_{01}},
+    \right]^{(\gamma_0-\gamma_1)\omega_{01}},
 \label{eq:bplwst}
 \end{align}
 where $E_{01}$ is the energy of the second knee, $\gamma_0$ and $\gamma_1$ are the spectral indices before and after the feature and, $\omega_{01}$ is a parameter that governs the width of the transition ~\cite{PierreAuger:2021InfillSpectrum}.
@@ -214,12 +214,12 @@ Assuming a change in  energy, $E'=(1+\delta)E$ where $\delta=\pm0.14$, using the
     J'(E')=J(E)\left|\frac{dE}{dE'}\right|
 \end{align}
 where $J(E)$ and $J'(E')$ are the flux measured on the $E$ and $E'$ energy scales respectively.
-Given a power law spectrum, $J(E)=J_0E^{\gamma}$, the change in the spectrum becomes,
+Given a power-law spectrum, $J(E)=J_0E^{-\gamma}$, the relative change in the spectrum becomes
 \begin{align}
 \frac{\Delta J}{J}=(1+\delta)^{\gamma-1}-1,
 \label{eq:energy_systematic_pl}
 \end{align}
-giving an upper limit of $+35\%$ $-29\%$ for $\gamma=3.35$.
+which gives flux shifts of approximately $\SI{+36}{\percent}$ and $\SI{-30}{\percent}$ for $\gamma=3.35$ and $\delta=+0.14$ and $-0.14$, respectively.
 The same derivation can be done for \cref{eq:bplwst}, giving
 \begin{align}
 \frac{\Delta J(E)}{J(E)}
@@ -232,13 +232,14 @@ J(E)
 }
 -1
 \label{eq:energy_systematic_bplwst}
-\end{align}.
+\end{align}
 
-The change in the flux that arises from the FD energy scale is shown in \cref{fig:energy_systematic}. 
-The red line shows the expression derived in \cref{eq:energy_systematic_bplwst} together with the difference by changing the energy of all events by $\delta$ in green.
-To estimate the change in the spectrum with the forward-folding procedure, the energy of each event is shifted in $\delta$.
-The migration matrix, however, doesn't change because the change.
-Both results agree very well and at the maximum and minimum energies agree with the expected results for a simple power law from \cref{eq:enegy_systematic_pl}
+The impact of each systematic uncertainty is evaluated by repeating the complete forward-folding and unfolding procedure after varying the affected analysis ingredient.
+For the FD energy-scale uncertainty, the reconstructed energy of every event is shifted coherently by $\delta$, while the nominal migration matrix is retained because this variation does not modify the detector resolution, bias, or efficiency.
+
+The resulting change in the flux is shown in \cref{fig:energy_systematic}.
+The numerical result obtained by repeating the forward-folding analysis is shown together with the analytical prediction from \cref{eq:energy_systematic_bplwst}.
+Both results agree very well and, at the minimum and maximum energies, approach the simple-power-law expectation from \cref{eq:energy_systematic_pl}.
 
 The changes in $\gamma_0$ and $\gamma_1$ are consistent with numerical differences, in accordance with what is expected, given that an uniform change in energy doesn't impact in the slope of the spectrum.
 However, the change in $E_{01}$ is a little smaller than the expected $\delta$.
