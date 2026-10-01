@@ -136,6 +136,15 @@ Once the set of best fit parameters is determined, the correction factors,
 \end{align}
  are used to estimate the unfolded cosmic ray flux, $J_i=c_iJ_{\text{raw}}$.
 
+An example of the correction factors obtained from a fitted toy spectrum is shown in \cref{fig:correction_factors_toy}.
+The correction is largest close to the full-efficiency threshold and becomes approximately constant at the highest energies, where the relative energy resolution is dominated by shower-to-shower fluctuations.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/chapter_spectrum/correction_factors_toy.png}
+    \caption{Correction factors obtained from one fitted toy spectrum containing 40,000 events. This example illustrates the magnitude and energy dependence of the unfolding correction produced by the \sd{433} response model.}
+    \label{fig:correction_factors_toy}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The \sd{433} Unfolded spectrum}
 \label{sec:unfolded_spectrum}
@@ -177,12 +186,34 @@ However, 125 yielded $\omega_{01}$ values at the limit of the fit.
 A histogram of of the $\omega_{01}$ values is shown in \cref{fig:omega_monte_carlo} and the rest of the parameters can be seen in the supplementary material \cref{appendix_chapter_spectrum}.
 The piled up distribution of the fitted values show that with the statistics present for the current \sd{433} measurement, the parameter $\omega_{01}$ cannot be properly constrained.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/chapter_spectrum/omega_free_toy_histograms.pdf}
+    \caption{Distributions of the spectral parameters reconstructed from toy Monte-Carlo spectra when the transition width $\omega_{01}$ is left free. The vertical dotted lines indicate the injected values. The accumulation of fits at the allowed boundaries shows that $\omega_{01}$ cannot be reliably constrained with the present \sd{433} statistics.}
+    \label{fig:omega_monte_carlo}
+\end{figure}
+
 To assess the impact of omega, a set of 10,000 spectra of 40,000 events were generated using a $\omega_{01}=0.25$ (a soft transition) and fitted using a fixed value of 0.05 (hard transition).
 Histograms of the fitted $\lg(E_{01})$, $\gamma_0$ and $\gamma_1$ are shown in \cref{fig:omega_wrong} together with its median and the injected values.
 The result from the simulations show that the impact of using a wrong $\omega_{01}$ value in the fit is within the statistical uncertainty of the fit.
 Because of this, a fixed $\omega_{01}$ of 0.05 is chosen, leaving this parameter to be properly constrained in \cref{chap:combined_spectrum} when including the much greater statistic of the \sd{750} in the bins around the second knee.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/chapter_spectrum/omega_wrong_closure.png}
+    \caption{Distributions of the fitted spectral parameters for toy spectra generated with $\omega_{01}=0.25$ and fitted with the transition width fixed to $\omega_{01}=0.05$. The vertical dotted lines indicate the injected values.}
+    \label{fig:omega_wrong}
+\end{figure}
+
 With the fixed value of the transition width, the forward-folded fit was performed once more, obtaining an energy of \secondKneeEnergy, \gammaZero and \gammaOne.
+
+The resulting unfolded spectrum and the residuals with respect to the fitted model are shown in \cref{fig:sd433_unfolded_spectrum}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/chapter_spectrum/sd433_unfolded_spectrum_with_residuals.pdf}
+    \caption{Unfolded cosmic-ray spectrum measured with the \sd{433} and the best-fit broken power law with a smooth transition. The lower panel shows the residuals with respect to the fitted model.}
+    \label{fig:sd433_unfolded_spectrum}
+\end{figure}
 
 To assess the stability of the second knee position, the fit was repeated increasing the minimum energy.
 The result is consistent up to $\lg(E_{\text{min}}/\mathrm{eV})=17.2$ when the quality of the fit is greatly degraded. The results for the spectral parameters can be found in \cref{appendix_chapter_spectrum}.
@@ -240,6 +271,21 @@ For the FD energy-scale uncertainty, the reconstructed energy of every event is 
 The resulting change in the flux is shown in \cref{fig:energy_systematic}.
 The numerical result obtained by repeating the forward-folding analysis is shown together with the analytical prediction from \cref{eq:energy_systematic_bplwst}.
 Both results agree very well and, at the minimum and maximum energies, approach the simple-power-law expectation from \cref{eq:energy_systematic_pl}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/chapter_spectrum/energy_systematic_relative.png}
+    \caption{Relative change in the fitted flux after coherently shifting the reconstructed energies by $+14\%$ and $-14\%$. The curves show the result of repeating the forward-folding fit, while the dash-dotted curves show the analytical expectation from \cref{eq:energy_systematic_bplwst}. The horizontal lines indicate the corresponding asymptotic simple-power-law expectations.}
+    \label{fig:energy_systematic}
+\end{figure}
+
+The unfolded spectra obtained for the nominal and shifted energy scales are compared in \cref{fig:energy_systematic_spectra}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/chapter_spectrum/energy_systematic_spectra.png}
+    \caption{Unfolded \sd{433} spectra and fitted models for the nominal energy scale and for coherent shifts of $+14\%$ and $-14\%$. The vertical lines indicate the fitted second-knee energies.}
+    \label{fig:energy_systematic_spectra}
+\end{figure}
 
 The changes in $\gamma_0$ and $\gamma_1$ are consistent with numerical differences, in accordance with what is expected, given that an uniform change in energy doesn't impact in the slope of the spectrum.
 However, the change in $E_{01}$ is a little smaller than the expected $\delta$.
