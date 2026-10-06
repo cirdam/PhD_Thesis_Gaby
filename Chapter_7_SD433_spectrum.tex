@@ -365,29 +365,22 @@ The nominal values $(A,B)=(119.5~\mathrm{PeV},0.946)$ were replaced by $(A^+,B^-
 The calibration curves for the detector are shown in the left panel of \cref{fig:calibration_systematic}.
 For each variation, the energy of every event was recalculated and the spectrum was fitted again.
 The fitted spectra are shown on the right panel of \cref{fig:calibration_systematic}.
-
-
-Using the values from the fit in \cref{sec:unfolded_spectrum}, $\gamma_0=3.036$ and $\gamma_1=3.342$, \cref{eq:calibration_spectral_index_change} gives
-\begin{align}
-    \Delta\gamma_0^\text{analytical}
-    &=
-    +0.083,
-    &
-    \Delta\gamma_1^\text{analytical}
-    &=
-    +0.095.
-\end{align}
-The corresponding changes obtained from the spectrum fit are
-\begin{align}
-    \Delta\gamma_0^\text{fit}
-    &=
-    +0.073,
-    &
-    \Delta\gamma_1^\text{fit}
-    &=
-    +0.081.
-\end{align}
-The fitted changes therefore agree closely with the analytical expectations.
-The opposite calibration variation produces comparable changes with the opposite sign, and the complete set of fitted parameters is reported in \cref{appendix_chapter_spectrum}.
-        
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter_spectrum/calibration_systematic.pdf}
+    \caption{
+        Effect of the calibration systematic on the reconstructed spectrum.
+        The left panel shows the reference calibration relation together with the lower- and upper-slope variations.
+        The right panel shows the corresponding unfolded spectra multiplied by $E^3$, with the lines representing the fitted spectral functions.
+    }
+    \label{fig:calibration_systematic}
+\end{figure}
+Using the values from the fit in \cref{sec:unfolded_spectrum}, $\gamma_0=3.036$ and $\gamma_1=3.342$, \cref{eq:calibration_spectral_index_change} yield $\Delta\gamma_0^\text{analytical}=0.083$ and $\Delta\gamma_1^\text{analytical}=0.095$.
+The corresponding changes obtained from the spectrum fit are $\Delta\gamma_0^\text{fit}=0.073$ and$\Delta\gamma_1^\text{fit}=0.081$.
+The fitted changes, therefore, agree closely with the analytical expectations.
+To be conservative, the largest analytical values are used.
+The position of the Second Knee changes by at most $\Delta\lg(E_{01}/\mathrm{eV})=0.024$, well within its nominal statistical uncertainty.
+The change in the flux produced by the calibration variations is shown in \cref{fig:systematic_budget}.
+This source of systematic uncertainty is the second-largest contribution after the energy-scale uncertainty.
+Its effect is largest at the boundaries of the fitted energy range because of the increasing event-by-event energy differences, reaching $18.6%$ at $\lg(E/\mathrm{eV})=16.8$ and $13.4%$ at $\lg(E/\mathrm{eV})=18.5$.
 \end{document}
