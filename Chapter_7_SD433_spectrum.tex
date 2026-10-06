@@ -296,20 +296,10 @@ The parameters $R_{\text{sh}}$ and $R_0$ were shifted by their $\pm1\sigma$ unce
 For each variation, the migration matrix was recalculated keeping all other components of the response function unchanged and the spectrum was fitted.
 The spectral-shape parameters remain well within their nominal statistical uncertainties. 
 For each source of systematic uncertainty, the contribution to $\Delta J/J$ was calculated as the root mean square of the relative flux variations.
-The resulting contribution from the energy resolution is shown in the left panel of \cref{fig:systematic_budget}.
+The resulting contribution from the energy resolution is shown in the left panel of \cref{fig:sd433_systematic_budget}.
 Its magnitude is largest near the full-efficiency threshold, where it reaches approximately $1.1\%$, and decreases with energy.
 Increasing the resolution parameters lowers the reconstructed flux, whereas decreasing them raises it.  
 The resulting spectra and fitted parameters are reported in \cref{appendix_chapter_spectrum}.
-
-The left panel of \cref{fig:sd433_systematic_budget} shows the individual response-function contributions and their quadratic sum.
-The right panel shows the complete flux-systematic budget after also including the FD energy scale, the calibration parameters, and the exposure uncertainty.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{figures/chapter_spectrum/sd433_systematic_budget.pdf}
-    \caption{Relative systematic uncertainty in the \sd{433} cosmic-ray flux. Left: contributions associated with the response function, obtained by varying the energy bias, efficiency, and resolution; the black curves show their quadratic sum. Right: complete systematic budget, including the FD energy scale, calibration parameters, combined unfolding contribution, and exposure; the black curves show the total uncertainty obtained by adding the independent contributions in quadrature. The asymmetry of the total uncertainty is inherited from the coherent positive and negative FD energy-scale shifts.}
-    \label{fig:sd433_systematic_budget}
-\end{figure}
 
 The dependence of the detector response on the assumed mass composition was estimated using the bias and efficiency parametrizations obtained in \cref{sec} for pure proton and pure iron primaries.
 Each component was evaluated separately, following the same procedure used for the resolution systematic.
@@ -320,7 +310,7 @@ However, the corresponding contribution to $\Delta J/J$ reaches approximately $4
 The composition dependence of the efficiency produces a smaller contribution to the flux systematic, with a maximum of $\sim1.5\%$.
 Nevertheless, it shifts the position of the Second Knee downward by approximately $\Delta\lg(E_{01}/\text{eV})=-0.03$.
 
-The contribution to the total flux systematic for both the bias and efficiency mass composition is also shown in the left panel of \cref{fig:systematic_budget}.
+The contribution to the total flux systematic for both the bias and efficiency mass composition is also shown in the left panel of \cref{fig:sd433_systematic_budget}.
 
 \subsection{Calibration systematic}
 \label{subsec:calibration_systematic}
@@ -389,7 +379,18 @@ The corresponding changes obtained from the spectrum fit are $\Delta\gamma_0^\te
 The fitted changes, therefore, agree closely with the analytical expectations.
 To be conservative, the largest analytical values are used.
 The position of the Second Knee changes by at most $\Delta\lg(E_{01}/\mathrm{eV})=0.024$, well within its nominal statistical uncertainty.
-The change in the flux produced by the calibration variations is shown in \cref{fig:systematic_budget}.
+The change in the flux produced by the calibration variations is shown in the right panel of \cref{fig:sd433_systematic_budget}.
 This source of systematic uncertainty is the second-largest contribution after the energy-scale uncertainty.
-Its effect is largest at the boundaries of the fitted energy range because of the increasing event-by-event energy differences, reaching $18.6%$ at $\lg(E/\mathrm{eV})=16.8$ and $13.4%$ at $\lg(E/\mathrm{eV})=18.5$.
+Its effect is largest at the boundaries of the fitted energy range because of the increasing event-by-event energy differences, reaching $18.6\%$ at $\lg(E/\mathrm{eV})=16.8$ and $13.4\%$ at $\lg(E/\mathrm{eV})=18.5$.
+
+The left panel of \cref{fig:sd433_systematic_budget} shows the individual response-function contributions and their quadratic sum.
+The right panel shows the complete flux-systematic budget after also including the FD energy scale, the calibration parameters, and the exposure uncertainty.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/chapter_spectrum/sd433_systematic_budget.pdf}
+    \caption{Relative systematic uncertainty in the \sd{433} cosmic-ray flux. Left: contributions associated with the response function, obtained by varying the energy bias, efficiency, and resolution; the black curves show their quadratic sum. Right: complete systematic budget, including the FD energy scale, calibration parameters, combined unfolding contribution, and exposure; the black curves show the total uncertainty obtained by adding the independent contributions in quadrature. The asymmetry of the total uncertainty is inherited from the coherent positive and negative FD energy-scale shifts.}
+    \label{fig:sd433_systematic_budget}
+\end{figure}
+
 \end{document}
