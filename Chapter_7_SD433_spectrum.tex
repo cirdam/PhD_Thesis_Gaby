@@ -435,6 +435,39 @@ In \cref{sec:unfolded_spectrum} the forward-folding technique was studied using 
 However, the determination of the width of the transition, $\omega_{01}$, is limited by the number of events in the dataset.
 For this, a transition width of $\omega_{01}=0.05$ was used and then the parameter will be determined using the much greater statistics of the combined \sd{750}-\sd{433} spectrum.
 The transition width was studied as another possible source of systematics.
-When leaving the parameter free during the fit, a value $\omega_{01}=$
+When leaving the parameter free, the fit successfully converged to $\omega_{01}=0.092$.
+However, the Hess interval obtained $\Delta\omega_{01}=0.267$ ranges from unphysical negative values for omega, but ranges from a broken power law to a very wide transition that span several bins.
+To assess the impact of the transition width in the spectral parameters, a scan in $\omega_{01}$ was made, performing the spectrum fit for fixed values $\omega_{01}\in[0,0.5]$ and $0.05$ steps.
+The fit converged for all $\omega_{01}$ in the range.
+The Poisson deviance, $D^2$, together with $\lg (E_{01}/\text{eV})$, $\gamma_0$ and $\gamma_1$ are shown in \cref{fig:omega_study}.
+The red circles are the fixed $\omega_{01}$ values and the point at $\omega_{01}=0$ corresponds to the a broken power-law.
+The purple star shows the value of the $\omega^{\text{free}}_{01}$.
+
+The deviance varies by only approximately $1.6$ over the complete scan hinting a weak sensitivity of the \sd{433} data to the transition width. 
+The reconstructed Second Knee energy remainscompatible within statistical uncertainties with the nominal $\omega_{01}=0.05$ result from \cref{sec:unfolded_spectrum}.
+A mild correlation between the transition width and the spectral indices is observed.
+As $\omega_{01}$ increases, the fitted $\gamma_0$ decreases from approximately $3.04$ to $2.97$, while increasing $\gamma_1$ from approximately $3.34$ to $3.38$.
+This behavior reflects the compensation between the transition width and the asymptotic slopes where a broader transition is accommodated by a flatter spectrum below the Second Knee and a steeper spectrum above it.
+Nevertheless, these variations remain compatible with the statistical uncertainties of the corresponding fits.
+Consequently, fixing $\omega_{01}=0.05$ does not introduce a significant additional systematic uncertainty in either the Second Knee position or the spectral indices.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/chapter_spectrum/omega_dependence_2x2.pdf}
+    \caption{
+        Dependence of the fitted second-knee parameters and Poisson deviance
+        on the assumed transition width $\omega_{01}$ for the \sd{433}
+        spectrum. Circles show fits with $\omega_{01}$ fixed, including
+        the sharp broken-power-law limit at $\omega_{01}=0$, while the star
+        indicates the result obtained when $\omega_{01}$ is left free.
+        The error bars represent the statistical uncertainties of the fits.
+        The dashed vertical lines in the lower-right panel indicate the
+        $1\sigma$ limits of the free-$\omega_{01}$ fit.
+    }
+    \label{fig:omega_study}
+\end{figure}
+
+\section{Summary of the chapter}
 
 \end{document}
