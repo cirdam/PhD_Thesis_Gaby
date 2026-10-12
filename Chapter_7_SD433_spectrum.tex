@@ -364,6 +364,7 @@ For the calibration relation
 \begin{align}
     E=A\left(\frac{S_{30}}{S_0}\right)^B,
 \end{align}
+a normalization $A=\SDFourThreeThreeCalA$, a slope $B=\SDFourThreeThreeCalB$, and a reference signal $S_0=\SDFourThreeThreeCalSZero$ are used in the frozen reconstruction.
 a change from $B$ to $B'$, while keeping $A$ fixed, transforms the reconstructed energy according to
 \begin{align}
     E'
@@ -399,7 +400,7 @@ This yields to a change in the spectral index
 Consequently, the uncertainty in $A$ primarily changes theflux normalization, whereas the uncertainty in $B$ modifies the shape of the reconstructed spectrum.
 
 In the systematic evaluation, the calibration parameters were varied according to their systematic uncertainties from \cref{sec:energy_calibration}.
-For this, the nominal values $(A,B)=(119.5~\mathrm{PeV},0.946)$ were replaced by $(A^+,B^-)=(125.7~\mathrm{PeV},0.909)$ and $(A^-,B^+)=(113.3~\mathrm{PeV},0.983)$.
+The correlated variations used to propagate the systematic envelope were $(A^+,B^-)=(125.7~\mathrm{PeV},0.909)$ and $(A^-,B^+)=(113.3~\mathrm{PeV},0.983)$.
 The calibration curves as a function of the energy for the detector are shown in the left panel of \cref{fig:calibration_systematic}.
 For each variation, the energy of every event was revaluated and the spectrum was fitted again.
 The three unfolded spectra are shown on the right panel of \cref{fig:calibration_systematic}.
