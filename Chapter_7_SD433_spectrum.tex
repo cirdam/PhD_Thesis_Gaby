@@ -470,4 +470,32 @@ Consequently, fixing $\omega_{01}=0.05$ does not introduce a significant additio
 
 \section{Summary of the chapter}
 
+This chapter presents the measurement of the cosmic-ray energy spectrum with the \sd{433} array using data reconstructed from the previous chapter and recorded between July 2018 and December 2021.
+The raw flux was obtained from the observed event counts and the geometrical exposure determined \cref{chapter:SD433_dataset}.
+
+To remove detector effects in the spectrum measurement, a forward-folding procedure was developed to be included in the spectrum fit.
+The detector response was incorporated into a migration matrix describing the probability that an event with true energy in bin $j$ is reconstructed in bin $i$.
+The matrix accounts for the energy-dependent detection efficiency, bias, and finite resolution of the \sd{433}.
+Although its exact definition depends on the assumed spectral model, this dependence can be neglected when the true-energy binning is sufficiently fine.
+A true-energy bin width of $\Delta\lg(E_j/\mathrm{eV})=0.01$ was therefore adopted, compared with $\Delta\lg(E_i/\mathrm{eV})=0.1$ in reconstructed energy.
+
+This approximation was benchmarked before it was applied to the measured spectrum.
+The expected reconstructed event counts obtained with the approximate matrix were compared with those calculated using the exact, spectrum-dependent expression for an injected power-law spectrum.
+The relative differences were found to be negligible across the full energy range.
+This validation showed that the approximate matrix preserves the detector response while avoiding the need to assume a the spectral parameters a priori or recalculate the matrix at every step of the fit.
+
+The validated migration matrix was subsequently used in a forward-folding Poisson-likelihood fit.
+Once the best-fit spectral parameters were obtained, the ratio between the expected true and reconstructed event counts provided the correction factors used to unfold the measured flux.
+
+As a first step, a simple-power-law hypothesis was proposed and rejected with a $p$-value of \SDFourThreeThreePowerLawPValue.
+Then a knee-like feature in the spectrum is allowed, modelling the flux with a broken power law with governed by a transition parameter, providing an adequate description of the data.
+The fit yields a Second-Knee energy of \secondKneeEnergy and spectral indices \gammaZero and \gammaOne below and above the feature, respectively.
+Toy Monte Carlo studies show that the available \sd{433} statistics are insufficient to constrain the transition width $\omega_{01}$.
+For this, the transition was fixed to $\omega_{01}=0.05$ like the other feature measured in the spectrum by Auger.
+
+The systematic study identifies the inherited \gls{fd} energy-scale uncertainty as the dominant contribution to the flux normalization and the position of the Second Knee.
+The systematic uncertainty in the \sd{433} energy calibration parameters produces the next-largest contribution and has the strongest effect on the spectral indices, while uncertainties associated with the detector response are smaller.
+The measurement therefore establishes the spectral steepening in the energy range covered by the \sd{433} and places it within the current statistical and systematic uncertainties.
+The transition width will be investigated with greater sensitivity using the combined \sd{433} and \sd{750} spectrum.
+
 \end{document}
