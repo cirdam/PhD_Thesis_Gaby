@@ -21,10 +21,10 @@ Finally, in ~\cref{sec:systematics} the impact of the different sources of syste
 With the recorded events with the \sd{433} between July 1 2018 and December 21 2021 the cosmic ray flux can start to be estimated.
 A histogram of the energy of the events, allows to estimate the raw flux of cosmic rays,
 \begin{align}
-    J_{i}^\text{raw}(E)=\frac{N_i}{\varepsilon\Delta E_i},
+    J_{i}^\text{raw}(E)=\frac{N_i}{\exposuresym\Delta E_i},
 \end{align}
-where $N_i$ is the number of events in energy bin $i$, $\Delta E_i$ is the width of the energy bin and $\varepsilon$ is the exposure. 
-As determined in \cref{sec:exposure}, the exposure, $\varepsilon$, is \SDFourThreeThreeExposure and is independent of energy over the range considered here.
+where $N_i$ is the number of events in energy bin $i$, $\Delta E_i$ is the width of the energy bin and $\exposuresym$ is the exposure.
+As determined in \cref{sec:exposure}, the exposure, $\exposuresym$, is \SDFourThreeThreeExposure and is independent of energy over the range considered here.
 ~\cref{fig:raw_spectrum} shows the raw spectrum together with the $1-\sigma$ Poisson confidence interval. The number at each datapoint show the number of events in that bin.
 \begin{figure}
     \centering
@@ -112,7 +112,7 @@ The approximated migration matrix for the \sd{433} is shown in \cref{fig:migrati
 \end{figure}
 At the lowest energies, since the resolution is lower, contributions from further bins become more relevant.
 To avoid border effects, the migration matrix is calculated for energies below full efficiency. 
-The probability of events not being detected is also compensated with the efficiency parametrization from \cref{chap:sd433}.
+The probability of events not being detected is also compensated with the efficiency parametrization from \cref{chap:sd433_dataset}.
 However, the contribution from events below full efficiency comes approximately only from two bins below. %improve wording.
 At the highest energies, the matrix becomes independent of the energy due to the dominance of the shower-to-shower fluctuations in the resolution.
 
@@ -472,7 +472,7 @@ Consequently, fixing $\omega_{01}=0.05$ does not introduce a significant additio
 \section{Summary of the chapter}
 
 This chapter presents the measurement of the cosmic-ray energy spectrum with the \sd{433} array using data reconstructed from the previous chapter and recorded between July 2018 and December 2021.
-The raw flux was obtained from the observed event counts and the geometrical exposure determined \cref{chapter:SD433_dataset}.
+The raw flux was obtained from the observed event counts and the geometrical exposure determined in \cref{chap:sd433_dataset}.
 
 To remove detector effects in the spectrum measurement, a forward-folding procedure was developed to be included in the spectrum fit.
 The detector response was incorporated into a migration matrix describing the probability that an event with true energy in bin $j$ is reconstructed in bin $i$.
