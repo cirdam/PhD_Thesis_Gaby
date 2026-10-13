@@ -178,6 +178,7 @@ The study considers the probability that a shower with a given energy and zenith
 The final parameterization is given in the \sd{433} energy scale, after correcting the simulation-based efficiency using the attenuation and calibration chain adopted for data~\cite{GAP:Rodriguez:2024}.
 This parameterization will later be used in the forward-folding procedure described in \cref{chapter:SD433_Spectrum}.
 
+The analysis is restricted to events with $\theta<40^\circ$, adopting a more conservative limit than the customary $\theta<45^\circ$ range of the \sd{433}, beyond which the quality of the standard geometry reconstruction degrades~\cite{GAP:Rodriguez:2024}, and matching the zenith-angle range used for the \sd{750}~\cite{PierreAuger:2021InfillSpectrum}.
 For events with zenith angles $\theta<40^\circ$, the efficiency for the \gls{gsf} mix can be parameterized as
 \begin{align}
 \epsilon(E) = \Phi \left( a_0 + a_1 \lg\left(\frac{E}{10^{17}\,\mathrm{eV}}\right) \right),
@@ -296,7 +297,7 @@ The stability of the array is monitored using the event rate shown in \cref{fig:
     \includegraphics[width=\linewidth]{figures/chapter_dataset/event_rate.pdf}
     \caption{Top: Daily 6T5 event rate of the \sd{433} array between the introduction of fast CDAS and the beginning of the Phase II electronics upgrade.
     Bottom: Daily event rate normalized by the number of active hexagons calculated from the T2Life information.
-    The horizontal line indicates the average normalized event rate.}
+    The horizontal line indicates the average normalized event rate, and the shaded regions indicate the periods of unstable acquisition excluded from the analysis.}
     \label{fig:event_rate}
 \end{figure}
 
