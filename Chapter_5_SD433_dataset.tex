@@ -158,6 +158,15 @@ To ensure a reliable reconstruction of the event, the 6T5 fiducial quality trigg
 It requires the station with the highest signal to be surrounded by six active neighbouring stations at the time of the event.
 This condition ensures that the shower core is well contained within the array, improves the accuracy of the reconstructed quantities, and allows the effective area to coincide with the geometrical one for energies higher than full efficiency.
 
+This criterion also defines the fiducial area where an event can be reconstructed where the station with the maximum signal is not in the border of the array.
+Since the \gls{sd} is a triangular grid, this fiducial area is hexagon shaped and its area can be calculated as
+\begin{align}
+    S_{\mathrm{hex}}
+    =\frac{\sqrt{3}}{2}d^2
+    =\SI{0.162}{\km\squared}.
+\end{align}
+This effective area ensures the proper containment of the core in order to guarantee the proper reconstruction of the shower.
+
 % TODO: Depending on the final structure of the chapter, it may be useful to add here
 % a short closing paragraph connecting the trigger chain to the dataset definition,
 % emphasizing that the final event sample is built from T4 physical events satisfying 6T5.
@@ -175,17 +184,21 @@ For this purpose, CORSIKA simulations were performed with EPOS-LHC~\cite{Pierog:
 Seven primary mass groups, ranging from proton to iron, were simulated and reconstructed using the \sd{433} array.
 Additionally, a mixed-composition result was estimated using the \gls{gsf} mix~\cite{Dembinsky:2017:gsf}.
 The study considers the probability that a shower with a given energy and zenith angle is successfully reconstructed by the array, after requiring the \mbox{6T5} condition and including the contribution of the \gls{totd} and \gls{mops} station triggers.
-The final parameterization is given in the \sd{433} energy scale, after correcting the simulation-based efficiency using the attenuation and calibration chain adopted for data~\cite{GAP:Rodriguez:2024}.
-This parameterization will later be used in the forward-folding procedure described in \cref{chapter:SD433_Spectrum}.
+The efficiency is defined as the ratio between successfully reconstructed events by the \sd{433} and the total number of simulated events.
+The final efficiency estimation is given as a function of the \sd{433} energy scale, after correcting the simulation-based efficiency using the attenuation and calibration chain adopted for data~\cite{GAP:Rodriguez:2024}.
 
+The simulated efficiency in the \sd{433} energy scale was then fitted using an unbinned likelhood fit.
 For events with zenith angles $\theta<40^\circ$, the efficiency for the \gls{gsf} mix can be parameterized as
 \begin{align}
 \epsilon(E) = \Phi \left( a_0 + a_1 \lg\left(\frac{E}{10^{17}\,\mathrm{eV}}\right) \right),
 \end{align}
 where $\Phi$ is the cumulative distribution function of the standard normal distribution, $E$ is the primary energy in the \sd{433} energy scale, $a_0$ determines the energy of the efficiency transition, and $a_1$ governs its steepness.
 The fitted parameters for the \gls{gsf} mix are $a_0 = 4.213 \pm 0.032$ and $a_1 = 5.496 \pm 0.044$.
+This parameterization will later be used in the forward-folding procedure described in \cref{chapter:SD433_Spectrum}.
 The corresponding efficiency estimators and fits are shown in \cref{fig:sd433_efficiency_curve} for the \gls{gsf} mix, together with proton and iron as extreme cases.
-
+Below full efficiency, the efficiency for proton is higher than the efficiency for iron.
+This effect can be explained by the higher penetration of the proton showers in the atmosphere at this energy range.
+The first bin in the full efficiency range, defined as $\varepsilon>97\%$, is at $\lg(E/\text{eV})=16.7$ for both pure primare masses and the \gls{gsf} mix.
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figures/chapter_dataset/new_eff_SD433_scale-1-2.pdf}
@@ -197,9 +210,9 @@ The corresponding efficiency estimators and fits are shown in \cref{fig:sd433_ef
 \end{figure}
 
 The simulation-based efficiency result was cross-checked using two tests based on reconstructed data.
-Neither test is independent of the core and energy reconstruction procedure, since both require reconstructed event observables and calibrated energies.
-They nevertheless test two distinct reconstruction-level consequences expected above full efficiency: the uniformity of the arrival directions in $\sin^2\theta$ and the uniform distribution of reconstructed shower cores within the fiducial 6T5 area.
-Together, they provide useful data-driven validation of the threshold inferred from simulations, even though these tests cannot be used to determine the efficiency parameterization.
+These tests are not independent of the core and energy reconstruction procedure, since both require reconstructed event observables and calibrated energies.
+Nevertheless they delve into two distinct observables that are expected from the reconstruction above full efficiency: the uniformity of the arrival directions in $\sin^2\theta$ and the uniform distribution of reconstructed shower cores within the fiducial 6T5 area.
+Together, they provide useful data-driven validation of the threshold inferred from simulations, even though these tests cannot be used solely to determine the efficiency parameterization.
 
 The first data-driven validation tests the isotropy of the arrival directions above different energy thresholds, following Ref.~\cite{GAP:Rodriguez:2024}.
 For isotropic arrival directions, the distribution in $\sin^2\theta$ is expected to be uniform up to the maximum zenith angle considered.
@@ -340,11 +353,7 @@ Above the full-efficiency threshold, the detection probability can be considered
 % Given the 6T5 condition, the effective area of the hexagons can be calculated as the surface where the station with the maximum signal is the closest one.
 % This is analogous to the Weigner-Seitz cell used in Solid State Physics.
 For a triangular array with a station spacing of $d=\SI{433}{\m}$, the fiducial area associated with one active 6T5 hexagon is
-\begin{align}
-    S_{\mathrm{hex}}
-    =\frac{\sqrt{3}}{2}d^2
-    =\SI{0.162}{\km\squared}.
-\end{align}
+
 Its aperture is obtained by integrating the projected area over the selected solid angle.
 The factor $\cos\theta$ accounts for the projection of the detector surface, while $\mathrm{d}\Omega=\sin\theta\,\mathrm{d}\theta\,\mathrm{d}\phi$ is the differential solid angle:
 \begin{align}
