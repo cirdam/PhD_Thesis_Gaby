@@ -7,7 +7,7 @@
 \label{chap:sdpectrum}
 \selectlanguage{english}
 
-With the developed energy reconstruction from the previous chapter and the proper determination of the full efficiency to have a proper estimation of the exposure, this chapter focuses on the measuerment of the cosmic ray spectrum with the \sd{433}.
+With the developed energy reconstruction from the previous chapter and the proper determination of the full efficiency to have a proper estimation of the exposure, this chapter focuses on the measurement of the cosmic ray spectrum with the \sd{433}.
 For this, \cref{sec:raw_spectrum} is devoted to the construction of the raw spectrum. 
 After this, the forward-folding formalism is presented in order to fit the spectrum and properly measure the second knee in the cosmic ray spectrum.
 Several checks were developed to assess the robustnes of the method and to understand the impact of the different detector characteristics.
@@ -70,7 +70,7 @@ The response matrix of the detector is built to fold the response in the \textit
     }
     \label{eq:migration_matrix}
 \end{align}
-where $\kappa(E_i))|E_j,\sigma,b)$ is the response function of the detector.
+where $\kappa(E_i|E_j,\sigma,b)$ is the response function of the detector.
 Using the resolution, $\sigma(E)$, and bias, $b(E)$ from ~\cref{chap:energy_reconstruction}, the resolution function of the \gls{sd} is modelled as a Gaussian distribution,
 \begin{align}
     \kappa(E_i \mid E_j,\sigma,b)
@@ -233,7 +233,7 @@ The result is consistent up to $\lg(E_{\text{min}}/\mathrm{eV})=17.2$ when the q
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Spectrum systematics}
-\label{sec:spectrum_systematics}
+\label{sec:systematics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To understand the robustness of the measurement of the Second Knee, the different sources of systematics were evaluated using the forward-folding machinery deveolped in the last section.
@@ -412,7 +412,7 @@ This yields to a change in the spectral index
 \end{align}
 Consequently, the uncertainty in $A$ primarily changes theflux normalization, whereas the uncertainty in $B$ modifies the shape of the reconstructed spectrum.
 
-In the systematic evaluation, the calibration parameters were varied according to their systematic uncertainties from \cref{sec:energy_calibration}.
+In the systematic evaluation, the calibration parameters were varied according to their systematic uncertainties from \cref{sec:calibration}.
 The correlated variations used to propagate the systematic envelope were $(A^+,B^-)=(125.7~\mathrm{PeV},0.909)$ and $(A^-,B^+)=(113.3~\mathrm{PeV},0.983)$.
 The calibration curves as a function of the energy for the detector are shown in the left panel of \cref{fig:calibration_systematic}.
 For each variation, the energy of every event was revaluated and the spectrum was fitted again.
@@ -432,7 +432,7 @@ The corresponding changes obtained from the spectrum fit are $\Delta\gamma_0^\te
 The fitted changes, therefore, agree closely with the analytical expectations.
 To be conservative, the largest analytical values are used.
 The position of the Second Knee changes by at most $\Delta\lg(E_{01}/\mathrm{eV})=0.024$, well within the statistical uncertainty of the fit.
-The change in the flux as a function of the energy produced by the calibration variations is shown in the right panel of \cref{fig:sd433_systematic_budget}.
+The change in the flux as a function of the energy produced by the calibration variations is shown in the right panel of \cref{fig:systematic_budget}.
 This source of systematic uncertainty is the second-largest contribution after the energy-scale and like this contribution is also asymmetric in the flux due to the spectrum shape.
 Its effect is largest at the boundaries of the energy range because of the increasing event-by-event energy differences, reaching $18.6\%$ at $\lg(E/\mathrm{eV})=16.8$ and $13.4\%$ at $\lg(E/\mathrm{eV})=18.5$.
 The right panel of \cref{fig:systematic_budget} shows the different sources of systematic uncertainty in the flux, i.e., the energy scale, the calibration systematics, the exposure, and the unfolding assumptions together with the total combined systematic.
@@ -440,7 +440,7 @@ The right panel of \cref{fig:systematic_budget} shows the different sources of s
     \centering
     \includegraphics[width=\linewidth]{figures/chapter_spectrum/sd433_systematic_budget.pdf}
     \caption{Relative systematic uncertainty in the \sd{433} cosmic-ray flux. Left: contributions associated with the assumptions used to calculate the migration matrix, obtained by varying the energy bias, efficiency, and resolution. The black curves show their quadratic sum. Right: systematic uncertainty, including the \gls{fd} energy scale, calibration parameters, combined unfolding contribution, and exposure. The black curves show the upper and lower limits by adding the independent contributions in quadrature. }
-    \label{fig:sd433_systematic_budget}
+    \label{fig:systematic_budget}
 \end{figure}
 
 \subsection{Transition systematic}
