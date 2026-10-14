@@ -42,7 +42,7 @@ Because of this, it is usual for the flux to be shown multiplied by $E^3$ to hig
 \label{forward_folding}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 To properly characterize the features of the spectrum, the influence of the detector in the measurement has to be taken into account.
-Many experiments resource to an unfolding procedure ~\cite{Book:Cowan:Statistics}.
+Many experiments resource to an unfolding procedure ~\cite{Cowan:1998:StatisticalDataAnalysis,Lista:2023:StatisticalMethods}.
 However, this methods need an external regularization to be included for the statistical fluctuations not being catastrophically increased.
 Because of this, the Pierre Auger Collaboration instead relies on a forward folding procedure to \textit{fold} the model with the detector and match the data.
 This method has the advantage of being self regularized.
@@ -160,7 +160,7 @@ In order to test the presence of a knee-like structure in the spectrum, a simple
 where the normalization constant, $J_0$, and spectral index $\gamma$ where left as free parameters.
 The obtained spectrum is shown in the supplementary material in \cref{app:chap_spectrum}.
 However, with a Poisson deviance of $D^2/\text{dof}=\SDFourThreeThreePowerLawDeviance/\SDFourThreeThreePowerLawDof$, the simple-power-law hypothesis is rejected with a $p$-value of $\SDFourThreeThreePowerLawPValue$.
-This is in accordance with the result published in Ref. ~\cite{PierreAuger:2021InfillSpectrum}, where a soft turn-down of the spectrum is seen but the second knee cannot be charaterized.
+This is in accordance with the result published in Ref. ~\cite{PierreAuger:2021:InfillSpectrum}, where a soft turn-down of the spectrum is seen but the second knee cannot be charaterized.
 As a consequence, a broken power law with a soft transition is used,
 \begin{align}
     J(E)=J_0\left(
@@ -173,7 +173,7 @@ As a consequence, a broken power law with a soft transition is used,
     \right]^{(\gamma_0-\gamma_1)\omega_{01}},
 \label{eq:bplwst}
 \end{align}
-where $E_{01}$ is the energy of the second knee, $\gamma_0$ and $\gamma_1$ are the spectral indices before and after the feature and, $\omega_{01}$ is a parameter that governs the width of the transition ~\cite{PierreAuger:2021InfillSpectrum}.
+where $E_{01}$ is the energy of the second knee, $\gamma_0$ and $\gamma_1$ are the spectral indices before and after the feature and, $\omega_{01}$ is a parameter that governs the width of the transition ~\cite{PierreAuger:2021:InfillSpectrum}.
 
 When fitting the spectrum data for the different dataset, it was observed that the $\omega_{01}$ could not be properly constrained.
 To study this, 300 iterations of toy Monte-Carlo spectra were simulated.
@@ -227,7 +227,7 @@ To understand the robustness of the measurement of the Second Knee, the differen
 The main source of systematic uncertainty arises from the $\sim14\%$ energy systematic inherited from the \sd{750} calibration using the FD.
 
 A well understood systematic source is the exposure uncertainty. Since the exposure is calculated geometrically and it is energy independent in the whole energy range, the systematic uncertainty is also energy independent.
-From Ref ~\cite{TriggerAndApperture}, it was determined that the uncertainty in the exposure is around $~3\%$ coming from the determination of the number of active hexagons used to estimate the aperture of the detector.%Fix citation
+From Ref ~\cite{PierreAuger:2010:TriggerAperture}, it was determined that the uncertainty in the exposure is around $~3\%$ coming from the determination of the number of active hexagons used to estimate the aperture of the detector.%Fix citation
 Other sources are included in the assumptions in the detector behaviour used in the construction of the migration matrix, such as the resolution uncertainty and the primary composition used in the bias and efficiency estimation.
 Also, the uncertainty originated from the systematic uncertainty in the calibration parameters from \cref{chapter:reconstruction} is included.
 These different sources were treated as uncorrelated and the impact in both the flux and the spectral parameters was studied.
@@ -237,7 +237,7 @@ Finally, the systematic uncertainty from the $\omega_{01}$ assumption is assesse
 \subsection{FD energy systematic}
 
 When using the \gls{fd} to calibrate the \gls{sd}, all the uncorrelated contributions from the energy scale are completely inherited.
-There are different contributions to the overall energy scale systematic uncertainty, which are described in length in Ref. \cite{PierreAuger:2015Observatory}.
+There are different contributions to the overall energy scale systematic uncertainty, which are described in length in Ref. \cite{PierreAuger:2015:Observatory}.
 The different sources are summarized in \cref{table:energy_scale_systematics} being the main contributions the proper \gls{fd} energy calibration and the profile reconstruction.
 
 \begin{table}
@@ -330,7 +330,7 @@ To be conservative, the systematic uncertainty assigned, $\Delta \lg (E_{01}/\te
 \label{subsec:response_systematics}
 
 To study the impact in the spectrum of the assumptions made for the response function defined in \cref{eq:resolution_function}, different changes in the bias, resolution and efficiency.
-The contribution of the uncertainty in the energy resolution was evaluated by varying the parameters of the resolution model defined in \cref{eq:resolution_sigma}, following the procedure of Ref.~\cite{PierreAuger:2021Iifill_spectrum}.
+The contribution of the uncertainty in the energy resolution was evaluated by varying the parameters of the resolution model defined in \cref{eq:resolution_sigma}, following the procedure of Ref.~\cite{PierreAuger:2021:InfillSpectrum}.
 The parameters $R_{\text{sh}}$ and $R_0$ were shifted by their $\pm1\sigma$ uncertainties, corresponding to variations of $\pm0.01$ respectively.
 For each variation, the migration matrix was recalculated keeping all other components of the response function unchanged and the spectrum was fitted.
 The spectral-shape parameters remain well within their nominal statistical uncertainties. 
