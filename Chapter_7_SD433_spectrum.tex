@@ -18,24 +18,37 @@ Finally, in ~\cref{sec:systematics} the impact of the different sources of syste
 \section{Raw spectrum}
 \label{sec:raw_spectrum}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-With the recorded events with the \sd{433} between July 1 2018 and December 21 2021 the cosmic ray flux can start to be estimated.
-A histogram of the energy of the events, allows to estimate the raw flux of cosmic rays,
+The energy spectrum describes the differential flux of cosmic rays as a function of their energy.
+It is estimated from the number of events recorded in a given energy interval, normalized by the exposure of the detector and the width of the interval.
+For the \sd{433}, the dataset described in \cref{chap:sd433_dataset} contains \SDFourThreeThreeNEvents events that pass the 6T5 fiducial trigger with zenith angle lower than $40^\circ$.
+These events were recorded between 1 July 2018 and 21 December 2021 above the full-efficiency threshold.
+
+The raw flux in reconstructed-energy bin $i$ is estimated as
 \begin{align}
-    J_{i}^\text{raw}(E)=\frac{N_i}{\exposuresym\Delta E_i},
+    J_i^{\mathrm{raw}}
+    =
+    \frac{N_i}{\exposuresym\,\Delta E_i},
+    \label{eq:raw_flux}
 \end{align}
-where $N_i$ is the number of events in energy bin $i$, $\Delta E_i$ is the width of the energy bin and $\exposuresym$ is the exposure.
-As determined in \cref{sec:exposure}, the exposure, $\exposuresym$, is \SDFourThreeThreeExposure and is independent of energy over the range considered here.
-~\cref{fig:raw_spectrum} shows the raw spectrum together with the $1-\sigma$ Poisson confidence interval. The number at each datapoint show the number of events in that bin.
+where $N_i$ is the number of events in the bin, $\Delta E_i$ is the bin width, and $\exposuresym$ is the accumulated exposure.
+As determined in \cref{sec:exposure}, the exposure is \SDFourThreeThreeExposure$\pm0.09$ and is energy independent above the full-efficiency threshold.
+The spectrum is referred to as raw because no correction has yet been applied for event migrations between energy bins caused by the finite resolution and bias of the detector.
+
+The left panel of \cref{fig:raw_spectrum} shows the raw flux together with the $68\%$ Poisson confidence intervals.
+The number of events in each bin is indicated next to each data point.
+Since the cosmic-ray flux decreases approximately as $E^{-3}$, the same measurements are shown multiplied by $E^3$ in the right panel.
+This representation reduces the dominant power-law dependence and makes changes in the spectral slope more visible.
+A steepening around $\lg(E/\mathrm{eV})\simeq17.3$ suggests the presence of a feature compatible with the second knee, although the detector response must be taken into account before it can be properly measured.
+
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{figures/chapter_spectrum/sd433_raw_spectrum.pdf}
-    \caption{Raw cosmic ray flux measured with the \sd{433}. The datapoints show the raw flux.
-    The uncertainty bars represent the $1-\sigma$ Poisson confidence interval. The number of events is also shown in text for each bin.}
+    \includegraphics[width=\linewidth]{figures/chapter_spectrum/sd433_raw_spectrum.pdf}
+    \caption{
+        Raw cosmic-ray spectrum measured with the \sd{433}. The error bars represent the $68\%$ Poisson confidence intervals.
+        Left: differential flux as a function of reconstructed energy; the numbers indicate the number of events in each bin.
+        Right: the same flux multiplied by $E^3$ to highlight changes in spectral slope.}
     \label{fig:raw_spectrum}
 \end{figure}
-The cosmic-ray flux spans many decades in energy, roughly following power law with a spectral index $\gamma\sim3$.
-Because of this, it is usual for the flux to be shown multiplied by $E^3$ to highlight the different features where $\gamma$ changes.
-\cref{fig:raw_spectrum} shows the \sd{433} spectrum multiplied by $E^3$, where a change in the slope of the flux around $\lg(E/\text{eV})\sim17.3$ giving a hint of the presence of the second knee.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Forward folding}
