@@ -32,6 +32,8 @@ The raw flux in reconstructed-energy bin $i$ is estimated as
 \end{align}
 where $N_i$ is the number of events in the bin, $\Delta E_i$ is the bin width, and $\exposuresym$ is the accumulated exposure.
 As determined in \cref{sec:exposure}, the exposure is \SDFourThreeThreeExposure$\pm0.09$ and is energy independent above the full-efficiency threshold.
+A logarithmic bin width of $\Delta\lg(E/\mathrm{eV})=0.1$ is used up to $\lg(E/\mathrm{eV})=18.1$, chosen to be compatible with the energy resolution described in \cref{sec:res_and_bias}.
+Above this energy, the bin width is increased to $\Delta\lg(E/\mathrm{eV})=0.3$ to increase the number of events per bin and reduce the statistical uncertainties.
 The spectrum is referred to as raw because no correction has yet been applied for event migrations between energy bins caused by the finite resolution and bias of the detector.
 
 The left panel of \cref{fig:raw_spectrum} shows the raw flux together with the $68\%$ Poisson confidence intervals.
@@ -103,71 +105,146 @@ The mean reconstructed energy is therefore $E[1+b(E)]$, while the standard devia
 
 At high energies, where the relative resolution $\sigma(E)/E$ is dominated by shower-to-shower fluctuations, the distribution of events among neighbouring reconstructed-energy bins becomes approximately independent of energy.
 Consequently, the width and shape of the migration pattern in logarithmic energy are approximately constant.
-From a spectrum model with a set of free parameters $\mathbf{s}$, the expected number of events on a bin,
+For a spectrum model with parameters $\mathbf{s}$, the expected number of events in true-energy bin $j$ is
 \begin{align}
-\mu=\int\limits_{\Delta E}\text{d}E\,J(E|\mathbf{s}),
+    \mu_j(\mathbf{s})
+    =
+    \exposuresym
+    \int_{\Delta E_j^{\mathrm{true}}}
+    \mathrm{d}E\,J(E\mid\mathbf{s}),
+    \label{eq:expected_true_counts}
 \end{align}
-Via the migration matrix this expected number of events can be folded by the detector response,
+where $\exposuresym$ is the accumulated exposure.
+After folding with the migration matrix, the expected number of events in reconstructed-energy bin $i$ is
 \begin{align}
-\nu_i=\sum\limits_jR_{ij}\mu_j.
+    \nu_i(\mathbf{s})
+    =
+    \sum_j R_{ij}\,\mu_j(\mathbf{s}).
+    \label{eq:expected_reconstructed_counts}
 \end{align}
-To estimate the set of parameters, $\mathbf{s}$, a Poisson likelihood fit can be performed. 
-For each bin in the reconstructed energy space, the log-Poisson likelihood is defined,
-\begin{align*}
-\mathcal{L}_i=\ln(\psi_i^2/\psi^2_{min})=-2\left[(\nu_i-n_i)-n_i\ln(\nu_i/n_i)\right],
-\end{align*}
-where $n_i$ is the reconstructed number of events on the energy bin $i$.
-By varying the set of free parameters, $\mathbf{s}$, the combined likelihood, $\mathcal{L}=\sum\limits_i\mathcal{L_i}$, is minimized.
-This method presents the challenge that the migration matrix depends explicitly on the spectrum model that is used, so it has to be recalculated at each step.
-However, given that the spectrum falls sharply as $\sim E^3$ of the energy, if the binning in the true space is fine enough, the response function and efficiency can be considered constant within each bin and removed from the integral.
-In this way, the dependence of $J(E|\mathbf{s})$ is the same in the numerator and denominator of \cref{eq:migration_matrix} and the explicit dependence vanishes.
-Then, the approximated migration matrix simplifies to
+
+The spectrum parameters are determined by comparing the expected event number $\nu_i$ with the observed event number $n_i$ in each reconstructed-energy bin using a binned Poisson likelihood.
+For this purpose, the Poisson deviance
 \begin{align}
-    R_{ij}=\int\limits_{\Delta E_ij}\text{d}E_i\,\kappa(E_i|E_j,\sigma,b)\epsilon(E_j).
+    D(\mathbf{s})
+    =
+    2\sum_i
+    \left[
+        \nu_i(\mathbf{s})-n_i
+        +
+        n_i\ln\left(
+            \frac{n_i}{\nu_i(\mathbf{s})}
+        \right)
+    \right]
+    \label{eq:poisson_deviance}
+\end{align}
+is minimized with respect to $\mathbf{s}$.
+The migration matrix in \cref{eq:migration_matrix} depends explicitly on the spectrum model $J(E\mid\mathbf{s})$.
+Consequently, every change in the spectrum parameters $\mathbf{s}$ during the fit requires the matrix to be recalculated.
+Following the approach described in Appendix~C of \cite{PierreAuger:2020:Spectrum}, an approximate calculation of the matrix is proposed.
+
+If the true-energy bins are sufficiently narrow, the efficiency and response function may be approximated as constant within each bin and taken outside the true-energy integral by evaluating them at a representative energy $E_j$.
+The remaining integral of $J(E\mid\mathbf{s})$ in the numerator is then identical to that in the denominator of \cref{eq:migration_matrix}, and the dependence on $J(E\mid\mathbf{s})$ cancels.
+This gives the approximate migration matrix
+\begin{align}
+    R_{ij}^{\mathrm{approx}}
+    =
+    \epsilon(E_j)
+    \int_{\Delta E_i^{\mathrm{rec}}}
+    \mathrm{d}E_{\mathrm{rec}}\,
+    \kappa(E_{\mathrm{rec}}\mid E_j).
     \label{eq:matrix_approx}
 \end{align}
 
-In order to test the robustness of this approximation, a the binning in the true energy space is chosen as $\Delta\lg(E_j/\text{eV})=0.01$ while the binning in the reconstructed energy space is chosen as $\Delta\lg(E_i/\text{eV})=0.1$ to be compatible with the resolution of the detector.
+For the numerical calculation, the true-energy bin width is chosen as $\Delta\lg(E_j/\mathrm{eV})=0.01$, while the reconstructed-energy bin width used in the analysis is $\Delta\lg(E_i/\mathrm{eV})=0.1$.
+The next step is to evaluate the usefulness of this approximate matrix by comparing the expected event numbers predicted with the exact and approximate matrices.
 
-The approximated migration matrix for the \sd{433} is shown in \cref{fig:migration_matrix} together with the full efficiency threshold represented by the red dashed line.
+The approximate migration matrix for the \sd{433} is shown in
+\cref{fig:migration_matrix}, together with the full-efficiency threshold in red and the identity in white.
+The horizontal axis represents true energy, while the vertical axis represents reconstructed energy.
+To avoid border effects, the migration matrix is calculated from
+$10^{16}$ to $10^{19}\,\mathrm{eV}$, extending below the full-efficiency threshold and above the maximum reconstructed energy in the dataset.
+
 \begin{figure}
     \centering
     \includegraphics[width=0.75\linewidth]{figures/chapter_spectrum/sd433_migration_matrix.pdf}
-    \caption{Migration matrix for the \sd{433}. The red dashed line indicates the full efficiency threshold. The identity is also shown in white}
+    \caption{
+        Approximate migration matrix for the \sd{433}.
+        The horizontal axis represents true energy and the vertical axis reconstructed energy.
+        The red dashed line indicates the full-efficiency threshold in true energy, and the white dashed line indicates
+        $E_{\mathrm{rec}}=E_{\mathrm{true}}$.
+    }
     \label{fig:migration_matrix}
 \end{figure}
-At the lowest energies, since the resolution is lower, contributions from further bins become more relevant.
-To avoid border effects, the migration matrix is calculated for energies below full efficiency. 
-The probability of events not being detected is also compensated with the efficiency parametrization from \cref{chap:sd433_dataset}.
-However, the contribution from events below full efficiency comes approximately only from two bins below. %improve wording.
-At the highest energies, the matrix becomes independent of the energy due to the dominance of the shower-to-shower fluctuations in the resolution.
 
-To assess the impact of using the approximated matrix, a power-law spectrum was assumed with a slope $\gamma=-3$, $J(E)=J_0E^{\gamma}$.
-The expected number of folded events, $\nu_i$, was calculated using both migration matrices, $R^{\text{approx}}_{ij}$ and $R^{\text{exact}}_{ij}$.
-\cref{fig:nu_ratio} shows the relative difference between the expected number of events calculated with the approximate and exact methods.
-The difference between the two is negligible in the whole energy range.
-For this reason, the approximated method is chosen for the forward-folding of the spectrum to avoid making a priori assumptions for the spectrum shape and parameters, and recalculating the matrix in each iteration of the fit.
+The efficiency suppresses the contribution from energies below the full-efficiency threshold.
+Nevertheless, upward migrations allow events from up to two bins below the full-efficiency threshold to contribute significantly to the measured spectrum.
+At low energies, the worsening energy resolution broadens the migration pattern, increasing the contributions from more distant true-energy bins.
+At high energies, where shower-to-shower fluctuations dominate the relative energy resolution, the shape of the migration pattern becomes approximately independent of energy.
+
+To assess the accuracy of the approximation, a power-law spectrum
+\begin{align}
+    J(E)=J_0E^\gamma
+\end{align}
+with spectral index $\gamma=-3$ is used.
+The expected event numbers are calculated using both the exact matrix,
+$R_{ij}^{\mathrm{exact}}$, and the approximate matrix,
+$R_{ij}^{\mathrm{approx}}$.
+The relative difference,
+\begin{align}
+    \delta\nu_i
+    =
+    \frac{
+        \nu_i^{\mathrm{approx}}
+        -
+        \nu_i^{\mathrm{exact}}
+    }{
+        \nu_i^{\mathrm{exact}}
+    },
+\end{align}
+is shown in \cref{fig:nu_ratio}.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.75\linewidth]{figures/chapter_spectrum/nu_ratio.pdf}
-    \caption{Percent difference between the folded number of events using the migration matrix from \cref{eq:migration_matrix} and the approximated matrix \cref{eq:matrix_approx}.}
+    \caption{
+        Relative difference between the expected event numbers obtained using the approximate and exact migration matrices for a power-law spectrum with $\gamma=-3$.
+    }
     \label{fig:nu_ratio}
 \end{figure}
 
-Once the set of best fit parameters is determined, the correction factors,
+The difference remains below $0.02\%$ over the full energy range, showing that the effect of the approximation is negligible for the chosen binning.
+The approximate matrix is therefore used in the forward-folding fit, avoiding both an a priori dependence on the spectral parameters and the need to recalculate the matrix at every iteration.
+
+Once the best-fit spectrum parameters $\hat{\mathbf{s}}$ are determined, the ratio
 \begin{align}
-    c_i=\mu_i/\nu_i,
+    c_i
+    =
+    \frac{
+        \mu_i(\hat{\mathbf{s}})
+    }{
+        \nu_i(\hat{\mathbf{s}})
+    },
     \label{eq:correction_factor}
 \end{align}
- are used to estimate the unfolded cosmic ray flux, $J_i=c_iJ_{\text{raw}}$.
+is calculated for each bin.
+These correction factors are then used to estimate the true flux:
+\begin{align}
+    J_i
+    =
+    c_i J_i^{\mathrm{raw}}.
+\end{align}
 
-The correction factors obtained from the fit to the measured \sd{433} dataset are shown in \cref{fig:correction_factors}.
-The correction is largest close to the full-efficiency threshold and becomes approximately constant at the highest energies, where the relative energy resolution is dominated by shower-to-shower fluctuations.
+The resulting values for the measured \sd{433} dataset are shown in
+\cref{fig:correction_factors}.
+The correction factors are more relevant near the full-efficiency threshold, where the efficiency and energy resolution have the greatest impact on the measured spectrum.
+At high energies, they become approximately constant because shower-to-shower fluctuations dominate the energy resolution.
 \begin{figure}
     \centering
     \includegraphics[width=0.75\linewidth]{figures/chapter_spectrum/sd433_nominal_correction_factors.pdf}
-    \caption{Correction factors obtained from the forward-folding fit to the measured \sd{433} dataset.}
+    \caption{
+        Correction factors obtained from the forward-folding fit to the measured \sd{433} dataset.
+    }
     \label{fig:correction_factors}
 \end{figure}
 
