@@ -150,6 +150,11 @@ This improves the quality of the reconstructed events and provides a robust meas
 \section{Correction for zenith-angle attenuation}
 \label{sec:cic}
 
+The reconstructed signal $S(300)$ provides an estimator of the shower size at ground level and is therefore used as a proxy of the energy of the primary cosmic ray.
+However, for a fixed primary energy, its value depends on the zenith angle because inclined showers traverse a larger atmospheric depth before reaching the detector.
+Consequently, $S(300)$ must be corrected for atmospheric attenuation before it can be used as an energy estimator.
+This correction is determined from data using the constant-intensity-cut method described below.
+
 \subsection{Constant-intensity cuts}
 \label{subsec:cic_method}
 
