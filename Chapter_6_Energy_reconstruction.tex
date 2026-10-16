@@ -64,35 +64,27 @@ For events with lower station multiplicity, the number of degrees of freedom is 
 The left panel of \cref{fig:sd433_event_footprint_ldf} illustrates the geometrical reconstruction of an \sd{433} event.
 The marker size is proportional to the station signal, while the colour scale represents its start time, progressing from earlier signals in blue to later signals in green.
 The black line indicates the reconstructed arrival direction projected onto the ground, and the cross marks the reconstructed core position.
-% TODO: Describe the Offline geometrical reconstruction and the modified NKG
-% lateral-distribution function used for SD-433, including the fixed beta
-% parametrization and the definition of S(300).
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{figures/chapter_reconstruction/event_footprint_ldf.pdf}
-    \caption{Example reconstruction of an \sd{433} event with zenith angle $\theta=\ang{32.0}$ and reconstructed shower size $S(300)=\qty{76.5\pm2.9}{VEM}$. The left panel shows the event footprint, with marker size proportional to the recorded signal and colour indicating the signal start time. The cross marks the reconstructed shower core, and the black line shows the projection of the arrival direction onto the ground. The right panel shows the recorded station signals as a function of the distance from the shower axis, together with the fitted \gls{ldf}. The red point indicates the reconstructed shower-size estimator $S(300)$.}
-    \label{fig:sd433_event_footprint_ldf}
-\end{figure}
+\subsection{Lateral-distribution function}
+\label{subsec:ldf}
 
 The shower size is then estimated by modeling the fall-off of the signal $S(r)$ with the distance $r$ to the shower axis using a \gls{ldf} ~\cite{Silli:2021:PerformanceSD433}.
 Intrinsic shower-to-shower fluctuations produce variations in the longitudinal development, such that individual events may be sampled at different stages of their development.
 As a consequence, the \gls{ldf} exhibits variations on an event-by-event basis, preventing the reconstruction of all the parameters in the shower. 
 Instead, the reconstruction is based on an \textit{average} LDF, $\langle S(r)\rangle$, and the expected signal at a fixed reference distance, $r_\text{opt}$, is adopted as the shower size.
 The optimal distance of \qty{300}{m} for the \sd{433} is determined by fitting the average LDF and identifying the distance at which the reconstructed shower size is minimally dependent on the LDF slope, following the method described in Ref.~\cite{Newton:2007:OptimalDistance}.
-In this way, the systematic uncertainty of the shower size is below 5\% \cite{Silli:2021:PerformanceSD433}.
+The dependence of the optimal distance on the assumed LDF shape, the primary energy, and the zenith angle remains at approximately the 5\% level~\cite{PierreAuger:2020:SDReconstruction}.
 The average LDF is described using an empirically-chosen model based on a modified \gls{nkg}function,
 \begin{align}
   \langle S(r)\rangle =
     S(r_\text{opt})
     \left(\frac{r}{r_\text{opt}}\right)^\beta
-    \left(\frac{r + r_\text{opt}}{r_\text{scale} + r_\text{opt}}\right)^\beta,
+    \left(\frac{r + r_\text{scale}}{r_\text{opt} + r_\text{scale}}\right)^\beta,
 \end{align}
 %
 where $\beta$ is the LDF slope and $r_\text{scale}=700\,\text{m}$ is a scale parameter.
 
-The slope of the \gls{ldf} was determined on an event-by-event basis, using a set of high quality events with multiplicity higher than five ~\cite{Silli:2021:PerformanceSD433}, where $\beta$ could be left as a free parameter from the fit.
-Then it was parameterized as
+The slope of the \gls{ldf} was determined on an event-by-event basis using a set of high-quality events with at least five triggered stations, for which $\beta$ could be left as a free parameter in the fit~\cite{Silli:2021:PerformanceSD433}.
+The fitted values were then used to parametrize the average dependence of the slope on the shower size and zenith angle as
 \begin{align}
     \beta(\theta,y)=a(\theta)+b(\theta)y
 \end{align}
@@ -115,37 +107,43 @@ The coefficients that govern the dependence in zenith angle, $a(\theta)$ and $b(
     \end{pmatrix}.
     \label{eq:beta_parameterization}
 \end{align}
-With this using the average \gls{ldf} the reconstruction can be performed for all the events.
-\cref{fig:sd433_size_zenith_distributions} shows a histogram of the reconstructed events.
-On the left panel, it can be seen that the number of events increases rapidly for $S(300)<15\mathrm{VEM}$ due to the increasing efficiency of the detector.
-However at signals higher than this, it starts to decay almost linearly due to the power-law like spectrum of the cosmic ray spectrum.
+The parametrization describes the event-by-event fitted slopes with an average relative difference of approximately $2\%$ over the considered range of shower sizes and zenith angles~\cite{Silli:2021:PerformanceSD433}.
+Once determined, this parametrization was fixed in the reconstruction of the complete data set, allowing events with insufficient station multiplicity to constrain the LDF slope to be reconstructed with the average LDF shape.
+With the LDF shape fixed by the parametrization of $\beta$, the shower size $S(300)$ and the core position $\vec{x}_{\mathrm{c}}$ are determined simultaneously through a maximum-likelihood fit.
+The likelihood accounts for the measured signals in the triggered stations and for active stations that did not trigger.
+Although no signal trace is available for these non-triggered stations, their presence constrains the fit, since an LDF predicting a signal above the trigger threshold at their positions is disfavoured.
+In this way, the LDF fit determines $S(300)$ and refines the core position obtained from the initial geometrical reconstruction.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter_reconstruction/event_footprint_ldf.pdf}
+    \caption{Example reconstruction of an \sd{433} event with zenith angle $\theta=\ang{32.0}$ and reconstructed shower size $S(300)=\qty{76.5\pm2.9}{VEM}$. The left panel shows the event footprint, with marker size proportional to the recorded signal and colour indicating the signal start time. The cross marks the reconstructed shower core, and the black line shows the projection of the arrival direction onto the ground. The right panel shows the recorded station signals as a function of the distance from the shower axis, together with the fitted \gls{ldf}. The red point indicates the reconstructed shower-size estimator $S(300)$.}
+    \label{fig:sd433_event_footprint_ldf}
+\end{figure}
+
+The left panel of \cref{fig:sd433_size_zenith_distributions} shows the distribution of the reconstructed shower size.
+At low values of $S(300)$, the number of events is strongly suppressed by the trigger efficiency.
+It increases as the array approaches full efficiency and then the distribution decreases approximately as a power law, reflecting the steeply falling cosmic-ray flux.
 The right panel shows the zenith angle distribution for the reconstructed events from 0 to $60^\circ$, the maximum angle of the vertical reconstruction implemented in \Offline.
-The reconstruction leads to \SDFourThreeTreeTotalNumberOfEvents that pass the 6T5 fiducial trigger.
+The distributions contain \SDFourThreeTreeTotalNumberOfEvents reconstructed events.
 However, as discussed in \cref{sec:efficiency}, events with $\theta<45^\circ$ are used in the spectrum in order to lower the full efficiency threshold for the array.
 
-In \cref{fig:sd433_multiplicity} a histogram of the multiplicity of the events is shown in two $S(300)$ bins, one for $S(300)<15\,\text{VEM}$ and $S(300)>15\,\text{VEM}$.
+In \cref{fig:sd433_multiplicity} the event multiplicity is shown in two $S(300)$ intervals, below and above $\qty{15}{VEM}$.
 This threshold is chosen to roughly correspond to the signal of the full efficiency threshold.
-For  the lower $S(300)$ bin, most of the events have only three or four triggered stations.
-However, at the higher $S(300)$, which roughly corresponds to the dataset used for the spectrum, less than $5\%$ of events have three triggered detectors, and most of them have six or more.
+For the lower $S(300)$ interval, most events have a multiplicity of three or four.
+For the higher $S(300)$ interval, which roughly corresponds to the data set used for the spectrum, $98.3\%$ of the events have a multiplicity greater than five.
 This improves the quality of the reconstructed events and provides a robust measurement of the signal and the energy of the events.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/chapter_reconstruction/shower_size_zenith_distributions.png}
-    \caption{Distributions of the reconstructed shower size $S(300)$ (left) and zenith angle (right) for SD-433 events with $S(300)\geq0.1\,\mathrm{VEM}$ and $0^\circ\leq\theta<60^\circ$, before the subsequent analysis selections.}
+    \caption{Distributions of the reconstructed shower size $S(300)$ (left) and zenith angle (right) for SD-433 events satisfying the 6T5 condition, with $0^\circ\leq\theta<60^\circ$.}
     \label{fig:sd433_size_zenith_distributions}
 \end{figure}
-\subsection{Properties of the reconstructed sample}
-\label{subsec:reconstructed_sample}
-
-% TODO: Introduce the complete reconstructed sample before the later quality,
-% zenith, CIC, and calibration selections. State the S(300) >= 0.1 VEM display
-% threshold and the 0--60 degree zenith range used in these distributions.
-
 
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.78\textwidth]{figures/chapter_reconstruction/multiplicity_by_shower_size.png}
-    \caption{Selected-station multiplicity for reconstructed events below and above $S(300)=15\,\mathrm{VEM}$. Each distribution is normalized independently to show the change in its shape with shower size.}
+    \caption{Multiplicity of reconstructed events below and above $S(300)=15\,\mathrm{VEM}$. Each distribution is normalized independently to show the change in its shape with shower size.}
     \label{fig:sd433_multiplicity}
 \end{figure}
 
