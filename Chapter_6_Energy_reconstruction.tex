@@ -1,3 +1,6 @@
+\def\Offline{\resizebox{!}{1.25\fontcharht\font`H}{\mbox{$\overline{\textrm{Off}}$\hspace{.05em}\protect\raisebox{.4ex}{$\protect\underline{\textrm{line}}$}}}\xspace}
+
+
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
@@ -5,12 +8,34 @@
 \label{chap:energy_reconstruction}
 \label{chapter:reconstruction}
 
+In this chapter we present the long road between the event level reconstruction and the final estimation of primary energy.
+In \cref{sec:reconstruction_shower_size} the \Offline reconstruction is presented to estimate the shower geometry and signal at a reference distance via the \gls{ldf}.
+Then in \cref{sec:cic} the correction for atmospheric attenuation is estimated and applied to the dataset.
+Finally in \cref{sec:calibration} the corrected shower size is used as a proxy for the energy and the energy calibration done with the \sd{750} dataset is performed to estimate the primary cosmic ray energy.
+
 \section{Reconstruction of the shower size}
 \label{sec:reconstruction_shower_size}
+
+To estimate the energy of the primary cosmic ray, a two step method is used.
+In a first stage, the geometry of the event is performed, using the start time of the signal in the different detectors in order to reconstruct the arrival direction of the and the impact position of the core.
+Then, a\gls{ldf} is used as an empirical functional form that describes the fall of the signal with the distance to the shower core $r$.
+The signal at a reference distance, $S(300)$, is used as an estimator of the particle number at the maximum development of the shower $<X_\text{max}>$.
+Finally, the reconstruction is performed by fitting simultaneously the \gls{ldf} and the shower geometry using the results from the single fits as a starting point.
 
 \subsection{Geometry and lateral-distribution fit}
 \label{subsec:geometry_ldf}
 
+The reconstruction of an event is performed using the data of the different detectors involved in a T3 stored in \gls{cdas} as stated in \cref{sec:triggers}.
+To estimate the position of the core $\vec{x_c}$ and the arrival direction $â=(\phi,\theta)$, where $\theta$ is the zenith angle and $\phi$ the acimut angle the timming and positions of the detectors is used.
+The position of each detector together with the timestamp of the trigger is determined using the GPS module at each station.
+For the \Offline reconstruction, the shower-front is approximated as a \textit{sphere} propagating towards the ground from a position $x_0$ and time $t_0$ at the speed of lite.
+Then the arrival time can be estimated by minimizing the sum of the squares of the differences in the predicted and measured start times
+\begin{align}
+    \chi=\sum\limits_i\frac{[t_i-t_\text{sh}(\vec{x_i})]^2}{\sigma^2_{t_i}}
+\end{align}.
+once the arrival time and $\vec{x_c}$ is predicted the normalized direction $â$ can be estimated.
+The radius of curvature is left as a free parameter when the events multiplicity is high but for events at lower energies with just three stations it is fixed since there are not enough degrees of freedom.
+In the left panel of \cref{fig:sd433_event_footprint_ldf} the start time of each triggered station is represented by a color scale where blue is earlier and green is latest. The arrival direction of the shower is represented by the black solid line and the impact position of the core is shown with a cross.
 % TODO: Describe the Offline geometrical reconstruction and the modified NKG
 % lateral-distribution function used for SD-433, including the fixed beta
 % parametrization and the definition of S(300).
@@ -18,7 +43,7 @@
 \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{figures/chapter_reconstruction/event_footprint_ldf.pdf}
-    \caption{Example SD-433 event reconstruction. The left panel shows the station footprint, with marker size proportional to the recorded signal and colour indicating the station start time. The right panel shows the lateral-distribution fit and the interpolated shower-size estimator $S(300)$.}
+    \caption{Example SD-433 event reconstruction for an event with energy $E=$ and zenith angle $\theta=$. The left panel shows the event footprint, with marker size proportional to the recorded signal $S(r)$ and colour indicating the station start time. The right panel shows the fall of signal with respect to the distance to the core $r$ and the \gls{ldf} fit with a \gls{nkg} function. The red point symbols the shower-size estimator $S(300)$.}
     \label{fig:sd433_event_footprint_ldf}
 \end{figure}
 
