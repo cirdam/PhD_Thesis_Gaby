@@ -346,7 +346,7 @@ Although subdominant, the influence of $\omega_{01}$ on the measured spectrum is
 With the fixed value of the transition width, the forward-folded fit was performed once more, obtaining an energy of \secondKneeEnergy, \gammaZero and \gammaOne.
 
 The resulting unfolded spectrum and the residuals with respect to the fitted model are shown in \cref{fig:sd433_unfolded_spectrum}.
-\begin{figure}[htbp]
+\begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/chapter_spectrum/sd433_unfolded_spectrum_with_residuals.pdf}
     \caption{Unfolded cosmic-ray spectrum measured with the \sd{433} and the best-fit broken power law with a smooth transition. The lower panel shows the residuals with respect to the fitted model.}
@@ -376,24 +376,24 @@ Consequently, the uncertainty in $\gamma_0$ increases and the fit quality decrea
 \label{sec:systematics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To understand the robustness of the measurement of the Second Knee, the different sources of systematics were evaluated using the forward-folding machinery deveolped in the last section.
-The main source of systematic uncertainty arises from the $\sim14\%$ energy systematic inherited from the \sd{750} calibration using the FD.
+The systematic uncertainties affecting the \sd{433} spectrum arise from the exposure, the energy scale, the detector response, and the assumed transition width.
+The dominant contribution is the approximately $14\%$ energy-scale uncertainty inherited from the calibration of the \sd{750} with the FD.
 
-A well understood systematic source is the exposure uncertainty. Since the exposure is calculated geometrically and it is energy independent in the whole energy range, the systematic uncertainty is also energy independent.
-From Ref ~\cite{PierreAuger:2010:TriggerAperture}, it was determined that the uncertainty in the exposure is around $~3\%$ coming from the determination of the number of active hexagons used to estimate the aperture of the detector.%Fix citation
-Other sources are included in the assumptions in the detector behaviour used in the construction of the migration matrix, such as the resolution uncertainty and the primary composition used in the bias and efficiency estimation.
-Also, the uncertainty originated from the systematic uncertainty in the calibration parameters from \cref{chapter:reconstruction} is included.
-These different sources were treated as uncorrelated and the impact in both the flux and the spectral parameters was studied.
-With this, the sum of the different contributions allows to construct the total systematic uncertainty in the measurement.
-Finally, the systematic uncertainty from the $\omega_{01}$ assumption is assessed directly from data in order to study the impact on the Second Knee determination.
+The exposure uncertainty is approximately $3\%$ and is energy independent, since the exposure is calculated geometrically from the number of active hexagons~\cite{PierreAuger:2010:TriggerAperture}.
+The uncertainties associated with the detector response include the energy resolution and the composition dependence of the bias and efficiency.
+The uncertainties in the calibration parameters determined in \cref{chapter:reconstruction} are also included.
+
+These sources are treated as uncorrelated, and their effects on both the flux and the fitted spectral parameters are evaluated using the forward-folding procedure developed in the previous section.
+Their contributions are combined in quadrature to determine the total systematic uncertainty of the measurement.
+The influence of the assumed value of $\omega_{01}$ on the determination of the second knee is assessed separately using the measured data and toy Monte-Carlo simulations.
 
 \subsection{FD energy systematic}
 
-When using the \gls{fd} to calibrate the \gls{sd}, all the uncorrelated contributions from the energy scale are completely inherited.
-There are different contributions to the overall energy scale systematic uncertainty, which are described in length in Ref. \cite{PierreAuger:2015:Observatory}.
-The different sources are summarized in \cref{table:energy_scale_systematics} being the main contributions the proper \gls{fd} energy calibration and the profile reconstruction.
+The calibration of the \gls{sd} with the \gls{fd} transfers the systematic uncertainty of the FD energy scale to the \sd{433} spectrum.
+The individual contributions to this uncertainty are described in detail in \cite{PierreAuger:2015:Observatory} and summarized in \cref{table:energy_scale_systematics}.
+The dominant contributions arise from the absolute calibration of the \gls{fd} and the reconstruction of the longitudinal shower profile.
 
-\begin{table}[htbp]
+\begin{table}
     \centering
     \caption{Contributions to the systematic uncertainty in the \gls{fd} energy scale.
     The ranges indicate the energy dependence of the corresponding contributions.
@@ -408,7 +408,7 @@ The different sources are summarized in \cref{table:energy_scale_systematics} be
         FD calibration
             & 9.9\,\% \\
         FD profile reconstruction
-            & 6.5--5.6\,\% \\
+            & 5.6--6.5\,\% \\
         Invisible energy
             & 3--1.5\,\% \\
         Statistical error of SD calibration fit
@@ -422,22 +422,25 @@ The different sources are summarized in \cref{table:energy_scale_systematics} be
     \end{tabular}
 \end{table}
 
-It can also be seen that all the contributions have at least a mild energy dependence and the total contribution can be estimated in $14\%$ and approximately energy independent.
+Some contributions exhibit a mild energy dependence, while the total uncertainty is approximately energy independent and amounts to $14\%$.
 
-The impact of the energy scale systematic in the spectrum can be derived analytically but the forward-folding developed in the previous section is used as a double check.
-Assuming a change in  energy, $E'=(1+\delta)E$ where $\delta=\pm0.14$, the change in the flux can be assessed using the change of variable theorem for a distribution,
+The effect of the energy-scale uncertainty on the spectrum can be derived analytically.
+However, the forward-folding procedure developed in the previous section is used as a cross-check.
+For a relative shift $\delta$ in the energy scale, the shifted energy is $E'=(1+\delta)E$, with $\delta=\pm0.14$.
+The corresponding change in the flux follows from the transformation of a probability density,
 \begin{align}
     J'(E')=J(E)\left|\frac{dE}{dE'}\right|
     \label{eq:change_of_variables}
 \end{align}
-where $J(E)$ and $J'(E')$ are the flux measured on the $E$ and $E'$ energy scales respectively.
-Given a power-law spectrum, $J(E)=J_0E^{-\gamma}$, the relative change in the spectrum becomes
+where $J(E)$ and $J'(E')$ are the differential fluxes on the original and shifted energy scales, respectively.
+For a power-law spectrum, $J(E)=J_0E^{-\gamma}$, the relative change in the flux is
 \begin{align}
 \frac{\Delta J}{J}=(1+\delta)^{\gamma-1}-1,
 \label{eq:energy_systematic_pl}
 \end{align}
-which gives flux shifts of approximately $\SI{+36}{\percent}$ and $\SI{-30}{\percent}$ for $\gamma=3.35$ and $\delta=+0.14$ and $-0.14$, respectively.
-The same derivation can be done for \cref{eq:bplwst}, giving
+For $\gamma=3.35$, \cref{eq:energy_systematic_pl} gives flux shifts of approximately
+$\SI{+36}{\percent}$ and $\SI{-30}{\percent}$ for $\delta=+0.14$ and $-0.14$, respectively.
+Applying the same transformation to the smoothly broken power law in \cref{eq:bplwst} gives
 \begin{align}
 \frac{\Delta J(E)}{J(E)}
 =
@@ -450,14 +453,20 @@ J(E)
 -1
 \label{eq:energy_systematic_bplwst}
 \end{align}
-From the fitted \sd{433} flux this estimation is shown in brown in \cref{fig:energy_systematic} together with the limits derived from \cref{eq:energy_systematic_pl}.
-Also, the impact of each systematic uncertainty is evaluated by repeating the complete forward-folding and unfolding when shifting coherently the energy of each event by $\delta$.
-The migration matrix is left unchanged because this variation does not modify the detector resolution, bias, or efficiency.
-The unfolded spectra for the events changed in energy is shown in \cref{appendix_chapter_spectrum}.
+The analytical estimate obtained from the fitted \sd{433} spectrum is shown in
+\cref{fig:energy_systematic}, together with the asymptotic limits from
+\cref{eq:energy_systematic_pl}.
 
-The resulting changes in the flux are also shown in \cref{fig:energy_systematic}.
-Both results agree well at maximum and minimum energies.
-However, in the region near the second knee the results differ due to the uncertainty in $\gamma_{01}$ originated by the low statistics at the highest energies.
+As a cross-check, the reconstructed energy of every event is shifted coherently by
+$\delta=\pm0.14$, and the complete forward-folding and unfolding procedures are repeated.
+The migration matrix is kept unchanged because the energy-scale shift does not modify the assumed detector resolution, bias, or efficiency.
+The corresponding unfolded spectra are shown in
+\cref{appendix_chapter_spectrum}.
+
+The flux variations obtained with this procedure are also shown in
+\cref{fig:energy_systematic}.
+The forward-folding and analytical results agree over most of the energy range.
+The differences around the second knee arise from the limited statistics above the feature and the resulting uncertainty in $\gamma_1$.
 
 \begin{figure}
     \centering
@@ -475,17 +484,18 @@ The effect of the energy-scale shifts on the fitted spectral parameters is shown
 \end{figure}
 
 The changes in $\gamma_0$ and $\gamma_1$ are consistent with statistical uncertainties, in accordance with what is expected, given that a uniform change in energy does not impact the slope of the spectrum.
-However, the change in $E_{01}$ is larger than the one expected from \cref{eq:energy_systematic_bplwst}.
-To be conservative, the systematic uncertainty assigned, $\Delta \lg (E_{01}/\text{eV})=0.10$, is the highest one coming from the unfolding procedure.
+The shifts obtained from the forward-folding procedure are larger than these expectations.
+Therefore, a conservative systematic uncertainty of
+$\Delta\lg(E_{01}/\mathrm{eV})=0.10$ is assigned, corresponding to the largest variation obtained from the fit.
 
 
 \subsection{Response function systematics}
 \label{subsec:response_systematics}
 
-To study the impact in the spectrum of the assumptions made for the response function defined in \cref{eq:resolution_function}, different changes in the bias, resolution and efficiency.
-The contribution of the uncertainty in the energy resolution was evaluated by varying the parameters of the resolution model defined in \cref{eq:resolution_sigma}, following the procedure of Ref.~\cite{PierreAuger:2021:InfillSpectrum}.
-The parameters $R_{\text{sh}}$ and $R_0$ were shifted by their $\pm1\sigma$ uncertainties, corresponding to variations of $\pm0.01$ respectively.
-For each variation, the migration matrix was recalculated keeping all other components of the response function unchanged and the spectrum was fitted.
+The systematic uncertainties associated with the detector response are evaluated by varying the energy resolution, bias, and efficiency independently.
+The contribution from the energy resolution is determined by varying the parameters of the resolution model defined in \cref{eq:resolution_sigma}, following the procedure in \cite{PierreAuger:2021:InfillSpectrum}.
+The parameters $R_{\mathrm{sh}}$ and $R_0$ are shifted by their respective $1\sigma$ uncertainties, corresponding to variations of $\pm0.01$ for each parameter.
+For each variation, the migration matrix is recalculated while keeping the other components of the detector response unchanged, and the spectrum is fitted again.
 The spectral-shape parameters remain well within their nominal statistical uncertainties. 
 For each source of systematic uncertainty, the contribution to $\Delta J/J$ was calculated as the root mean square of the relative flux variations.
 The resulting contribution from the energy resolution is shown in the left panel of \cref{fig:sd433_systematic_budget}.
@@ -493,24 +503,25 @@ Its magnitude is largest near the full-efficiency threshold, where it reaches ap
 Increasing the resolution parameters lowers the reconstructed flux, whereas decreasing them raises it.  
 The resulting spectra and fitted parameters are reported in \cref{appendix_chapter_spectrum}.
 
-The dependence of the detector response on the assumed mass composition was estimated using the bias and efficiency parametrizations obtained in \cref{sec:res_and_bias} for pure proton and pure iron primaries.
-Each component was evaluated separately, following the same procedure used for the resolution systematic.
+The dependence of the detector response on the assumed mass composition is estimated using the bias and efficiency parametrizations obtained in \cref{sec:res_and_bias} for pure proton and pure iron primaries.
+The bias and efficiency contributions are evaluated separately, following the same procedure used for the resolution uncertainty.
 
-The bias variations leave the position of the Second Knee and the spectral indices essentially unchanged.
-However, the corresponding contribution to $\Delta J/J$ reaches approximately $4.3\%$ near the full-efficiency threshold.
+The bias variations leave the position of the second knee and the spectral indices essentially unchanged.
+However, their contribution to $\Delta J/J$ reaches approximately $4.3\%$ near the full-efficiency threshold.
 
-The composition dependence of the efficiency produces a smaller contribution to the flux systematic, with a maximum of $\sim1.5\%$.
-Nevertheless, it shifts the position of the Second Knee downward by approximately $\Delta\lg(E_{01}/\text{eV})=-0.03$.
+The composition dependence of the efficiency produces a smaller contribution to the flux uncertainty, with a maximum of approximately $1.5\%$.
+Nevertheless, it shifts the position of the second knee downward by
+$\Delta\lg(E_{01}/\mathrm{eV})=-0.03$.
 
-The contribution to the total flux systematic as a function of the energy for the pure primaries both the bias and efficiency mass composition is also shown in the left panel of \cref{fig:sd433_systematic_budget}.
+The contributions from the composition dependence of the bias and efficiency are shown in the left panel of \cref{fig:sd433_systematic_budget}.
 
 \subsection{Calibration systematic}
 \label{subsec:calibration_systematic}
 
-The energy assigned to each \sd{433} event is obtained from the calibration with the \sd{750} energy estimator described in \cref{sec:calibration}.
-In addition to the systematic uncertainty inherited from the FD energy scale, the finite precision of this calibration introduces an independent contribution to the spectrum systematic.
-This contribution is associated with the systematic uncertainties in the normalization $A$ and slope $B$ of the calibration relation also discussed in \cref{sec:calibration}.
-Unlike a uniform shift of the energy scale, such as the one introduced by the uncertainty in $A$, a variation of the slope $B$ produces an energy-dependent change in the reconstructed energies and can therefore, modify the spectral indices.
+The energy assigned to each \sd{433} event is obtained from its calibration with the \sd{750} energy estimator, described in \cref{sec:calibration}.
+In addition to the uncertainty inherited from the FD energy scale, the finite precision of this calibration introduces an independent contribution to the spectrum uncertainty.
+This contribution arises from the uncertainties in the normalization $A$ and slope $B$ of the calibration relation.
+A variation of $A$ produces a uniform shift in energy, whereas a variation of $B$ produces an energy-dependent shift and can therefore modify the spectral indices.
 
 The effect of the calibration slope can be understood analytically.
 For the calibration relation
@@ -518,7 +529,7 @@ For the calibration relation
     E=A\left(\frac{S_{30}}{S_0}\right)^B,
 \end{align}
 a normalization $A=\SDFourThreeThreeCalA$, a slope $B=\SDFourThreeThreeCalB$, and a reference signal $S_0=\SDFourThreeThreeCalSZero$ are used in the frozen reconstruction.
-a change from $B$ to $B'$, while keeping $A$ fixed, transforms the reconstructed energy according to
+A change from $B$ to $B'$, while keeping $A$ fixed, transforms the reconstructed energy according to
 \begin{align}
     E'
     =
@@ -542,7 +553,7 @@ For a power law spectrum, $J(E)\propto E^{-\gamma}$, the transformed spectrum is
     1+(\gamma-1)\frac{B}{B'}.
     \label{eq:calibration_spectral_index}
 \end{align}
-This yields to a change in the spectral index
+This yields a change in the spectral index
 \begin{align}
     \Delta\gamma
     =
@@ -550,13 +561,16 @@ This yields to a change in the spectral index
     \left(\frac{B}{B'}-1\right).
     \label{eq:calibration_spectral_index_change}
 \end{align}
-Consequently, the uncertainty in $A$ primarily changes theflux normalization, whereas the uncertainty in $B$ modifies the shape of the reconstructed spectrum.
+Consequently, the uncertainty in $A$ produces a uniform shift in the energy scale, affecting the flux normalization and the position of spectral features, whereas the uncertainty in $B$ modifies the shape of the reconstructed spectrum.
 
-In the systematic evaluation, the calibration parameters were varied according to their systematic uncertainties from \cref{sec:calibration}.
-The correlated variations used to propagate the systematic envelope were $(A^+,B^-)=(125.7~\mathrm{PeV},0.909)$ and $(A^-,B^+)=(113.3~\mathrm{PeV},0.983)$.
-The calibration curves as a function of the energy for the detector are shown in the left panel of \cref{fig:calibration_systematic}.
-For each variation, the energy of every event was revaluated and the spectrum was fitted again.
-The three unfolded spectra are shown on the right panel of \cref{fig:calibration_systematic}.
+In the systematic evaluation, the calibration parameters are varied according to the systematic uncertainties determined in \cref{sec:calibration}.
+The correlated variations used to define the systematic envelope are
+$(A^+,B^-)=(125.7~\mathrm{PeV},0.909)$ and
+$(A^-,B^+)=(113.3~\mathrm{PeV},0.983)$.
+The nominal and varied calibration relations are shown in the left panel of
+\cref{fig:calibration_systematic}.
+For each variation, the energy of every event is recalculated and the spectrum is fitted again.
+The resulting unfolded spectra are shown in the right panel.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/chapter_spectrum/calibration_systematic.pdf}
@@ -567,15 +581,24 @@ The three unfolded spectra are shown on the right panel of \cref{fig:calibration
     }
     \label{fig:calibration_systematic}
 \end{figure}
-Using the values from the fit in \cref{sec:unfolded_spectrum}, $\gamma_0=3.036$ and $\gamma_1=3.342$, \cref{eq:calibration_spectral_index_change} yield $\Delta\gamma_0^\text{analytical}=0.083$ and $\Delta\gamma_1^\text{analytical}=0.095$.
-The corresponding changes obtained from the spectrum fit are $\Delta\gamma_0^\text{fit}=0.073$ and$\Delta\gamma_1^\text{fit}=0.081$.
-The fitted changes, therefore, agree closely with the analytical expectations.
-To be conservative, the largest analytical values are used.
-The position of the Second Knee changes by at most $\Delta\lg(E_{01}/\mathrm{eV})=0.024$, well within the statistical uncertainty of the fit.
-The change in the flux as a function of the energy produced by the calibration variations is shown in the right panel of \cref{fig:systematic_budget}.
-This source of systematic uncertainty is the second-largest contribution after the energy-scale and like this contribution is also asymmetric in the flux due to the spectrum shape.
-Its effect is largest at the boundaries of the energy range because of the increasing event-by-event energy differences, reaching $18.6\%$ at $\lg(E/\mathrm{eV})=16.8$ and $13.4\%$ at $\lg(E/\mathrm{eV})=18.5$.
-The right panel of \cref{fig:systematic_budget} shows the different sources of systematic uncertainty in the flux, i.e., the energy scale, the calibration systematics, the exposure, and the unfolding assumptions together with the total combined systematic.
+Using the nominal fit values, $\gamma_0=3.036$ and $\gamma_1=3.342$,
+\cref{eq:calibration_spectral_index_change} predicts
+$\Delta\gamma_0^{\mathrm{analytical}}=0.083$ and
+$\Delta\gamma_1^{\mathrm{analytical}}=0.095$.
+The corresponding changes obtained from the spectrum fit are
+$\Delta\gamma_0^{\mathrm{fit}}=0.073$ and
+$\Delta\gamma_1^{\mathrm{fit}}=0.081$.
+The fitted changes therefore agree closely with the analytical expectations.
+Since the analytical estimates are slightly larger, they are adopted as conservative systematic uncertainties.
+The position of the second knee changes by at most
+$\Delta\lg(E_{01}/\mathrm{eV})=0.024$, well within its statistical uncertainty.
+
+The flux uncertainty produced by the calibration variations is shown in the right panel of \cref{fig:systematic_budget}.
+It is the second-largest contribution after the energy-scale uncertainty and is also asymmetric because of the shape of the spectrum.
+Its magnitude is largest at the boundaries of the energy range, reaching
+$18.6\%$ at $\lg(E/\mathrm{eV})=16.8$ and
+$13.4\%$ at $\lg(E/\mathrm{eV})=18.5$.
+The right panel also shows the contributions from the exposure and unfolding assumptions, together with the total uncertainty obtained by combining the independent contributions in quadrature.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/chapter_spectrum/sd433_systematic_budget.pdf}
@@ -586,15 +609,20 @@ The right panel of \cref{fig:systematic_budget} shows the different sources of s
 \subsection{Transition systematic}
 \label{subsec:transition_systematic}
 
-To study this, 300 iterations of toy Monte-Carlo spectra were simulated.
-Using \cref{eq:bplwst} sets of 40,000 events, in approximation with the number of events from the measured spectrum, were generated weighted by the detection efficiency model.
-Then, each event was smeared by the Gaussian resolution function from \cref{eq:resolution_function}.
-Finally, the fit using the migration matrix from \cref{eq:matrix_approx} was performed.
+As discussed in \cref{sec:unfolded_spectrum}, leaving the transition width free yields
+$\omega_{01}^{\mathrm{free}}=0.092\pm0.267$.
+The large uncertainty, which extends into the unphysical region of negative values, shows that the \sd{433} data cannot constrain this parameter.
+Its impact on the spectrum measurement is therefore studied using toy Monte-Carlo simulations and a profile-likelihood scan of the measured data.
 
-From the 300 iterations, 296 were successfully fitted.
-However, 125 yielded $\omega_{01}$ values at the limit of the fit.
-A histogram of of the $\omega_{01}$ values is shown in \cref{fig:omega_monte_carlo} and the rest of the parameters can be seen in the supplementary material \cref{appendix_chapter_spectrum}.
-The piled up distribution of the fitted values show that with the statistics present for the current \sd{433} measurement, the parameter $\omega_{01}$ cannot be properly constrained.
+A total of 300 toy spectra are generated from \cref{eq:bplwst}, each containing 40,000 events to approximate the size of the measured dataset.
+The detection efficiency is applied during the generation, and the energy of each event is smeared according to the response function in \cref{eq:resolution_function}.
+Each toy spectrum is then fitted using the approximate migration matrix from \cref{eq:matrix_approx}.
+
+Of the 300 toy spectra, 296 are fitted successfully.
+However, 125 of these fits yield values of $\omega_{01}$ at the allowed boundaries.
+The distributions of the reconstructed spectral parameters are shown in
+\cref{fig:omega_monte_carlo}.
+The accumulation of fitted values at the boundaries confirms that the transition width cannot be constrained with the statistics of the current \sd{433} dataset.
 
 \begin{figure}
     \centering
@@ -603,38 +631,31 @@ The piled up distribution of the fitted values show that with the statistics pre
     \label{fig:omega_monte_carlo}
 \end{figure}
 
-To assess the impact of omega, a set of 10,000 spectra of 40,000 events were generated using a $\omega_{01}=0.25$ (a soft transition) and fitted using a fixed value of 0.05 (hard transition).
-Histograms of the fitted $\lg(E_{01})$, $\gamma_0$ and $\gamma_1$ are shown in \cref{fig:omega_wrong} together with its median and the injected values.
-The result from the simulations show that the impact of using a wrong $\omega_{01}$ value in the fit is within the statistical uncertainty of the fit.
-Because of this, a fixed $\omega_{01}$ of 0.05 is chosen, leaving this parameter to be properly constrained in \cref{chap:combined_spectrum} when including the much greater statistic of the \sd{750} in the bins around the second knee.
+To test whether fixing the transition width biases the reconstructed spectral parameters, 300 toy spectra of 40,000 events are generated with $\omega_{01}=0.25$ and fitted with $\omega_{01}=0.05$.
+This deliberately compares a broad injected transition with the substantially sharper transition fixed in the fit to the measured data.
+The distributions of the reconstructed second-knee energy and spectral indices are shown in \cref{fig:omega_wrong}, together with their median and injected values.
+The reconstructed parameters remain compatible with the injected values within their statistical uncertainties, showing that fixing an incorrect transition width does not introduce a significant bias at the current level of statistics.
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_spectrum/omega_wrong_closure.png}
-    \caption{Distributions of the fitted spectral parameters for toy spectra generated with $\omega_{01}=0.25$ and fitted with the transition width fixed to $\omega_{01}=0.05$. The vertical dotted lines indicate the injected values.}
+    \includegraphics[width=\linewidth]{figures/chapter_spectrum/omega_wrong_closure_python.pdf}
+    \caption{Distributions of the spectral parameters reconstructed from toy spectra generated with $\omega_{01}=0.25$ and fitted with a sharp transition fixed to $\omega_{01}=0.05$, as used for the measured data. The dashed vertical lines indicate the injected values, while the solid vertical lines show the mean fitted values and the shaded regions represent the corresponding $1\sigma$ intervals.}
     \label{fig:omega_wrong}
 \end{figure}
 
-In \cref{sec:unfolded_spectrum} the forward-folding technique was studied using toy Monte Carlo simulations, showing that the parameters determined with a dataset of the size of the \sd{433} dataset are compatible within statistical uncertainty with the parameters used to generate the spectrum.
-However, the determination of the width of the transition, $\omega_{01}$, is limited by the number of events in the dataset.
-For this, a transition width of $\omega_{01}=0.05$ was used and then the parameter will be determined using the much greater statistics of the combined \sd{750}-\sd{433} spectrum.
-The transition width was studied as another possible source of systematics.
-When leaving the parameter free, the fit successfully converged to $\omega_{01}=0.092$.
-However, the Hess interval obtained $\Delta\omega_{01}=0.267$ ranges from unphysical negative values for omega, but ranges from a broken power law to a very wide transition that span several bins.
-To assess the impact of the transition width in the spectral parameters, a scan in $\omega_{01}$ was made, performing the spectrum fit for fixed values $\omega_{01}\in[0,0.5]$ and $0.05$ steps.
-The fit converged for all $\omega_{01}$ in the range.
-The Poisson deviance, $D^2$, together with $\lg (E_{01}/\text{eV})$, $\gamma_0$ and $\gamma_1$ are shown in \cref{fig:omega_study}.
-The red circles are the fixed $\omega_{01}$ values and the point at $\omega_{01}=0$ corresponds to the a broken power-law.
-The purple star shows the value of the $\omega^{\text{free}}_{01}$.
+To assess the effect of the assumed transition width on the other spectral parameters, the fit is repeated with $\omega_{01}$ fixed between $0$ and $0.5$ in steps of $0.05$.
+The fit converges over the complete range.
+The resulting Poisson deviance, second-knee energy, and spectral indices are shown in \cref{fig:omega_study}.
+The circles represent the fits with fixed $\omega_{01}$, with $\omega_{01}=0$ corresponding to the sharp broken-power-law limit.
+The star indicates the result obtained when $\omega_{01}$ is left free.
 
-The deviance varies by only approximately $1.6$ over the complete scan hinting a weak sensitivity of the \sd{433} data to the transition width. 
-The reconstructed Second Knee energy remainscompatible within statistical uncertainties with the nominal $\omega_{01}=0.05$ result from \cref{sec:unfolded_spectrum}.
-A mild correlation between the transition width and the spectral indices is observed.
-As $\omega_{01}$ increases, the fitted $\gamma_0$ decreases from approximately $3.04$ to $2.97$, while increasing $\gamma_1$ from approximately $3.34$ to $3.38$.
-This behavior reflects the compensation between the transition width and the asymptotic slopes where a broader transition is accommodated by a flatter spectrum below the Second Knee and a steeper spectrum above it.
+The deviance varies by only approximately $1.6$ over the complete scan, indicating that the \sd{433} data have little sensitivity to the transition width.
+The reconstructed second-knee energy remains compatible within statistical uncertainties with the nominal result obtained for $\omega_{01}=0.05$.
+
+A mild correlation is observed between the transition width and the spectral indices.
+As $\omega_{01}$ increases, the fitted value of $\gamma_0$ decreases from approximately $3.04$ to $2.97$, while $\gamma_1$ increases from approximately $3.34$ to $3.38$.
+This behaviour reflects a compensation between the transition width and the asymptotic slopes: a broader transition is accommodated by a flatter spectrum below the second knee and a steeper spectrum above it.
 Nevertheless, these variations remain compatible with the statistical uncertainties of the corresponding fits.
-Consequently, fixing $\omega_{01}=0.05$ does not introduce a significant additional systematic uncertainty in either the Second Knee position or the spectral indices.
-
 
 \begin{figure}
     \centering
@@ -651,6 +672,88 @@ Consequently, fixing $\omega_{01}=0.05$ does not introduce a significant additio
     }
     \label{fig:omega_study}
 \end{figure}
+
+The toy Monte-Carlo studies and the profile-likelihood scan of the measured data lead to consistent conclusions.
+The closure test shows that fixing $\omega_{01}=0.05$ does not introduce a significant bias in the reconstructed second-knee energy or spectral indices, even when the injected transition is substantially broader.
+Similarly, the scan of the measured data shows that the variations induced by the assumed transition width remain within the statistical uncertainties.
+No additional systematic uncertainty is therefore assigned to the choice of $\omega_{01}$.
+
+A summary of the contributions to the systematic uncertainties of the fitted spectral parameters is presented in \cref{table:sd433_parameter_systematics}.
+The FD energy scale dominates the uncertainties in the normalization and second-knee energy, while the calibration parameters provide the largest contribution to the uncertainties in the spectral indices.
+The detector-response uncertainties are subdominant throughout the measured energy range.
+The exposure uncertainty affects only the normalization.
+Since the different sources are treated as uncorrelated, the total systematic uncertainty for each parameter is obtained by adding the individual contributions in quadrature.
+
+\begin{table}
+    \centering
+    \caption{
+        Contributions to the systematic uncertainties of the fitted \sd{433} spectral parameters.
+        The values correspond to the largest absolute variation obtained for each source.
+        The uncertainty in $J_0$ is expressed in units of
+        $10^{-13}\,\mathrm{km^{-2}\,yr^{-1}\,sr^{-1}\,eV^{-1}}$.
+        The total is obtained by adding the independent contributions in quadrature.
+    }
+    \label{table:sd433_parameter_systematics}
+    \begin{tabular}{lcccc}
+        \hline
+        Source
+        & $\Delta J_0$
+        & $\Delta\lg(E_{01}/\mathrm{eV})$
+        & $\Delta\gamma_0$
+        & $\Delta\gamma_1$ \\
+        \hline
+        FD energy scale
+        & $0.277$ & $0.100$ & $0.024$ & $0.055$ \\
+        Calibration
+        & $0.156$ & $0.024$ & $0.083$ & $0.095$ \\
+        Energy resolution
+        & $0.008$ & $0.003$ & $0.005$ & $0.002$ \\
+        Composition: bias
+        & $0.038$ & $0.006$ & $0.026$ & $0.019$ \\
+        Composition: efficiency
+        & $0.005$ & $0.032$ & $0.019$ & $0.011$ \\
+        Exposure
+        & $0.028$ & $0$ & $0$ & $0$ \\
+        Transition width
+        & $0$ & $0$ & $0$ & $0$ \\
+        \hline
+        \textbf{Total}
+        & $\mathbf{0.321}$
+        & $\mathbf{0.108}$
+        & $\mathbf{0.092}$
+        & $\mathbf{0.112}$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering
+    \caption{
+        Best-fit values of the \sd{433} spectral parameters.
+        The first uncertainty is statistical and the second systematic.
+        The transition width is fixed in the fit.
+    }
+    \label{table:sd433_spectral_parameters}
+    \begin{tabular}{lc}
+        \hline
+        Parameter & Value $\pm\sigma_{\mathrm{stat}}\pm\sigma_{\mathrm{syst}}$ \\
+        \hline
+        $J_0/
+        \left(
+        \mathrm{km^{-2}\,yr^{-1}\,sr^{-1}\,eV^{-1}}
+        \right)$
+        & $(0.9125\pm0.0054\pm0.321)\times10^{-13}$ \\
+        $\gamma_0$
+        & $3.036\pm0.017\pm0.092$ \\
+        $E_{01}/\mathrm{eV}$
+        & $(2.75\pm0.52\pm0.68)\times10^{17}$ \\
+        $\gamma_1$
+        & $3.342\pm0.078\pm0.112$ \\
+        $\omega_{01}$
+        & $0.05$ -- fixed \\
+        \hline
+    \end{tabular}
+\end{table}
 
 \section{Summary of the chapter}
 
@@ -671,11 +774,21 @@ This validation showed that the approximate matrix preserves the detector respon
 The validated migration matrix was subsequently used in a forward-folding Poisson-likelihood fit.
 Once the best-fit spectral parameters were obtained, the ratio between the expected true and reconstructed event counts provided the correction factors used to unfold the measured flux.
 
-As a first step, a simple-power-law hypothesis was proposed and rejected with a $p$-value of \SDFourThreeThreePowerLawPValue.
-Then a knee-like feature in the spectrum is allowed, modelling the flux with a broken power law with governed by a transition parameter, providing an adequate description of the data.
-The fit yields a Second-Knee energy of \secondKneeEnergy and spectral indices \gammaZero and \gammaOne below and above the feature, respectively.
-Toy Monte Carlo studies show that the available \sd{433} statistics are insufficient to constrain the transition width $\omega_{01}$.
-For this, the transition was fixed to $\omega_{01}=0.05$ like the other feature measured in the spectrum by Auger.
+A simple power law is rejected with a $p$-value of
+\SDFourThreeThreePowerLawPValue, providing evidence for a change in the spectral slope.
+The spectrum is therefore described using a broken power law with a smooth transition.
+The fit yields a second-knee energy of
+$E_{01}=(2.75\pm0.52\pm0.68)\times10^{17}\,\mathrm{eV}$,
+with spectral indices
+$\gamma_0=3.036\pm0.017\pm0.092$ and
+$\gamma_1=3.342\pm0.078\pm0.112$
+below and above the feature, respectively.
+The complete set of fitted parameters is summarized in
+\cref{table:sd433_spectral_parameters}.
+
+Toy Monte-Carlo studies show that the available \sd{433} statistics are insufficient to constrain the transition width.
+It is therefore fixed to $\omega_{01}=0.05$, following the value adopted by the Pierre Auger Observatory for spectral features whose transition widths could not be constrained.
+The toy studies and the scan of the measured data show that this choice does not introduce a significant bias in the reconstructed second-knee energy or spectral indices.
 
 The systematic study identifies the inherited \gls{fd} energy-scale uncertainty as the dominant contribution to the flux normalization and the position of the Second Knee.
 The systematic uncertainty in the \sd{433} energy calibration parameters produces the next-largest contribution and has the strongest effect on the spectral indices, while uncertainties associated with the detector response are smaller.
