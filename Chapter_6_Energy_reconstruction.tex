@@ -150,104 +150,83 @@ This improves the quality of the reconstructed events and provides a robust meas
 \section{Correction for zenith-angle attenuation}
 \label{sec:cic}
 
-The reconstructed signal $S(300)$ provides an estimator of the shower size at ground level and is therefore used as a proxy of the energy of the primary cosmic ray.
-However, for a fixed primary energy, its value depends on the zenith angle because the atmospheric attenuation due traversing a larger atmospheric slant-depth before reaching the detector.
-One of the sources of this attenuation is the energy loss of the particles due to the atmospheric interaction and the more inclined showers are generally later developed than the vertical showers.
-Also, since showers possess a muonic and electromagnetic components, these two attenuate in different way due to the higher penetration of muons.
-In this way, the electromagnetic to muonic ratio of the component changes with the zenith angle.
-Finally, there is a component given of the interaction of the particles inside the detector. 
-One one hand, more inclined particles traverse a longer path inside the detector allowing for the particles to deposit more energy inside the tank.
-This effect is specially noticeable for the electrons and photons of the electromagnetic component of the shower, since the muons cross completely the detector.
-Consequently, $S(300)$ must be corrected for atmospheric attenuation before it can be used as an energy estimator.
-This correction was first studied by Hirsil et al in ~\cite{Hirsil:1961:CIC} in the 1961 and is determined from data using the constant-intensity-cut method described below, using a purely phenomenological method so that is independent of Hadronic models and primary mass composition assumptions.
-The shower size is corrected using as a zenith angle independent estimator the $S(300)$ expected for a shower with the same energy at reference angle $\theta_{\text{ref}}=30^\circ$.
-This angle is chosen near the median of the zenith angle range used, $0-45^\circ$, for the\sd{433} dividing the number of events roughly in half.
-In this way, the size of the correction and its uncertainty is reduced.
-The corrected shower size, $S_{30}$ is obtained via the attenuation function,
+The reconstructed signal $S(300)$ provides an estimator of the shower size at ground and contains information about the energy and longitudinal development of the primary cosmic-ray shower.
+However, at a fixed primary energy, $S(300)$ also depends on the zenith angle.
+Inclined showers traverse a larger atmospheric slant depth before reaching the detector and are therefore observed at a later stage of their development than more vertical showers of the same energy.
+Since the electromagnetic component attenuates more rapidly in the atmosphere than the more penetrating muonic component, their relative contributions to the signal at ground change with zenith angle.
+This effect is coupled to the different responses of the water-Cherenkov detector to electromagnetic particles and muons.
+Consequently, showers with the same primary energy but different zenith angles do not generally produce the same $S(300)$, and this dependence must be corrected before the shower size can be used as an energy estimator.
+The correction is determined from data using the constant-intensity-cut method, first introduced by Hersil et al.~\cite{Hirsil:1961:CIC}.
+The corrected shower size, $S_{30}$, is the value of $S(300)$ that the shower would have produced at the reference angle $\theta_{\text{ref}}=30^\circ$.
+This angle is chosen as the median of the studied event distribution, reducing the typical magnitude of the correction.
+The measured and corrected shower sizes are related through the attenuation function,
 \begin{align}
-    S(300)=\frac{S_{30}}{f(\theta,S_{\text{30}})}
+    S(300)=S_{30}f_{\text{CIC}}(\theta,S_{30})
     \label{eq:attenuation}
 \end{align}
-which is chosen by construction so that $f(300,30^\circ)=1$.
+which is normalized such that $f_{\text{CIC}}(30^\circ,S_{30})=1$.
 
 \subsection{The Constant-intensity cut method}
 \label{subsec:cic_method}
 To determine the attenuation function, the \gls{cic} method is used.
-Since at energies below $8\,\text{EeV}$, the cosmic ray flux can be treated as isotropic in arrival direction.
-Because of the solid-angle projection, equal exposure can be obtained when binning in $\sin^2\theta$.
-Above full efficiency, equal number of events are expected in these intervals for a fixed energy threshold.
-For the \sd{433}, nine zenith angle bins are used.
-Within each zenith angle bin the events are ranked in decreasing $S(300)$. 
-Given the isotropic distribution, selecting the same intensity(i.e., $N$) in each zenith angle, events of the same rank are expected to have the same $S(300)$. 
-Through this, the $f(S_{30},\theta)$ can then be estimated for different intensities since a one to one correspondence cannot be performed.
-To be statistically significant, intensities $[100,200,500,1000,2000 and 5000]$ were used.
-The statistical uncertainty assigned to the shower size at rank $N$ is estimated using the neighboring statistics,
+The large-scale dipolar anisotropy reported by the Pierre Auger Observatory becomes significant above $8\,\text{EeV}$~\cite{PierreAuger:2017:LargeScaleAnisotropy}, while below this energy the flux is considered isotropic.
+The events are binned in equal-width intervals of $\sin^2\theta$, which have equal exposure.
+For the \sd{433}, the range $0^\circ\leq\theta<45^\circ$ is divided into nine such intervals.
+Within each interval, events are ranked by decreasing $S(300)$.
+Events at the same rank $N$ correspond approximately to the same primary energy, and the variation of their $S(300)$ with zenith angle determines the attenuation curve at that intensity.
+Six intensity cuts, $N\in\{100,\,200,\,500,\,1000,\,2000,\,5000\}$, are used to determine the attenuation at different shower sizes.
+The statistical uncertainty of $S_N$ is estimated from the Poisson fluctuations of $N$ as
 \begin{align}
-    \sigma_{S(300)_N}=\frac{S(300)_{N-\sqrt{N}}-S(300)_{N+\sqrt{N}}}{2}
+    \sigma_{S_N}
+    =
+    \frac{S_{N-\sqrt{N}}-S_{N+\sqrt{N}}}{2}.
 \end{align}
-The fit is performed using $x=\sin^2\theta-\sin^2\theta_{\text{ref}}$ and $y=\lg(S_{30}/S_0)$ as independent variables, where the scale factor $S_0=40\,\text{VEM}$ is used to reduce the correlation in the parameters.
-The dependence of the attenuation function in these parameters is expressed as a third degree polynomial in $x$,
+The attenuation also depends on the shower size, since the depth of the shower maximum and the contributions of the electromagnetic and muonic components evolve with energy.
+This dependence is included using $S_{30}$ as an energy estimator.
+The fit uses $x=\sin^2\theta-\sin^2\theta_{\text{ref}}$ and $y=\lg(S_{30}/S_0)$, where the reference scale $S_0=40\,\text{VEM}$ is introduced to reduce correlations among the parameters.
+The attenuation function is described by a third-degree polynomial in $x$, with coefficients that depend linearly on $y$,
 \begin{align}
-    f_{\text{CIC}}(\theta,S_{30})=1+a_1(y)x+a_2(y)x^2+cx^3
+    f_{\text{CIC}}(\theta,S_{30})
+    =
+    1+(a_0+a_1y)x+(b_0+b_1y)x^2+c_0x^3.
 \end{align}
-where the coefficients $a_1$, $a_2$ are first degree polinomials in $y$,
-\begin{align}
-    a_i(y)=b_1+b_2y,
-\end{align}
-and $c$ is a constant factor.
-On a first step, the different intensities are fitted sepparately.
-However, finally a global fit using the individually fitted parameters is performed
-The obtained give a $\chi^2/N_{\text{dof}=31.79/43}$ and best fit parameters are presented in \cref{table:cic_parameters}.
-Given the explicit dependence of $f_{\text{CIC}}$ in $S_{30}$ an inverse fit has to be applied.
-In \cref{fig:cic_global_fit} the $S_{300}$ for the different intensities is shown together with the fitted attenuation function.
-In the inset below, the different attenuation curves are shown together to see the explicit dependence in $S_{30}$.
-However this dependence is minor and is below $4\%$ on the correction factor, so the $S_{30}$ difference is within $1\%$.
+First, each intensity is fitted independently.
+The resulting parameters are then used as starting values for a simultaneous fit to all six intensities and nine zenith-angle bins.
+The global fit gives $\chi^2/N_{\text{dof}}=31.80/43$.
+The best fit parameters are shown in \cref{table:cic_parameters}.
 
+\begin{table}[t]
+    \centering
+    \caption{Parameters obtained from the global fit of the \sd{433} attenuation function.}
+    \label{table:cic_parameters}
+    \begin{tabular}{cc}
+        \hline
+        Parameter & Fitted value \\
+        \hline
+        $a_0$ & $-1.6294 \pm 0.0322$ \\
+        $a_1$ & $\phantom{-}0.2623 \pm 0.0589$ \\
+        $b_0$ & $-1.4622 \pm 0.1328$ \\
+        $b_1$ & $-0.4461 \pm 0.4125$ \\
+        $c_0$ & $\phantom{-}0.8954 \pm 0.7462$ \\
+        \hline
+    \end{tabular}
+\end{table}
 
-% TODO: Explain the constant-intensity or countdown construction, the use of
-% nine equal-exposure bins in sin^2(theta), the six event intensities, the
-% 30-degree reference angle, and the extension of the CIC fit to 45 degrees.
-
-% \begin{figure}[t]
-%     \centering
-%     \includegraphics[width=0.85\textwidth]{figures/chapter_reconstruction/cic_individual_cuts.pdf}
-%     \caption{Independent fits to the six constant-intensity cuts used to determine the zenith-angle attenuation of $S(300)$.}
-%     \label{fig:cic_individual_cuts}
-% \end{figure}
-
-\subsection{Energy-dependent attenuation model}
-\label{subsec:cic_global_model}
-
-% TODO: Motivate the energy-dependent CIC parametrization, following the
-% established SD reconstruction approach, and report the fitted coefficients
-% and their uncertainties in both the Spectuls and Offline conventions.
-
-% \begin{figure}[t]
-%     \centering
-%     \includegraphics[width=0.85\textwidth]{figures/chapter_reconstruction/cic_individual_parameters.pdf}
-%     \caption{Evolution of the attenuation-curve parameters obtained from the independent constant-intensity fits. This dependence motivates the global shower-size-dependent CIC model.}
-%     \label{fig:cic_individual_parameters}
-% \end{figure}
+Since $f_{\text{CIC}}$ depends on the unknown $S_{30}$, the correction is applied iteratively, starting from $S_{30}=S(300)$ and updating it as $S_{30}=S(300)/f_{\text{CIC}}(\theta,S_{30})$ until its relative change is smaller than $10^{-4}$.
+The constant-intensity cuts and the global fit are shown in the upper panel of \cref{fig:cic_global_fit}.
+The lower panel shows the corresponding attenuation curves, illustrating their dependence on $S_{30}$.
+Compared with the attenuation curve at the reference size $S_{30}=40\,\mathrm{VEM}$, the shower-size dependence changes the reconstructed $S_{30}$ by less than $3.5\%$, with the largest effect occurring for vertical showers.
 
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.85\textwidth]{figures/chapter_reconstruction/cic_global_fit.pdf}
-    \caption{Global energy-dependent fit to the SD-433 constant-intensity cuts.}
+    \caption{Global fit to the six constant-intensity cuts.
+    The upper panel shows the values of $S(300)$ and the fitted curves, while the lower panel shows the corresponding attenuation functions.
+    The vertical dashed line indicates the reference angle $\theta_{\text{ref}}=30^\circ$.}
     \label{fig:cic_global_fit}
 \end{figure}
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.85\textwidth]{figures/chapter_reconstruction/cic_attenuation.pdf}
-    \caption{Attenuation curves obtained from the global CIC fit for the shower sizes sampled by the constant-intensity cuts. The curves define the conversion from $S(300)$ to the reference estimator $S_{30}$.}
-    \label{fig:cic_attenuation}
-\end{figure}
-
-\subsection{Fit quality and CIC-corrected estimator}
-\label{subsec:cic_validation}
-
-% TODO: Report chi2/ndf = 31.80/43, p = 0.8959, discuss the residuals,
-% and define the event-by-event conversion from S(300) to S30.
+The resulting $S_{30}$ is independent of the zenith angle and is used as the shower-size estimator for the energy calibration.
 
 % \begin{figure}[t]
 %     \centering
