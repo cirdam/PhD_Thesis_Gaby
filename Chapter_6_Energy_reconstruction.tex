@@ -247,8 +247,31 @@ The corrected shower size $S_{30}$ is therefore used as the energy estimator.
 \label{sec:energy_calibration}
 \label{sec:calibration}
 
+With the attenuation due to the atmosphere already corrected, the energy assignment of the \sd{433} can now be tackled.
+The other two \gls{sd} arrays, the \sd{750} and \sd{1500} are calibrated directly using events detected simultaneously by the \gls{sd} and \gls{fd}.
+However, due to the distance between the \sd{433} and the nearest \gls{fd} site, Cohihueco, the telescopes \gls{heat} are unable to see the showers in the \sd{433} area.
+Given this, the calibration of \sd{433} is done via an \gls{sd}-\gls{sd} calibration using the events in common with the \sd{750}.
+This brings new challenges to the calibration, because there is some extrapolation between two and three bins below the \sd{750} full efficiency threshold (as will be discussed in \cref{sec:sd750_efficiency}.
+However, using a combined likelihood approach these issues can be addressed and properly constrained.
+
 \subsection{SD-750 reference scale and coincident events}
 \label{subsec:calibration_sample}
+
+To calibrate the detector, we need a subset of high quality events in both of the arrays.
+For this, the usual spectrum cuts are applied to both the \sd{433} and \sd{750}.
+The events are required to have $\theta<45^\circ$, pass the 6T5 fiducial trigger, not to be in periods of bad acquisition.
+An update of the Herald reconstruction of  Ref. ~\cite{PierreAuger:2021:InfillSpectrum} comprises the dataset for the \sd{750}, for events with the same dates used in \sd{433}.
+However, the updated calibration from ICRC 2025 produced with the updated \gls{fd} reconstruction ~\cite{Verzi:2021:EnergyScale} was used.
+The calibration function used is a simple power law,
+\begin{align}
+    E^{\text{SD-750}}=A^{\text{SD-750}}\left(\frac{S^\text{SD-750}_{35}}{S_0}\right)^{B^{\text{SD-750}}}
+    \label{eq:sd750_cal}
+\end{align}
+where $A^{\text{SD-750}}$ is the scale factor, and $B^{\text{SD-750}}$ is the slope.
+The corrected \sd{750} shower size $S^{\text{SD-750}}_{35}$ is used as the energy estimator.
+For the \sd{750}, $A=(132.91 \pm 0.24)\mathrm{\,PeV}$ while $B=0.9985\pm0.0053$ \cite{Verzi:2025:Calibration} and $S_0=1\mathrm{\,VEM}$.
+With these parameters, the reconstructed data was recalibrated and use.
+Then the two datasets were merged, obtaining $\num{37505}$ events in common.
 
 % TODO: Describe the SD-750 reference energy scale, the construction of the
 % 37,505-event coincidence sample, the resolution model, and the S30 > 30 VEM
@@ -257,6 +280,16 @@ The corrected shower size $S_{30}$ is therefore used as the energy estimator.
 \subsection{Likelihood fit and calibration relation}
 \label{subsec:calibration_fit}
 
+For the calibration of the \sd{433}, a slightly modified version of \cref{eq:sd750_cal} was used
+\begin{align}
+    E=A
+    \left( 
+    \frac{S_{35}}{S_0}
+    \right)
+\end{align}
+where the normalization factor $S_0=40\,\mathrm{VEM}$ was introduced to decrease the lever arm of the calibration function that strongly correlates the parameters $A$ and $B$.
+Since the 
+The calibration method is based on the one described by Dembinsky et al. in Ref.~\cite{Dembinski:2015:Likelihood}
 % TODO: Introduce E = A (S30 / 40 VEM)^B, describe the preliminary chi-square
 % fit and the final likelihood treatment, and report A, B, their scaled
 % uncertainties, and their correlation.
