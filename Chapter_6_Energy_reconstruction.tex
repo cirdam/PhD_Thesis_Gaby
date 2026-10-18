@@ -337,8 +337,8 @@ The corresponding response function for event $i$ is
     },
     \label{eq:calibration_response}
 \end{align}
-where $\sigma_{S,i}$ and $\sigma_{E,i}$ are the absolute uncertainties of $S_{30,i}$ and $E_i^{\mathrm{SD-750}}$, respectively, and $\rho_i$ is their correlation coefficient.
-The quantity $Q_i$ is the squared correlated distance between the measured event and the corresponding point on the calibration curve,
+where $\sigma_{S,i}$ and $\sigma_{E,i}$ are the absolute uncertainties of $S_{30,i}$ and $E_i^{\mathrm{SD-750}}$, respectively, and $\rho_i=0.33$ is the correlation coefficient given that the detectors share some of the \gls{wcd}s.
+The quantity $Q_i$ is the quadratic correlated distance between the measured event energy and the corresponding point on the calibration curve,
 \begin{align}
     Q_i(s\mid A,B)
     =
@@ -376,6 +376,30 @@ The quantity $Q_i$ is the squared correlated distance between the measured event
 % TODO: Introduce E = A (S30 / 40 VEM)^B, describe the preliminary chi-square
 % fit and the final likelihood treatment, and report A, B, their scaled
 % uncertainties, and their correlation.
+
+With this, a combine likelihood can be derived but given the shape of the spectrum, the upward fluctuations produce a higher number of events than expected on each bin.
+To address this a term in the liklihood is introduce as a phenomenological distribution function,
+\begin{align}
+    h_i(s)=\frac{1}{N_{\mathrm{evt}}}\sum\limits_k\delta(s,S_k)
+\end{align}
+where the sum is done over the energy bins, $N_{\mathrm{evt}}$ is the total fraction of events and $\delta(s,S_k)$ is Dirac's delta function evaluated in the bin center $S_k$.
+When binning in $\lg(S_{35}/\mathrm{\,VEM})$ this expression can be simplified to $w_k=n_k/N_{\mathrm{evt}}$, where $n_i$ is the number of events in bin $k$.
+With this, the single event likelihood can be defined
+\begin{align}
+    \mathcal{L}_i(A,B)=\sum\limits_k w_k R_i
+    \left(
+        S_{30,i},
+        E_i^{\mathrm{SD-750}}
+        \mid
+        s_k,A,B
+    \right),
+\end{align}
+where the sum over $k$ replaces the integral due to the binning in $\lg(s_k/\mathrm{VEM})$.
+Finally the combined likelihood can be written as $\ln\mathcal{L}(A,B)=\sum\limits_i\ln\mathcal{L}_i(A,B)$
+Given that the \sd{433} has a better resolution, to minimize dispersion, the cut for events is applied in $S_{35}=30\mathrm{\,VEM}$ to roughly correspond to the full efficiency threshold of the \sd{750}.
+However, events below the cut are used to determine $h(s)$ and avoid border effects.
+The total number of events that pass the $S_{35}$ cut is \num{5980}.
+The fit results in a $D^2/\mathrm{dof}=$ and parameters $A=(149,49\pm)\mathrm{\,eV}$ and $B=(0.963\pm)$ with a correlation between the two $\rho_{AB}=-0.51$
 
 \begin{figure}
     \centering
