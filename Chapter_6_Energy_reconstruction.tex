@@ -226,14 +226,22 @@ Compared with the attenuation curve at the reference size $S_{30}=40\,\mathrm{VE
     \label{fig:cic_global_fit}
 \end{figure}
 
-The resulting $S_{30}$ is independent of the zenith angle and is used as the shower-size estimator for the energy calibration.
+The effect of the CIC correction is shown in \cref{fig:cic_before_after}.
+The upper panel shows the distribution of $S(300)$ as a function of the zenith angle.
+For a fixed intensity, the shower size decreases towards larger zenith angles due to atmospheric attenuation, following the fitted CIC curve.
+After the correction, the corresponding distributions in $S_{30}$ become approximately independent of the zenith angle, as shown in the lower panel.
+The solid and dashed lines indicate the approximate full-efficiency threshold before and after the correction, respectively.
+Below this threshold, the distribution is distorted by the decreasing detection efficiency and should not be interpreted as a residual attenuation effect.
+The corrected shower size $S_{30}$ is therefore used as the energy estimator.
 
-% \begin{figure}[t]
-%     \centering
-%     \includegraphics[width=0.85\textwidth]{figures/chapter_reconstruction/cic_residuals.pdf}
-%     \caption{Residuals of the global CIC fit for the six constant-intensity cuts.}
-%     \label{fig:cic_residuals}
-% \end{figure}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figures/chapter_reconstruction/cic_before_after.pdf}
+    \caption{Distribution of the shower size and zenith angle before and after the CIC correction.
+    The solid line in the upper panel shows the attenuation curve corresponding to the full-efficiency threshold, $S_{30}=15\,\mathrm{VEM}$.
+    The dashed line in the lower panel shows the same threshold after the conversion to $S_{30}$.}
+    \label{fig:cic_before_after}
+\end{figure}
 
 \section{Calibration of the SD-433 energy estimator}
 \label{sec:energy_calibration}
