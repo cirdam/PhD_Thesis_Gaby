@@ -296,6 +296,22 @@ The relation between the \sd{433} shower size and the \sd{750} reference energy 
 \end{align}
 where $S_0=40\,\mathrm{VEM}$ is chosen to be within the calibrated energy range to reduce the correlation between the fitted normalization $A$ and slope $B$.
 The calibration is performed using the likelihood method introduced by Dembinski et al.~\cite{Dembinski:2015:Likelihood}.
+The fit is performed using a likelihood method because a $\chi^2$-fit would bias the calibration parameters because of the finite resolutions both of the \gls{fd} and \gls{sd}.
+However, given the \gls{sd}-\gls{sd} calibration an extra issue raises given that the resoution of the \sd{433}, the \textit{calibrated} detector, is higher at the same energy range than the \sd{750}.
+For the \sd{750} resolution, the same parameterization from Ref.~\cite{PierreAuger:2021:InfillSpectrum} is adopted,
+\begin{align}
+    \frac{\sigma_{\mathrm{SD-750}}}{E}=\sqrt{\sigma^2_\mathrm{sh}+\sigma^2_{\mathrm{det}}\frac{E_0}{E}}
+\end{align}
+where the $\sigma_{\mathrm{det}}^2=0.21$ is the intrinsic detector resolution that decreases as energy increases, while $\sigma_{\mathrm{sh}=0.09}$ is the resolution given the shower-to-shower fluctuations, which are constant in energy and $E_0=100\mathrm{\,eV}$.
+The resolution of the \sd{433} is intrinsically related since events are sampling the same shower, so both detectors measure the same shower-to-shower fluctuations.
+Also there is an extra correlation rises from the common detectors shared between both arrays.
+To estimate resolution of the \sd{433} is estimated from an inverse calibration with a starting parameter $B_0=1$.
+The resolution model of $S_{35}$ is then
+\begin{align}
+    \frac{\sigma_{S_{30}}}{S_{30}}=\frac{1}{B_0}\sqrt{\sigma^2_{\mathrm{sh}}+\sigma_{\mathrm{det}}^2\frac{E_0}{E}}
+\end{align}
+with $\sigma^2{_{\text{sh}}}=0.09$ and $\sigma^2_{\mathrm{det}}=0.12$.
+The combined response function is then modelled as a correlated two-dimensional Gaussian.
 An underlying shower size $s$ is therefore introduced, allowing the reconstructed $S_{30}$ to fluctuate around it according to the \sd{433} resolution model.
 For a given $s$, the calibration relation predicts the energy $E_{\mathrm{cal}}(s\mid A,B)=A(s/S_0)^B$.
 The same reasoning is also applied to the \sd{750} energy, allowing the reconstructed $E_i^{\mathrm{SD-750}}$ to fluctuate around $E_{\mathrm{cal}}(s\mid A,B)$ according to the \sd{750} resolution model.
