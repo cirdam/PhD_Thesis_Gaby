@@ -415,16 +415,23 @@ The fit with $S_{30,\min}=15\,\mathrm{VEM}$ extends well below the nominal \sd{7
     \label{fig:sd433_energy_calibration}
 \end{figure}
 
-\subsection{Calibration residuals and application}
-\label{subsec:calibration_validation}
+% \subsection{Calibration residuals and application}
+% \label{subsec:calibration_validation}
 
 % TODO: Discuss the calibration residuals, the 113.3 PeV energy associated
 % with the 30 VEM calibration cut, and application of the relation to the
 % 382,131-event SD-433 dataset used for the spectrum measurement.
 
-The relative difference between the \sd{750} reference energy and the calibrated \sd{433} energy is shown in \cref{fig:sd433_energy_calibration_residuals}.
-Above the calibration threshold, the mean residual remains close to zero and decreases with energy.
+The relative difference between the \sd{750} reference energy and the calibrated \sd{433} energy is shown in the left panel of \cref{fig:sd433_energy_calibration_residuals}.
+The small data points show the single events. The grey datapoints show the events below the $S^{\mathrm{min}}_{30}=30\,\mathrm{VEM}$ swhower size threshold while the green datapoints highlight the events used for the \sd{433} calibration.
+The red datapoints correspond to the mean of the residual as a function of the energy, binned in $\Delta\lg(E^{\mathrm{SD-433}}/\mathrm{\,eV})=0.1$ below $\lg(E^{\mathrm{SD-433}}/\mathrm{\,eV})=18$ and $\Delta\lg(E^{\mathrm{SD-433}}/\mathrm{\,eV})=0.3$ above to increase statistics.
+The error bars correspond to the 1-$\sigma$ confidence level intervals.
+While single event residual can get up to $\sim20\%$, above the calibration threshold, the mean residual remains close to zero and decreases quickly with energy.
 The positive residual observed below the threshold is produced by migration across the event selection and is not included in the fit.
+
+Finally, the event histogram of the \sd{433} is presented on \cref{fig:sd433_energy_calibration_residuals} together with the full efficiency threshold.
+We can see that below full efficiency, at around $\lg(E/\mathrm{eV})={16.2}$ the efficiency starts to increase and the number of events increase and for energies above the full efficiency threshold the number of events decays linearly in the log-log scale, hinting the power-law like spectrum.
+This histogram will be the basis to determine the raw spectrum in \cref{sec:raw_spectrum} and finally be able to characterize the Second knee.
 
 \begin{figure}
     \centering
@@ -436,16 +443,16 @@ The positive residual observed below the threshold is produced by migration acro
 \section{Summary}
 \label{sec:energy_reconstruction_summary}
 
-In this chapter we present the basis of the energy recnonstruction of the events recorded with the \sd{433}.
+In this chapter we present the basis of the energy reconstruction of the events recorded with the \sd{433}.
 From the challenges raised from the reconstruction of the arrival direction of the shower and the modelling of the fall of the signal with the distance to the shower core.
-From the reconstructed $S_{300}$ we determined the best fit parameters of the attenuation function to correct the atmospheric atenuation due to the different zenith angle of the showers.
+From the reconstructed $S_{300}$ we determined the best fit parameters of the attenuation function to correct the atmospheric attenuation due to the different zenith angle of the showers.
 We constructed the zenith-angle independent shower size, $S_{35}$ by iteratively applying a shower-size dependent correction from $f_{\mathrm{cic}}(\theta,S_{35})$.
 Using the events detected in common with the \sd{750} and the zenith-independent shower size estimator we then developed the energy calibration for the \sd{433}.
-The likelihood formalism was introduced to take into acount the finite resolution both of \sd{433} in the shower size and \sd{750} in energy.
+The likelihood formalism was introduced to take into account the finite resolution both of \sd{433} in the shower size and \sd{750} in energy.
 Also, to include the low-to-high migration due to the steepness of the cosmic ray spectrum, an empirical distribution was included in the likelihood.
 Through a minimization of the log-likelihood the calibration parameters, $A=(149.49\pm0.34)\,\mathrm{PeV}$ and $B=0.963\pm0.002$ were determined.
 With the calibrated events, the relative difference in between the \sd{433} and \sd{750} was evaluated, finding that the difference is less than $3\%$ on average in the whole energy range and decreases with increasing energy.
-Finally, the \sd{433} energy histogram could be constructed and will be the cornerstone of the cosmic ray spectrum measurment presented in the next chapter.
+Finally, the \sd{433} energy histogram could be constructed and will be the cornerstone of the cosmic ray spectrum measurement presented in the next chapter.
 % TODO: Summarize the continuous reconstruction chain from the Offline
 % determination of S(300), through the CIC correction to S30, to the calibrated
 % SD-433 energy used in the spectrum measurement.
