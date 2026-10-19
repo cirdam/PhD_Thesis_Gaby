@@ -261,7 +261,7 @@ The calibration requires events reconstructed with high quality by both arrays.
 The standard spectrum-quality selections are therefore applied independently to the \sd{433} and \sd{750} datasets.
 The events are required to have $\theta<40^\circ$, satisfy the 6T5 fiducial condition, and fall outside the periods of unstable acquisition.
 The \sd{750} dataset is obtained from an updated Herald reconstruction of the data used in Ref.~\cite{PierreAuger:2021:InfillSpectrum}, restricted to the same acquisition period as the \sd{433} dataset.
-Its energies are recalculated using the updated ICRC 2025 calibration based on the revised \gls{fd} reconstruction~\cite{Verzi:2021:EnergyScale,Verzi:2025:Calibration}.
+Its energies are recalculated using the updated ICRC 2025 calibration based on the revised \gls{fd} reconstruction~\cite{PierreAuger:2025:EnergyScale,2026:Verzi:CalibrationSD750}.
 
 The \sd{750} energy calibration is described by the power law
 \begin{align}
@@ -295,7 +295,7 @@ The relation between the \sd{433} shower size and the \sd{750} reference energy 
     \label{eq:sd433_calibration}
 \end{align}
 where $S_0=40\,\mathrm{VEM}$ is chosen to be within the calibrated energy range to reduce the correlation between the fitted normalization $A$ and slope $B$.
-The calibration is performed using the likelihood method introduced by Dembinski et al.~\cite{Dembinski:2015:Likelihood}.
+The calibration is performed using the likelihood method introduced by Dembinski et al.~\cite{Dembinski:2016:Likelihood}.
 The finite resolutions of both $S_{30}$ and the \sd{750} reference energy would bias a conventional $\chi^2$-fit and are therefore included in the likelihood.
 Unlike an \gls{sd}-\gls{fd} calibration, the two measurements are correlated because both arrays observe the same shower and share some of the \gls{wcd}s.
 For the \sd{750} resolution, the same parameterization from Ref.~\cite{PierreAuger:2021:InfillSpectrum} is adopted,
@@ -417,7 +417,7 @@ The quantity $Q_i$ is the quadratic correlated distance between the measured pai
 
 Because the event distribution falls steeply with shower size, upward migrations are more frequent than downward migrations.
 The distribution of the shower size is therefore included in the likelihood.
-An empirical distribution is used, defined as
+An empirical distribution is used~\cite{Dembinski:2013:Unfolding}, defined as
 \begin{align}
     h(s)=\frac{1}{N_{\mathrm{evt}}}\sum\limits_{j=1}^{N_{\mathrm{evt}}}\delta(s-S_{30,j})
 \end{align}
@@ -482,7 +482,7 @@ This distribution forms the basis for the raw spectrum determined in \cref{sec:r
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/chapter_reconstruction/sd433_resolution_bias.pdf}
-    \caption{Energy bias (left) and resolution (right) parameterizations obtained from simulations using the GSF mixed composition. The dashed lines indicate the full-efficiency threshold. Adapted from Ref.~\cite{2026:Rodriguez:Thesis}.}
+    \caption{Energy bias (left) and resolution (right) parameterizations obtained from simulations using the GSF mixed composition. The dashed lines indicate the full-efficiency threshold. Adapted from Ref.~\cite{Rodriguez:2026:Thesis}.}
     \label{fig:sd433_res_bias}
 \end{figure}
 
