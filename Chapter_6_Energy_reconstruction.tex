@@ -302,15 +302,15 @@ For the \sd{750} resolution, the same parameterization from Ref.~\cite{PierreAug
 \begin{align}
     \frac{\sigma_{\mathrm{SD-750}}}{E}=\sqrt{\sigma^2_\mathrm{sh}+\sigma^2_{\mathrm{det}}\frac{E_0}{E}}
 \end{align}
-where the $\sigma_{\mathrm{det}}^2=0.21$ is the intrinsic detector resolution that decreases as energy increases, while $\sigma_{\mathrm{sh}=0.09}$ is the resolution given the shower-to-shower fluctuations, which are constant in energy and $E_0=100\mathrm{\,eV}$.
+where the $\sigma_{\mathrm{det}}=0.21$ is the intrinsic detector resolution that decreases as energy increases, while $\sigma_{\mathrm{sh}}=0.09$ is the resolution given the shower-to-shower fluctuations, which are constant in energy and $E_0=100\mathrm{\,PeV}$.
 The resolution of the \sd{433} is intrinsically related since events are sampling the same shower, so both detectors measure the same shower-to-shower fluctuations.
 Also there is an extra correlation rises from the common detectors shared between both arrays.
 To estimate resolution of the \sd{433} is estimated from an inverse calibration with a starting parameter $B_0=1$.
-The resolution model of $S_{35}$ is then
+The resolution model of $S_{30}$ is then
 \begin{align}
     \frac{\sigma_{S_{30}}}{S_{30}}=\frac{1}{B_0}\sqrt{\sigma^2_{\mathrm{sh}}+\sigma_{\mathrm{det}}^2\frac{E_0}{E}}
 \end{align}
-with $\sigma^2{_{\text{sh}}}=0.09$ and $\sigma^2_{\mathrm{det}}=0.12$.
+with $\sigma_{\text{sh}}=0.09$ and $\sigma_{\mathrm{det}}=0.12$.
 The combined response function is then modelled as a correlated two-dimensional Gaussian.
 An underlying shower size $s$ is therefore introduced, allowing the reconstructed $S_{30}$ to fluctuate around it according to the \sd{433} resolution model.
 For a given $s$, the calibration relation predicts the energy $E_{\mathrm{cal}}(s\mid A,B)=A(s/S_0)^B$.
@@ -337,8 +337,9 @@ The corresponding response function for event $i$ is
     },
     \label{eq:calibration_response}
 \end{align}
-where $\sigma_{S,i}$ and $\sigma_{E,i}$ are the absolute uncertainties of $S_{30,i}$ and $E_i^{\mathrm{SD-750}}$, respectively, and $\rho_i=0.33$ is the correlation coefficient given that the detectors share some of the \gls{wcd}s.
-The quantity $Q_i$ is the quadratic correlated distance between the measured event energy and the corresponding point on the calibration curve,
+where $\sigma_{S,i}$ and $\sigma_{E,i}$ are the absolute uncertainties of $S_{30,i}$ and $E_i^{\mathrm{SD-750}}$, respectively, and $\rho_i$ is their energy-dependent correlation coefficient.
+The correlation between the detector contributions is assumed to be $0.33$ because the two arrays share some of the \gls{wcd}s.
+The quantity $Q_i$ is the quadratic correlated distance between the measured pair and the corresponding point on the calibration curve,
 \begin{align}
     Q_i(s\mid A,B)
     =
@@ -377,13 +378,14 @@ The quantity $Q_i$ is the quadratic correlated distance between the measured eve
 % fit and the final likelihood treatment, and report A, B, their scaled
 % uncertainties, and their correlation.
 
-With this, a combine likelihood can be derived but given the shape of the spectrum, the upward fluctuations produce a higher number of events than expected on each bin.
-To address this a term in the liklihood is introduce as a phenomenological distribution function,
+Because the event distribution falls steeply with shower size, upward migrations are more frequent than downward migrations.
+The distribution of the shower size is therefore included in the likelihood.
+An empirical distribution is used, defined as
 \begin{align}
-    h_i(s)=\frac{1}{N_{\mathrm{evt}}}\sum\limits_k\delta(s,S_k)
+    h(s)=\frac{1}{N_{\mathrm{evt}}}\sum\limits_{j=1}^{N_{\mathrm{evt}}}\delta(s-S_{30,j})
 \end{align}
-where the sum is done over the energy bins, $N_{\mathrm{evt}}$ is the total fraction of events and $\delta(s,S_k)$ is Dirac's delta function evaluated in the bin center $S_k$.
-When binning in $\lg(S_{35}/\mathrm{\,VEM})$ this expression can be simplified to $w_k=n_k/N_{\mathrm{evt}}$, where $n_i$ is the number of events in bin $k$.
+where the sum is done over the observed events, $N_{\mathrm{evt}}$ is the total number of events and $\delta$ is Dirac's delta function.
+When binning in $\lg(S_{30}/\mathrm{\,VEM})$ this expression can be simplified to $w_k=n_k/N_{\mathrm{evt}}$, where $n_k$ is the number of events in bin $k$.
 With this, the single event likelihood can be defined
 \begin{align}
     \mathcal{L}_i(A,B)=\sum\limits_k w_k R_i
@@ -395,16 +397,21 @@ With this, the single event likelihood can be defined
     \right),
 \end{align}
 where the sum over $k$ replaces the integral due to the binning in $\lg(s_k/\mathrm{VEM})$.
-Finally the combined likelihood can be written as $\ln\mathcal{L}(A,B)=\sum\limits_i\ln\mathcal{L}_i(A,B)$
-Given that the \sd{433} has a better resolution, to minimize dispersion, the cut for events is applied in $S_{35}=30\mathrm{\,VEM}$ to roughly correspond to the full efficiency threshold of the \sd{750}.
-However, events below the cut are used to determine $h(s)$ and avoid border effects.
-The total number of events that pass the $S_{35}$ cut is \num{5980}.
-The fit results in a $D^2/\mathrm{dof}=$ and parameters $A=(149,49\pm)\mathrm{\,eV}$ and $B=(0.963\pm)$ with a correlation between the two $\rho_{AB}=-0.51$
+Finally, the combined log-likelihood is written as $\ln\mathcal{L}(A,B)=\sum\limits_i\ln\mathcal{L}_i(A,B)$.
+Since the \sd{433} has a better resolution, the event selection is applied to $S_{30}$ to minimize migration effects.
+The cut $S_{30}>30\,\mathrm{VEM}$ roughly corresponds to the full-efficiency threshold of the \sd{750}, leaving \num{5980} available events for the calibration.
+However, events below the cut are still used to determine $h(s)$ and account for migrations across the threshold.
+The fit results in $A=(149.49\pm0.34)\,\mathrm{PeV}$ and $B=0.963\pm0.002$, with a correlation $\rho_{AB}=-0.51$.
+The calibration threshold $S_{30}=30\,\mathrm{VEM}$ corresponds to an energy of $113.3\,\mathrm{PeV}$.
+The systematic uncertainty associated with the choice of the calibration threshold is evaluated by repeating the fit for $S_{30,\min}$ between $15$ and $40\,\mathrm{VEM}$.
+As the threshold increases, the normalization $A$ decreases while the slope $B$ increases, resulting in strongly anticorrelated variations.
+The full excursion of the fitted parameters is assigned as the systematic uncertainty, yielding $\Delta A_{\mathrm{syst}}=4.0\,\mathrm{PeV}$ and $\Delta B_{\mathrm{syst}}=0.035$.
+The fit with $S_{30,\min}=15\,\mathrm{VEM}$ extends well below the nominal \sd{750} efficiency range and approximately down to the full-efficiency threshold of the \sd{433}, therefore providing a conservative estimate of the systematic envelope.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.82\textwidth]{figures/chapter_reconstruction/energy_calibration.pdf}
-    \caption{Calibration of the SD-433 zenith-corrected shower size $S_{30}$ against the SD-750 reference energy using coincident events. The line shows the fitted power-law relation.}
+    \caption{Calibration of the \sd{433} shower size $S_{30}$ against the \sd{750} reference energy using coincident events. The color scale shows the event density above the calibration threshold, while events below the threshold are shown in gray. The red line shows the fitted calibration relation. The dashed lines indicate the normalization point $S_0=40\,\mathrm{VEM}$ and its corresponding energy.}
     \label{fig:sd433_energy_calibration}
 \end{figure}
 
@@ -415,10 +422,14 @@ The fit results in a $D^2/\mathrm{dof}=$ and parameters $A=(149,49\pm)\mathrm{\,
 % with the 30 VEM calibration cut, and application of the relation to the
 % 382,131-event SD-433 dataset used for the spectrum measurement.
 
+The relative difference between the \sd{750} reference energy and the calibrated \sd{433} energy is shown in \cref{fig:sd433_energy_calibration_residuals}.
+Above the calibration threshold, the mean residual remains close to zero and decreases with energy.
+The positive residual observed below the threshold is produced by migration across the event selection and is not included in the fit.
+
 \begin{figure}
     \centering
-    \includegraphics[width=0.82\textwidth]{figures/chapter_reconstruction/energy_calibration_residuals.pdf}
-    \caption{Residuals of the SD-433 energy-calibration fit.}
+    \includegraphics[width=\textwidth]{figures/chapter_reconstruction/energy_calibration_residuals.pdf}
+    \caption{Left: relative difference between the \sd{750} reference energy and the calibrated \sd{433} energy. The points show individual events and the red markers show the mean residual in energy bins, with error bars indicating the uncertainty of the mean. Right: energy distribution of the full \sd{433} dataset. The dashed line indicates the full-efficiency energy.}
     \label{fig:sd433_energy_calibration_residuals}
 \end{figure}
 
