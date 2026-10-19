@@ -296,21 +296,36 @@ The relation between the \sd{433} shower size and the \sd{750} reference energy 
 \end{align}
 where $S_0=40\,\mathrm{VEM}$ is chosen to be within the calibrated energy range to reduce the correlation between the fitted normalization $A$ and slope $B$.
 The calibration is performed using the likelihood method introduced by Dembinski et al.~\cite{Dembinski:2015:Likelihood}.
-The fit is performed using a likelihood method because a $\chi^2$-fit would bias the calibration parameters because of the finite resolutions both of the \gls{fd} and \gls{sd}.
-However, given the \gls{sd}-\gls{sd} calibration an extra issue raises given that the resoution of the \sd{433}, the \textit{calibrated} detector, is higher at the same energy range than the \sd{750}.
+The finite resolutions of both $S_{30}$ and the \sd{750} reference energy would bias a conventional $\chi^2$-fit and are therefore included in the likelihood.
+Unlike an \gls{sd}-\gls{fd} calibration, the two measurements are correlated because both arrays observe the same shower and share some of the \gls{wcd}s.
 For the \sd{750} resolution, the same parameterization from Ref.~\cite{PierreAuger:2021:InfillSpectrum} is adopted,
 \begin{align}
-    \frac{\sigma_{\mathrm{SD-750}}}{E}=\sqrt{\sigma^2_\mathrm{sh}+\sigma^2_{\mathrm{det}}\frac{E_0}{E}}
+    \frac{\sigma_{\mathrm{SD-750}}}{E}
+    =
+    \sqrt{
+        \sigma_{\mathrm{sh}}^2
+        +
+        \left(\sigma_{\mathrm{det}}^{\mathrm{SD-750}}\right)^2
+        \frac{E_0}{E}
+    },
 \end{align}
-where the $\sigma_{\mathrm{det}}=0.21$ is the intrinsic detector resolution that decreases as energy increases, while $\sigma_{\mathrm{sh}}=0.09$ is the resolution given the shower-to-shower fluctuations, which are constant in energy and $E_0=100\mathrm{\,PeV}$.
-The resolution of the \sd{433} is intrinsically related since events are sampling the same shower, so both detectors measure the same shower-to-shower fluctuations.
-Also there is an extra correlation rises from the common detectors shared between both arrays.
-To estimate resolution of the \sd{433} is estimated from an inverse calibration with a starting parameter $B_0=1$.
-The resolution model of $S_{30}$ is then
+where $\sigma_{\mathrm{sh}}=0.09$ describes the energy-independent shower-to-shower fluctuations, $\sigma_{\mathrm{det}}^{\mathrm{SD-750}}=0.21$ parameterizes the detector contribution, and $E_0=100\,\mathrm{PeV}$.
+
+Because both arrays sample the same shower, their shower-to-shower fluctuations are fully correlated.
+An additional detector correlation arises from the \gls{wcd}s shared by the two arrays.
+The $S_{30}$ resolution is estimated through the inverse calibration using an initial slope $B_0=1$,
 \begin{align}
-    \frac{\sigma_{S_{30}}}{S_{30}}=\frac{1}{B_0}\sqrt{\sigma^2_{\mathrm{sh}}+\sigma_{\mathrm{det}}^2\frac{E_0}{E}}
+    \frac{\sigma_{S_{30}}}{S_{30}}
+    =
+    \frac{1}{B_0}
+    \sqrt{
+        \sigma_{\mathrm{sh}}^2
+        +
+        \left(\sigma_{\mathrm{det}}^{\mathrm{SD-433}}\right)^2
+        \frac{E_0}{E}
+    },
 \end{align}
-with $\sigma_{\text{sh}}=0.09$ and $\sigma_{\mathrm{det}}=0.12$.
+where $\sigma_{\mathrm{det}}^{\mathrm{SD-433}}=0.12$.
 The combined response function is then modelled as a correlated two-dimensional Gaussian.
 An underlying shower size $s$ is therefore introduced, allowing the reconstructed $S_{30}$ to fluctuate around it according to the \sd{433} resolution model.
 For a given $s$, the calibration relation predicts the energy $E_{\mathrm{cal}}(s\mid A,B)=A(s/S_0)^B$.
@@ -337,8 +352,30 @@ The corresponding response function for event $i$ is
     },
     \label{eq:calibration_response}
 \end{align}
-where $\sigma_{S,i}$ and $\sigma_{E,i}$ are the absolute uncertainties of $S_{30,i}$ and $E_i^{\mathrm{SD-750}}$, respectively, and $\rho_i$ is their energy-dependent correlation coefficient.
-The correlation between the detector contributions is assumed to be $0.33$ because the two arrays share some of the \gls{wcd}s.
+where $\sigma_{S,i}$ and $\sigma_{E,i}$ are the absolute uncertainties of $S_{30,i}$ and $E_i^{\mathrm{SD-750}}$, respectively.
+The energy-dependent correlation coefficient is calculated as
+\begin{align}
+    \rho_i
+    =
+    \frac{
+        \displaystyle
+        \frac{\sigma_{\mathrm{sh}}^2}{B_0}
+        +
+        \rho_{\mathrm{det}}
+        \sigma_{\mathrm{det}}^{\mathrm{SD-433}}
+        \sigma_{\mathrm{det}}^{\mathrm{SD-750}}
+        \frac{E_0}{E_i^{\mathrm{SD-750}}}
+    }{
+        \displaystyle
+        \left(
+            \frac{\sigma_{S,i}}{S_{30,i}}
+        \right)
+        \left(
+            \frac{\sigma_{E,i}}{E_i^{\mathrm{SD-750}}}
+        \right)
+    },
+\end{align}
+where $\rho_{\mathrm{det}}=0.33$ is the assumed correlation between the detector contributions arising from the \gls{wcd}s shared by the two arrays.
 The quantity $Q_i$ is the quadratic correlated distance between the measured pair and the corresponding point on the calibration curve,
 \begin{align}
     Q_i(s\mid A,B)
@@ -423,15 +460,17 @@ The fit with $S_{30,\min}=15\,\mathrm{VEM}$ extends well below the nominal \sd{7
 % 382,131-event SD-433 dataset used for the spectrum measurement.
 
 The relative difference between the \sd{750} reference energy and the calibrated \sd{433} energy is shown in the left panel of \cref{fig:sd433_energy_calibration_residuals}.
-The small data points show the single events. The grey datapoints show the events below the $S^{\mathrm{min}}_{30}=30\,\mathrm{VEM}$ swhower size threshold while the green datapoints highlight the events used for the \sd{433} calibration.
-The red datapoints correspond to the mean of the residual as a function of the energy, binned in $\Delta\lg(E^{\mathrm{SD-433}}/\mathrm{\,eV})=0.1$ below $\lg(E^{\mathrm{SD-433}}/\mathrm{\,eV})=18$ and $\Delta\lg(E^{\mathrm{SD-433}}/\mathrm{\,eV})=0.3$ above to increase statistics.
-The error bars correspond to the 1-$\sigma$ confidence level intervals.
-While single event residual can get up to $\sim20\%$, above the calibration threshold, the mean residual remains close to zero and decreases quickly with energy.
-The positive residual observed below the threshold is produced by migration across the event selection and is not included in the fit.
+The small points correspond to individual events.
+Events below the $S_{30,\min}=30\,\mathrm{VEM}$ shower-size threshold are shown in gray, while the events used for the \sd{433} calibration are shown in green.
+The red points show the mean residual in bins of width $\Delta\lg(E^{\mathrm{SD-433}}/\mathrm{eV})=0.1$ below $\lg(E^{\mathrm{SD-433}}/\mathrm{eV})=18$ and $0.3$ above to increase the statistics.
+The error bars indicate the standard error of the mean.
+Although individual residuals can reach approximately $20\%$, above the calibration threshold the mean residual remains close to zero and decreases quickly with energy.
+The positive residual below the threshold is produced by migration across the event selection and is not included in the fit.
 
-Finally, the event histogram of the \sd{433} is presented on \cref{fig:sd433_energy_calibration_residuals} together with the full efficiency threshold.
-We can see that below full efficiency, at around $\lg(E/\mathrm{eV})={16.2}$ the efficiency starts to increase and the number of events increase and for energies above the full efficiency threshold the number of events decays linearly in the log-log scale, hinting the power-law like spectrum.
-This histogram will be the basis to determine the raw spectrum in \cref{sec:raw_spectrum} and finally be able to characterize the Second knee.
+Finally, the energy distribution of the \sd{433} events is shown in the right panel of \cref{fig:sd433_energy_calibration_residuals}, together with the full-efficiency threshold.
+Below this threshold, the detection efficiency increases with energy, producing the rising event distribution despite the decreasing cosmic ray flux.
+Above full efficiency, the distribution decreases approximately linearly on the logarithmic scale, as expected for a power-law-like spectrum.
+This distribution forms the basis for the raw spectrum determined in \cref{sec:raw_spectrum} and the subsequent characterization of the second knee.
 
 \begin{figure}
     \centering
@@ -443,16 +482,16 @@ This histogram will be the basis to determine the raw spectrum in \cref{sec:raw_
 \section{Summary}
 \label{sec:energy_reconstruction_summary}
 
-In this chapter we present the basis of the energy reconstruction of the events recorded with the \sd{433}.
-From the challenges raised from the reconstruction of the arrival direction of the shower and the modelling of the fall of the signal with the distance to the shower core.
-From the reconstructed $S_{300}$ we determined the best fit parameters of the attenuation function to correct the atmospheric attenuation due to the different zenith angle of the showers.
-We constructed the zenith-angle independent shower size, $S_{35}$ by iteratively applying a shower-size dependent correction from $f_{\mathrm{cic}}(\theta,S_{35})$.
+In this chapter we present the energy reconstruction of the events recorded with the \sd{433}.
+After reconstructing the shower geometry, $S(300)$ is obtained by modelling the decrease of the signal with the distance to the shower core.
+From the reconstructed $S(300)$, the attenuation function is determined to correct for the different zenith angles of the showers.
+The zenith-independent shower size $S_{30}$ is then obtained by iteratively applying the shower-size-dependent correction $f_{\mathrm{CIC}}(\theta,S_{30})$.
 Using the events detected in common with the \sd{750} and the zenith-independent shower size estimator we then developed the energy calibration for the \sd{433}.
 The likelihood formalism was introduced to take into account the finite resolution both of \sd{433} in the shower size and \sd{750} in energy.
-Also, to include the low-to-high migration due to the steepness of the cosmic ray spectrum, an empirical distribution was included in the likelihood.
-Through a minimization of the log-likelihood the calibration parameters, $A=(149.49\pm0.34)\,\mathrm{PeV}$ and $B=0.963\pm0.002$ were determined.
-With the calibrated events, the relative difference in between the \sd{433} and \sd{750} was evaluated, finding that the difference is less than $3\%$ on average in the whole energy range and decreases with increasing energy.
-Finally, the \sd{433} energy histogram could be constructed and will be the cornerstone of the cosmic ray spectrum measurement presented in the next chapter.
+An empirical shower-size distribution is included to account for the preferential migration from low to high energies produced by the steep cosmic ray spectrum.
+Minimizing the log-likelihood yields $A=(149.49\pm0.34)\,\mathrm{PeV}$ and $B=0.963\pm0.002$.
+The mean difference between the calibrated \sd{433} energy and the \sd{750} reference energy remains below $3\%$ throughout the fitted energy range and decreases with increasing energy.
+Finally, the calibrated \sd{433} energy distribution forms the basis of the cosmic ray spectrum measurement presented in the next chapter.
 % TODO: Summarize the continuous reconstruction chain from the Offline
 % determination of S(300), through the CIC correction to S30, to the calibrated
 % SD-433 energy used in the spectrum measurement.
