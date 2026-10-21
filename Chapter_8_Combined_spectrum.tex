@@ -2,12 +2,61 @@
 
 \begin{document}
 
-\chapter{The updated SD-750 and combined SD-433--SD-750 spectra}
+\chapter{The combined \gls{sd} spectrum}
 \label{chapter:sd750_combined_spectrum}
+
+In this chapter we present an update of the \sd{750} spectrum, previously published in 2021 ~\cite{PierreAuger:2021:InfillSpectrum} together with the combined \sd{433}-\sd{750} spectrum.
+For the \sd{750} the efficiency measured with hybrid events and simulations from Refs. ~\cite{PierreAuger:2021:InfillSpectrum,Coleman:2020:Thesis} is revisited and parameterized in a data-driven method using the events in common with the \sd{433} in \cref{sec:sd750_response}.
+An update of the dataset is presented in \cref{sec:sd750_dataset} to determine the raw spectrum.
+The spectrum is then unfolded using the updated response function and unfolding in \cref{sec:sd750_spectrum}.
+Finally the two spectrum measured individually with \sd{433} and the \sd{750} are combined using a likelihood method together with a study of the robustness of the measurement in \cref{sec:combined_spectrum}
 
 \section{Updated SD-750 dataset}
 
-The reconstruction efficiency of the \sd{750}, measured using events independently selected by the \sd{433}, is shown in \cref{fig:sd750_efficiency}.
+In 2021, the Pierre Auger Collaboration presented a measurement of a turn-down in the cosmic ray flux at around $10^{17}\,\mathrm{eV}$, consisting in about $\num{560000}$ events.
+However, the feature could not be constrained due to the closeness with the minimum energy in the flux measurement, $\lg(E/\mathrm{eV})=17$.
+Therefore, the width of the transition and the spectral index above the feature were fitted from the spectrum.
+Given the much larger surface of the \sd{750}, energies up to $\lg(E/\mathrm{eV})=19.5$ were used in the spectrum determination.
+This allowed for the ankle in the cosmic ray spectrum to be measured.
+
+The \sd{750} started acquiring Phase I data when including the Gen II triggers, \gls{totd} and \gls{mops}, in Jan 2014 and ended with the inclusion of the new updated electronics on 29 November 2021.
+The geometrical reconstruction is analogous to the one presented in \cref{subsec:geometry_ldf}.
+However, in this case the reconstruction was performed using the other algorithm reconstruction, Herald, given that the Observer reconstruction was not updated for the \sd{750}.%[To do: include herald quote]
+The fiducial 6T5 trigger is also applied to ensure the proper reconstruction of the events and given the inclusion of the Gen. II triggers with a strong sensitivity to the electromagnetic component of the shower, only events with $\theta<40^\circ$ are included in the spectrum measurement.
+Time periods with acquisition problems are also excluded in the spectrum.
+When removing the bad periods and using the number of hexagons, analogously to the \sd{433}, the exposure of the \sd{750} can be calculated, obtaining $\exposuresym_{\text{SD-750}}=$\SDSevenFiftyExposure above the full efficiency threshold.
+
+\subsection{\sd{750} Efficiency}
+\label{subsec:sd750_efficiency}
+
+The \sd{750} efficiency was previously estimated using the limited hybrid dataset from events in common with Cohiueco and from simulations ~\cite{2018:Coleman:Thesis}.
+Since the \sd{433} is nested within the \sd{750}, opens the possibility to estimate the efficiency from the events in common between the two detectors.
+Having in mind that  there is the caveat that the two energy scales are interwined, hoewever we can study the efficiency since the most important contribution to this study is the full efficiency threshold.
+The parameterization for the efficiency can also be estimated from this study but the contribution in the spectrum is solely in the forward-folding and hence is minor.
+Using the events when both detectors were active in phase I, the binned efficiency of the \sd{750} can be estimated as 
+\begin{align}
+    \varepsilon(E_i)=\frac{k_i}{n_i},
+\end{align}
+\noindent where $n_i$ is the number of events in the $i$-eth bin detected by the \sd{433} and $k_i$ is the number of events detected in common by the \sd{750}.
+The estimation was performed, as with the calibration, from the unique id tag of the events and double checked with the GPS time.
+In \cref{fig:sd750_efficiency}, the circle data points represent the estimated efficiency of the \sd{750} together with the $68\%$ Clopper-Pearson confidence intervals in the error bars ~\cite{Clopper:1934:BinomialInverval}.
+The efficiency results is shown for energies above the full efficiency threshold of the \sd{433}.
+This confidence intervals were used to ensure that for $\varepsilon=1$, the confidence interval reduces to a lower limit, compatible with the physical constrain of the efficiency.
+To parameterize the efficiency, a binomial likelihood fit was used where for each bin,
+\begin{align}
+    \mathcal{L}(\mu,\sigma)=\prod\limits_i^{N_{bins}}\binom{n_i}{k_i}\varepsilon_i^{k_i}(1-\varepsilon_i)^{n_i-k_i}
+\end{align}
+where $\varepsilon$ is modeled using the same parameterization from Ref.~\cite{PierreAuger:2021:InfillSpectrum},
+\begin{align}
+    \varepsilon = \frac{1}{2}\left[
+1+\mathrm{erf}\left(\frac{lg(E/\mathrm{eV)-\mu}}{\sigma}\right)
+    \right]
+\end{align}
+\noindent where $\mathrm{erf}(E)$ is the error function and $\mu$ and $\sigma$ are the shape parameters that govern the transition.
+The best fit parameters are $\mu=16.74\pm0.01$ and $\sigma=(0.250\pm0.001)$ with a correlation $\rho_{\mu,\sigma}=0.38$.
+The fit result is shown with a solid line in \cref{fig:sd750_efficiency}, together with the fit result from Ref.~\cite{PierreAuger:2021:InfillSpectrum} in a dashed line.
+The gray vertical line shows the full efficiency threshold for the \sd{750} estimated with the \sd{433}.
+It is noteworthy that the resolution previously estimated reaches full efficiency almost two bins below this work.
 
 \begin{figure}
     \centering
@@ -16,7 +65,6 @@ The reconstruction efficiency of the \sd{750}, measured using events independent
     \label{fig:sd750_efficiency}
 \end{figure}
 
-\section{Updated SD-750 spectrum}
 
 \begin{figure}
     \centering
@@ -38,6 +86,8 @@ The reconstruction efficiency of the \sd{750}, measured using events independent
     \caption{Migration matrix used for the updated \sd{750} spectrum. The horizontal axis gives the true-energy bin $j$ and the vertical axis the reconstructed-energy bin $i$; the additional axes give the corresponding logarithmic energies. The matrix includes the measured reconstruction efficiency, energy bias, and energy resolution.}
     \label{fig:sd750_migration_matrix}
 \end{figure}
+
+\subsection{Updated SD-750 spectrum}
 
 \begin{figure}
     \centering
