@@ -42,9 +42,35 @@ The reconstruction efficiency of the \sd{750}, measured using events independent
 \begin{figure}
     \centering
     \includegraphics[width=0.82\linewidth]{figures/chapter_combined/sd750_unfolded_spectrum.pdf}
-    \caption{Unfolded cosmic-ray spectrum measured with the updated \sd{750} dataset and its best-fit spectral model. The open squares show the unfolded spectrum reported in \cite{PierreAuger:2021:InfillSpectrum} for comparison. The lower panel shows the residuals of the updated \sd{750} points with respect to the fitted model; the published points are not included in the residuals. Only statistical uncertainties are shown.}
+    \caption{Unfolded cosmic-ray spectrum measured with the updated \sd{750} dataset and its best-fit spectral model, obtained for $\lg(E/\mathrm{eV})\geq17.2$ with the second-knee position fixed to the \sd{433} result. The open squares show the unfolded spectrum reported in \cite{PierreAuger:2021:InfillSpectrum} for comparison. The lower panel shows the residuals of the updated \sd{750} points with respect to the fitted model; the published points are not included in the residuals. Only statistical uncertainties are shown.}
     \label{fig:sd750_unfolded_spectrum}
 \end{figure}
+
+The position of the second knee is fixed to the value measured with the \sd{433},
+\begin{align}
+    \lg(E_{01}/\mathrm{eV})=17.4401,
+\end{align}
+while the remaining spectral parameters are fitted to the \sd{750} data. The resulting deviance is $D^2=18.07$ for 17 degrees of freedom, corresponding to a $p$-value of $0.385$. The fitted parameters are listed in \cref{tab:sd750_fit_parameters}.
+
+\begin{table}
+    \centering
+    \caption{Parameters of the \sd{750} spectrum fit for $\lg(E/\mathrm{eV})\geq17.2$. The second-knee position $E_{01}$ is fixed to the \sd{433} result and the ankle width $\omega_{12}$ is fixed to $0.05$. The quoted uncertainties are statistical.}
+    \label{tab:sd750_fit_parameters}
+    \begin{tabular}{lcc}
+        \toprule
+        Parameter & Value & Status \\
+        \midrule
+        $J_0\,/\,(10^{-13}\,\mathrm{km}^{-2}\,\mathrm{sr}^{-1}\,\mathrm{yr}^{-1}\,\mathrm{eV}^{-1})$ & $0.9861\pm0.0083$ & fitted \\
+        $\lg(E_{01}/\mathrm{eV})$ & $17.4401$ & fixed to \sd{433} \\
+        $\omega_{01}$ & $0.264\pm0.159$ & fitted \\
+        $\gamma_0$ & $3.158\pm0.030$ & fitted \\
+        $\gamma_1$ & $3.351\pm0.024$ & fitted \\
+        $\lg(E_{12}/\mathrm{eV})$ & $18.641\pm0.085$ & fitted \\
+        $\omega_{12}$ & $0.05$ & fixed \\
+        $\gamma_2$ & $2.709\pm0.178$ & fitted \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \section{Combined SD-433 and SD-750 spectrum}
 
