@@ -2,8 +2,87 @@
 
 \begin{document}
 
-\chapter{The SD-750 Spectrum}
+\chapter{The updated SD-750 and combined SD-433--SD-750 spectra}
+\label{chapter:sd750_combined_spectrum}
 
-In the previous chapter
+\section{Updated SD-750 dataset}
+
+The reconstruction efficiency of the \sd{750}, measured using events independently selected by the \sd{433}, is shown in \cref{fig:sd750_efficiency}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/chapter_spectrum/sd750_efficiency.pdf}
+    \caption{Reconstruction efficiency of the \sd{750} as a function of the energy reconstructed with the \sd{433}. The filled markers show the efficiency obtained with the updated dataset, while the open markers show the efficiency reported in the previous \sd{750} spectrum measurement~\cite{PierreAuger:2021:InfillSpectrum}. The horizontal dashed line indicates an efficiency of $0.97$.}
+    \label{fig:sd750_efficiency}
+\end{figure}
+
+\section{Updated SD-750 spectrum}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/chapter_spectrum/sd750_raw_spectrum.pdf}
+    \caption{Raw cosmic-ray spectrum measured with the updated \sd{750} dataset, compared with the spectrum reported in \cite{PierreAuger:2021:InfillSpectrum}. The left panel shows the differential flux and the right panel the flux multiplied by $E^3$. Both measurements are displayed using the same energy bins. Only statistical uncertainties are shown.}
+    \label{fig:sd750_raw_spectrum}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/chapter_spectrum/sd433_sd750_bias_resolution.pdf}
+    \caption{Relative energy bias (left) and energy resolution (right) used to construct the \sd{433} and \sd{750} response matrices. The vertical dashed lines indicate the full-efficiency thresholds adopted for the two arrays.}
+    \label{fig:sd433_sd750_response}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.78\linewidth]{figures/chapter_spectrum/sd750_migration_matrix.pdf}
+    \caption{Migration matrix used for the updated \sd{750} spectrum. The horizontal axis gives the true-energy bin $j$ and the vertical axis the reconstructed-energy bin $i$; the additional axes give the corresponding logarithmic energies. The matrix includes the measured reconstruction efficiency, energy bias, and energy resolution.}
+    \label{fig:sd750_migration_matrix}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.82\linewidth]{figures/chapter_spectrum/sd750_unfolded_spectrum.pdf}
+    \caption{Unfolded cosmic-ray spectrum measured with the updated \sd{750} dataset and its best-fit spectral model. The open squares show the unfolded spectrum reported in \cite{PierreAuger:2021:InfillSpectrum} for comparison. The lower panel shows the residuals of the updated \sd{750} points with respect to the fitted model; the published points are not included in the residuals. Only statistical uncertainties are shown.}
+    \label{fig:sd750_unfolded_spectrum}
+\end{figure}
+
+\section{Combined SD-433 and SD-750 spectrum}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.82\linewidth]{figures/chapter_spectrum/sd433_sd750_combined_spectrum.pdf}
+    \caption{Unfolded spectra measured with the \sd{433} and \sd{750}, together with the combined spectrum and common best-fit model. The combined spectrum uses the \sd{433} binning below $\lg(E/\mathrm{eV})=17.2$ and the \sd{750} binning at higher energies. Only statistical uncertainties are shown.}
+    \label{fig:sd433_sd750_combined_spectrum}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.82\linewidth]{figures/chapter_spectrum/sd433_sd750_combined_spectrum_systematic.pdf}
+    \caption{Combined \sd{433}--\sd{750} spectrum and common best-fit model. The shaded region shows the effect of the $\pm14\%$ energy-scale uncertainty propagated through the fitted spectrum using \cref{eq:energy_systematic_bplwst}. The error bars represent statistical uncertainties.}
+    \label{fig:sd433_sd750_combined_systematic}
+\end{figure}
+
+\section{Stability of the combined fit}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/chapter_spectrum/combined_fit_max_scan_deviance.pdf}
+    \caption{Dependence of the combined-fit Poisson deviance, deviance per degree of freedom, and $p$-value on the maximum \sd{750} energy included in the fit. The \sd{750} lower boundary is fixed at $\lg(E/\mathrm{eV})=17.2$ and the \sd{433} fit range is kept unchanged.}
+    \label{fig:combined_fit_max_scan}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/chapter_spectrum/combined_fit_min_scan_deviance.pdf}
+    \caption{Dependence of the combined-fit Poisson deviance, deviance per degree of freedom, and $p$-value on the minimum \sd{750} energy included in the fit. The scan covers $17.0\leq\lg(E_{\min}/\mathrm{eV})\leq17.5$; the fit first becomes acceptable at $\lg(E_{\min}/\mathrm{eV})=17.2$. The \sd{750} upper boundary is fixed at $\lg(E/\mathrm{eV})=19.4$, the \sd{433} fit range is unchanged, and the \sd{433} exposure is fixed to the value preferred by the nominal combined fit.}
+    \label{fig:combined_fit_min_scan}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/chapter_spectrum/combined_omega_profile.pdf}
+    \caption{Profile of the combined-fit Poisson deviance as a function of the second-knee transition width $\omega_{01}$. At each fixed value of $\omega_{01}$, the remaining spectral parameters are profiled, while the \sd{433} exposure is fixed to the value preferred by the nominal combined fit and the calibration parameters are left unchanged. The horizontal lines indicate $\Delta D^2=1$ and $4$, and the vertical dashed line marks the best-fit value $\omega_{01}=0.314$.}
+    \label{fig:combined_omega_profile}
+\end{figure}
 
 \end{document}
