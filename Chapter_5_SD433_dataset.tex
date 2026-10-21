@@ -146,7 +146,7 @@ This configuration is particularly relevant for more inclined showers, whose tri
 
 The T1, T2, and T3 selection are performed online and the data is stored to be reconstructed later, where the next two trigger levels are applied.
 The physical trigger, T4,is designed to reject accidental coincidences and retain physically originated showers.
-For vertical showers,two T4 criteria are used.
+For vertical showers, two T4 criteria are used.
 
 The first T4 criterion, denoted \textit{3ToT}, originally required three nearby stations having a \gls{tot} trigger in a non-aligned pattern, but was later updated to also include combinations of the \gls{totd} and \gls{mops} triggers.
 In addition, the trigger times of the three stations must be compatible with a plane shower front moving at the speed of light.
@@ -159,7 +159,7 @@ To ensure a reliable reconstruction of the event, the 6T5 fiducial quality trigg
 It requires the station with the highest signal to be surrounded by six active neighbouring stations at the time of the event.
 This condition ensures that the shower core is well contained within the array, improves the accuracy of the reconstructed quantities, and allows the effective area to coincide with the geometrical one for energies higher than full efficiency.
 
-The 6T5 trigger also defines the fiducial area associated with each active central station.
+The 6T5 trigger also defines a fiducial area associated with each active station.
 Because the surface-detector stations are arranged on a triangular grid, this area is a regular hexagon centred on the station with the largest signal.
 Requiring all six neighbouring stations to be active ensures that this station does not lie at the boundary of the active array and provides adequate containment of the reconstructed shower core.
 For a station spacing $d=\SI{433}{\m}$, the area of this hexagon is
@@ -178,7 +178,7 @@ The event sample used in this work therefore consists of physical events selecte
 In order to calculate the exposure from the purely geometrical aperture of the array, it is necessary to establish an energy threshold above which the detector can be treated as fully efficient.
 Below this threshold, the probability of detecting and reconstructing a shower depends on the primary energy and arrival direction, and the exposure can no longer be calculated from the geometry alone.
 The spectrum measurement is therefore restricted to an energy range in which the array can be treated as fully efficient~\cite{PierreAuger:2010:TriggerAperture}.
-The efficiency parameterization is nevertheless included in the detector response used in the forward-folding procedure to account for the residual detector influence near the threshold.
+The efficiency parameterization is nevertheless included in the detector response used in the forward-folding procedure to account for a residual detector influence near the threshold.
 
 The efficiency of the \sd{433} array was studied in detail in Ref.~\cite{GAP:Rodriguez:2024:Efficiency}, using simulated showers and validating the results with measured data.
 For this purpose, CORSIKA simulations were performed with EPOS-LHC~\cite{Pierog:2015:EPOSLHC} as the high-energy hadronic-interaction model and FLUKA~\cite{Battistoni:2008:FLUKA} at lower energies.
@@ -191,17 +191,18 @@ The simulation-based efficiency is transformed to the \sd{433} energy scale usin
 Efficiency studies of the \sd{433} are customarily restricted to events with $\theta<45^\circ$, since the quality of the standard geometry reconstruction degrades at larger zenith angles~\cite{GAP:Rodriguez:2024:Efficiency}.
 In this work, the more conservative selection $\theta<40^\circ$ is adopted to match the zenith-angle range used for the \sd{750}~\cite{PierreAuger:2021:InfillSpectrum}.
 
-The resulting efficiency in the \sd{433} energy scale is determined with an unbinned likelihood fit, treating each simulated shower as either triggered or non-triggered at its simulated energy.
-For events with zenith angles $\theta<40^\circ$, the efficiency for the \gls{gsf} mix can be parameterized as
+The resulting efficiency in the \sd{433} energy scale is determined with an unbinned likelihood fit, considering if each simulated shower triggers the array or not.
+The corresponding efficiency estimators and fits are shown in \cref{fig:sd433_efficiency_curve} for the \gls{gsf} mix, together with proton and iron as extreme cases.
+For events with zenith angles $\theta<40^\circ$, the efficiency for the \gls{gsf} mix is parameterized as,
 \begin{align}
 \epsilon(E) = \Phi \left( a_0 + a_1 \lg\left(\frac{E}{10^{17}\,\mathrm{eV}}\right) \right),
 \end{align}
 where $\Phi$ is the cumulative distribution function of the standard normal distribution, $E$ is the primary energy in the \sd{433} energy scale, $a_0$ determines the energy of the efficiency transition, and $a_1$ governs its steepness.
-The fitted parameters for the \gls{gsf} mix are $a_0 = 4.213 \pm 0.032$ and $a_1 = 5.496 \pm 0.044$.
+The fitted parameters for the \gls{gsf} mix are $a_0 = 4.21 \pm 0.03$ and $a_1 = 5.50 \pm 0.04$.
 This parameterization will later be used in the forward-folding procedure described in \cref{chapter:SD433_Spectrum}.
-The corresponding efficiency estimators and fits are shown in \cref{fig:sd433_efficiency_curve} for the \gls{gsf} mix, together with proton and iron as extreme cases.
+
 Below full efficiency, the efficiency for proton showers is higher than that for iron showers.
-This difference can be attributed to the deeper development of lighter-primary showers combined with the enhanced sensitivity of the second-generation triggers to the electromagnetic component of the shower~\cite{GAP:Rodriguez:2024:Efficiency}.
+This difference is linked to the deeper development of lighter-primary showers combined with the enhanced sensitivity of the second-generation triggers to the electromagnetic component of the shower~\cite{GAP:Rodriguez:2024:Efficiency}.
 For proton, iron, and the \gls{gsf} mix, the first energy bin with an efficiency above $97\%$ begins at $\lg(E/\mathrm{eV})=16.7$.
 This simulation-based result motivates the data-driven validations described below, which support the more conservative threshold of $\lg(E/\mathrm{eV})=16.8$ adopted for the spectrum measurement.
 \begin{figure}
@@ -215,22 +216,22 @@ This simulation-based result motivates the data-driven validations described bel
 \end{figure}
 
 The simulation-based efficiency result was cross-checked using two tests applied to reconstructed data.
-These tests are not independent of the core and energy reconstruction procedures, since both require reconstructed event observables and calibrated energies.
+These tests are dependent of the core and energy reconstruction procedures, since both require reconstructed event observables and calibrated energies.
 Nevertheless, they probe two distinct signatures expected above full efficiency: the uniformity of the arrival directions in $\sin^2\theta$ and the uniform distribution of reconstructed shower cores within the fiducial 6T5 area.
-Together, they provide data-driven validation of the threshold inferred from simulations, although they cannot be used independently to determine the efficiency parameterization.
+Together, they provide data-driven validation of the threshold inferred from simulations.
 
 The first data-driven validation tests the isotropy of the arrival directions above different energy thresholds, following Ref.~\cite{GAP:Rodriguez:2024:Efficiency}.
 For isotropic arrival directions, the distribution in $\sin^2\theta$ is expected to be uniform up to the maximum zenith angle considered.
-For each energy threshold, the cumulative distribution measured in data was compared with the uniform expectation using the Anderson--Darling statistic, which gives greater weight to deviations near the tails of the distribution.
-The reference distribution of the statistic was generated from pseudo-experiments uniformly distributed in $\sin^2\theta$, and the $p$-value was calculated as the fraction of simulated statistics larger than the value observed in data.
+For each energy threshold, the cumulative distribution of $\sin^2\theta$ was compared with the uniform expectation using the Anderson--Darling test statistic, which gives greater weight to deviations near the tails of the distribution.
+The reference distribution of the test statistic was generated from pseudo-experiments uniformly distributed in $\sin^2\theta$, and the $p$-value was calculated as the fraction of simulated statistics larger than the value observed in data.
 
-The test gives $p$-values of $0$, $0.008$, and $0.357$ for minimum-energy thresholds of $\lg(E/\mathrm{eV})=16.7$, $16.8$, and $16.9$, respectively.
+The test gives numerical $p$-values of $0$, $0.008$, and $0.357$ for minimum-energy thresholds of $\lg(E/\mathrm{eV})=16.7$, $16.8$, and $16.9$, respectively.
 Using $p<0.005$ as the rejection criterion, the isotropic hypothesis cannot be rejected for events with $\lg(E/\mathrm{eV})\geq16.8$.
 This supports the choice of $\lg(E/\mathrm{eV})=16.8$ as a conservative threshold above which the array can be treated as fully efficient.
 
 As a second validation, the spatial distribution of the reconstructed shower cores was examined using events with $\theta<40^\circ$.
 Once the detector is fully efficient, an isotropic flux is expected to produce a uniform distribution of shower cores within the fiducial 6T5 area.
-To combine the equivalent regions associated with different stations, the position of the station with the largest signal is subtracted from the reconstructed core position, folding all events onto a single hexagon.
+To combine the equivalent regions associated with different stations, the position of the station with the largest signal is subtracted from the reconstructed core position, folding all events into a single hexagon.
 
 The resulting core positions are grouped using hexagonal bins with a characteristic size of approximately \SI{28}{\m}.
 This choice preserves the symmetry of the detector and gives a spatial scale comparable to the core-position resolution, which is approximately \SI{20}{\m} in this energy range~\cite{GAP:Gonzalez:2020:Geometry}.
@@ -259,7 +260,7 @@ This feature is no longer apparent from $\lg(E/\mathrm{eV})=16.8$ onward, for wh
 \end{figure}
 
 To quantify the uniformity of the core distribution, the observed bin occupancies were compared with a uniform expectation using the Poisson deviance.
-For a sample containing $N$ events distributed among $N_{\mathrm{bin}}$ accepted bins, the expected occupancy under the uniform hypothesis is
+For a sample containing $N$ events distributed among $N_{\mathrm{bin}}$ accepted bins, the expected occupancy under the uniform hypothesis is,
 \begin{align}
     \nu=\frac{N}{N_{\mathrm{bin}}}.
 \end{align}
@@ -278,7 +279,7 @@ The reduced deviance, $D^2/\mathrm{dof}$, is used to compare samples selected us
 The resulting reduced deviance, $D^2/\mathrm{dof}$, is shown in \cref{fig:sd433_core_deviance}.
 It decreases as the minimum-energy threshold increases and falls below unity at $\lg(E_{\min}/\mathrm{eV})=16.8$.
 This result supports the use of $\lg(E/\mathrm{eV})=16.8$ as the lower boundary of the full-efficiency regime for events with $\theta<40^\circ$.
-At the highest energy thresholds, the reduced deviance increases because the lower occupancy of each bin increases the statistical fluctuations.
+
 
 \begin{figure}
     \centering
@@ -290,7 +291,7 @@ At the highest energy thresholds, the reduced deviance increases because the low
 \end{figure}
 
 The simulation-based efficiency determination and the two data-driven validations therefore support the adoption of $\lg(E/\mathrm{eV})=16.8$, corresponding to $\SI{0.063}{\exa\eV}$, as the full-efficiency threshold for the \sd{433} dataset.
-Above this threshold, the exposure can be calculated from the geometric aperture of the array.
+Above this threshold, the exposure can be calculated from the geometric aperture of the array given that the efficiency factor in this calculation is unity
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -299,30 +300,30 @@ Above this threshold, the exposure can be calculated from the geometric aperture
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The \sd{433} evolved from an engineering array around the Tina Turner station into its seven-hexagon configuration over a six-year period.
-During this time, changes to the detector layout and communication system affected both the number of active stations and the information available for evaluating the 6T5 condition.
+During this time, changes to the detector layout and communication system affected both the number of active stations and the information available to evaluate the 6T5 condition.
 
 The main stages relevant to the dataset used in this work are summarized below~\cite{GAP:Roncoroni:2021:Recovery}:
 \begin{itemize}
     \item April 2013: stable data acquisition began with a single hexagon.
     \item January 2014: the \gls{totd} and \gls{mops} triggers were deployed.
-    \item June--December 2017: Chichino Jr. and Guili Jr. were repositioned.
+    \item June--December 2017: the stations Chichino Jr. and Guili Jr. were repositioned.
     \item January 2018: the array was expanded to four hexagons.
-    \item July 2018: fast CDAS was introduced, providing the status of silent stations in the acquired events.
+    \item July 2018: silent stations were included in the acquired events.
     \item May 2019: installation of the seven-hexagon configuration was completed.
     \item December 2021: the electronics upgrade for Phase II began.
 \end{itemize}
 
-Before the introduction of \textit{fast CDAS}, the status of non-triggered stations was not always included in the event records.
-Consequently, the 6T5 trigger could not be evaluated reliably, resulting in a substantial deficit of events satisfying this quality requirement.
-Although the earlier data were subsequently recovered using monitoring information~\cite{GAP:Roncoroni:2021:Recovery}, the dataset used in this work begins on 1 July 2018, after fast CDAS had been introduced.
-Restricting the analysis to this period ensures that the 6T5 trigger is evaluated directly from the detector-status information included in the event records and provides a homogeneous dataset throughout the analysis.
+The status of non-triggered stations was not included in the event records in the origina array.
+Consequently, the 6T5 trigger could not be evaluated, resulting in a substantial deficit of events satisfying this quality requirement.
+Although the earlier data were subsequently recovered using monitoring information~\cite{GAP:Roncoroni:2021:Recovery}, the dataset used in this work begins on 1 July 2018, when silent stations were included in the events.
+Restricting the analysis to this period ensures that the 6T5 trigger is evaluated directly from the detector-status information included in the acquired event records and provides a homogeneous dataset throughout the analysis.
 The selected period ends on 21 December 2021, when the electronics upgrade of the \sd{433} array began.
 
-The stability of the array is monitored using the event rate shown in \cref{fig:event_rate}.
+The stability of the array is monitored using the daily event rate shown in \cref{fig:event_rate}.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/chapter_dataset/event_rate.pdf}
-    \caption{Top: Daily 6T5 event rate of the \sd{433} array between the introduction of fast CDAS and the beginning of the Phase II electronics upgrade.
+    \caption{Top: Daily 6T5 event rate of the \sd{433} array during the acquisition period used for the spectrum.
     Bottom: Daily event rate normalized by the number of active hexagons calculated from the T2Life information.
     The horizontal line indicates the average normalized event rate, and the shaded regions indicate the periods of unstable acquisition excluded from the analysis.}
     \label{fig:event_rate}
@@ -332,26 +333,23 @@ The increase in the total event rate observed in 2019 results from the addition 
 To separate changes in the array size from variations in its operational stability, the event rate is normalized by the number of active hexagons at each time, as shown in \cref{fig:event_rate}.
 For a stable detector configuration, the normalized rate is expected to remain approximately constant, so significant deviations can be used to identify changes in the acquisition conditions.
 
-The operational status of each station is recorded by the T2Life flags, which are transmitted to CDAS every second and indicate whether a station is capable of acquiring data.
+The operational status of each station is recorded every second and indicate whether a station is capable of acquiring data in the so-called T2Life flags.
 A hexagon is considered active when its central station and all six stations in its first crown are tagged as alive.
 The instantaneous array configuration can therefore be evaluated with a time resolution of one second~\cite{GAP:Gonzalez:2022:Exposure}.
-For the exposure calculation, this information is summarized in one-minute intervals, within which the number of active hexagons is treated as constant.
+% For the exposure calculation, this information is summarized in one-minute intervals, within which the number of active hexagons is treated as constant.
+The distribution of the daily 6T5 event rate normalized by the number of active hexagons has a mean of $6.8$ events per day per hexagon and a standard deviation of $\sigma_{N_{\mathrm{evt}}}=1.8$.
 
-The distribution of the daily 6T5 event rate normalized by the number of active hexagons has a mean of 6.77 events per day per hexagon and a standard deviation of $\sigma_{N_{\mathrm{evt}}}=1.84$.
 Although the surface detector has a duty cycle close to $100\%$, communication and electronics failures can produce periods of unstable data acquisition.
 These periods are identified from unexpectedly long time intervals between successive 6T5 events.
-
-Assuming that the events follow a Poisson process, their expected rate is proportional to the active area.
-The probability of observing a time interval longer than $T$ is
+%Assuming that the events follow a Poisson process, their expected rate is proportional to the active area.
+The probability of observing a time interval longer than $T$ is,
 \begin{align}
-    P(t>T)=\exp(-FAT),
+    P(t>T)=\exp(-F\,A \,T),
 \end{align}
-where $F$ is the expected event rate per unit time and unit area, and $A$ is the average effective area of the active hexagons during the interval.
-An interval is classified as unstable when this probability falls below a threshold $\alpha$.
-The threshold is obtained from deviations exceeding $2\sigma$ from the exponential model and is set to $\alpha=10^{-2.5}$~\cite{GAP:Gonzalez:2022:Exposure}.
-
+where $F$ is the expected event rate per unit time and unit area and $A$ is the average effective area of the active hexagons during the interval.
+An interval is classified as unstable when this probability falls below a threshold set to $\alpha=10^{-2.5}$~\cite{GAP:Gonzalez:2022:Exposure}.
 The intervals satisfying $P(t>T)<\alpha$, referred to as \textit{bad periods}, are shaded in \cref{fig:event_rate}.
-Together, these periods account for 169.6 days of the 1269-day acquisition interval, corresponding to a loss of $13.37\%$.
+Together, these bad periods account for $170$ days of the $1269$-day acquisition interval, corresponding to an exposure loss of about $13\%$.
 
 % However, in December 2017, it was noticed that the positions of two of the stations of the first crown, Chichino and Guili, were  35 and 75\,m away from the expected position respectively.
 % These stations were then relocated to correct their positions.
@@ -367,10 +365,11 @@ Together, these periods account for 169.6 days of the 1269-day acquisition inter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 After establishing the full-efficiency threshold and identifying the periods of stable acquisition, the exposure can be determined geometrically.
-Above the full-efficiency threshold, the detection probability can be considered independent of the primary energy and mass, and the detector aperture is obtained by integrating its effective projected area over solid angle.
+% Above the full-efficiency threshold, the detection probability can be considered independent of the primary energy and mass, and the detector aperture is obtained by integrating its effective projected area over solid angle.
 The fiducial area associated with one active 6T5 hexagon is given by \cref{eq:6T5_area}.
-Its aperture is obtained by integrating the projected area over the selected solid angle.
-The factor $\cos\theta$ accounts for the projection of the detector surface, while $\mathrm{d}\Omega=\sin\theta\,\mathrm{d}\theta\,\mathrm{d}\phi$ is the differential solid angle:
+Acceptance describes the ability of the array to collect particles from different directions. For a flat collecting surface, the area seen from an arrival direction is its projected area, \(S_{\mathrm{hex}}\cos\theta\).
+The acceptance of an elemental hexagon in a acceptance cone  delimited by the zenith angles $\theta_{\min}$ and $\theta_{\max}$ is found by integration that projected area over all accepted directions, 
+
 \begin{align}
     A_{\mathrm{6T5}}
     &=S_{\mathrm{hex}}
@@ -383,27 +382,24 @@ The factor $\cos\theta$ accounts for the projection of the detector surface, whi
         -\sin^2\theta_{\min}
     \right).
 \end{align}
-For the zenith-angle range used in this work, $\theta_{\min}=0^\circ$ and $\theta_{\max}=40^\circ$, the aperture per active hexagon is
-\begin{align}
-    A_{\mathrm{6T5}}=\SI{0.211}{\km\squared\sr}.
-\end{align}
-
-Using the minute-based T2Life information, the instantaneous aperture is
+\noindent For the zenith-angle range used in this work, $\theta_{\min}=0^\circ$ and $\theta_{\max}=40^\circ$, the acceptance per active hexagon is $A_{\mathrm{6T5}}=\SI{0.211}{\km\squared\sr}$.
+The acceptance for the array containing $N_{\mathrm{hex}}$ active hexagons is,
 \begin{align}
     \frac{\mathrm{d}\exposuresym}{\mathrm{d}t}
     =N_{\mathrm{hex}}(t)A_{\mathrm{6T5}}.
 \end{align}
-The accumulated exposure is obtained by integrating this aperture over the selected acquisition intervals,
+The accumulated exposure is obtained by integrating this acceptance over the selected acquisition intervals,
 \begin{align}
     \exposuresym
     =\int_{\mathrm{good\ periods}}
-    N_{\mathrm{hex}}(t)A_{\mathrm{6T5}}\,\mathrm{d}t,
+    N_{\mathrm{hex}}(t) \, A_{\mathrm{6T5}}  \,\mathrm{d}t,
 \end{align}
-where the identified bad-acquisition periods are excluded.
-In this way, stable periods with a reduced number of active hexagons are retained, with their contribution weighted by the corresponding instantaneous aperture.
+\indent where the identified bad periods are excluded.
+% In this way, stable periods with a reduced number of active hexagons are retained, with their contribution weighted by the corresponding instantaneous aperture.
 
 The upper panel of \cref{fig:exposure} shows the daily mean number of active hexagons calculated from the minute-based T2Life information.
 Its evolution reflects both changes in the array configuration and temporary detector downtime.
+Their maximum corresponds to all 7 hexagons of the \sd{433} in good working order.
 The lower panel shows the accumulated exposure contributed by each hexagon and their sum after excluding the bad-acquisition periods.
 
 The total accumulated exposure for $\theta<40^\circ$ is \SDFourThreeThreeExposure.
@@ -411,15 +407,12 @@ The total accumulated exposure for $\theta<40^\circ$ is \SDFourThreeThreeExposur
     \centering
     \includegraphics[width=\linewidth]{figures/chapter_dataset/acumulated_exposure.pdf}
     \caption{Evolution of the \sd{433} array and its exposure during the selected data period.
-    Top: daily mean number of active 6T5 hexagons calculated from the minute-based T2Life information.
-    Bottom: accumulated exposure of the individual hexagons and their sum for $\theta<40^\circ$ after excluding bad-acquisition periods; the final total is \SDFourThreeThreeExposure.}
+    Top: daily mean number of active 6T5 hexagons calculated from the T2Life information.
+    Bottom: accumulated exposure of the individual hexagons and their sum for $\theta<40^\circ$ after excluding bad-acquisition periods.}
     \label{fig:exposure}
 \end{figure}
 
-After excluding the identified bad-acquisition periods, the final dataset spans the interval from 1 July 2018, following the introduction of fast CDAS, to 21 December 2021, when the electronics upgrade began.
-The resulting live-time fraction is $86.63\%$.
-Applying the 6T5 quality condition, the full-efficiency threshold $\lg(E/\mathrm{eV})\geq16.8$, and the zenith-angle selection $\theta<40^\circ$ yields \SDFourThreeThreeNEvents events with an accumulated exposure of \SDFourThreeThreeExposure.
-This defines the \sd{433} dataset used for the energy-spectrum measurement.
+Applying the 6T5 quality condition, the full-efficiency threshold $\lg(E/\mathrm{eV})\geq16.8$, and the zenith-angle selection $\theta<40^\circ$ yields \SDFourThreeThreeNEvents events.
 
 \section{Chapter summary}
 \label{sec:sd433_dataset_summary}
@@ -432,10 +425,9 @@ These studies support the choice of $\lg(E/\mathrm{eV})=16.8$ as the lower bound
 Above this threshold, the aperture can be calculated geometrically because the detection probability can be considered independent of the primary energy and mass.
 
 The operational history and active configuration of the array were characterized using the T2Life information.
-Periods of unstable acquisition were identified and excluded, while the number of active 6T5 hexagons was used to integrate the time-dependent aperture.
-The final dataset covers the period from 1 July 2018 to 21 December 2021 and has a live-time fraction of $86.63\%$.
+Periods of unstable acquisition were identified and excluded, while the number of active 6T5 hexagons was used to integrate the time-dependent acceptance.
+The final dataset covers the period from 1 July 2018 to 21 December 2021 and has a live-time fraction of $87\%$.
 After applying the 6T5 quality condition, the full-efficiency threshold, and the zenith-angle selection, it contains \SDFourThreeThreeNEvents events with an accumulated exposure of \SDFourThreeThreeExposure.
 This dataset is used in the following chapter to determine the \sd{433} cosmic-ray energy spectrum.
-
 
 \end{document}
