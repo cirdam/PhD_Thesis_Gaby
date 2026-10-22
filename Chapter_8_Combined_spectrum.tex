@@ -12,6 +12,7 @@ The spectrum is then unfolded using the updated response function and unfolding 
 Finally the two spectrum measured individually with \sd{433} and the \sd{750} are combined using a likelihood method together with a study of the robustness of the measurement in \cref{sec:combined_spectrum}
 
 \section{Updated SD-750 dataset}
+\label{sec:sd750_dataset}
 
 In 2021, the Pierre Auger Collaboration presented a measurement of a turn-down in the cosmic ray flux at around $10^{17}\,\mathrm{eV}$, consisting in about $\num{560000}$ events.
 However, the feature could not be constrained due to the closeness with the minimum energy in the flux measurement, $\lg(E/\mathrm{eV})=17$.
@@ -66,12 +67,8 @@ It is noteworthy that the resolution previously estimated reaches full efficienc
 \end{figure}
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/chapter_combined/sd750_raw_spectrum.pdf}
-    \caption{Raw cosmic-ray spectrum measured with the updated \sd{750} dataset, compared with the spectrum reported in \cite{PierreAuger:2021:InfillSpectrum}. The left panel shows the differential flux and the right panel the flux multiplied by $E^3$. Both measurements are displayed using the same energy bins. Only statistical uncertainties are shown.}
-    \label{fig:sd750_raw_spectrum}
-\end{figure}
+\subsection{Detector response}
+\label{sec:sd750_response}
 
 \begin{figure}
     \centering
@@ -88,6 +85,14 @@ It is noteworthy that the resolution previously estimated reaches full efficienc
 \end{figure}
 
 \subsection{Updated SD-750 spectrum}
+\label{sec:sd750_spectrum}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/chapter_combined/sd750_raw_spectrum.pdf}
+    \caption{Raw cosmic-ray spectrum measured with the updated \sd{750} dataset, compared with the spectrum reported in \cite{PierreAuger:2021:InfillSpectrum}. The left panel shows the differential flux and the right panel the flux multiplied by $E^3$. Both measurements are displayed using the same energy bins. Only statistical uncertainties are shown.}
+    \label{fig:sd750_raw_spectrum}
+\end{figure}
 
 \begin{figure}
     \centering
@@ -123,6 +128,7 @@ while the remaining spectral parameters are fitted to the \sd{750} data. The res
 \end{table}
 
 \section{Combined SD-433 and SD-750 spectrum}
+\label{sec:combined_spectrum}
 
 \begin{figure}
     \centering
