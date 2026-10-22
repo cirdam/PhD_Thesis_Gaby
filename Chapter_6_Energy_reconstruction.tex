@@ -480,13 +480,45 @@ This distribution forms the basis for the raw spectrum determined in \cref{sec:r
 \end{figure}
 
 \section{Energy resolution and bias}
+\label{sec:res_and_bias}
 
 The energy resolution and bias enter the detector response used to fit and unfold the cosmic-ray spectrum measured with the \sd{433}.
-For the larger \gls{sd} arrays, these quantities can be constrained directly through their calibration against the \gls{fd}.
-For the \sd{433}, however, the available calibration sample does not provide a sufficiently precise direct determination because its resolution is poorer than that of the \sd{750} reference array.
-The \sd{433} energy bias and resolution are therefore obtained from the same simulations used to determine the efficiency in \cref{sec:efficiency}~\cite{Rodriguez:2026:Thesis}.
-The simulations cover the same primary-mass groups, and the final parameterizations are calculated for the mixed composition inferred from the \gls{gsf} measurements.
-They are shown in \cref{fig:sd433_res_bias}.
+Their parameterizations are obtained from the same simulations used to determine the detection efficiency in \cref{sec:efficiency}, adopting the mixed composition inferred from the \gls{gsf} model~\cite{Rodriguez:2026:Thesis}.
+The denser spacing of the \sd{433} provides more triggered stations at a given energy, better constraining the shower-size reconstruction and yielding a better energy resolution than that of the \sd{750}.
+Comparisons using events reconstructed jointly by the two arrays provide a consistency check above full efficiency, although the direct determination is limited by the available statistics and the unknown correlation between the energy estimators.
+
+The relative energy bias is determined from the mean fractional residual $E_{\mathrm{rec}}/E_{\mathrm{MC}}-1$.
+These residuals are evaluated using the simulation-based calibration, while the energy dependence is expressed in terms of the true energy mapped onto the \sd{433} data scale, denoted here by $E$.
+The bias is parameterized as
+\begin{align}
+    b(E)
+    &= b_0\exp\!\left[-b_1\left(\lg(E/\mathrm{eV})-16\right)\right]+b_2,
+    \label{eq:energy_bias}
+\end{align}
+with
+\begin{align}
+    b_0 &= 0.30 \pm 0.01, &
+    b_1 &= 10.0 \pm 0.3, &
+    b_2 &= 0.005 \pm 0.001.
+\end{align}
+Below full efficiency, upward fluctuations are preferentially selected, producing a positive bias that increases towards lower energies.
+Above the full-efficiency threshold, this contribution becomes small.
+
+The relative energy resolution is described by the quadratic sum of a constant contribution from shower-to-shower fluctuations and an energy-dependent detector contribution,
+\begin{align}
+    \frac{\sigma(E)}{E}
+    &= \sqrt{R_{\mathrm{sh}}^2
+       +\frac{R_0^2}{E/(10^{17}\,\mathrm{eV})}},
+    \label{eq:resolution_sigma}
+\end{align}
+where the fit to the simulated \gls{gsf} mixture yields
+\begin{align}
+    R_{\mathrm{sh}} &= 0.103 \pm 0.001, &
+    R_0 &= 0.096 \pm 0.005.
+\end{align}
+The detector contribution decreases with increasing energy, and the relative resolution approaches the shower-fluctuation limit of approximately $10.3\%$.
+Here, $\sigma(E)$ denotes the absolute energy resolution used in the response function for the spectrum analysis.
+The bias and relative resolution parameterizations are shown in \cref{fig:sd433_res_bias}.
 
 \begin{figure}
     \centering
