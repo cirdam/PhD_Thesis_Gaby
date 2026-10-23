@@ -11,8 +11,10 @@ An update of the dataset is presented in \cref{sec:sd750_dataset} to determine t
 The spectrum is then unfolded using the updated response function and unfolding in \cref{sec:sd750_spectrum}.
 Finally the two spectrum measured individually with \sd{433} and the \sd{750} are combined using a likelihood method together with a study of the robustness of the measurement in \cref{sec:combined_spectrum}
 
-\section{Updated SD-750 dataset}
-\label{sec:sd750_dataset}
+\section{The \sd{750} Spectrum}
+\label{sec:sd750_spectrum}
+
+\subsection{The \sd{750} dataset}
 
 In 2021, the Pierre Auger Collaboration presented a measurement of a turn-down in the cosmic ray flux at around $10^{17}\,\mathrm{eV}$, consisting in about $\num{560000}$ events.
 However, the feature could not be constrained due to the closeness with the minimum energy in the flux measurement, $\lg(E/\mathrm{eV})=17$.
@@ -27,7 +29,7 @@ The fiducial 6T5 trigger is also applied to ensure the proper reconstruction of 
 Time periods with acquisition problems are also excluded in the spectrum.
 When removing the bad periods and using the number of hexagons, analogously to the \sd{433}, the exposure of the \sd{750} can be calculated, obtaining $\exposuresym_{\text{SD-750}}=$\SDSevenFiftyExposure above the full efficiency threshold.
 
-\subsection{\sd{750} Efficiency}
+\subsection{\sd{750} efficiency and response function}
 \label{subsec:sd750_efficiency}
 
 The \sd{750} efficiency was previously estimated using the limited hybrid dataset from events in common with Cohiueco and from simulations ~\cite{2018:Coleman:Thesis}.
@@ -42,12 +44,19 @@ Using the events when both detectors were active in phase I, the binned efficien
 The estimation was performed, as with the calibration, from the unique id tag of the events and double checked with the GPS time.
 In \cref{fig:sd750_efficiency}, the circle data points represent the estimated efficiency of the \sd{750} together with the $68\%$ Clopper-Pearson confidence intervals in the error bars ~\cite{Clopper:1934:BinomialInverval}.
 The efficiency results is shown for energies above the full efficiency threshold of the \sd{433}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/chapter_combined/sd750_efficiency.pdf}
+    \caption{Reconstruction efficiency of the \sd{750} as a function of the energy reconstructed with the \sd{433}. The filled markers show the efficiency obtained with the updated dataset, while the open markers show the efficiency reported in the previous \sd{750} spectrum measurement~\cite{PierreAuger:2021:InfillSpectrum}. The horizontal dashed line indicates an efficiency of $0.97$.}
+    \label{fig:sd750_efficiency}
+\end{figure}
 This confidence intervals were used to ensure that for $\varepsilon=1$, the confidence interval reduces to a lower limit, compatible with the physical constrain of the efficiency.
 To parameterize the efficiency, a binomial likelihood fit was used where for each bin,
 \begin{align}
-    \mathcal{L}(\mu,\sigma)=\prod\limits_i^{N_{bins}}\binom{n_i}{k_i}\varepsilon_i^{k_i}(1-\varepsilon_i)^{n_i-k_i}
+    \mathcal{L}(\mu,\sigma)=\prod\limits_i^{N_{bins}}\binom{n_i}{k_i}\varepsilon_i^{k_i}(1-\varepsilon_i)^{n_i-k_i}.
 \end{align}
-where $\varepsilon$ is modeled using the same parameterization from Ref.~\cite{PierreAuger:2021:InfillSpectrum},
+The efficiency is modelled using the same parameterization from Ref.~\cite{PierreAuger:2021:InfillSpectrum},
 \begin{align}
     \varepsilon = \frac{1}{2}\left[
 1+\mathrm{erf}\left(\frac{lg(E/\mathrm{eV)-\mu}}{\sigma}\right)
@@ -59,24 +68,46 @@ The fit result is shown with a solid line in \cref{fig:sd750_efficiency}, togeth
 The gray vertical line shows the full efficiency threshold for the \sd{750} estimated with the \sd{433}.
 It is noteworthy that the resolution previously estimated reaches full efficiency almost two bins below this work.
 
+In order to construct the migration matrix of the \sd{750}, the resolution and bias are needed. For this, the model used in Ref. ~\cite{PierreAuger:2021:InfillSpectrum} is used.
+The left panel of \cref{fig:sd433_sd750_response} shows the relative resolution of the \sd{750} from below full efficiency $\lg(E/\mathrm{eV})=19.5$, together with the \sd{433} resolution
+At lower energies, the detector contribution of the \sd{433} is better.
+However, as energy increases, the intrinsic detector contribution from \sd{750} is lower and the shower-to-shower fluctuations dominate, resulting in a better resolution with this detector.
+The resolution is also modeled with \cref{eq:resolution_sigma} from \cref{sec:res_bias} with $r_\text{sh}=(0.06\pm0.02)$ and $r_\text{det}=(0.05\pm0.01)$.
+On the right panel of \cref{fig:sd433_sd750_response}, the fit of the relative energy bias is displayed, also for \sd{750} and \sd{433},
+\begin{align}
+    b(E)=b_0\lg(x-b_1)\exp
+    \left[
+    -b_2(x-b_3)^2
+    \right]+b4
+    \label{eq:sd750_bias}
+\end{align}
+\noindent with the best fit parameters,
+\begin{align*}
+    \begin{gathered}
+        b_0 = -3 \pm 1, \qquad
+        b_1 = 26 \pm 4, \qquad
+        b_2 = 0.35 \pm 0.02, \\[4pt]
+        b_3 = 12.7 \pm 0.1, \qquad
+        b_4 = -0.0039 \pm 0.0008
+    \end{gathered}
+\end{align*}
+The bias is lower for the \sd{433} in the entire energy range. However, for the \sd{750} reduces asymptotically to $0.5\%$.
+
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{figures/chapter_combined/sd750_efficiency.pdf}
-    \caption{Reconstruction efficiency of the \sd{750} as a function of the energy reconstructed with the \sd{433}. The filled markers show the efficiency obtained with the updated dataset, while the open markers show the efficiency reported in the previous \sd{750} spectrum measurement~\cite{PierreAuger:2021:InfillSpectrum}. The horizontal dashed line indicates an efficiency of $0.97$.}
-    \label{fig:sd750_efficiency}
-\end{figure}
-
-
-\subsection{Detector response}
-\label{sec:sd750_response}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/chapter_combined/sd433_sd750_bias_resolution.pdf}
+    \includegraphics[width=\linewidth]{figures/chapter_combined/sd433_sd750_bias_resolution.pdf}
     \caption{Relative energy bias (left) and energy resolution (right) used to construct the \sd{433} and \sd{750} response matrices. The vertical dashed lines indicate the full-efficiency thresholds adopted for the two arrays.}
     \label{fig:sd433_sd750_response}
 \end{figure}
 
+With the efficiency from the previous section, the \sd{750} migration matrix can be constructed with the same formalism from \cref{sec:unfolded_spectrum}.
+For this, the approximated matrix with the finer binning in $\Delta E_\text{true}=0.01$ is constructed with \cref{eq:matrix_approx} to make the matrix independent of the spectrum model.
+The resulting migration matrix is presented in \cref{fig:sd750_migration_matrix}.
+The dashed vertical line indicates the full efficiency threshold of the \sd{750} and the white diagonal line indicates $E_\text{true}=E_\text{recon}$.
+As with the \sd{433}, the matrix is constructed for an energy range wider than the spectrum in order to avoid border effects from the neighbouring bin contributions.
+Given that the resolution near the \sd{750} is similar to the one of the \sd{433}, the width of the spread in these rows is similar.
+However, when comparing with \cref{fig:migration_matrix}, at higher energies, the spread around $E_\text{true}=E_\text{recon}$ is tighter due to the better resolution of the \sd{433}.
+With this, using the raw spectrum, the forward folding fit can be performed.
 \begin{figure}
     \centering
     \includegraphics[width=0.78\linewidth]{figures/chapter_combined/sd750_migration_matrix.pdf}
@@ -87,12 +118,55 @@ It is noteworthy that the resolution previously estimated reaches full efficienc
 \subsection{Updated SD-750 spectrum}
 \label{sec:sd750_spectrum}
 
+The \sd{750} traditionally uses the Herald reconstruction.
+For the updated and combined spectrum an update with the ICRC 2025 energy scale was performed as mentioned in the \cref{sec:calibration}.
+However, the change in energy is minor with an energy difference less than $0.5\%$ around full efficiency and below $2\%$ at the highest energies.
+This change in the energy scale leads to an intrinsic change in the spectrum, however minor.
+The left panel of \cref{fig:sd750_raw_spectrum} shows the \sd{750} raw spectrum estimated with the updated dataset for $\theta<40^\circ$ together with the published in EPJC 2021.
+The main difference is around $5\%$ at all energy range, due to a bug found in the code where the spectrum used included the bad periods.
+This difference is constant in energy and can be seen amplified in the right panel of \cref{fig:sd750_raw_spectrum}.
+The change in the energy explains the dependence in energy of the raw flux, that increases as the energy increases.
+However, beyond the normalization, parameters compatible with the EPJC 2021 paper are found when using the same fit conditions, as can be seen in \cref{appendix:chapter_combined}.
+The updated dataset was used for the \sd{433} calibration.
+
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{figures/chapter_combined/sd750_raw_spectrum.pdf}
     \caption{Raw cosmic-ray spectrum measured with the updated \sd{750} dataset, compared with the spectrum reported in \cite{PierreAuger:2021:InfillSpectrum}. The left panel shows the differential flux and the right panel the flux multiplied by $E^3$. Both measurements are displayed using the same energy bins. Only statistical uncertainties are shown.}
     \label{fig:sd750_raw_spectrum}
 \end{figure}
+
+To fit the spectrum, the forward folding using the matrix from \cref{fig:sd750_migration_matrix} was used.
+The higher energy range of the \sd{750} given its larger surface allows to include in the fit the next spectrum feature, the ankle.
+This feature is a sharp hardening of the spectrum observed at around $4\,\mathrm{PeV}$. %Citation needed
+To model the flux, an extension of \cref{eq:bplwst} was used,
+\begin{align}
+    J(E)=J_0
+    \left(
+    \frac{E}{10^{17}\,\mathrm{eV}}
+    \right)^{\gamma_0
+    }
+    \prod \limits_{i=0}^{1}
+    \left[
+    1+
+        \left(
+        \frac{E}{E_{ij}}
+        \right)
+        ^{\frac{1}{\omega_{ij}}}
+    \right]^{(\gamma_i-\gamma_j)\omega_{ij}},
+    \label{eq:extended_bplwst}
+\end{align}
+\noindent where $j=i+1$.
+The parameter $E_{12}$ describes the energy of the ankle, $\gamma_2$ is the spectral index after and $\omega_{12}$ is the parameter that governs the transition.
+Given the sharpness of this feature, the transition parameter $\omega_{12}$ is fixed to 0.05 during the fit.
+
+When the fit was performed, the second knee energy was fixed to the \sd{433} value during the fit, given that the full efficiency threshold of the \sd{750} did not allow to constrain all fit the parameters.
+Nevertheless, when releasing it, $\lg(E_{01}/\mathrm{eV})=17.44\pm0.16$, very similar to the one obtained from the \sd{433} fit.
+\cref{fig:sd750_unfolded_spectrum} shows the unfolded \sd{750} spectrum together with the fit.
+The resulting fit parameters are shown in \cref{tab:sd750_fit_parameters}.
+The obtained$\gamma_1$ slope after the second knee is compatible with the measurement from EPJC 2021 and the \sd{433} measurement from the previous chapter.
+The ankle energy and slope are also compatible although the $\gamma_2$ is loosely constrained due to the lack of statistics of this array in this energy region.
+The resulting deviance is $D^2=18.07$ for 17 degrees of freedom, corresponding to a $p$-value of $0.385$.
 
 \begin{figure}
     \centering
@@ -101,11 +175,64 @@ It is noteworthy that the resolution previously estimated reaches full efficienc
     \label{fig:sd750_unfolded_spectrum}
 \end{figure}
 
-The position of the second knee is fixed to the value measured with the \sd{433},
+\section{The Combined Spectrum}
+\label{sec:combined_spectrum}
+
+In order to combine the much higher exposure of the \sd{750} with the lower energy threshold of the \sd{433} the combined \gls{sd}-\gls{sd} spectrum was developed.
+The approach consist in a combined likelihood as the one in Refs. ~\cite{PierreAuger:2021:InfillSpectrum,2025:CombinedVertical}.
+Although the two detectors are treated independently, to combine the two spectra, the  data sets associated with each detector are treated as independent.
+In this way, the estimation of the exposure of each detector can be treated individually and in the full efficiency threshold is calculated geometrically as described in section \cref{sec:exposure}.
+The combined likelihood is defined as
 \begin{align}
-    \lg(E_{01}/\mathrm{eV})=17.4401,
+    \mathcal{L}(\mathbf{s})=\mathcal{L}_{\text{SD-433}}\,\mathcal{L}_{\text{SD-750}}\,\mathcal{L}_{\text{exp}}\,\mathcal{L}_{\text{cal}}
 \end{align}
-while the remaining spectral parameters are fitted to the \sd{750} data. The resulting deviance is $D^2=18.07$ for 17 degrees of freedom, corresponding to a $p$-value of $0.385$. The fitted parameters are listed in \cref{tab:sd750_fit_parameters}.
+\noindent where $\mathcal{L}_{\text{SD-433}}$ and $\mathcal{L}_{\text{SD-750}}$ are the individual likelihoods of the two arrays respectively as defined in \cref{sec:unfolded_spectrum}.
+The term $\mathcal{L}_{\text{exp}}$ is a change in the exposure of the \sd{433} that allows for the normalization to change. It is modelled as a Gaussian likelihood,
+% \begin{align}
+%     \mathcal{L}(\delta\mathcal{E}_{\text{SD-433}})=\frac{1}{\sigma_{\mathcal{E}_{\text{SD-433}}}\sqrt{2\pi}}\exp\left(
+%     -\frac{\mathcal{E}_{\text{SD-433}}-\delta\mathcal{E}}{\sigma_{\mathcal{E}_{\text{SD-433}}}}
+%     \right)^2
+% \end{align}
+
+\begin{align}
+\mathcal L_{\mathrm{exp}}(\delta\mathcal E)
+&=
+\frac{1}{\sqrt{2\pi}\,\sigma_{\mathcal E}}
+\exp\left[
+-\frac{1}{2}
+\left(\frac{\delta\mathcal E}{\sigma_{\mathcal E}}\right)^2
+\right],
+\end{align}
+\noindent where $\delta\mathcal{E}$ is the change in the \sd{433} exposure $\mathcal{E}_{\text{SD-433}}-\mathcal{\hat{E}}$, and $\sigma_{\mathcal E}=0.03\,\mathcal E_{\mathrm{SD\text{-}433}}$ is the $3\%$ relative uncertainty in the exposure ~\cite{PierreAuger:2010:TriggerAperture}, penalizing deviations higher than the exposure.
+An extra change is allowed in the calibration parameters from the \sd{433}, $A$ and $B$, since they are measured with the \sd{750}.
+In this case, the likelihood is modelled as a two dimensional Gaussian, with $\sigma_A$ and $\sigma_B$ the systematic uncertainties determined in \cref{sec:calibration} and the correlation $\rho_{AB}$ is obtained from the calibration fit,
+\begin{align}
+\mathcal L_{AB}(\delta A,\delta B)
+&=
+\frac{1}{2\pi\sigma_A\sigma_B\sqrt{1-\rho_{AB}^{2}}}
+\exp\left[
+-\frac{1}{2(1-\rho_{AB}^{2})}
+\left(
+\frac{\delta A^{2}}{\sigma_A^{2}}
++\frac{\delta B^{2}}{\sigma_B^{2}}
+-\frac{2\rho_{AB}\delta A\,\delta B}{\sigma_A\sigma_B}
+\right)
+\right],
+\end{align}
+so that the changes in $\delta_A=A-\hat{A}$ and $\delta_B=B-\hat{B}$ are penalized for deviations higher than their systmatic uncertainty.
+
+However, the combined fit must be carried out in two steps because of the degeneracy of $\delta\mathcal{E}$ and $\delta_A$ given that by definition, both end up being a proportional factor in the spectrum, as developed in \cref{sec:systematics}.
+Because of this a two step fit is performed.
+In a first step, only the exposure is allowed to change, so the fitted parameters are $\delta\mathcal{E}$ and the free parameters from the spectrum model \cref{eq:extended_bplwst} with exception of $\omega_{12}$.
+The combined spectrum is shown with purple triangles in \cref{fig:sd433_sd750_combined_spectrum} together with the \sd{433} spectrum in red circles and the \sd{750} spectrum in green squares.
+At lower energies, the information from the \sd{433} allows for a proper characterization of the spectral index, $\gamma_1$, which is compatible with the \sd{433} measurement, while at higher energies, the spectrum is dominated by the higher \sd{750} exposure, allowing to characterize the ankle. 
+The measured $\gamma_1$ is compatible with the \sd{433} and \sd{750} measurement, alike the ankle energy and spectral index.
+However, same as with the \sd{433} spectrum, the slope $\gamma_2$ is loosely constrained.
+From the fit, the second knee is located at $\lg(E_{01}/\mathrm{eV})=17.27\pm0.05$.
+This value is within $1.5\sigma$ from the $\lg(E_{01}/\mathrm{eV})=17.44\pm0.10$, however this values are consistent within systematic uncertainties.
+The resulting parameters are summarized in \cref{table:combined_parameters_single}.
+
+
 
 \begin{table}
     \centering
@@ -113,16 +240,16 @@ while the remaining spectral parameters are fitted to the \sd{750} data. The res
     \label{tab:sd750_fit_parameters}
     \begin{tabular}{lcc}
         \toprule
-        Parameter & Value & Status \\
+        Parameter & Value\\
         \midrule
-        $J_0\,/\,(10^{-13}\,\mathrm{km}^{-2}\,\mathrm{sr}^{-1}\,\mathrm{yr}^{-1}\,\mathrm{eV}^{-1})$ & $0.9861\pm0.0083$ & fitted \\
-        $\lg(E_{01}/\mathrm{eV})$ & $17.4401$ & fixed to \sd{433} \\
-        $\omega_{01}$ & $0.264\pm0.159$ & fitted \\
-        $\gamma_0$ & $3.158\pm0.030$ & fitted \\
-        $\gamma_1$ & $3.351\pm0.024$ & fitted \\
-        $\lg(E_{12}/\mathrm{eV})$ & $18.641\pm0.085$ & fitted \\
-        $\omega_{12}$ & $0.05$ & fixed \\
-        $\gamma_2$ & $2.709\pm0.178$ & fitted \\
+        $J_0\,/\,(10^{-13}\,\mathrm{km}^{-2}\,\mathrm{sr}^{-1}\,\mathrm{yr}^{-1}\,\mathrm{eV}^{-1})$ & $0.9861\pm0.0083$\\
+        $\lg(E_{01}/\mathrm{eV})$ & $17.4401$ (fixed)\\
+        $\omega_{01}$ & $0.264\pm0.159$\\
+        $\gamma_0$ & $3.158\pm0.030$\\
+        $\gamma_1$ & $3.351\pm0.024$\\
+        $\lg(E_{12}/\mathrm{eV})$ & $18.641\pm0.085$\\
+        $\omega_{12}$ & $0.05$\\
+        $\gamma_2$ & $2.709\pm0.178$\\
         \bottomrule
     \end{tabular}
 \end{table}
