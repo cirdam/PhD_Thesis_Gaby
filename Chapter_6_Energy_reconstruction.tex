@@ -15,8 +15,8 @@ Finally, in \cref{sec:calibration}, the corrected shower size is calibrated agai
 
 The shower reconstruction proceeds in two stages.
 First, the relative start times of the signals measured by the participating stations are used to determine the arrival direction of the shower and the impact position of its core on the ground.
-The recorded signals are then fitted as a function of the perpendicular distance to the shower axis using an empirical \gls{ldf}.
-The value of this function at the reference distance of \SI{300}{\m}, denoted by $S(300)$, provides the ground-level shower-size estimator used for the \sd{433}.
+The recorded signals are then fitted as a function of the perpendicular distance to the shower axis using an empirical \gls{ldf} to model the decrease in the signal with the distance to the core.
+Analogously to the other \gls{sd} arrays, the value of this function at the reference distance of \SI{300}{\m}, denoted by $S(300)$, provides the ground-level shower-size estimator used for the \sd{433}.
 Because the core position affects the station distances entering the \gls{ldf}, the geometry and shower size are finally determined in a combined fit initialized with the results of the separate reconstructions.
 A detailed description of the event-reconstruction procedure used for the surface detector can be found in Ref.~\cite{PierreAuger:2020:SDReconstruction}.
 Here, the main elements relevant to the reconstruction of the \sd{433} events are summarized, with particular emphasis on the steps implemented for the present analysis.
@@ -73,7 +73,7 @@ As a consequence, the \gls{ldf} exhibits variations on an event-by-event basis, 
 Instead, the reconstruction is based on an \textit{average} LDF, $\langle S(r)\rangle$, and the expected signal at a fixed reference distance, $r_\text{opt}$, is adopted as the shower size.
 The optimal distance of \qty{300}{m} for the \sd{433} is determined by fitting the average LDF and identifying the distance at which the reconstructed shower size is minimally dependent on the LDF slope, following the method described in Ref.~\cite{Newton:2007:OptimalDistance}.
 The dependence of the optimal distance on the assumed LDF shape, the primary energy, and the zenith angle remains at approximately the 5\% level~\cite{PierreAuger:2020:SDReconstruction}.
-The average LDF is described using an empirically-chosen model based on a modified \gls{nkg}function,
+The average LDF is described using an empirically-chosen model based on a modified \gls{nkg} function,
 \begin{align}
   \langle S(r)\rangle =
     S(r_\text{opt})
@@ -125,7 +125,7 @@ The left panel of \cref{fig:sd433_size_zenith_distributions} shows the distribut
 At low values of $S(300)$, the number of events is strongly suppressed by the trigger efficiency.
 It increases as the array approaches full efficiency and then the distribution decreases approximately as a power law, reflecting the steeply falling cosmic-ray flux.
 The right panel shows the zenith angle distribution for the reconstructed events from 0 to $60^\circ$, the maximum angle of the vertical reconstruction implemented in \Offline.
-The distributions contain \SDFourThreeTreeTotalNumberOfEvents reconstructed events.
+The distributions contain \SDFourThreeTreeTotalNumberOfEvents\: reconstructed events.
 However, as discussed in \cref{sec:efficiency}, events with $\theta<45^\circ$ are used in the spectrum in order to lower the full efficiency threshold for the array.
 
 In \cref{fig:sd433_multiplicity} the event multiplicity is shown in two $S(300)$ intervals, below and above $\qty{15}{VEM}$.
@@ -169,9 +169,10 @@ which is normalized such that $f_{\text{CIC}}(30^\circ,S_{30})=1$.
 \subsection{The Constant-intensity cut method}
 \label{subsec:cic_method}
 To determine the attenuation function, the \gls{cic} method is used.
-The large-scale dipolar anisotropy reported by the Pierre Auger Observatory becomes significant above $8\,\text{EeV}$~\cite{PierreAuger:2017:LargeScaleAnisotropy}, while below this energy the flux is considered isotropic.
-The events are binned in equal-width intervals of $\sin^2\theta$, which have equal exposure.
-For the \sd{433}, the range $0^\circ\leq\theta<45^\circ$ is divided into nine such intervals.
+This method is based on the isotropy of arribal directions of the cosmic rays.
+The large-scale dipolar anisotropy reported by the Pierre Auger Observatory becomes significant above $8\,\text{EeV}$~\cite{PierreAuger:2017:LargeScaleAnisotropy}, while below this energy the flux can be considered isotropic.
+The events measured with the \sd{433} are binned in equal-width intervals of $\sin^2\theta$, which have equal exposure.
+For this array, the zenith angle range $0^\circ\leq\theta<45^\circ$ is divided into nine such intervals.
 Within each interval, events are ranked by decreasing $S(300)$.
 Events at the same rank $N$ correspond approximately to the same primary energy, and the variation of their $S(300)$ with zenith angle determines the attenuation curve at that intensity.
 Six intensity cuts, $N\in\{100,\,200,\,500,\,1000,\,2000,\,5000\}$, are used to determine the attenuation at different shower sizes.
