@@ -175,6 +175,26 @@ The resulting deviance is $D^2=18.07$ for 17 degrees of freedom, corresponding t
     \label{fig:sd750_unfolded_spectrum}
 \end{figure}
 
+\begin{table}
+    \centering
+    \caption{Parameters of the standalone \sd{750} spectrum fit for $\lg(E/\mathrm{eV})\geq17.2$. The second-knee position is fixed to the \sd{433} result and the ankle width is fixed to $\omega_{12}=0.05$. The quoted uncertainties are statistical.}
+    \label{tab:sd750_fit_parameters}
+    \begin{tabular}{lcc}
+        \toprule
+        Parameter & Value & Status\\
+        \midrule
+        $J_0\,/\,(10^{-13}\,\mathrm{km}^{-2}\,\mathrm{sr}^{-1}\,\mathrm{yr}^{-1}\,\mathrm{eV}^{-1})$ & $0.9861\pm0.0083$ & fitted\\
+        $\lg(E_{01}/\mathrm{eV})$ & $17.4401$ & fixed to \sd{433}\\
+        $\omega_{01}$ & $0.264\pm0.159$ & fitted\\
+        $\gamma_0$ & $3.158\pm0.030$ & fitted\\
+        $\gamma_1$ & $3.351\pm0.024$ & fitted\\
+        $\lg(E_{12}/\mathrm{eV})$ & $18.641\pm0.085$ & fitted\\
+        $\omega_{12}$ & $0.05$ & fixed\\
+        $\gamma_2$ & $2.709\pm0.178$ & fitted\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
 \section{The Combined Spectrum}
 \label{sec:combined_spectrum}
 
@@ -228,28 +248,32 @@ The combined spectrum is shown with purple triangles in \cref{fig:sd433_sd750_co
 At lower energies, the information from the \sd{433} allows for a proper characterization of the spectral index, $\gamma_1$, which is compatible with the \sd{433} measurement, while at higher energies, the spectrum is dominated by the higher \sd{750} exposure, allowing to characterize the ankle. 
 The measured $\gamma_1$ is compatible with the \sd{433} and \sd{750} measurement, alike the ankle energy and spectral index.
 However, same as with the \sd{433} spectrum, the slope $\gamma_2$ is loosely constrained.
-From the fit, the second knee is located at $\lg(E_{01}/\mathrm{eV})=17.27\pm0.05$.
-This value is within $1.5\sigma$ from the $\lg(E_{01}/\mathrm{eV})=17.44\pm0.10$, however this values are consistent within systematic uncertainties.
-The resulting parameters are summarized in \cref{table:combined_parameters_single}.
+The exposure-only fit gives $\lg(E_{01}/\mathrm{eV})=17.230\pm0.058$.
+The results of this fit and of the subsequent fit with varying calibration parameters are summarized in \cref{table:combined_parameters_single}.
 
 
 
 \begin{table}
     \centering
-    \caption{Parameters of the \sd{750} spectrum fit for $\lg(E/\mathrm{eV})\geq17.2$. The second-knee position $E_{01}$ is fixed to the \sd{433} result and the ankle width $\omega_{12}$ is fixed to $0.05$. The quoted uncertainties are statistical.}
-    \label{tab:sd750_fit_parameters}
+    \caption{Combined \sd{433}--\sd{750} fit results. In the exposure-only fit, the \sd{433} exposure varies while its calibration parameters remain fixed. In the calibration-variation fit, the exposure is fixed to the exposure-only best-fit value and the calibration parameters vary. The ankle width is fixed to $\omega_{12}=0.05$ in both fits. Uncertainties are quoted only for the exposure-only fit because the calibration-variation fit did not yield an accurate covariance matrix.}
+    \label{table:combined_parameters_single}
     \begin{tabular}{lcc}
         \toprule
-        Parameter & Value\\
+        Parameter & Exposure only & Calibration variation\\
         \midrule
-        $J_0\,/\,(10^{-13}\,\mathrm{km}^{-2}\,\mathrm{sr}^{-1}\,\mathrm{yr}^{-1}\,\mathrm{eV}^{-1})$ & $0.9861\pm0.0083$\\
-        $\lg(E_{01}/\mathrm{eV})$ & $17.4401$ (fixed)\\
-        $\omega_{01}$ & $0.264\pm0.159$\\
-        $\gamma_0$ & $3.158\pm0.030$\\
-        $\gamma_1$ & $3.351\pm0.024$\\
-        $\lg(E_{12}/\mathrm{eV})$ & $18.641\pm0.085$\\
-        $\omega_{12}$ & $0.05$\\
-        $\gamma_2$ & $2.709\pm0.178$\\
+        $J_0\,/\,(10^{-13}\,\mathrm{km}^{-2}\,\mathrm{sr}^{-1}\,\mathrm{yr}^{-1}\,\mathrm{eV}^{-1})$ & $0.952\pm0.039$ & $0.9915$\\
+        $\lg(E_{01}/\mathrm{eV})$ & $17.230\pm0.058$ & $17.1719$\\
+        $\omega_{01}$ & $0.314\pm0.114$ & $0.3903$\\
+        $\gamma_0$ & $2.938\pm0.066$ & $2.8682$\\
+        $\gamma_1$ & $3.343\pm0.018$ & $3.3501$\\
+        $\lg(E_{12}/\mathrm{eV})$ & $18.605\pm0.110$ & $18.5954$\\
+        $\omega_{12}$ & $0.05$ (fixed) & $0.05$ (fixed)\\
+        $\gamma_2$ & $2.882\pm0.184$ & $2.8821$\\
+        $\mathcal E_{\mathrm{SD\text{-}433}}\,/\,(\mathrm{km^2\,sr\,yr})$ & $2.8443\pm0.0301$ & $2.8443$ (fixed)\\
+        $A$ & $149.49$ (fixed) & $149.5389$\\
+        $B$ & $0.963$ (fixed) & $0.95996$\\
+        $D^2/\mathrm{dof}$ & $36.31/30$ & $29.98/29$\\
+        $p$-value & $0.198$ & $0.415$\\
         \bottomrule
     \end{tabular}
 \end{table}
