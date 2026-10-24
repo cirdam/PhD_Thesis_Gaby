@@ -170,7 +170,7 @@ The resulting deviance is $D^2=18.07$ for 17 degrees of freedom, corresponding t
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.82\linewidth]{figures/chapter_combined/sd750_unfolded_spectrum.pdf}
+    \includegraphics[width=0.90\linewidth]{figures/chapter_combined/sd750_unfolded_spectrum.pdf}
     \caption{Unfolded cosmic-ray spectrum measured with the updated \sd{750} dataset and its best-fit spectral model, obtained for $\lg(E/\mathrm{eV})\geq17.2$ with the second-knee position fixed to the \sd{433} result. The open squares show the unfolded spectrum reported in \cite{PierreAuger:2021:InfillSpectrum} for comparison. The lower panel shows the residuals of the updated \sd{750} points with respect to the fitted model; the published points are not included in the residuals. Only statistical uncertainties are shown.}
     \label{fig:sd750_unfolded_spectrum}
 \end{figure}
@@ -247,26 +247,10 @@ In this case, the likelihood is modelled as a two dimensional Gaussian, with $\s
 \end{align}
 so that the changes in $\delta_A=A-\hat{A}$ and $\delta_B=B-\hat{B}$ are penalized for deviations higher than their systematic uncertainty.
 
-However, the combined fit must be carried out in two steps because of the degeneracy of $\delta\mathcal{E}$ and $\delta_A$ given that by definition, both end up being a proportional factor in the spectrum, as developed in \cref{sec:systematics}.
-Because of this a two step fit is performed.
-In a first step, only the exposure is allowed to change, so the fitted parameters are $\delta\mathcal{E}$ and the free parameters from the spectrum model \cref{eq:extended_bplwst} with exception of $\omega_{12}$.
-The combined spectrum is shown with purple triangles in \cref{fig:sd433_sd750_combined_spectrum} together with the \sd{433} spectrum in red circles and the \sd{750} spectrum in green squares.
-At lower energies, the information from the \sd{433} allows for a proper characterization of the spectral index, $\gamma_1$, which is compatible with the \sd{433} measurement, while at higher energies, the spectrum is dominated by the higher \sd{750} exposure, allowing to characterize the ankle. 
-The measured $\gamma_1$ is compatible with the \sd{433} and \sd{750} measurement, alike the ankle energy and spectral index.
-However, same as with the \sd{750} spectrum, the slope $\gamma_2$ is loosely constrained.
-The exposure-only fit gives $\lg(E_{01}/\mathrm{eV})=17.230\pm0.058$.
-The results of this fit and the subsequent fit with varying calibration parameters are summarized in \cref{table:combined_parameters_single}.
-After this, with the exposure value that minimizes the combined likelihood, the spectrum is re fitted with $\delta A$ and $\delta B$ as free parameters.
-All the spectral parameters that define $J(E)$ are compatible with the ones measured just by changing the exposure.
-Both changes are compatible with zero.
-The fit converges with $\delta A/A<1\%$ and a change in the slope $\delta B=0.003$.
-This result implies that when doing a \gls{sd}-\gls{sd} calibration, the energy scale matches seamlessly, as expected, and the main source source of change is the \sd{433} exposure.
-
-
 
 \begin{table}
     \centering
-    \caption{Combined \sd{433}--\sd{750} fit results. The shifts $\delta\mathcal E_{433}$, $\delta A$, and $\delta B$ are relative to $\mathcal E_{433}=2.888\,\mathrm{km^2\,sr\,yr}$, $A=149.49$, and $B=0.963$. In the exposure-only fit, only the exposure shift varies; in the calibration-variation fit, the exposure shift is fixed to the preceding best-fit value and the calibration shifts vary. The ankle width is fixed to $\omega_{12}=0.05$ in both fits. The quoted errors are those returned by the fits.}
+    \caption{Combined \sd{433}-\sd{750} fit results. The shifts $\delta\mathcal E_{433}$, $\delta A$, and $\delta B$ are relative to $\mathcal E_{433}=2.888\,\mathrm{km^2\,sr\,yr}$, $A=149.49$, and $B=0.963$. In the exposure-only fit, only the exposure shift varies; in the calibration-variation fit, the exposure shift is fixed to the preceding best-fit value and the calibration shifts vary. The ankle width is fixed to $\omega_{12}=0.05$ in both fits. The quoted errors are those returned by the fits.}
     \label{table:combined_parameters_single}
     \begin{tabular}{lcc}
         \toprule
@@ -290,14 +274,30 @@ This result implies that when doing a \gls{sd}-\gls{sd} calibration, the energy 
         \bottomrule
     \end{tabular}
 \end{table}
+However, the combined fit must be carried out in two steps because of the degeneracy of $\delta\mathcal{E}$ and $\delta_A$ given that by definition, both end up being a proportional factor in the spectrum, as developed in \cref{sec:systematics}.
+Because of this a two step fit is performed.
+In a first step, only the exposure is allowed to change, so the fitted parameters are $\delta\mathcal{E}$ and the free parameters from the spectrum model \cref{eq:extended_bplwst} with exception of $\omega_{12}$.
+The combined spectrum is shown with purple triangles in \cref{fig:sd433_sd750_combined_spectrum} together with the \sd{433} spectrum in red circles and the \sd{750} spectrum in green squares.
+At lower energies, the information from the \sd{433} allows for a proper characterization of the spectral index, $\gamma_1$, which is compatible with the \sd{433} measurement, while at higher energies, the spectrum is dominated by the higher \sd{750} exposure, allowing to characterize the ankle. 
+The measured $\gamma_1$ is compatible with the \sd{433} and \sd{750} measurement, alike the ankle energy and spectral index.
+However, same as with the \sd{750} spectrum, the slope $\gamma_2$ is loosely constrained.
+The exposure-only fit gives $\lg(E_{01}/\mathrm{eV})=17.230\pm0.058$.
+The results of this fit and the subsequent fit with varying calibration parameters are summarized in \cref{table:combined_parameters_single}.
+After this, with the exposure value that minimizes the combined likelihood, the spectrum is re fitted with $\delta A$ and $\delta B$ as free parameters.
+All the spectral parameters that define $J(E)$ are compatible with the ones measured just by changing the exposure.
+Both changes are compatible with zero.
+The fit converges with $\delta A/A<1\%$ and a change in the slope $\delta B=0.003$.
+At the lowest range, the extra information from the \sd{433} allows for the slope $\gamma_0$ to be properly measure.
+The higher exposure of the \sd{750} then allows to properly constrain the second knee energy and the $\omega_01$ transition parameter.
+This wider transition from one slope to the other can also contribute to the lower \sd{433} value compared to the combined spectrum.
+Although there is some tension between the two energy measurements, they are within the $1.5\sigma$ statistical uncertainty and the measurements agree within the $14\%$ systematic uncertainty from the \gls{fd} energy scale.
+However, this result implies that when doing a \gls{sd}-\gls{sd} calibration, the energy scale matches seamlessly, as expected, and the main source source of change is the \sd{433} exposure.
 
-% \section{Combined SD-433 and SD-750 spectrum}
-% \label{sec:combined_spectrum}
-
+ 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.82\linewidth]{figures/chapter_combined/sd433_sd750_combined_spectrum_systematic.pdf}
+    \includegraphics[width=0.8\linewidth]{figures/chapter_combined/sd433_sd750_combined_spectrum_systematic.pdf}
     \caption{Combined \sd{433}--\sd{750} spectrum and common best-fit model. The shaded region shows the effect of the $\pm14\%$ energy-scale uncertainty propagated through the fitted spectrum using \cref{eq:energy_systematic_bplwst}. The error bars represent statistical uncertainties.}
     \label{fig:sd433_sd750_combined_systematic}
 \end{figure}
@@ -309,6 +309,10 @@ This result implies that when doing a \gls{sd}-\gls{sd} calibration, the energy 
     \caption{Dependence of the combined-fit Poisson deviance, deviance per degree of freedom, and $p$-value on the maximum \sd{750} energy included in the fit. The \sd{750} lower boundary is fixed at $\lg(E/\mathrm{eV})=17.2$ and the \sd{433} fit range is kept unchanged.}
     \label{fig:combined_fit_max_scan}
 \end{figure}
+% \section{Combined SD-433 and SD-750 spectrum}
+% \label{sec:combined_spectrum}
+
+
 
 \begin{figure}
     \centering
@@ -317,11 +321,11 @@ This result implies that when doing a \gls{sd}-\gls{sd} calibration, the energy 
     \label{fig:combined_fit_min_scan}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/chapter_combined/combined_omega_profile.pdf}
-    \caption{Profile of the combined-fit Poisson deviance as a function of the second-knee transition width $\omega_{01}$. At each fixed value of $\omega_{01}$, the remaining spectral parameters are profiled, while the \sd{433} exposure is fixed to the value preferred by the nominal combined fit and the calibration parameters are left unchanged. The horizontal lines indicate $\Delta D^2=1$ and $4$, and the vertical dashed line marks the best-fit value $\omega_{01}=0.314$.}
-    \label{fig:combined_omega_profile}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.8\linewidth]{figures/chapter_combined/combined_omega_profile.pdf}
+%     \caption{Profile of the combined-fit Poisson deviance as a function of the second-knee transition width $\omega_{01}$. At each fixed value of $\omega_{01}$, the remaining spectral parameters are profiled, while the \sd{433} exposure is fixed to the value preferred by the nominal combined fit and the calibration parameters are left unchanged. The horizontal lines indicate $\Delta D^2=1$ and $4$, and the vertical dashed line marks the best-fit value $\omega_{01}=0.314$.}
+%     \label{fig:combined_omega_profile}
+% \end{figure}
 
 \end{document}
