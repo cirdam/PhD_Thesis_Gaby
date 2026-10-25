@@ -168,6 +168,16 @@ The obtained$\gamma_1$ slope after the second knee is compatible with the measur
 The ankle energy and slope are also compatible although the $\gamma_2$ is loosely constrained due to the lack of statistics of this array in this energy region.
 The resulting deviance is $D^2=18.07$ for 17 degrees of freedom, corresponding to a $p$-value of $0.385$.
 
+To estimate the flux, both detectors are treated as independent an the unfolded number of events is used, together with an effective exposure   
+\begin{align}
+    J^\text{comb}_i=\frac{
+    n_i^{433}c_i^{433}+n_i^{750}c_i^{750}
+    }{\Delta E_{i}\mathcal{E}_\text{eff}},
+\end{align}
+\noindent where $n^{\text{x}}_i$ is the number of events detected individually by each of the SD arrays, $c^{\text{x}}_i$ is the correction factor calculated with the fitted $J(E)$ and each of the migration matrices.
+The denominator consists of $\Delta E_i$, the width of the energy bin, and the effective exposur            e, $\mathcal{E}_{\text{eff}}=\mathcal{E}_{750}+\mathcal{E}_{433}+\delta\mathcal{E}$ where the energy range of the two detectors overlap and $\mathcal{E}_{\text{SD-x}}$ where only one of the detectors contributes to the spectrum.
+
+
 \begin{figure}
     \centering
     \includegraphics[width=0.90\linewidth]{figures/chapter_combined/sd750_unfolded_spectrum.pdf}
