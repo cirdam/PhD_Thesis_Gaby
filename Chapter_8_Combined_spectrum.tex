@@ -293,14 +293,34 @@ This wider transition from one slope to the other can also contribute to the low
 Although there is some tension between the two energy measurements, they are within the $1.5\sigma$ statistical uncertainty and the measurements agree within the $14\%$ systematic uncertainty from the \gls{fd} energy scale.
 However, this result implies that when doing a \gls{sd}-\gls{sd} calibration, the energy scale matches seamlessly, as expected, and the main source source of change is the \sd{433} exposure.
 
- 
+To study the stability of the combined spectrum, a scan in the maximum and minimum energy of the \sd{750} was performed.
+In figure \cref{fig:combined_fit_min_scan} the results of the $p$-value, second knee energy, $\gamma_0$ and $\gamma_1$ are shown for the different \sd{750} minimum energy.
+For the bins $\lg(E^{750}_{\text{min}}/\text{eV})=$ 17.0 and 17.0, the p value is close to 0 indicating that the goodness of fit is poor.
+This follows the way of the estimation of the full efficiency threshold from \cref{subsec:sd750_efficiency}, which explain the increased deviance when using this bins because of the turndown being dominated by the missing events detected with the \sd{750}.
+Although $\lg(E^{750}_{\text{min}}/\text{eV})=17.2$ is the first bin that shows good agreement between the two \sd{433} and \sd{750}, the it can be seen that the determination of $\gamma_0$ has issues due to the large statistical uncertainty.
+Evethough the p-value is maximum in the $\lg(E^{750}_{\text{min}}/\text{eV})=17.3$ threshold and the second knee energy is compatible, to maximize the information from the \sd{750} the minimum energy from the full efficiency study is kept.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{figures/chapter_combined/sd433_sd750_combined_spectrum_systematic.pdf}
-    \caption{Combined \sd{433}--\sd{750} spectrum and common best-fit model. The shaded region shows the effect of the $\pm14\%$ energy-scale uncertainty propagated through the fitted spectrum using \cref{eq:energy_systematic_bplwst}. The error bars represent statistical uncertainties.}
-    \label{fig:sd433_sd750_combined_systematic}
+    \includegraphics[width=\linewidth]{figures/chapter_combined/combined_fit_min_scan_deviance.pdf}
+    \caption{Dependence of the combined-fit Poisson deviance, deviance per degree of freedom, and $p$-value on the minimum \sd{750} energy included in the fit. The scan covers $17.0\leq\lg(E_{\min}/\mathrm{eV})\leq17.5$; the fit first becomes acceptable at $\lg(E_{\min}/\mathrm{eV})=17.2$. The \sd{750} upper boundary is fixed at $\lg(E/\mathrm{eV})=19.4$, the \sd{433} fit range is unchanged, and the \sd{433} exposure is fixed to the value preferred by the nominal combined fit.}
+    \label{fig:combined_fit_min_scan}
 \end{figure}
+
+For the maximum energy study, \cref{fig:combined_fit_max_scan} shows the fit $p$-value together with the parameters that determine the ankle, $\lg(E_{12}/\text{eV})$, $\gamma_1$ and $\gamma_2$.
+Although the $p$-value maximizes for $\lg(E^{750}_\text{max}/\text{eV})=19.0$, a transition can be seen both for $\lg(E_{12}/\text{eV})$ and $\gamma_2$ that stabilize at higher maximum energies due to the extra information to detrermine the slope.
+Given that, $\lg(E^{750}_\text{max}/\text{eV})=19.4$ is chosen as the maximum energy of the fit, which also gives a good trade-off between the \sd{750} number of events in the maximum energy bin and the Hesse errors associated with the fit.
+The resulting parameters are compatible with the previous measurements from Auger presented in Ref. ~\cite{PierreAuger:2021:InfillSpectrum}.
+
+With the energy range of the fit chosen with $16.8<\lg(E^{433}/\text{eV})<18.2$ and $17.2<\lg(E^{750}/\text{eV})<19.4$, the systematics in the combined spectrum were studied using the methods developed \cref{sec:systematics}.
+
+The main source of systematic uncertainty in the flux comes from the \gls{fd} energy scale and is independent of each detector and is propagated using \cref{eq:energy_systematic_bplwst} and is shown together with the combined spectrum in \cref{fig:sd433_sd750_combined_systematic}.
+The shaded area corresponds to the propagated $\Delta J(E)$.
+Energy scale systematic can also be used to estimate the uncertainty in second knee and the ankle energies, $E_{01}$ and $E_{12}$ respectively.
+For the spectral indices, $\gamma_0$, $\gamma_1$ and $\gamma_2$ the analytical expression from \cref{eq:calibration_spectral_index} is used.
+Finally, for $\omega_{01}$, the maximum deviation in the \sd{750} minimum energy study was used as the systematic uncertainty
+
+%[THE J estimation with exp effective]
 
 
 \begin{figure}
@@ -309,17 +329,61 @@ However, this result implies that when doing a \gls{sd}-\gls{sd} calibration, th
     \caption{Dependence of the combined-fit Poisson deviance, deviance per degree of freedom, and $p$-value on the maximum \sd{750} energy included in the fit. The \sd{750} lower boundary is fixed at $\lg(E/\mathrm{eV})=17.2$ and the \sd{433} fit range is kept unchanged.}
     \label{fig:combined_fit_max_scan}
 \end{figure}
-% \section{Combined SD-433 and SD-750 spectrum}
-% \label{sec:combined_spectrum}
+
 
 
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_combined/combined_fit_min_scan_deviance.pdf}
-    \caption{Dependence of the combined-fit Poisson deviance, deviance per degree of freedom, and $p$-value on the minimum \sd{750} energy included in the fit. The scan covers $17.0\leq\lg(E_{\min}/\mathrm{eV})\leq17.5$; the fit first becomes acceptable at $\lg(E_{\min}/\mathrm{eV})=17.2$. The \sd{750} upper boundary is fixed at $\lg(E/\mathrm{eV})=19.4$, the \sd{433} fit range is unchanged, and the \sd{433} exposure is fixed to the value preferred by the nominal combined fit.}
-    \label{fig:combined_fit_min_scan}
+    \includegraphics[width=0.8\linewidth]{figures/chapter_combined/sd433_sd750_combined_spectrum_systematic.pdf}
+    \caption{Combined \sd{433}--\sd{750} spectrum and common best-fit model. The shaded region shows the effect of the $\pm14\%$ energy-scale uncertainty propagated through the fitted spectrum using \cref{eq:energy_systematic_bplwst}. The error bars represent statistical uncertainties.}
+    \label{fig:sd433_sd750_combined_systematic}
 \end{figure}
+
+\begin{table}
+    \centering
+    \caption{
+        Best-fit values of the combined \sd{433}--\sd{750} spectral parameters
+        from the exposure-only fit. The first uncertainty is statistical and
+        the second systematic. Asymmetric uncertainties are symmetrized using
+        the larger deviation.
+    }
+    \label{table:combined_spectrum_parameters_systematics}
+    \begin{tabular}{lc}
+        \hline
+        Parameter & Value $\pm\sigma_{\mathrm{stat}}\pm\sigma_{\mathrm{syst}}$ \\
+        \hline
+        $J_0/\left(\mathrm{km^{-2}\,yr^{-1}\,sr^{-1}\,eV^{-1}}\right)$
+        & $(0.952\pm0.039\pm0.284)\times10^{-13}$ \\
+        $\gamma_0$ & $2.94\pm0.07\pm0.12$ \\
+        $E_{01}/\mathrm{PeV}$ & $169.82\pm35.00\pm23.78$ \\
+        $\gamma_1$ & $3.34\pm0.02\pm0.14$ \\
+        $\omega_{01}$ & $0.314\pm0.114\pm0.089$ \\
+        $E_{12}/\mathrm{EeV}$ & $4.03\pm1.16\pm0.56$ \\
+        $\gamma_2$ & $2.88\pm0.18\pm0.11$ \\
+        $\omega_{12}$ & $0.05$ -- fixed \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Summary}
+
+In this chapter, an update of the \sd{750} dataset and spectrum is presented.
+The efficiency of the \sd{750} is estimated through the events in common with the \sd{433} in a data driven way, also determining a parameterization of it.
+The full efficiency threshold from this study is measured at $\lg(E/\mathrm{eV})=17.2$.
+Migration matrix is estimated with the same method than the \sd{433} and the spectrum is unfolded.
+The fitted spectrum is consistent within statistical uncertainty with the \sd{433} although the energy of the second knee had to be fixed to the \sd{433} value due to the lack of bins below the break to properly measure it.
+However, the width of the transition can be estimated due to the higher number of events from the greater surface of the \sd{750}.
+With the spectrum updated, the \sd{433} and \sd{750} were combined using a likelihood that has into account the individual likelihoods of each detector, an uncertainty in the exposure and a change in the energy scale of the \sd{433}.
+A strong result due to the cross calibration of the \sd{433} with the \sd{750} is that the change in the calibration parameters $A$ and $B$ is compatible with zero.
+Also, given that the same method was used to estimate the exposure of both arrays, the change in exposure is less than $1\%$, making both measurement compatible.
+The combined flux was estimated using the combined number unfolded of events and an effective exposure.
+The measured energy of the second knee is in some tension with the \sd{433} alone measurement.
+However, this result is dependent in the maximum energy of the \sd{750} full efficiency threshold.
+Also the unfolded flux hints a flux difference however it cannot be stated with enough statistcal significance and has to be further studied.
+The complete set of parameters used to model the spectrum is then presented, characterizing both the second knee and the ankle and presenting a \gls{sd} spectrum measurement ranging almost three decades.
+% \section{Combined SD-433 and SD-750 spectrum}
+% \label{sec:combined_spectrum}
 
 % \begin{figure}
 %     \centering
