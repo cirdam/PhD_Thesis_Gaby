@@ -5,8 +5,8 @@
 \chapter{The combined \gls{sd} spectrum}
 \label{chapter:sd750_combined_spectrum}
 
-In this chapter we present an update of the \sd{750} spectrum, previously published in 2021 ~\cite{PierreAuger:2021:InfillSpectrum} together with the combined \sd{433}-\sd{750} spectrum.
-For the \sd{750} the efficiency measured with hybrid events and simulations from Refs. ~\cite{PierreAuger:2021:InfillSpectrum,Coleman:2020:Thesis} is revisited and parameterized in a data-driven method using the events in common with the \sd{433} in \cref{sec:sd750_response}.
+In this chapter we present an update of the \sd{750} spectrum, previously published in 2021 ~\cite{PierreAuger:2021} together with the combined \sd{433}-\sd{750} spectrum.
+For the \sd{750} the efficiency measured with hybrid events and simulations from Refs. ~\cite{PierreAuger:2021,Coleman:2020:Thesis} is revisited and parameterized in a data-driven method using the events in common with the \sd{433} in \cref{sec:sd750_response}.
 An update of the dataset is presented in \cref{sec:sd750_dataset} to determine the raw spectrum.
 The spectrum is then unfolded using the updated response function and unfolding in \cref{sec:sd750_spectrum}.
 Finally the two spectrum measured individually with \sd{433} and the \sd{750} are combined using a likelihood method together with a study of the robustness of the measurement in \cref{sec:combined_spectrum}
@@ -48,7 +48,7 @@ The efficiency results is shown for energies above the full efficiency threshold
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/chapter_combined/sd750_efficiency.pdf}
-    \caption{Reconstruction efficiency of the \sd{750} as a function of the energy reconstructed with the \sd{433}. The filled markers show the efficiency obtained with the updated dataset, while the open markers show the efficiency reported in the previous \sd{750} spectrum measurement~\cite{PierreAuger:2021:InfillSpectrum}. The horizontal dashed line indicates an efficiency of $0.97$.}
+    \caption{Reconstruction efficiency of the \sd{750} as a function of the energy reconstructed with the \sd{433}. The filled markers show the efficiency obtained with the updated dataset, while the open markers show the efficiency reported in the previous \sd{750} spectrum measurement~\cite{PierreAuger:2021}. The horizontal dashed line indicates an efficiency of $0.97$.}
     \label{fig:sd750_efficiency}
 \end{figure}
 This confidence intervals were used to ensure that for $\varepsilon=1$, the confidence interval reduces to a lower limit, compatible with the physical constrain of the efficiency.
@@ -56,7 +56,7 @@ To parameterize the efficiency, a binomial likelihood fit was used where for eac
 \begin{align}
     \mathcal{L}(\mu,\sigma)=\prod\limits_i^{N_{bins}}\binom{n_i}{k_i}\varepsilon_i^{k_i}(1-\varepsilon_i)^{n_i-k_i}.
 \end{align}
-The efficiency is modelled using the same parameterization from Ref.~\cite{PierreAuger:2021:InfillSpectrum},
+The efficiency is modelled using the same parameterization from Ref.~\cite{PierreAuger:2021},
 \begin{align}
     \varepsilon = \frac{1}{2}\left[
 1+\mathrm{erf}\left(\frac{lg(E/\mathrm{eV)-\mu}}{\sigma}\right)
@@ -64,11 +64,11 @@ The efficiency is modelled using the same parameterization from Ref.~\cite{Pierr
 \end{align}
 \noindent where $\mathrm{erf}(E)$ is the error function and $\mu$ and $\sigma$ are the shape parameters that govern the transition.
 The best fit parameters are $\mu=16.74\pm0.01$ and $\sigma=(0.250\pm0.001)$ with a correlation $\rho_{\mu,\sigma}=0.38$.
-The fit result is shown with a solid line in \cref{fig:sd750_efficiency}, together with the fit result from Ref.~\cite{PierreAuger:2021:InfillSpectrum} in a dashed line.
+The fit result is shown with a solid line in \cref{fig:sd750_efficiency}, together with the fit result from Ref.~\cite{PierreAuger:2021} in a dashed line.
 The gray vertical line shows the full efficiency threshold for the \sd{750} estimated with the \sd{433}.
 It is noteworthy that the resolution previously estimated reaches full efficiency almost two bins below this work.
 
-In order to construct the migration matrix of the \sd{750}, the resolution and bias are needed. For this, the model used in Ref. ~\cite{PierreAuger:2021:InfillSpectrum} is used.
+In order to construct the migration matrix of the \sd{750}, the resolution and bias are needed. For this, the model used in Ref. ~\cite{PierreAuger:2021} is used.
 The left panel of \cref{fig:sd433_sd750_response} shows the relative resolution of the \sd{750} from below full efficiency $\lg(E/\mathrm{eV})=19.5$, together with the \sd{433} resolution
 At lower energies, the detector contribution of the \sd{433} is better.
 However, as energy increases, the intrinsic detector contribution from \sd{750} is lower and the shower-to-shower fluctuations dominate, resulting in a better resolution with this detector.
@@ -132,7 +132,7 @@ The updated dataset was used for the \sd{433} calibration.
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{figures/chapter_combined/sd750_raw_spectrum.pdf}
-    \caption{Raw cosmic-ray spectrum measured with the updated \sd{750} dataset, compared with the spectrum reported in \cite{PierreAuger:2021:InfillSpectrum}. The left panel shows the differential flux and the right panel the flux multiplied by $E^3$. Both measurements are displayed using the same energy bins. Only statistical uncertainties are shown.}
+    \caption{Raw cosmic-ray spectrum measured with the updated \sd{750} dataset, compared with the spectrum reported in \cite{PierreAuger:2021}. The left panel shows the differential flux and the right panel the flux multiplied by $E^3$. Both measurements are displayed using the same energy bins. Only statistical uncertainties are shown.}
     \label{fig:sd750_raw_spectrum}
 \end{figure}
 
@@ -181,7 +181,7 @@ The denominator consists of $\Delta E_i$, the width of the energy bin, and the e
 \begin{figure}
     \centering
     \includegraphics[width=0.90\linewidth]{figures/chapter_combined/sd750_unfolded_spectrum.pdf}
-    \caption{Unfolded cosmic-ray spectrum measured with the updated \sd{750} dataset and its best-fit spectral model, obtained for $\lg(E/\mathrm{eV})\geq17.2$ with the second-knee position fixed to the \sd{433} result. The open squares show the unfolded spectrum reported in \cite{PierreAuger:2021:InfillSpectrum} for comparison. The lower panel shows the residuals of the updated \sd{750} points with respect to the fitted model; the published points are not included in the residuals. Only statistical uncertainties are shown.}
+    \caption{Unfolded cosmic-ray spectrum measured with the updated \sd{750} dataset and its best-fit spectral model, obtained for $\lg(E/\mathrm{eV})\geq17.2$ with the second-knee position fixed to the \sd{433} result. The open squares show the unfolded spectrum reported in \cite{PierreAuger:2021} for comparison. The lower panel shows the residuals of the updated \sd{750} points with respect to the fitted model; the published points are not included in the residuals. Only statistical uncertainties are shown.}
     \label{fig:sd750_unfolded_spectrum}
 \end{figure}
 
@@ -209,7 +209,7 @@ The denominator consists of $\Delta E_i$, the width of the energy bin, and the e
 \label{sec:combined_spectrum}
 
 In order to combine the much higher exposure of the \sd{750} with the lower energy threshold of the \sd{433} the combined \gls{sd}-\gls{sd} spectrum was developed.
-The approach consist in a combined likelihood as the one in Refs. ~\cite{PierreAuger:2021:InfillSpectrum,2025:CombinedVertical}.
+The approach consist in a combined likelihood as the one in Refs. ~\cite{PierreAuger:2021,2025:CombinedVertical}.
 Although the two detectors are treated independently, to combine the two spectra, the  data sets associated with each detector are treated as independent.
 In this way, the estimation of the exposure of each detector can be treated individually and in the full efficiency threshold is calculated geometrically as described in section \cref{sec:exposure}.
 The combined likelihood is defined as
@@ -320,7 +320,7 @@ Evethough the p-value is maximum in the $\lg(E^{750}_{\text{min}}/\text{eV})=17.
 For the maximum energy study, \cref{fig:combined_fit_max_scan} shows the fit $p$-value together with the parameters that determine the ankle, $\lg(E_{12}/\text{eV})$, $\gamma_1$ and $\gamma_2$.
 Although the $p$-value maximizes for $\lg(E^{750}_\text{max}/\text{eV})=19.0$, a transition can be seen both for $\lg(E_{12}/\text{eV})$ and $\gamma_2$ that stabilize at higher maximum energies due to the extra information to detrermine the slope.
 Given that, $\lg(E^{750}_\text{max}/\text{eV})=19.4$ is chosen as the maximum energy of the fit, which also gives a good trade-off between the \sd{750} number of events in the maximum energy bin and the Hesse errors associated with the fit.
-The resulting parameters are compatible with the previous measurements from Auger presented in Ref. ~\cite{PierreAuger:2021:InfillSpectrum}.
+The resulting parameters are compatible with the previous measurements from Auger presented in Ref. ~\cite{PierreAuger:2021}.
 
 With the energy range of the fit chosen with $16.8<\lg(E^{433}/\text{eV})<18.2$ and $17.2<\lg(E^{750}/\text{eV})<19.4$, the systematics in the combined spectrum were studied using the methods developed \cref{sec:systematics}.
 

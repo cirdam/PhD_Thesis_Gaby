@@ -69,7 +69,7 @@ Since this observable carries important astrophysical information, the construct
 This requires not only a reliable event reconstruction, but also a careful characterization of the detector response, the trigger hierarchy, and the stability of the array over time.
 
 This chapter introduces the main elements that define the dataset used in this work.
-The \sd{433} is a compact array of 19 surface-detector stations arranged on a triangular grid with a spacing of \SI{433}{\m}, nested within the \sd{750} array to extend the energy-spectrum measurement toward lower energies~\cite{BrichettoOrquera:2023:SecondKnee}.
+The \sd{433} is a compact array of 19 surface-detector stations arranged on a triangular grid with a spacing of \SI{433}{\m}, nested within the \sd{750} array to extend the energy-spectrum measurement toward lower energies~\cite{BrichettoOrquera:2023}.
 It begins with the hierarchical trigger chain, from the local station triggers to the selection of physical events, described in \cref{sec:triggers}.
 \cref{sec:efficiency} addresses the trigger efficiency and establishes the energy threshold above which the exposure can be treated as purely geometrical.
 The discussion closes with the stability and operational history of the array in \cref{sec:stability}, which provides the basis for the exposure calculation in \cref{sec:exposure} used in the spectrum measurement.
@@ -189,7 +189,7 @@ The efficiency is defined as the ratio of the number of simulated events success
 The simulation-based efficiency is transformed to the \sd{433} energy scale using the attenuation and calibration chain adopted for data~\cite{GAP:Rodriguez:2024:Efficiency}.
 
 Efficiency studies of the \sd{433} are customarily restricted to events with $\theta<45^\circ$, since the quality of the standard geometry reconstruction degrades at larger zenith angles~\cite{GAP:Rodriguez:2024:Efficiency}.
-In this work, the more conservative selection $\theta<40^\circ$ is adopted to match the zenith-angle range used for the \sd{750}~\cite{PierreAuger:2021:InfillSpectrum}.
+In this work, the more conservative selection $\theta<40^\circ$ is adopted to match the zenith-angle range used for the \sd{750}~\cite{PierreAuger:2021}.
 
 The resulting efficiency in the \sd{433} energy scale is determined with an unbinned likelihood fit, considering if each simulated shower triggers the array or not.
 The corresponding efficiency estimators and fits are shown in \cref{fig:sd433_efficiency_curve} for the \gls{gsf} mix, together with proton and iron as extreme cases.
