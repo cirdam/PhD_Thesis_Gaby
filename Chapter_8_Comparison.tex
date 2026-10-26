@@ -21,8 +21,9 @@ The second knee is measured at $E_{01}=(230\pm50\,\mathrm{(stat)}\pm35\,\mathrm{
 This value is consistent with both the \sd{433} and combined spectrum measurements.
 There is also good agreement between the $\gamma_0$ and $\gamma_1$ indices.
 
+
 Combined measurements from \cite{Novotny:2021:CherenkovSpectrum} shows the combined \gls{sd} and the Cherenkov spectrum measured with the \gls{fd} shown in black squares.
-In this measurement, Cherenkov light produce by the showers in the atmosphere is detected directly for events pointing to the telescopes.
+In this measurement, Cherenkov light produced by the showers in the atmosphere is detected directly for events pointing to the telescopes.
 This allows for the threshold energy to be greatly reduced, but at the expense of a harder to determine exposure and energy calibration when compared with straightforward SD-SD calibration.
 For this measurement, the position of the second knee is in some tension with the \sd{433} measurement.
 However, it agrees with the combined measurement.
@@ -30,12 +31,24 @@ This is expected since the \sd{750} spectrum dominates the exposure at the energ
 The reported $\gamma_0$ is lower than the measured with this work but it can be due to the used minimum energy of the \sd{750} events which according to this work has an unaccounted efficiency effect.
 
 The other measurements shown in \cref{fig:comparison} shows the results for the all-particle spectrum from other experiments.
-The markers in color are used for experiments with a calorimetric energy scale from fluorescence detectors and the gray datapoints are used for experiments calibrated via simulations.
-Most of the measurements are contained within the systematic flux band from the combined spectrum and all the spectra shows the presence of the change in the slope of the spectum at different energies.
+The markers in color are used for experiments with a calorimetric energy scale from fluorescence detectors and the gray data points are used for experiments calibrated via simulations.
+Most of the measurements are contained within the systematic flux band from the combined spectrum and all the spectra shows the presence of the change in the slope of the spectrum at different energies.
 The range for $\gamma_0$ is from around 2.8 to 3.8 while for $\gamma_1$ the measurement ranges between 3.2 and 3.37.
 The reported results for $E_{01}$, $\gamma_0$ and $\gamma_1$ are shown in \cref{tab:second_knee_comparison} for the different experiments.
 
-In \cref{fig:comparison_shift}, the results from experiments that report a measurement of the second knee are shown shifted in a factor 
+In \cref{fig:comparison_shift}, the results from experiments that report a measurement of the second knee are shifted to match all the second knees in the energy of the second knee from the combined spectrum via a transformation,
+% $E' = E\,\frac{E_{01}^{\mathrm{comb}}{E_{01}^{\mathrm{exp}}}$,
+\begin{align}
+    E'=E\frac{E_{01}^\mathrm{exp}}{E_{01}^\mathrm{comb}}
+\end{align}
+\noindent where $E^\mathrm{x}_{01}$ is the measured second knee energy, to preserve the binning in logarithmic scale.
+The behavior of all the experiments is quite consistent for higher energies, where a softening of the spectrum roll over and the slopes are quite consistent.
+This hints that the primary difference in the measured second knee energies and the all particle flux between the different spectra arises from the differences in the energy scale rather than from a difference in the shape of the spectrum.
+Experiments with the biggest deviation are the ones where the energy scale is not set calorimetrically, like KASCADE-Grande
+Measurements such as TALE and Yakutsk, for instance, are almost completely contained within the systematic uncertainty band from the combined spectrum in the overlapping region.
+It is noteworthy that all measurments show a smooth transition that last several bins, however this is the first to characterize the width of the transition, highlighting that the second knee is a soft change in the slope of the all particle spectrum.
+
+
 
 
 
@@ -45,7 +58,7 @@ In \cref{fig:comparison_shift}, the results from experiments that report a measu
     \caption[Comparison with previous measurements of the all-particle cosmic-ray spectrum.]{
 Comparison of the all-particle cosmic-ray energy spectrum obtained in this work with previous measurements. The purple diamonds show the provisional combined SD-433 and SD-750 spectrum, while the red circles show the standalone SD-433 measurement up to the upper limit of its fit range. The shaded band shows the effect of the $14\%$ systematic uncertainty in the FD energy scale of the combined spectrum.  Previous Pierre Auger measurements comprise the SD-433 result presented at ICRC 2023, the SD-750 spectrum published in EPJC in 2021, and the combined Cherenkov--SD spectrum presented at ICRC 2021~\cite{BrichettoOrquera:2023,PierreAuger:2021:InfillSpectrum,Novotny:2021:CherenkovSpectrum}.
 The error bars represent statistical $68.27\%$ confidence level.
-Measurements from TA SD~\cite{Ivanov:2019:TASD}, TALE~\cite{TALE:2018:SecondKnee}, Yakutsk~\cite{Knurenko:2015:Yakutsk}, IceTop\cite{IceCube:2019:IceTop}, KASCADE-Grande~\cite{Bertaina:2015:KascadeGrande}, Tibet-III~\cite{Amenomori:2008:Tibet}, Tunka-133~\cite{Budnev:2020:Tunka133}, GAMMA~\cite{TerAntonyan:2014:GAMMA}, and Akeno~\cite{Nagano:1992:Akeno} are also shown for comparison. All published spectra are displayed on their original energy scales. Colored markers are used for spectra with chalorimetric energy scales while gray markers are used for experiments calibrated with simulations.
+Measurements from TA SD~\cite{Ivanov:2019:TASD}, TALE~\cite{TALE:2018:SecondKnee}, Yakutsk~\cite{Knurenko:2015:Yakutsk}, IceTop\cite{IceCube:2019:IceTop}, KASCADE-Grande~\cite{Bertaina:2015:KascadeGrande}, Tibet-III~\cite{Amenomori:2008:Tibet}, Tunka-133~\cite{Budnev:2020:Tunka133}, GAMMA~\cite{TerAntonyan:2014:GAMMA}, and Akeno~\cite{Nagano:1992:Akeno} are also shown for comparison. All published spectra are displayed on their original energy scales. Colored markers are used for spectra with calorimetric energy scales while gray markers are used for experiments calibrated with simulations.
 }
     \label{fig:comparison}
 \end{figure}
