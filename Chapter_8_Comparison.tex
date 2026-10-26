@@ -17,23 +17,23 @@ A preliminary measurement with the \sd{433} from ICRC 2023 \cite{BrichettoOrquer
 The main difference between the two \sd{433} measurement is the updated \Offline reconstruction, improved bad period estimation and the updated \gls{fd} energy scale and is seen as an almost vertical shift in the spectrum due to the change in the exposure.
 This measurement is estimated with events from $0-45^\circ$ and using events where the silent station flags had to be repaired, as previously mentioned in \cref{sec:sd433_dataset_summary}.
 The change in the dataset is, however, less than $10\%$ overall, but is compensated with the appropriate exposure correction.
-The second knee is measured at $E_{01} = (230 ± 50 \text{ stat} ± 35 \text{ syst})\,\text{PeV}$. 
+The second knee is measured at $E_{01}=(230\pm50\,\mathrm{(stat)}\pm35\,\mathrm{(syst)})\,\mathrm{PeV}$.
 This value is consistent with both the \sd{433} and combined spectrum measurements.
 There is also good agreement between the $\gamma_0$ and $\gamma_1$ indices.
 
-Combined measurements from \cite{PierreAuger:2021:Combined} shows the combined \gls{sd} and the Cherenkov spectrum measured with the \gls{fd} shown in black squares.
+Combined measurements from \cite{Novotny:2021:CherenkovSpectrum} shows the combined \gls{sd} and the Cherenkov spectrum measured with the \gls{fd} shown in black squares.
 In this measurement, Cherenkov light produce by the showers in the atmosphere is detected directly for events pointing to the telescopes.
 This allows for the threshold energy to be greatly reduced, but at the expense of a harder to determine exposure and energy calibration when compared with straightforward SD-SD calibration.
-For this measurement, the position of the second knee is in some tension with the \sd{433} measurement. 
+For this measurement, the position of the second knee is in some tension with the \sd{433} measurement.
 However, it agrees with the combined measurement.
 This is expected since the \sd{750} spectrum dominates the exposure at the energies around the second knee.
-The reported $\gamma_0$ is lower than the measured with this work but it can be due to the used minimum energy of the \sd{750} events which acording to this work has an unacounted efficiency effect.
+The reported $\gamma_0$ is lower than the measured with this work but it can be due to the used minimum energy of the \sd{750} events which according to this work has an unaccounted efficiency effect.
 
 The other measurements shown in \cref{fig:comparison} shows the results for the all-particle spectrum from other experiments.
 The markers in color are used for experiments with a calorimetric energy scale from fluorescence detectors and the gray datapoints are used for experiments calibrated via simulations.
 Most of the measurements are contained within the systematic flux band from the combined spectrum and all the spectra shows the presence of the change in the slope of the spectum at different energies.
 The range for $\gamma_0$ is from around 2.8 to 3.8 while for $\gamma_1$ the measurement ranges between 3.2 and 3.37.
-The reported results for $E_{01}$, $\gamma_0$ and $\gamma1$ are shown in \cref{table:second_knee} for the different experiments.
+The reported results for $E_{01}$, $\gamma_0$ and $\gamma_1$ are shown in \cref{tab:second_knee_comparison} for the different experiments.
 
 
 
@@ -43,9 +43,89 @@ The reported results for $E_{01}$, $\gamma_0$ and $\gamma1$ are shown in \cref{t
     \caption[Comparison with previous measurements of the all-particle cosmic-ray spectrum.]{
 Comparison of the all-particle cosmic-ray energy spectrum obtained in this work with previous measurements. The purple diamonds show the provisional combined SD-433 and SD-750 spectrum, while the red circles show the standalone SD-433 measurement up to the upper limit of its fit range. The shaded band shows the effect of the $14\%$ systematic uncertainty in the FD energy scale of the combined spectrum.  Previous Pierre Auger measurements comprise the SD-433 result presented at ICRC 2023, the SD-750 spectrum published in EPJC in 2021, and the combined Cherenkov--SD spectrum presented at ICRC 2021~\cite{BrichettoOrquera:2023,PierreAuger:2021:InfillSpectrum,Novotny:2021:CherenkovSpectrum}.
 The error bars represent statistical $68.27\%$ confidence level.
-Measurements from TA SD~\cite{Ivanov:2019:TASD}, TALE~\cite{TALE:2018:SecondKnee}, Yakutsk~\cite{Knurenko:2015:Yakutsk}, IceTop\cite{IceCube:2019:IceTop}, KASCADE-Grande~\cite{Bertaina:2015:KascadeGrande}, Tibet-III~\cite{Amenomori:2008:Tibet}, Tunka-133~\cite{Budnev:2020:Tunka133}, GAMMA~\cite{TerAntonyan:2014:GAMMA}, and Akeno~\cite{Nagano:1992:Akeno} are also shown for comparison. All published spectra are displayed on their original energy scales. Colored markers are used for spectra with chalorimetric energy scales while gray markers are used for experiments calibrated with simulations.  
+Measurements from TA SD~\cite{Ivanov:2019:TASD}, TALE~\cite{TALE:2018:SecondKnee}, Yakutsk~\cite{Knurenko:2015:Yakutsk}, IceTop\cite{IceCube:2019:IceTop}, KASCADE-Grande~\cite{Bertaina:2015:KascadeGrande}, Tibet-III~\cite{Amenomori:2008:Tibet}, Tunka-133~\cite{Budnev:2020:Tunka133}, GAMMA~\cite{TerAntonyan:2014:GAMMA}, and Akeno~\cite{Nagano:1992:Akeno} are also shown for comparison. All published spectra are displayed on their original energy scales. Colored markers are used for spectra with chalorimetric energy scales while gray markers are used for experiments calibrated with simulations.
 }
     \label{fig:comparison}
 \end{figure}
+
+
+The second-knee parameters reported by the experiments that locate the feature are summarized in \cref{tab:second_knee_comparison}.
+For entries with two uncertainties, the first is statistical and the second systematic.
+A single uncertainty denotes the fit uncertainty when the publication does not provide a separate systematic contribution.
+A hyphen indicates that the parameter was not reported, while parameters held constant in the fit are marked as fixed.
+The TA result presented at ICRC 2019 is not listed separately because its second-knee value is taken from the same TALE measurement shown in the table.
+
+\begin{sidewaystable}
+    \centering
+    \caption{Comparison of the second-knee energy and spectral parameters measured in this work and reported by previous experiments. Only results that report a second-knee energy are included. The spectral indices are written using the positive-index convention $J(E)\propto E^{-\gamma}$.}
+    \label{tab:second_knee_comparison}
+    \small
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        Experiment
+        & $E_{01}/\mathrm{PeV}$
+        & $\gamma_0$
+        & $\gamma_1$
+        & $\omega_{01}$ \\
+        \midrule
+        This work, combined spectrum (2026)
+        & $169.8\pm35.0\pm23.8$
+        & $2.94\pm0.07\pm0.12$
+        & $3.34\pm0.02\pm0.14$
+        & $0.314\pm0.114\pm0.089$ \\
+        This work, \sd{433} (2026)
+        & $280\pm50\pm70$
+        & $3.04\pm0.02\pm0.09$
+        & $3.34\pm0.08\pm0.11$
+        & (fixed) \\
+        \midrule
+        Auger \sd{433} (2023)~\cite{BrichettoOrquera:2023}
+        & $230\pm50\pm35$
+        & $3.00\pm0.05\pm0.10$
+        & $3.32\pm0.08\pm0.10$
+        & (fixed) \\
+        Auger \sd{750} (2021)~\cite{PierreAuger:2021:InfillSpectrum}
+        & (fixed)
+        & (fixed)
+        & $3.34\pm0.02\pm0.09$
+        & $0.49\pm0.07\pm0.34$ \\
+        Auger Cherenkov--SD (2021)~\cite{Novotny:2021:CherenkovSpectrum}
+        & $158\pm5\pm20$
+        & $2.85\pm0.01\pm0.05$
+        & $3.283\pm0.002\pm0.10$
+        & (fixed) \\
+        TALE (2018)~\cite{TALE:2018:SecondKnee}
+        & $110^{+9}_{-8}\,{}^{+25}_{-21}$
+        & $2.92\pm0.008\pm0.012$
+        & $3.19\pm0.017\pm0.026$
+        & - \\
+        Yakutsk (2015)~\cite{Knurenko:2015:Yakutsk}
+        & $\sim200$
+        & $2.92\pm0.03$
+        & $3.24\pm0.04$
+        & - \\
+        KASCADE-Grande, EPOS-LHC (2015)~\cite{Bertaina:2015:KascadeGrande}
+        & $74^{+24}_{-18}$
+        & $2.98\pm0.03$
+        & $3.17\pm0.05$
+        & - \\
+        KASCADE-Grande, QGSJet (2015)~\cite{Bertaina:2015:KascadeGrande}
+        & $76^{+34}_{-23}$
+        & $2.97\pm0.05$
+        & $3.15\pm0.05$
+        & - \\
+        Tunka-133 (2020)~\cite{Budnev:2020:Tunka133}
+        & $\sim300$
+        & $2.99\pm0.01$
+        & $3.29\pm0.09$
+        & - \\
+        Akeno (1992)~\cite{Nagano:1992:Akeno}
+        & $631$
+        & $3.02\pm0.03$
+        & $3.24\pm0.18$
+        & - \\
+        \bottomrule
+    \end{tabular}
+\end{sidewaystable}
 
 \end{document}
