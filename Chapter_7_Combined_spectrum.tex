@@ -43,7 +43,7 @@ Using periods during which both arrays were active in Phase I, the binned \sd{75
 \end{align}
 \noindent where $n_i$ is the number of events detected by the \sd{433} in energy bin $i$, and $k_i$ is the subset of those events also detected by the \sd{750}.
 Events are matched using their unique identifiers and cross-checked using their GPS times, following the procedure adopted for the calibration.
-The filled circles in \cref{fig:sd750_efficiency} show the resulting efficiencies, with error bars representing the $68\%$ Clopper--Pearson confidence intervals~\cite{Clopper:1934:BinomialInverval}.
+The filled circles in \cref{fig:sd750_efficiency} show the resulting efficiencies, with error bars representing the $68\%$ Clopper--Pearson confidence intervals~\cite{Clopper:1934:BinomialInterval}.
 Only energies above the full-efficiency threshold of the \sd{433} are included.
 
 \begin{figure}
@@ -78,8 +78,8 @@ Following Ref.~\cite{PierreAuger:2021:InfillSpectrum}, the efficiency is modeled
 \noindent where $\mu$ determines the position of the transition and $\sigma$ its width.
 The best-fit values are $\mu=16.74\pm0.01$ and $\sigma=0.250\pm0.001$, with correlation $\rho_{\mu,\sigma}=0.38$.
 The fitted curve is shown as a solid line in \cref{fig:sd750_efficiency}, while the dashed line shows the result from Ref.~\cite{PierreAuger:2021:InfillSpectrum}.
-The vertical gray line marks the full-efficiency threshold obtained from the comparison with the \sd{433}.
-The updated estimate places this threshold approximately two energy bins above the previous result.
+Defining full efficiency at $\varepsilon=0.97$ gives a threshold of $\lg(E/\mathrm{eV})=17.2$, marked by the vertical gray line.
+The updated threshold lies approximately two energy bins above the previous estimate.
 
 The \sd{750} energy bias and resolution are required to construct its migration matrix.
 We adopt the parameterizations used in Ref.~\cite{PierreAuger:2021:InfillSpectrum}.
@@ -179,7 +179,7 @@ The indices $\gamma_0$, $\gamma_1$, and $\gamma_2$ describe the three intervenin
 Because the ankle transition is sharp, $\omega_{12}$ is fixed to $0.05$ in the fit.
 
 Because the \sd{750} full-efficiency threshold lies close to the second knee, the standalone data cannot constrain all spectral parameters simultaneously.
-The second-knee position is therefore fixed to the \sd{433} result in the nominal fit, while its transition width remains free.
+The second-knee position is therefore fixed to the \sd{433} result in the fit, while its transition width remains free.
 As a cross-check, allowing the position to vary gives $\lg(E_{01}/\mathrm{eV})=17.44\pm0.16$, compatible with the standalone \sd{433} measurement.
 The unfolded spectrum and best-fit model are shown in \cref{fig:sd750_unfolded_spectrum}, and the fitted parameters are listed in \cref{tab:sd750_fit_parameters}.
 The fit gives $D^2=18.07$ for 17 degrees of freedom, corresponding to a $p$-value of $0.385$.
@@ -292,14 +292,14 @@ The results of both fits are summarized in \cref{table:combined_parameters_singl
 
 \begin{table}
     \centering
-    \caption{Combined \sd{433}-\sd{750} fit results. The shifts $\delta\mathcal E_{433}$, $\delta A$, and $\delta B$ are relative to $\mathcal E_{433}=2.888\,\mathrm{km^2\,sr\,yr}$, $A=149.49$, and $B=0.963$. In the exposure-only fit, only the exposure shift varies; in the calibration-variation fit, the exposure shift is fixed to the preceding best-fit value and the calibration shifts vary. The ankle width is fixed to $\omega_{12}=0.05$ in both fits. The uncertainties on $\delta A$ and $\delta B$ are obtained from a likelihood profile in these parameters.}
+    \caption{Combined \sd{433}-\sd{750} fit results. The shifts $\delta\mathcal E_{433}$, $\delta A$, and $\delta B$ are relative to $\mathcal E_{433}=2.88\,\mathrm{km^2\,sr\,yr}$, $A=149.49\,\mathrm{PeV}$, and $B=0.963$. In the exposure-only fit, only the exposure shift varies; in the calibration-variation fit, the exposure shift is fixed to the preceding best-fit value and the calibration shifts vary. The ankle width is fixed to $\omega_{12}=0.05$ in both fits. The uncertainties on $\delta A$ and $\delta B$ are obtained from a likelihood profile in these parameters.}
     \label{table:combined_parameters_single}
     \begin{tabular}{lcc}
         \toprule
         Parameter & Exposure only & Calibration variation\\
         \midrule
         $J_0\,/\,(10^{-13}\,\mathrm{km}^{-2}\,\mathrm{sr}^{-1}\,\mathrm{yr}^{-1}\,\mathrm{eV}^{-1})$ & $0.952\pm0.039$ & $0.992\pm0.017$\\
-        $\lg(E_{01}/\mathrm{eV})$ & $17.23\pm0.06$ & $17.17\pm0.02$\\
+        $\lg(E_{01}/\mathrm{eV})$ & $17.23\pm0.09$ & $17.17\pm0.02$\\
         $\omega_{01}$ & $0.31\pm0.11$ & $0.39\pm0.04$\\
         $\gamma_0$ & $2.94\pm0.07$ & $2.87\pm0.03$\\
         $\gamma_1$ & $3.34\pm0.02$ & $3.35\pm0.01$\\
@@ -308,7 +308,7 @@ The results of both fits are summarized in \cref{table:combined_parameters_singl
         $\gamma_2$ & $2.88\pm0.18$ & $2.88\pm0.19$\\
         \midrule
         $\delta\mathcal E_{433}\,/\,(\mathrm{km^2\,sr\,yr})$ & $-0.04\pm0.03$ & $-0.04$ (fixed)\\
-        $\delta A$ & $0$ (fixed) & $0.1\pm6.1$\\
+        $\delta A/\mathrm{PeV}$ & $0$ (fixed) & $0.1\pm6.1$\\
         $\delta B$ & $0$ (fixed) & $-0.003\pm0.027$\\
         \midrule
         $D^2/\mathrm{dof}$ & $36.31/30$ & $29.98/29$\\
@@ -356,8 +356,8 @@ The effective exposure is
 
 To assess the stability of the combined result, the lower boundary of the \sd{750} fit range was varied from $\lg(E_{\min}^{750}/\mathrm{eV})=17.0$ to $17.5$, while the upper boundary was kept fixed at $19.4$.
 The results are shown in \cref{fig:combined_fit_min_scan}.
-Fits starting at $17.0$ and $17.1$ have $p$-values below $0.05$, as these thresholds lie below the full-efficiency energy of the \sd{750}.
-The fit first becomes acceptable at $17.2$.
+The fit ranges starting at $17.0$ and $17.1$ extend below the full-efficiency threshold of the \sd{750} and yield $p$-values below $0.05$.
+The fit first becomes acceptable at $17.2$, which coincides with the full-efficiency threshold.
 Although the $p$-value reaches its maximum at $17.3$, the fitted second-knee energies are compatible across the accepted thresholds.
 We therefore retain $17.2$ as the nominal lower boundary, maximizing the \sd{750} event sample while restricting the fit to the full-efficiency range.
 
@@ -372,8 +372,8 @@ The upper boundary of the \sd{750} fit range was then varied while the lower bou
 The results are shown in \cref{fig:combined_fit_max_scan}.
 All tested ranges give acceptable $p$-values, with the maximum occurring at $\lg(E_{\max}^{750}/\mathrm{eV})=19.0$.
 As higher-energy events are included, the ankle position and $\gamma_2$ become more stable and their uncertainties decrease.
-We choose $19.4$ as the nominal upper boundary because it provides stable fit parameters while retaining sufficient statistics in the highest-energy bin.
-The resulting parameters are compatible with the previous Auger measurement in Ref.~\cite{PierreAuger:2021:InfillSpectrum}.
+We therefore choose $19.4$ as the nominal upper boundary to include the available high-energy events and better constrain the spectrum above the ankle.
+The spectral parameters obtained with this fit range are compatible with the previous Auger measurement in Ref.~\cite{PierreAuger:2021:InfillSpectrum}.
 
 \begin{figure}
     \centering
@@ -382,15 +382,14 @@ The resulting parameters are compatible with the previous Auger measurement in R
     \label{fig:combined_fit_max_scan}
 \end{figure}
 
-With the fit ranges fixed to $16.8<\lg(E^{433}/\mathrm{eV})<18.2$ and $17.2<\lg(E^{750}/\mathrm{eV})<19.4$, the systematic uncertainties of the combined spectrum are evaluated using the methods described in \cref{sec:systematics}.
+With the fit ranges fixed to $16.8\leq\lg(E^{433}/\mathrm{eV})\leq18.2$ and $17.2\leq\lg(E^{750}/\mathrm{eV})\leq19.4$, the systematic uncertainties of the combined spectrum are evaluated using the methods described in \cref{sec:systematics}.
 The dominant contribution to the flux uncertainty comes from the \gls{fd} energy scale, which is common to both arrays.
 Its effect is propagated using \cref{eq:energy_systematic_bplwst} and is shown by the shaded band in \cref{fig:sd433_sd750_combined_systematic}.
 The same energy-scale uncertainty is propagated to the second-knee and ankle energies, $E_{01}$ and $E_{12}$.
-The systematic uncertainties of the spectral indices $\gamma_0$, $\gamma_1$, and $\gamma_2$ are inherited from the uncertainty in the calibration slope and are evaluated using the analytical expression in \cref{eq:calibration_spectral_index}.
+The systematic uncertainties of the spectral indices $\gamma_0$, $\gamma_1$, and $\gamma_2$ are inherited from the uncertainty in the calibration slope and are evaluated using the analytical expression in \cref{eq:calibration_spectral_index_change}.
 Finally, the systematic uncertainty assigned to $\omega_{01}$ is the maximum variation observed in the \sd{750} minimum-energy scan.
 The resulting spectral parameters and their statistical and systematic uncertainties are summarized in \cref{table:combined_spectrum_parameters_systematics}.
 
-%[THE J estimation with exp effective]
 
 
 
@@ -407,8 +406,7 @@ The resulting spectral parameters and their statistical and systematic uncertain
     \caption{
         Best-fit values of the combined \sd{433}--\sd{750} spectral parameters
         from the exposure-only fit. The first uncertainty is statistical and
-        the second systematic. Asymmetric uncertainties are symmetrized using
-        the larger deviation.
+        the second systematic.
     }
     \label{table:combined_spectrum_parameters_systematics}
     \begin{tabular}{lc}
@@ -433,15 +431,15 @@ The resulting spectral parameters and their statistical and systematic uncertain
 This chapter presents an updated \sd{750} dataset and spectrum measurement.
 The detection efficiency is determined with a data-driven method using events recorded by both the \sd{433} and \sd{750}, yielding a full-efficiency threshold of $\lg(E/\mathrm{eV})=17.2$.
 The detector response is modeled using the same method as for the \sd{433} and is used to unfold the measured spectrum.
-Because the \sd{750} fit range begins close to the second knee, its position is fixed to the standalone \sd{433} result in the nominal fit.
-When released, the fitted position remains compatible with that measurement.
+Because the \sd{750} fit range begins close to the second knee, its position is fixed to the single \sd{433} result in the fit.
+In a cross-check where the second-knee position is allowed to vary, the fitted value remains compatible with the \sd{433} measurement.
 The larger collecting area of the \sd{750} extends the spectrum measurement through the ankle and allows the second-knee transition width to be fitted, although $\gamma_2$ remains loosely constrained.
 The updated \sd{750} spectrum is then combined with the \sd{433} measurement.
 The likelihood retains the separate event distributions of the two arrays and includes nuisance terms for the \sd{433} exposure and relative energy calibration.
 The profiled shifts in the calibration parameters $A$ and $B$ are compatible with zero, indicating that no significant relative recalibration is required.
 The exposure-only fit gives $\delta\mathcal E_{433}=-0.04\pm0.03\,\mathrm{km^2\,sr\,yr}$, which is compatible with zero within approximately $1.5\sigma$.
 For presentation, the combined flux is constructed from the sum of the unfolded event counts and the corresponding effective exposure.
-The combined fit favors a lower second-knee energy than the standalone \sd{433} measurement, with $\lg(E_{01}/\mathrm{eV})=17.23\pm0.06$.
+The combined fit favors a lower second-knee energy than the standalone \sd{433} measurement, with $\lg(E_{01}/\mathrm{eV})=17.23\pm0.09$.
 This result is sensitive to the minimum \sd{750} energy included in the fit.
 The nominal boundary, $\lg(E_{\min}^{750}/\mathrm{eV})=17.2$, is retained because it corresponds to the measured full-efficiency threshold and is the lowest boundary for which the combined fit is acceptable.
 The statistical interval on $\lg(E_{01}/\mathrm{eV})$ spans approximately one energy bin.
