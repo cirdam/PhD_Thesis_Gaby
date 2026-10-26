@@ -136,6 +136,19 @@
 \date{}
 
 % ------------------------------------------------------------------------------
+% Bibliography
+% ------------------------------------------------------------------------------
+\usepackage[
+    backend=biber,
+    style=phys,
+    sorting=none,
+    giveninits=true,
+    maxbibnames=6,
+    minbibnames=1
+]{biblatex}
+\addbibresource{bibiblioteca.bib}
+
+% ------------------------------------------------------------------------------
 % Hyperlinks and References
 % ------------------------------------------------------------------------------
 \usepackage{hyperref}
@@ -155,7 +168,6 @@
 }
 
 \usepackage[capitalize]{cleveref}
-\usepackage[numbers,sort&compress]{natbib}
 
 % ------------------------------------------------------------------------------
 % Glossaries & Acronyms
@@ -280,8 +292,7 @@
 % \label{chapter:summary}
 % \input chapter_10_A_Dream_of_Spring
 
-\bibliographystyle{elsarticle-num}
-\bibliography{bibiblioteca}
+\printbibliography
 
 % Acronyms
 \cleardoublepage
