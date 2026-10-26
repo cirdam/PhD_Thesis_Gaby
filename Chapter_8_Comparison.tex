@@ -55,11 +55,14 @@ A single uncertainty denotes the fit uncertainty when the publication does not p
 A hyphen indicates that the parameter was not reported, while parameters held constant in the fit are marked as fixed.
 The TA result presented at ICRC 2019 is not listed separately because its second-knee value is taken from the same TALE measurement shown in the table.
 
-\begin{sidewaystable}
+\begin{table}[p]
     \centering
     \caption{Comparison of the second-knee energy and spectral parameters measured in this work and reported by previous experiments. Only results that report a second-knee energy are included. The spectral indices are written using the positive-index convention $J(E)\propto E^{-\gamma}$.}
     \label{tab:second_knee_comparison}
     \small
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.08}
+    \begin{adjustbox}{max width=\textwidth}
     \begin{tabular}{@{}lcccc@{}}
         \toprule
         Experiment
@@ -104,12 +107,12 @@ The TA result presented at ICRC 2019 is not listed separately because its second
         & $2.92\pm0.03$
         & $3.24\pm0.04$
         & - \\
-        KASCADE-Grande, EPOS-LHC (2015)~\cite{Bertaina:2015:KascadeGrande}
+        \shortstack[l]{KASCADE-Grande (2015)\\EPOS-LHC}~\cite{Bertaina:2015:KascadeGrande}
         & $74^{+24}_{-18}$
         & $2.98\pm0.03$
         & $3.17\pm0.05$
         & - \\
-        KASCADE-Grande, QGSJet (2015)~\cite{Bertaina:2015:KascadeGrande}
+        \shortstack[l]{KASCADE-Grande (2015)\\QGSJet}~\cite{Bertaina:2015:KascadeGrande}
         & $76^{+34}_{-23}$
         & $2.97\pm0.05$
         & $3.15\pm0.05$
@@ -126,6 +129,7 @@ The TA result presented at ICRC 2019 is not listed separately because its second
         & - \\
         \bottomrule
     \end{tabular}
-\end{sidewaystable}
+    \end{adjustbox}
+\end{table}
 
 \end{document}
