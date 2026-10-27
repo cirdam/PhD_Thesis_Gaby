@@ -56,14 +56,15 @@ A steepening around $\lg(E/\mathrm{eV})\simeq17.3$ already suggests the presence
 \section{Forward folding}
 \label{forward_folding}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The raw spectrum is affected by the finite energy resolution, the energy bias, and the detection efficiency of the \sd{433}.
-These effects must be included when fitting the spectrum to determine the spectral parameters because they cause events to migrate between reconstructed-energy bins.
-A direct inversion of the detector response can amplify statistical fluctuations~\cite{Cowan:1998:StatisticalDataAnalysis,Lista:2023:StatisticalMethods}.
-Some experiments therefore use unfolding procedures that require external regularization to control these effects.
-Instead, a forward-folding procedure is used here. % Quote D'Agostini
-For a spectrum model $J(E)$, the expected event distribution is folded through a convolution with the detector response and compared directly with the measured counts.
+The detector response can be accounted for using either unfolding or forward folding.
+In unfolding, the measured reconstructed-energy distribution is corrected to estimate the underlying true-energy distribution.
+This inverse problem often requires regularization because a direct inversion of the detector response can amplify statistical fluctuations~\cite{Cowan:1998:StatisticalDataAnalysis,Lista:2023:StatisticalMethods}.
+In forward folding, a model of the true-energy spectrum is convolved with the detector response, and the resulting reconstructed-energy distribution is compared directly with the measured counts.
+The latter approach is used here because it avoids a direct inversion and incorporates the finite energy resolution, energy bias, and detection efficiency into the likelihood.
 
-The detector response is represented by a migration matrix,
+The finite energy resolution spreads events around their mean reconstructed energy, while the energy bias shifts this mean relative to the true energy.
+Consequently, events from a given true-energy bin can be assigned to neighbouring reconstructed-energy bins, while the detection efficiency determines the fraction of events that are detected.
+These effects are represented by a migration matrix,
 
 
 \begin{align}
@@ -71,52 +72,56 @@ R_{ij}
 &=
 \frac{
     \displaystyle
-    \int_{\Delta E'_i} \mathrm{d}E'
-    \int_{\Delta E_j} \mathrm{d}E\,
-    J(E)\,\epsilon(E)\,\kappa(E'\mid E)
+    \int_{\Delta E_i^{\mathrm{rec}}} \mathrm{d}E_{\mathrm{rec}}
+    \int_{\Delta E_j^{\mathrm{true}}} \mathrm{d}E_{\mathrm{true}}\,
+    J(E_{\mathrm{true}})\,\epsilon(E_{\mathrm{true}})\,
+    \kappa(E_{\mathrm{rec}}\mid E_{\mathrm{true}})
 }{
     \displaystyle
-    \int_{\Delta E_j} \mathrm{d}E\,J(E)
+    \int_{\Delta E_j^{\mathrm{true}}}
+    \mathrm{d}E_{\mathrm{true}}\,J(E_{\mathrm{true}})
 },
-\label{eq:migration_matrix2}
+\label{eq:migration_matrix}
 \end{align}
 
-where $E$ is the true energy and $E'$ the reconstructed energy. The detector response $\kappa(E_{\mathrm{rec}}\mid E)$ represents the conditional probability density for reconstructing an energy $E_{\mathrm{rec}}$ given a true energy $E$.
-The detector efficiency $\epsilon(E)$, determined in \cref{sec:efficiency}, weighs the probability that an event is detected.
+The detector response $\kappa(E_{\mathrm{rec}}\mid E_{\mathrm{true}})$ is the conditional probability density for reconstructing an energy $E_{\mathrm{rec}}$ given a true energy $E_{\mathrm{true}}$.
+The detector efficiency $\epsilon(E_{\mathrm{true}})$, determined in \cref{sec:efficiency}, weighs the probability that an event is detected.
 Above full efficiency, elements $R_{ij}$ represent the probability that an event with true energy in bin $j$ is reconstructed in bin $i$.
 However, at lower energies, where the efficiency is smaller than unity, the matrix also accounts for the probability that an event is detected, allowing the contribution from true energies below the full-efficiency threshold to be included.
 
 The response function is modeled as a Gaussian:
 \begin{align}
-    \kappa(E_{\mathrm{rec}}\mid E)
+    \kappa(E_{\mathrm{rec}}\mid E_{\mathrm{true}})
     &=
-    \frac{1}{\sqrt{2\pi}\,\sigma(E)}
+    \frac{1}{\sqrt{2\pi}\,\sigma(E_{\mathrm{true}})}
     \exp\left[
         -\frac{
             \left(
-                E_{\mathrm{rec}}-E\left[1+b(E)\right]
+                E_{\mathrm{rec}}-E_{\mathrm{true}}
+                \left[1+b(E_{\mathrm{true}})\right]
             \right)^2
         }{
-            2\sigma^2(E)
+            2\sigma^2(E_{\mathrm{true}})
         }
     \right],
     \label{eq:resolution_function}
 \end{align}
-where $\sigma(E)$ is the energy resolution and $b(E)$ is the relative energy bias determined from the simulations in \cref{sec:res_and_bias}.
+where $\sigma(E_{\mathrm{true}})$ is the energy resolution and $b(E_{\mathrm{true}})$ is the relative energy bias determined from the simulations in \cref{sec:res_and_bias}.
 
-
-At high energies, where the relative resolution $\sigma(E)/E$ is dominated by shower-to-shower fluctuations, the distribution of events among neighbouring reconstructed-energy bins becomes approximately independent of energy.
-Consequently, the width and shape of the migration pattern in logarithmic energy are approximately constant.
+At high energies, the relative resolution $\sigma(E_{\mathrm{true}})/E_{\mathrm{true}}$ approaches an approximately constant value because shower-to-shower fluctuations dominate.
+Consequently, the migration pattern retains approximately the same width and shape in logarithmic energy and is translated along the diagonal as $E_{\mathrm{true}}$ increases.
 For a spectrum model with parameters $\mathbf{s}$, the expected number of events in the true-energy bin $j$ is
 \begin{align}
     \mu_j(\mathbf{s})
     =
     \int_{\Delta E_j^{\mathrm{true}}}
-    \mathrm{d}E\,J(E\mid\mathbf{s}) \, \exposuresym(E),
+    \mathrm{d}E_{\mathrm{true}}\,
+    J(E_{\mathrm{true}}\mid\mathbf{s})
+    \,\exposuresym(E_{\mathrm{true}}),
     \label{eq:expected_true_counts}
 \end{align}
-where $\exposuresym(E)$ is the exposure. 
-The spectrum is only calculated above full-efficiency to provide a robust estimation of the number of events becomes independently of any efficiency model.  
+where $\exposuresym(E_{\mathrm{true}})$ is the exposure.
+The spectrum is reported only above the full-efficiency threshold to minimize its dependence on the efficiency model.
 After folding with the migration matrix, the expected number of events in the reconstructed-energy bin $i$ is
 \begin{align}
     \nu_i(\mathbf{s})
@@ -141,24 +146,24 @@ For this purpose, the Poisson deviance,
     \label{eq:poisson_deviance}
 \end{align}
 is minimized with respect to $\mathbf{s}$.
-It should be noted that the migration matrix in \cref{eq:migration_matrix} explicitly depends on the spectrum model $J(E\mid\mathbf{s})$.
+It should be noted that the migration matrix in \cref{eq:migration_matrix} explicitly depends on the spectrum model $J(E_{\mathrm{true}}\mid\mathbf{s})$.
 Consequently, every change in the spectrum parameters $\mathbf{s}$ made during each fit iteration requires the matrix to be recalculated.
 To avoid this expensive calculation, an approximate migration matrix is used following the approach described in Appendix~C of \cite{PierreAuger:2020:Spectrum}.
 
 If the true-energy bins are sufficiently narrow, the efficiency and response function can be approximated as constant within each bin and taken outside the true-energy integral.
-The remaining integral of $J(E\mid\mathbf{s})$ in the numerator becomes identical to that in the denominator of \cref{eq:migration_matrix}, and the dependence on $J(E\mid\mathbf{s})$ cancels out.
+The remaining integral of $J(E_{\mathrm{true}}\mid\mathbf{s})$ in the numerator becomes identical to that in the denominator of \cref{eq:migration_matrix}, and the dependence on $J(E_{\mathrm{true}}\mid\mathbf{s})$ cancels out.
 This gives the approximate migration matrix
 \begin{align}
     R_{ij}^{\mathrm{approx}}
     =
-    \epsilon(E_j)
+    \epsilon(E_j^{\mathrm{true}})
     \int_{\Delta E_i^{\mathrm{rec}}}
     \mathrm{d}E_{\mathrm{rec}}\,
-    \kappa(E_{\mathrm{rec}}\mid E_j).
+    \kappa(E_{\mathrm{rec}}\mid E_j^{\mathrm{true}}).
     \label{eq:matrix_approx}
 \end{align}
 
-For the numerical calculation, the true-energy bin width is chosen as $\Delta\lg(E_j/\mathrm{eV})=0.01$, while the reconstructed-energy bin width is $\Delta\lg(E_i/\mathrm{eV})=0.1$.
+For the numerical calculation, the true-energy bin width is chosen as $\Delta\lg(E_j^{\mathrm{true}}/\mathrm{eV})=0.01$, while the reconstructed-energy bin width is $\Delta\lg(E_i^{\mathrm{rec}}/\mathrm{eV})=0.1$.
 The approximate migration matrix for the \sd{433} is shown in
 \cref{fig:migration_matrix}, together with the full-efficiency threshold in red and the identity in white.
 The horizontal axis represents the true energy, while the vertical axis represents the reconstructed energy.
@@ -177,19 +182,14 @@ $10^{16}$ to $10^{19}\,\mathrm{eV}$, extending below the full-efficiency thresho
     \label{fig:migration_matrix}
 \end{figure}
 
-Although the spectrum is only calculated for a reconstructed energy greater than the full efficiency threshold energy, events with a true energy below the threshold indirectly contribute to the spectrum prediction through upward energy fluctuations accounted for in the migration matrix.
-Given the energy resolution and the chosen bin width, the first sub-threshold bin and, to a lesser extent, the second one have some impact on the spectrum.
-To account for them, the efficiency shape before the full efficiency threshold is taken into consideration via the calculation of the number of events $\mu_j$ as per eq. \ref{eq:expected_reconstructed_counts}. 
-
-The efficiency suppresses the contribution from energies below the full-efficiency threshold.
-Nevertheless, upward migrations allow events from up to two bins below the full-efficiency threshold to contribute significantly to the measured spectrum.
-At low energies, the worsening energy resolution broadens the migration pattern, increasing the contributions from more distant true-energy bins.
-At high energies, where shower-to-shower fluctuations dominate the relative energy resolution, the shape of the migration pattern becomes approximately independent of energy.
+Although the spectrum is evaluated only for reconstructed energies above the full-efficiency threshold, upward energy fluctuations can cause events with true energies below the threshold to be reconstructed within the analysis range.
+For the energy resolution and binning used here, the first two true-energy bins below the threshold make an appreciable contribution to the lowest reconstructed-energy bins of the spectrum.
+Their reduced detection probability is included through the efficiency factor $\epsilon(E_{\mathrm{true}})$ in the migration matrix, while contributions from lower true energies are negligible.
 
 The next step is to evaluate the usefulness of this approximate matrix by comparing the expected event numbers in bins of reconstructed energy predicted with the exact and approximate matrices given the same number of events of true energy.
 To assess the accuracy of the approximation, the power-law spectrum,
 \begin{align}
-    J(E)=J_0E^\gamma,
+    J(E_{\mathrm{true}})=J_0E_{\mathrm{true}}^\gamma,
 \end{align}
 with spectral index $\gamma=-3$ is used.
 The expected event numbers $\nu_i^{\mathrm{approx}}$ and $\nu_i^{\mathrm{exact}}$ are calculated using the exact matrix,
@@ -219,7 +219,8 @@ is shown in \cref{fig:nu_ratio}.
 \end{figure}
 
 The difference remains below $0.02\%$ over the full energy range, showing that the effect of the approximation is negligible for the chosen binning.
-The approximate matrix is therefore used in the forward-folding fit, avoiding both an a priori dependence the calculation of the migration matrix at every iteration and the postulation of a priori spectrum close enough to the final one to ensure numerical convergence.
+The approximate matrix is therefore used in the forward-folding fit.
+It avoids recalculating the exact, spectrum-dependent matrix at every iteration and does not require an a priori spectrum close to the final solution to ensure numerical convergence.
 
 The best-fit spectrum parameters $\hat{\mathbf{s}}$ are determined using the described procedure. 
 Subsequently, the ratio,  
@@ -373,8 +374,9 @@ Consequently, the uncertainty in $\gamma_0$ increases, although the fitted value
     \includegraphics[width=\linewidth]
     {figures/chapter_spectrum/sd433_fit_min_stability_2x2.pdf}
     \caption{
-        Dependence of the fitted second-knee parameters and Poisson deviance per degree of freedom on the minimum energy included in the fit. 
+        Dependence of the fitted second-knee parameters and goodness-of-fit $p$-value on the minimum energy included in the fit.
         The error bars represent the statistical uncertainties of the fitted parameters.
+        The $p$-value is calculated from the Poisson deviance using the corresponding number of degrees of freedom.
     }
     \label{fig:sd433_fit_min_stability}
 \end{figure}
@@ -432,9 +434,7 @@ The dominant contributions arise from the absolute calibration of the \gls{fd} a
 
 Some contributions exhibit a mild energy dependence, while the total uncertainty is approximately energy independent and amounts to $14\%$.
 
-The effect of the energy-scale uncertainty on the spectrum is derived analytically. 
-This method contrast with the usual method used in Auger which is based on shifting the energies of measured events. 
-We use this second method as a cross-check of the analytical method we developed.
+The effect of the energy-scale uncertainty on the spectrum is evaluated analytically and cross-checked numerically by coherently shifting the reconstructed energies of the measured events.
 
 For a relative shift $\delta$ in the energy scale, the shifted energy is $E'=(1+\delta)E$, with $\delta=\pm0.14$.
 The corresponding change in the flux follows from the transformation of a probability density,
@@ -443,14 +443,6 @@ The corresponding change in the flux follows from the transformation of a probab
     \label{eq:change_of_variables}
 \end{align}
 \noindent where $J(E)$ and $J'(E')$ are the differential fluxes on the original and shifted energy scales, respectively.
-For a power-law spectrum, $J(E)=J_0\,E^{-\gamma}$, the relative change in the flux is,
-\begin{align}
-\frac{\Delta J}{J}=(1+\delta)^{\gamma-1}-1,
-\label{eq:energy_systematic_pl}
-\end{align}
-For $\gamma=3.35$, \cref{eq:energy_systematic_pl} gives flux shifts of approximately
-$\SI{+36}{\percent}$ and $\SI{-30}{\percent}$ for $\delta=+0.14$ and $-0.14$, respectively.
-
 For a flux of a general shape, \cref{eq:change_of_variables} can be expanded to,
 \begin{align}
 \frac{\Delta J(E)}{J(E)}
@@ -467,7 +459,7 @@ J(E)
 The analytical estimate of the systematic uncertainty obtained from the fitted \sd{433} spectrum is shown in
 \cref{fig:energy_systematic}. 
 
-As a cross-check, the reconstructed energy of every event is shifted coherently by
+As a numerical cross-check, the reconstructed energy of every event is shifted coherently by
 $\delta=\pm0.14$, and the complete forward-folding and unfolding procedures are repeated.
 The migration matrix is kept unchanged because the energy-scale shift does not modify the assumed detector resolution, bias, or efficiency.
 The corresponding unfolded spectra are shown in
@@ -482,7 +474,7 @@ Therefore, the analytical method is better suited to accomplish a stable estimat
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/chapter_spectrum/delta_j_over_j.pdf}
-    \caption{Relative change in the fitted flux after coherently shifting the reconstructed energies by $+14\%$ and $-14\%$. The solid curves show the result of repeating the forward-folding fit, while the dash-dotted curves show the analytical expectation from \cref{eq:energy_systematic_bplwst}. The horizontal dashed lines indicate the corresponding asymptotic simple-power-law expectations.}
+    \caption{Relative change in the flux for coherent energy-scale shifts of $+14\%$ and $-14\%$. The points show the changes in the unfolded flux, the solid curves show the result of repeating the forward-folding fit, and the dash-dotted curves show the analytical estimate from \cref{eq:energy_systematic_bplwst}.}
     \label{fig:energy_systematic}
 \end{figure}
 
@@ -494,10 +486,10 @@ We applied the method of shifting event energies to evaluate the systematic unce
     \label{fig:energy_systematic_fit_parameters}
 \end{figure}
 
-The changes in $\gamma_0$ and $\gamma_1$ are consistent with statistical uncertainties, in accordance with what is expected, given that a uniform change in energy does not impact the slope of the spectrum.
-The shifts obtained from the forward-folding procedure are larger than these expectations.
-Therefore, a conservative systematic uncertainty of
-$\Delta\lg(E_{01}/\mathrm{eV})=0.10$ is assigned, corresponding to the largest variation obtained from the fit.
+The fitted values of $\gamma_0$ and $\gamma_1$ remain consistent with the nominal values within their statistical uncertainties, as expected for a coherent shift of the energy scale.
+For energy-scale shifts of $+14\%$ and $-14\%$, the fitted second-knee position changes by $+0.10$ and $-0.05$ in $\lg(E_{01}/\mathrm{eV})$, respectively.
+The corresponding shifts expected from direct propagation of the energy scale are $+0.057$ and $-0.066$.
+A conservative symmetric systematic uncertainty of $\Delta\lg(E_{01}/\mathrm{eV})=\pm0.10$ is therefore assigned, corresponding to the largest absolute variation obtained from the refits.
 
 
 \subsection{Response function systematics}
