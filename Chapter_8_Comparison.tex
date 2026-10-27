@@ -36,23 +36,6 @@ Most of the measurements are contained within the systematic flux band from the 
 The range for $\gamma_0$ is from around 2.8 to 3.8 while for $\gamma_1$ the measurement ranges between 3.2 and 3.37.
 The reported results for $E_{01}$, $\gamma_0$ and $\gamma_1$ are shown in \cref{tab:second_knee_comparison} for the different experiments.
 
-In \cref{fig:comparison_shift}, the results from experiments that report a measurement of the second knee are shifted to match all the second knees in the energy of the second knee from the combined spectrum via a transformation,
-\begin{align}
-    E'=E\frac{E_{01}^\mathrm{comb}}{E_{01}^\mathrm{exp}}
-\end{align}
-\noindent where $E^\mathrm{x}_{01}$ is the measured second knee energy, to preserve the binning in logarithmic scale.
-The behavior of all the experiments is quite consistent for higher energies, where a softening of the spectrum roll over and the slopes are quite consistent.
-This hints that the primary difference in the measured second knee energies and the all particle flux between the different spectra arises from the differences in the energy scale rather than from a difference in the shape of the spectrum.
-Experiments with the biggest deviation are the ones where the energy scale is not set calorimetrically, like KASCADE-Grande
-Measurements such as TALE and Yakutsk, for instance, are almost completely contained within the systematic uncertainty band from the combined spectrum in the overlapping region.
-It is noteworthy that all measurements show a smooth transition that last several bins, however this is the first to characterize the width of the transition, highlighting that the second knee is a soft change in the slope of the all particle spectrum.
-
-In the context of theoretical models associated with the second knee, the softening measured at \(0.17\,\mathrm{EeV}\) occurs above the approximately \(0.08\)--\(0.10\,\mathrm{EeV}\) expected for the iron knee in a simple Peters-cycle scenario. In this scenario, the spectra of the individual elemental components steepen at energies proportional to their charge, \(E_Z\simeq Z E_{\mathrm{p}}\), producing a sequence of rigidity-dependent knees~\cite{Mollerach:2019:GalacticScenario,Aloisio:2012:Transition}. Given the statistical and systematic uncertainties and the simplicity of this scaling, the measured break energy does not by itself exclude a rigidity-dependent Galactic origin. Its position and smoothness are also compatible with an overlap between a fading Galactic component and an emerging extragalactic component~\cite{Aloisio:2012:Transition,Mollerach:2019:GalacticScenario,Lemoine:2005:MagneticHorizon}. Further studies using the Underground Muon Detector of the Pierre Auger Observatory will provide mass-sensitive information through the muonic component of the air showers and allow possible changes in the primary composition across the second knee to be investigated. Measurements of \(X_{\max}\) would provide complementary information about changes in the elongation rate. Distinguishing between a rigidity-dependent cutoff, an additional Galactic component, and the onset of an extragalactic contribution therefore requires complementary measurements of mass composition and anisotropy~\cite{Thoudam:2016:SecondGalacticComponent,Giacinti:2012:AnisotropyTransition}.
-
-
-
-
-
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/chapter_comparison/sd433_combined_experiment_comparison.pdf}
@@ -70,7 +53,7 @@ A single uncertainty denotes the fit uncertainty when the publication does not p
 A hyphen indicates that the parameter was not reported, while parameters held constant in the fit are marked as fixed.
 The TA result presented at ICRC 2019 is not listed separately because its second-knee value is taken from the same TALE measurement shown in the table.
 
-\begin{table}[htbp]
+\begin{table}
     \centering
     \caption{Comparison of the second-knee energy and spectral parameters measured in this work and reported by previous experiments. Only results that report a second-knee energy are included. The spectral indices are written using the positive-index convention $J(E)\propto E^{-\gamma}$.}
     \label{tab:second_knee_comparison}
@@ -152,7 +135,25 @@ The TA result presented at ICRC 2019 is not listed separately because its second
     \end{adjustbox}
 \end{table}
 
-\begin{figure}[htbp]
+
+In \cref{fig:comparison_shift}, the results from experiments that report a measurement of the second knee are shifted to match all the second knees in the energy of the second knee from the combined spectrum via a transformation,
+\begin{align}
+    E'=E\frac{E_{01}^\mathrm{comb}}{E_{01}^\mathrm{exp}}
+\end{align}
+\noindent where $E^\mathrm{x}_{01}$ is the measured second knee energy, to preserve the binning in logarithmic scale.
+The behavior of all the experiments is quite consistent for higher energies, where a softening of the spectrum roll over and the slopes are quite consistent.
+This hints that the primary difference in the measured second knee energies and the all particle flux between the different spectra arises from the differences in the energy scale rather than from a difference in the shape of the spectrum.
+Experiments with the biggest deviation are the ones where the energy scale is not set calorimetrically, like KASCADE-Grande
+Measurements such as TALE and Yakutsk, for instance, are almost completely contained within the systematic uncertainty band from the combined spectrum in the overlapping region.
+It is noteworthy that all measurements show a smooth transition that last several bins, however this is the first to characterize the width of the transition, highlighting that the second knee is a soft change in the slope of the all particle spectrum.
+
+In the context of theoretical models associated with the second knee, the softening measured at \(0.17\,\mathrm{EeV}\) occurs above the approximately \(0.08\)--\(0.10\,\mathrm{EeV}\) expected for the iron knee in a simple Peters-cycle scenario. In this scenario, the spectra of the individual elemental components steepen at energies proportional to their charge, \(E_Z\simeq Z E_{\mathrm{p}}\), producing a sequence of rigidity-dependent knees~\cite{Mollerach:2019:GalacticScenario,Aloisio:2012:Transition}. Given the statistical and systematic uncertainties and the simplicity of this scaling, the measured break energy does not by itself exclude a rigidity-dependent Galactic origin. Its position and smoothness are also compatible with an overlap between a fading Galactic component and an emerging extragalactic component~\cite{Aloisio:2012:Transition,Mollerach:2019:GalacticScenario,Lemoine:2005:MagneticHorizon}. Further studies using the Underground Muon Detector of the Pierre Auger Observatory will provide mass-sensitive information through the muonic component of the air showers and allow possible changes in the primary composition across the second knee to be investigated. Measurements of \(X_{\max}\) would provide complementary information about changes in the elongation rate. Distinguishing between a rigidity-dependent cutoff, an additional Galactic component, and the onset of an extragalactic contribution therefore requires complementary measurements of mass composition and anisotropy~\cite{Thoudam:2016:SecondGalacticComponent,Giacinti:2012:AnisotropyTransition}.
+
+\section{Summary}
+
+The measured second-knee energy lies within the range reported by previous experiments. After aligning the spectra at their respective break energies, they exhibit a broadly consistent softening. Nevertheless, the all-particle energy spectrum alone cannot determine the origin of this feature. Measurements of the mass composition and anisotropy across this energy range are required to distinguish between a rigidity-dependent decline of the Galactic component and the emergence of an extragalactic contribution.
+
+\begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/chapter_comparison/sd433_combined_second_knee_aligned_comparison.pdf}
     \caption[Comparison after aligning the measured second-knee energies.]{
