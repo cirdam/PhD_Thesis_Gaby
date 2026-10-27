@@ -81,8 +81,9 @@ R_{ij}
 \label{eq:migration_matrix2}
 \end{align}
 
-where $E$ is the true energy and $E'$ the reconstructed energy. The detector response $\kappa(E_{\mathrm{rec}}\mid E)$ represents the conditional probability density for reconstructing an energy $E_{\mathrm{rec}}$ given a true energy $E$.
-The detector efficiency $\epsilon(E)$, determined in \cref{sec:efficiency}, weighs the probability that an event is detected.
+where $E$ is the true energy and $E'$ the reconstructed energy. 
+The detector response $\kappa(E_{\mathrm{rec}}\mid E)$ represents the conditional probability density for reconstructing an energy $E_{\mathrm{rec}}$ given a true energy $E$.
+The detector efficiency $\epsilon(E)$, determined in \cref{sec:efficiency}, weights the probability that an event is detected.
 Above full efficiency, elements $R_{ij}$ represent the probability that an event with true energy in bin $j$ is reconstructed in bin $i$.
 However, at lower energies, where the efficiency is smaller than unity, the matrix also accounts for the probability that an event is detected, allowing the contribution from true energies below the full-efficiency threshold to be included.
 
@@ -102,7 +103,7 @@ The response function is modeled as a Gaussian:
     \right],
     \label{eq:resolution_function}
 \end{align}
-where $\sigma(E)$ is the energy resolution and $b(E)$ is the relative energy bias determined from the simulations in \cref{sec:res_and_bias}.
+where $\sigma(E)$ is the energy resolution, and $b(E)$ is the relative energy bias determined from the simulations in \cref{sec:res_and_bias}.
 
 
 At high energies, where the relative resolution $\sigma(E)/E$ is dominated by shower-to-shower fluctuations, the distribution of events among neighbouring reconstructed-energy bins becomes approximately independent of energy.
