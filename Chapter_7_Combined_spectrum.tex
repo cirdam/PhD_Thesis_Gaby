@@ -10,9 +10,9 @@ The \sd{750} analysis builds on the spectrum published in 2021~\cite{PierreAuger
 The detection efficiency is revisited with a data-driven method based on the fraction of \sd{433} events also detected by the \sd{750}, as described in \cref{subsec:sd750_efficiency}.
 Together with the energy bias and resolution from Ref.~\cite{PierreAuger:2021:InfillSpectrum}, this efficiency defines the detector response used to unfold the updated \sd{750} spectrum in \cref{subsec:sd750_spectrum}.
 Finally, in \cref{sec:combined_spectrum}, the separately reconstructed \sd{433} and \sd{750} measurements are combined using a likelihood method.
-The stability of the combined result is assessed, and all spectral parameters from the second knee through the ankle are determined.
+Preliminary results of this combination are presented, extending the spectral coverage from below the second knee through the ankle.
 
-\section{The \sd{750} Spectrum}
+\section{The \sd{750} spectrum}
 \label{sec:sd750_spectrum}
 
 \subsection{The \sd{750} dataset}
@@ -139,6 +139,7 @@ The \sd{750} events are reconstructed with Herald.
 For the updated and combined spectra, their energies are recalibrated using the ICRC 2025 energy scale described in \cref{sec:calibration}.
 Relative to the previous calibration, the energy changes by less than $0.5\%$ near the full-efficiency threshold and by less than $2\%$ at the highest energies.
 The corresponding effect on the spectrum is therefore small.
+The spectral difference and the contribution from the updated calibration are shown in \cref{fig:sd750_flux_difference_calibration} in the supplementary material.
 
 The left panel of \cref{fig:sd750_raw_spectrum} compares the raw spectrum obtained from the updated dataset for $\theta<40^\circ$ with the spectrum published in 2021~\cite{PierreAuger:2021:InfillSpectrum}.
 The updated flux differs by approximately $5\%$ over most of the energy range, primarily because periods affected by acquisition problems were inadvertently included in the earlier calculation.
@@ -213,10 +214,12 @@ The ankle energy is also compatible with the published result, while $\gamma_2$ 
     \end{tabular}
 \end{table}
 
-\section{The Combined Spectrum}
+\section{The combined spectrum}
 \label{sec:combined_spectrum}
 
-To combine the larger exposure of the \sd{750} with the lower energy threshold of the \sd{433}, the procedure used in Refs.~\cite{PierreAuger:2021:InfillSpectrum,PierreAuger:2025:Declination} is followed. The \sd{433} and \sd{750} spectra are reconstructed separately and enter the combination with their respective event distributions, exposures, and detector-response matrices. The exposure of each array is calculated from its geometrical aperture above the corresponding full-efficiency threshold, as described in \cref{sec:exposure}.
+A preliminary combination of the two spectra is developed to bring together the larger exposure of the \sd{750} and the lower energy threshold of the \sd{433}.
+The combination follows the procedure used in Refs.~\cite{PierreAuger:2021:InfillSpectrum,PierreAuger:2025:Declination}.
+The \sd{433} and \sd{750} spectra are reconstructed separately and enter the combination with their respective event distributions, exposures, and detector-response matrices. The exposure of each array is calculated from its geometrical aperture above the corresponding full-efficiency threshold, as described in \cref{sec:exposure}.
 The combined likelihood is defined as
 \begin{align}
     \mathcal{L}
@@ -284,46 +287,52 @@ Their systematic uncertainties and correlation are incorporated through the biva
 \noindent where $\sigma_A$, $\sigma_B$, and $\rho_{AB}$ are obtained from the calibration analysis in \cref{sec:calibration}.
 This term constrains the calibration shifts according to their uncertainties while preserving their correlation.
 
-Variations in the \sd{433} exposure and in the calibration normalization $A$ both affect the relative flux normalization and therefore cannot be constrained simultaneously.
-The combination is consequently performed in two steps.
-First, the spectral parameters and $\delta\mathcal E_{433}$ are fitted while $A$ and $B$ remain fixed.
-The exposure is then fixed to its best-fit value, and the fit is repeated with $\delta A$ and $\delta B$ as free parameters.
+Variations in the \sd{433} exposure and in the calibration normalization $A$ both affect the relative flux normalization.
+Two alternative fits are performed to separate these effects.
+In the exposure-only fit, the spectral parameters and $\delta\mathcal E_{433}$ are fitted with $\delta A=\delta B=0$.
+In the calibration-variation fit, the spectral parameters, $\delta A$, and $\delta B$ are fitted with the exposure fixed to its nominal value, $\delta\mathcal E_{433}=0$.
 The results of both fits are summarized in \cref{table:combined_parameters_single}.
 
 \begin{table}
     \centering
-    \caption{Combined \sd{433}-\sd{750} fit results. The shifts $\delta\mathcal E_{433}$, $\delta A$, and $\delta B$ are relative to $\mathcal E_{433}=2.88\,\mathrm{km^2\,sr\,yr}$, $A=149.49\,\mathrm{PeV}$, and $B=0.963$. In the exposure-only fit, only the exposure shift varies; in the calibration-variation fit, the exposure shift is fixed to the preceding best-fit value and the calibration shifts vary. The ankle width is fixed to $\omega_{12}=0.05$ in both fits. The uncertainties on $\delta A$ and $\delta B$ are obtained from a likelihood profile in these parameters.}
+    \caption{Preliminary combined \sd{433}--\sd{750} fit results.
+    The shifts $\delta\mathcal E_{433}$, $\delta A$, and $\delta B$ are relative to $\mathcal E_{433}=2.888\,\mathrm{km^2\,sr\,yr}$, $A=149.49\,\mathrm{PeV}$, and $B=0.963$.
+    The spectral parameters vary in both fits.
+    In the exposure-only fit, the exposure shift varies with $\delta A=\delta B=0$; in the calibration-variation fit, the calibration shifts vary with $\delta\mathcal E_{433}=0$.
+    The ankle width is fixed to $\omega_{12}=0.05$ in both fits.
+    The spectral-parameter uncertainties in the calibration-variation fit are local curvature estimates.
+    The intervals quoted for $\delta A$ and $\delta B$ are retained from the earlier fit with $\delta\mathcal E_{433}=-0.04\,\mathrm{km^2\,sr\,yr}$ as an approximation.}
     \label{table:combined_parameters_single}
     \begin{tabular}{lcc}
         \toprule
         Parameter & Exposure only & Calibration variation\\
         \midrule
-        $J_0\,/\,(10^{-13}\,\mathrm{km}^{-2}\,\mathrm{sr}^{-1}\,\mathrm{yr}^{-1}\,\mathrm{eV}^{-1})$ & $0.952\pm0.039$ & $0.992\pm0.017$\\
-        $\lg(E_{01}/\mathrm{eV})$ & $17.23\pm0.09$ & $17.17\pm0.02$\\
-        $\omega_{01}$ & $0.31\pm0.11$ & $0.39\pm0.04$\\
-        $\gamma_0$ & $2.94\pm0.07$ & $2.87\pm0.03$\\
-        $\gamma_1$ & $3.34\pm0.02$ & $3.35\pm0.01$\\
+        $J_0\,/\,(10^{-13}\,\mathrm{km}^{-2}\,\mathrm{sr}^{-1}\,\mathrm{yr}^{-1}\,\mathrm{eV}^{-1})$ & $0.952\pm0.039$ & $0.959\pm0.052$\\
+        $\lg(E_{01}/\mathrm{eV})$ & $17.23\pm0.09$ & $17.19\pm0.07$\\
+        $\omega_{01}$ & $0.31\pm0.11$ & $0.33\pm0.11$\\
+        $\gamma_0$ & $2.94\pm0.07$ & $2.88\pm0.09$\\
+        $\gamma_1$ & $3.34\pm0.02$ & $3.34\pm0.02$\\
         $\lg(E_{12}/\mathrm{eV})$ & $18.61\pm0.11$ & $18.60\pm0.11$\\
         $\omega_{12}$ & $0.05$ (fixed) & $0.05$ (fixed)\\
-        $\gamma_2$ & $2.88\pm0.18$ & $2.88\pm0.19$\\
+        $\gamma_2$ & $2.88\pm0.18$ & $2.88\pm0.18$\\
         \midrule
-        $\delta\mathcal E_{433}\,/\,(\mathrm{km^2\,sr\,yr})$ & $-0.04\pm0.03$ & $-0.04$ (fixed)\\
-        $\delta A/\mathrm{PeV}$ & $0$ (fixed) & $0.1\pm6.1$\\
-        $\delta B$ & $0$ (fixed) & $-0.003\pm0.027$\\
+        $\delta\mathcal E_{433}\,/\,(\mathrm{km^2\,sr\,yr})$ & $-0.04\pm0.03$ & $0$ (fixed)\\
+        $\delta A/\mathrm{PeV}$ & $0$ (fixed) & $0.09\pm6.1$\\
+        $\delta B$ & $0$ (fixed) & $-0.0032\pm0.027$\\
         \midrule
-        $D^2/\mathrm{dof}$ & $36.31/30$ & $29.98/29$\\
-        $p$-value & $0.198$ & $0.415$\\
+        $D^2/\mathrm{dof}$ & $36.31/30$ & $30.59/29$\\
+        $p$-value & $0.198$ & $0.385$\\
         \bottomrule
     \end{tabular}
 \end{table}
-The combined spectrum is shown with purple triangles in \cref{fig:sd433_sd750_combined_spectrum}, together with the \sd{433} spectrum in red circles and the \sd{750} spectrum in green squares.
+The combined spectrum from the exposure-only fit is shown with purple diamonds in \cref{fig:sd433_sd750_combined_spectrum}, together with the \sd{433} spectrum in red circles and the \sd{750} spectrum in green squares.
 The \sd{433} data constrain $\gamma_0$ at the lowest energies, while both measurements contribute to determining the second-knee energy, the transition width $\omega_{01}$, and the spectral index $\gamma_1$.
 The fitted value of $\gamma_1$ is compatible with the standalone measurements from both arrays.
 At higher energies, the larger exposure of the \sd{750} constrains the ankle position, although $\gamma_2$ remains loosely constrained.
-In the calibration-variation fit, the resulting shifts are $\delta A=0.1\pm6.1\,\mathrm{PeV}$ and $\delta B=-0.003\pm0.027$, with uncertainties obtained from a likelihood profile in the $(\delta A,\delta B)$ parameter space.
-Both shifts are compatible with zero, showing that the combination does not require a significant relative recalibration of the \sd{433} and \sd{750} energy scales.
+In the calibration-variation fit with $\delta\mathcal E_{433}=0$, the resulting shifts are $\delta A=0.09\pm6.1\,\mathrm{PeV}$ and $\delta B=-0.0032\pm0.027$, using the approximate intervals described in \cref{table:combined_parameters_single}.
+Both shifts are compatible with zero, indicating that no significant relative recalibration is preferred within the tested fit configuration.
 The spectral parameters remain compatible with those obtained in the exposure-only fit.
-Therefore, the combined result is stable under the allowed calibration variations, while the relative normalization is primarily accommodated by the fitted \sd{433} exposure shift.
+However, these checks do not resolve the differences between the spectra in the second-knee region, which require further investigation.
 
 The likelihood fit is performed using the event distributions of the two arrays separately.
 For presentation, the combined flux is constructed after the fit by adding their unfolded event counts,
@@ -350,21 +359,28 @@ The effective exposure is
 \begin{figure}
     \centering
     \includegraphics[width=0.82\linewidth]{figures/chapter_combined/sd433_sd750_combined_spectrum.pdf}
-    \caption{Unfolded spectra measured with the \sd{433} and \sd{750}, together with the combined spectrum and common best-fit model. The combined spectrum uses the \sd{433} binning below $\lg(E/\mathrm{eV})=17.2$ and the \sd{750} binning at higher energies. Only statistical uncertainties are shown.}
+    \caption{Unfolded spectra measured with the \sd{433} and \sd{750}, together with the preliminary combined spectrum and common best-fit model from the exposure-only fit. The combined spectrum uses the \sd{433} binning below $\lg(E/\mathrm{eV})=17.2$ and the \sd{750} binning at higher energies. Only statistical uncertainties are shown.}
     \label{fig:sd433_sd750_combined_spectrum}
 \end{figure}
 
-To assess the stability of the combined result, the lower boundary of the \sd{750} fit range was varied from $\lg(E_{\min}^{750}/\mathrm{eV})=17.0$ to $17.5$, while the upper boundary was kept fixed at $19.4$.
+The comparison in \cref{fig:sd433_sd750_combined_spectrum} shows a difference between the standalone \sd{433} and combined spectra in the second-knee region.
+The nominal combined fit places the break at $\lg(E_{01}/\mathrm{eV})=17.23$, compared with $17.44$ for the standalone \sd{433} measurement, corresponding to a displacement of approximately two energy bins.
+Notably, the combined best-fit position lies within $17.2\leq\lg(E/\mathrm{eV})<17.3$, the first bin in which the \sd{750} data enter the combination.
+The origin of the spectral difference and the displacement of the fitted break remains unresolved and requires further investigation.
+The combined spectrum is therefore presented as work in progress.
+Nevertheless, the spectral indices below and above the second knee are compatible with those obtained from the standalone \sd{433} measurement, indicating agreement in the overall steepening despite the difference in its fitted position.
+
+The lower boundary of the \sd{750} fit range was varied from $\lg(E_{\min}^{750}/\mathrm{eV})=17.0$ to $17.5$, while the upper boundary was kept fixed at $19.4$.
 The results are shown in \cref{fig:combined_fit_min_scan}.
 The fit ranges starting at $17.0$ and $17.1$ extend below the full-efficiency threshold of the \sd{750} and yield $p$-values below $0.05$.
-The fit first becomes acceptable at $17.2$, which coincides with the full-efficiency threshold.
-Although the $p$-value reaches its maximum at $17.3$, the fitted second-knee energies are compatible across the accepted thresholds.
-We therefore retain $17.2$ as the nominal lower boundary, maximizing the \sd{750} event sample while restricting the fit to the full-efficiency range.
+The fit first becomes acceptable at $\lg(E_{\min}^{750}/\mathrm{eV})=17.2$, which coincides with the measured full-efficiency threshold.
+Removing the first \sd{750} bin shifts the fitted second knee to higher energy, although the values remain compatible within their uncertainties.
+The lower boundary is kept at $17.2$ because it is set by the efficiency study.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/chapter_combined/combined_fit_min_scan_deviance.pdf}
-    \caption{Dependence of the combined-fit $p$-value, second-knee energy, and spectral indices $\gamma_0$ and $\gamma_1$ on the minimum \sd{750} energy included in the fit. The dashed line in the upper-left panel indicates $p=0.05$. The \sd{750} upper boundary is fixed at $\lg(E/\mathrm{eV})=19.4$, the \sd{433} fit range is unchanged, and the \sd{433} exposure is fixed to the value preferred by the nominal combined fit.}
+    \caption{Dependence of the combined-fit $p$-value, second-knee energy, and spectral indices $\gamma_0$ and $\gamma_1$ on the minimum \sd{750} energy included in the fit. The \sd{750} upper boundary is fixed at $\lg(E/\mathrm{eV})=19.4$, the \sd{433} fit range is unchanged, and the \sd{433} exposure is fixed to the value preferred by the nominal combined fit.}
     \label{fig:combined_fit_min_scan}
 \end{figure}
 
@@ -404,9 +420,8 @@ The resulting spectral parameters and their statistical and systematic uncertain
 \begin{table}
     \centering
     \caption{
-        Best-fit values of the combined \sd{433}--\sd{750} spectral parameters
-        from the exposure-only fit. The first uncertainty is statistical and
-        the second systematic.
+        Preliminary results for the combined \sd{433}--\sd{750} spectral parameters from the exposure-only fit.
+        The first uncertainty is statistical and the second systematic.
     }
     \label{table:combined_spectrum_parameters_systematics}
     \begin{tabular}{lc}
@@ -436,16 +451,17 @@ In a cross-check where the second-knee position is allowed to vary, the fitted v
 The larger collecting area of the \sd{750} extends the spectrum measurement through the ankle and allows the second-knee transition width to be fitted, although $\gamma_2$ remains loosely constrained.
 The updated \sd{750} spectrum is then combined with the \sd{433} measurement.
 The likelihood retains the separate event distributions of the two arrays and includes nuisance terms for the \sd{433} exposure and relative energy calibration.
-The profiled shifts in the calibration parameters $A$ and $B$ are compatible with zero, indicating that no significant relative recalibration is required.
+The fitted calibration shifts are compatible with zero within the retained approximate intervals.
 The exposure-only fit gives $\delta\mathcal E_{433}=-0.04\pm0.03\,\mathrm{km^2\,sr\,yr}$, which is compatible with zero within approximately $1.5\sigma$.
 For presentation, the combined flux is constructed from the sum of the unfolded event counts and the corresponding effective exposure.
-The combined fit favors a lower second-knee energy than the standalone \sd{433} measurement, with $\lg(E_{01}/\mathrm{eV})=17.23\pm0.09$.
-This result is sensitive to the minimum \sd{750} energy included in the fit.
-The nominal boundary, $\lg(E_{\min}^{750}/\mathrm{eV})=17.2$, is retained because it corresponds to the measured full-efficiency threshold and is the lowest boundary for which the combined fit is acceptable.
-The statistical interval on $\lg(E_{01}/\mathrm{eV})$ spans approximately one energy bin.
-The combined fit also favors a broader transition, $\omega_{01}=0.31\pm0.11$, than the standalone best-fit value, $\omega_{01}=0.09\pm0.27$, although the two measurements are statistically compatible.
-The unfolded \sd{433} and \sd{750} spectra show a possible difference in flux normalization in their overlap region, but its statistical significance is insufficient to establish a discrepancy.
-The combined fit therefore characterizes both the second knee and the ankle, providing a \gls{sd} spectrum measurement that spans almost three decades in energy.
+The combined fit places the second knee at $\lg(E_{01}/\mathrm{eV})=17.23\pm0.09$, approximately two energy bins below the standalone \sd{433} result.
+This position lies in the first bin where the \sd{750} data enter the combination and shifts to higher energy when that bin is excluded.
+The nominal lower boundary is retained at $\lg(E_{\min}^{750}/\mathrm{eV})=17.2$, as determined by the efficiency study.
+The difference between the spectra in this region and the displacement of the fitted knee remain to be understood.
+
+The spectral indices below and above the second knee agree with those of the standalone \sd{433} measurement.
+The combined fit favors a broad transition, with $\omega_{01}=0.31\pm0.11$, while the \sd{433} data do not constrain its width.
+The wider energy coverage makes the combined spectrum useful for the comparisons, allowing the spectrum to be followed above the second-knee transition and through the ankle.
 % \section{Combined SD-433 and SD-750 spectrum}
 % \label{sec:combined_spectrum}
 
