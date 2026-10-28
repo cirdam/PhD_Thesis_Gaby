@@ -3,45 +3,37 @@
 \begin{document}
 
 
-\chapter{Comparison with other experiment}
+\chapter{Comparison with other experiments}
 \label{chapter:comparison}
 
-With the measurement developed from the \sd{433} data, the update of the \sd{750} spectrum and further the combination between the two measurements, the second knee could finally be measured.
-The \sd{433} measurement of the second knee is constrained by the fewer statistics in the dataset, the width of the transition cannot be asserted.
-On the other hand, the \sd{750} measurement has a much higher statistical weight but the full efficiency is reached $\lg(E/\mathrm{eV})=17.2$ and the position of the break nor the spectral index before the second knee cannot be measured.
-Combining the strong points of the two measurements, the combined spectrum can be finally be developed and the second knee properly characterized in the fit.
-There is good agreement between the two spectral indices before and after the second knee between the \sd{433} and the combined spectrum.
-In \cref{fig:comparison} the measured spectra in this work are shown together with previous measurements with other spectra.
-The diamond show the estimated flux from the combined spectrum and the circles represent the \sd{433} alone measurements.
-A preliminary measurement with the \sd{433} from ICRC 2023 \cite{BrichettoOrquera:2023} is also shown for reference.
-The main difference between the two \sd{433} measurement is the updated \Offline reconstruction, improved bad period estimation and the updated \gls{fd} energy scale and is seen as an almost vertical shift in the spectrum due to the change in the exposure.
-This measurement is estimated with events from $0-45^\circ$ and using events where the silent station flags had to be repaired, as previously mentioned in \cref{sec:sd433_dataset_summary}.
-The change in the dataset is, however, less than $10\%$ overall, but is compensated with the appropriate exposure correction.
-The second knee is measured at $E_{01}=(230\pm50\,\mathrm{(stat)}\pm35\,\mathrm{(syst)})\,\mathrm{PeV}$.
-This value is consistent with both the \sd{433} and combined spectrum measurements.
-There is also good agreement between the $\gamma_0$ and $\gamma_1$ indices.
+This chapter compares the standalone \sd{433} measurement and the preliminary combined \sd{433}--\sd{750} spectrum with previous measurements from the Pierre Auger Observatory and other experiments.
+Both results give compatible spectral indices below and above the second knee, but differ in the fitted knee position.
+As discussed in Chapter 7, this displacement remains unresolved.
+With its wider energy coverage, the combined spectrum allows the comparison to extend above the second-knee transition and through the ankle.
 
+In \cref{fig:comparison}, the combined spectrum and the standalone \sd{433} measurement are shown with diamonds and circles, respectively, alongside previous measurements.
+Among these is the preliminary \sd{433} spectrum presented at ICRC 2023~\cite{BrichettoOrquera:2023}, which differs from the current analysis in the \Offline reconstruction, the identification of bad acquisition periods and the \gls{fd} energy scale.
+The difference between the two spectra appears mainly as an almost vertical shift, associated with the change in exposure.
+The ICRC 2023 analysis placed the second knee at $E_{01}=(230\pm50\,\mathrm{(stat)}\pm35\,\mathrm{(syst)})\,\mathrm{PeV}$, consistent within the quoted uncertainties with both the current standalone \sd{433} and combined results.
+Its spectral indices below and above the knee also agree with those obtained in this work.
 
-Combined measurements from \cite{Novotny:2021:CherenkovSpectrum} shows the combined \gls{sd} and the Cherenkov spectrum measured with the \gls{fd} shown in black squares.
-In this measurement, Cherenkov light produced by the showers in the atmosphere is detected directly for events pointing to the telescopes.
-This allows for the threshold energy to be greatly reduced, but at the expense of a harder to determine exposure and energy calibration when compared with straightforward SD-SD calibration.
-For this measurement, the position of the second knee is in some tension with the \sd{433} measurement.
-However, it agrees with the combined measurement.
-This is expected since the \sd{750} spectrum dominates the exposure at the energies around the second knee.
-The reported $\gamma_0$ is lower than the measured with this work but it can be due to the used minimum energy of the \sd{750} events which according to this work has an unaccounted efficiency effect.
+Black squares show the combined Cherenkov and SD spectrum presented in \cite{Novotny:2021:CherenkovSpectrum}, which extends to lower energies by using the fluorescence telescopes to detect direct atmospheric Cherenkov light from showers directed toward them.
+This lowers the detection threshold, although determining the exposure and energy calibration is more involved than for the surface-detector measurements.
+The reported second-knee energy, $158\pm5\,\mathrm{(stat)}\pm20\,\mathrm{(syst)}\,\mathrm{PeV}$, is lower than the standalone \sd{433} result and close to the preliminary combined value.
+Its spectral index below the knee, $\gamma_0=2.85\pm0.01\,\mathrm{(stat)}\pm0.05\,\mathrm{(syst)}$, is also lower than those obtained in this work.
+Differences in the lower energy boundary and the treatment of the \sd{750} efficiency may affect this comparison.
+In the EPJC analysis, the inferred index below the knee is particularly low, although it is not directly constrained by the measured energy range and was subsequently held fixed when estimating the uncertainties of the remaining spectral parameters.
 
-The other measurements shown in \cref{fig:comparison} shows the results for the all-particle spectrum from other experiments.
-The markers in color are used for experiments with a calorimetric energy scale from fluorescence detectors and the gray data points are used for experiments calibrated via simulations.
-Most of the measurements are contained within the systematic flux band from the combined spectrum and all the spectra shows the presence of the change in the slope of the spectrum at different energies.
-The range for $\gamma_0$ is from around 2.8 to 3.8 while for $\gamma_1$ the measurement ranges between 3.2 and 3.37.
-The reported results for $E_{01}$, $\gamma_0$ and $\gamma_1$ are shown in \cref{tab:second_knee_comparison} for the different experiments.
+Measurements from other experiments are also shown in \cref{fig:comparison}, with colored markers indicating calorimetric energy scales and gray markers indicating calibrations based on simulations.
+These spectra show a softening at different energies, while the reported indices above the break are generally closer to one another.
+The second-knee energies and spectral parameters are collected in \cref{tab:second_knee_comparison}.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/chapter_comparison/sd433_combined_experiment_comparison.pdf}
     \caption[Comparison with previous measurements of the all-particle cosmic-ray spectrum.]{
 Comparison of the all-particle cosmic-ray energy spectrum obtained in this work with previous measurements. The purple diamonds show the provisional combined SD-433 and SD-750 spectrum, while the red circles show the standalone SD-433 measurement up to the upper limit of its fit range. The shaded band shows the effect of the $14\%$ systematic uncertainty in the FD energy scale of the combined spectrum.  Previous Pierre Auger measurements comprise the SD-433 result presented at ICRC 2023, the SD-750 spectrum published in EPJC in 2021, and the combined Cherenkov--SD spectrum presented at ICRC 2021~\cite{BrichettoOrquera:2023,PierreAuger:2021:InfillSpectrum,Novotny:2021:CherenkovSpectrum}.
-The error bars represent statistical $68.27\%$ confidence level.
+The error bars show statistical uncertainties at the $68.27\%$ confidence level.
 Measurements from TA SD~\cite{Ivanov:2019:TASD}, TALE~\cite{TALE:2018:SecondKnee}, Yakutsk~\cite{Knurenko:2015:Yakutsk}, IceTop\cite{IceCube:2019:IceTop}, KASCADE-Grande~\cite{Bertaina:2015:KascadeGrande}, Tibet-III~\cite{Amenomori:2008:Tibet}, Tunka-133~\cite{Budnev:2020:Tunka133}, GAMMA~\cite{TerAntonyan:2014:GAMMA}, and Akeno~\cite{Nagano:1992:Akeno} are also shown for comparison. All published spectra are displayed on their original energy scales. Colored markers are used for spectra with calorimetric energy scales while gray markers are used for experiments calibrated with simulations.
 }
     \label{fig:comparison}
@@ -136,22 +128,38 @@ The TA result presented at ICRC 2019 is not listed separately because its second
 \end{table}
 
 
-In \cref{fig:comparison_shift}, the results from experiments that report a measurement of the second knee are shifted to match all the second knees in the energy of the second knee from the combined spectrum via a transformation,
+To compare the spectral shapes around the second knee, the spectra in \cref{fig:comparison_shift} are shifted along the energy axis according to
 \begin{align}
-    E'=E\frac{E_{01}^\mathrm{comb}}{E_{01}^\mathrm{exp}}
+    E'=E\frac{E_{01}^{\mathrm{comb}}}{E_{01}^{\mathrm{exp}}},
 \end{align}
-\noindent where $E^\mathrm{x}_{01}$ is the measured second knee energy, to preserve the binning in logarithmic scale.
-The behavior of all the experiments is quite consistent for higher energies, where a softening of the spectrum roll over and the slopes are quite consistent.
-This hints that the primary difference in the measured second knee energies and the all particle flux between the different spectra arises from the differences in the energy scale rather than from a difference in the shape of the spectrum.
-Experiments with the biggest deviation are the ones where the energy scale is not set calorimetrically, like KASCADE-Grande
-Measurements such as TALE and Yakutsk, for instance, are almost completely contained within the systematic uncertainty band from the combined spectrum in the overlapping region.
-It is noteworthy that all measurements show a smooth transition that last several bins, however this is the first to characterize the width of the transition, highlighting that the second knee is a soft change in the slope of the all particle spectrum.
+where $E_{01}^{\mathrm{exp}}$ is the second-knee energy reported by each experiment and $E_{01}^{\mathrm{comb}}$ is the preliminary combined value.
+The combined spectrum is used as the reference because its wider energy coverage provides a more precise determination of the spectral index above the knee than the standalone \sd{433} measurement.
+This transformation preserves the logarithmic bin widths and leaves the flux values unchanged, placing each fitted knee at the same energy.
 
-In the context of theoretical models associated with the second knee, the softening measured at \(0.17\,\mathrm{EeV}\) occurs above the approximately \(0.08\)--\(0.10\,\mathrm{EeV}\) expected for the iron knee in a simple Peters-cycle scenario. In this scenario, the spectra of the individual elemental components steepen at energies proportional to their charge, \(E_Z\simeq Z E_{\mathrm{p}}\), producing a sequence of rigidity-dependent knees~\cite{Mollerach:2019:GalacticScenario,Aloisio:2012:Transition}. Given the statistical and systematic uncertainties and the simplicity of this scaling, the measured break energy does not by itself exclude a rigidity-dependent Galactic origin. Its position and smoothness are also compatible with an overlap between a fading Galactic component and an emerging extragalactic component~\cite{Aloisio:2012:Transition,Mollerach:2019:GalacticScenario,Lemoine:2005:MagneticHorizon}. Further studies using the Underground Muon Detector of the Pierre Auger Observatory will provide mass-sensitive information through the muonic component of the air showers and allow possible changes in the primary composition across the second knee to be investigated. Measurements of \(X_{\max}\) would provide complementary information about changes in the elongation rate. Distinguishing between a rigidity-dependent cutoff, an additional Galactic component, and the onset of an extragalactic contribution therefore requires complementary measurements of mass composition and anisotropy~\cite{Thoudam:2016:SecondGalacticComponent,Giacinti:2012:AnisotropyTransition}.
+After alignment, the spectra show broadly similar slopes above the second knee.
+TALE and Yakutsk lie largely within the systematic uncertainty band of the combined spectrum over the overlapping energy range, while larger differences remain for KASCADE-Grande.
+The similarity of the spectral shapes suggests that differences in energy scale may account for part of the spread in the reported knee energies.
+
+The combined fit favors a broad second-knee transition, with $\omega_{01}=0.31\pm0.11\,\mathrm{(stat)}\pm0.09\,\mathrm{(syst)}$.
+A broad transition was also reported in the published \sd{750} analysis, which gave $\omega_{01}=0.49\pm0.07\,\mathrm{(stat)}\pm0.34\,\mathrm{(syst)}$ with the knee energy and the index below it held fixed.
+Both fits therefore describe a gradual steepening, although the fitted width depends on how the spectrum below the knee is constrained.
+
+In a simple Peters-cycle scenario, individual elemental spectra steepen at energies proportional to their charge, $E_Z\simeq Z E_{\mathrm{p}}$, placing the iron knee at approximately $0.08$ to $0.10\,\mathrm{EeV}$~\cite{Mollerach:2019:GalacticScenario,Aloisio:2012:Transition}.
+The preliminary combined fit places the second knee at $0.17\,\mathrm{EeV}$, above this range, while the standalone \sd{433} result at $0.28\,\mathrm{EeV}$ lies higher still.
+Neither result, however, is sufficient on its own to exclude a rigidity-dependent Galactic origin.
+An overlap between a fading Galactic component and an emerging extragalactic component offers another possible interpretation of the gradual steepening~\cite{Aloisio:2012:Transition,Mollerach:2019:GalacticScenario,Lemoine:2005:MagneticHorizon}.
+Understanding the difference between the standalone \sd{433} and combined spectra near the second knee is also needed before drawing firmer conclusions from the fitted break energy and transition width.
+
+Measurements of the muonic component with the Underground Muon Detector of the Pierre Auger Observatory could help establish whether the composition changes across the second knee, complemented by measurements of $X_{\max}$ and its evolution with energy.
+Together with anisotropy studies, this information is needed to distinguish between a rigidity-dependent cutoff, an additional Galactic component and the onset of an extragalactic contribution~\cite{Thoudam:2016:SecondGalacticComponent,Giacinti:2012:AnisotropyTransition}.
 
 \section{Summary}
 
-The measured second-knee energy lies within the range reported by previous experiments. After aligning the spectra at their respective break energies, they exhibit a broadly consistent softening. Nevertheless, the all-particle energy spectrum alone cannot determine the origin of this feature. Measurements of the mass composition and anisotropy across this energy range are required to distinguish between a rigidity-dependent decline of the Galactic component and the emergence of an extragalactic contribution.
+Comparison with previous measurements places the results of this work in the broader experimental picture of the second knee.
+Both the standalone \sd{433} and preliminary combined second-knee energies lie within the range reported by previous experiments.
+Aligning the spectra at their fitted knee energies reveals broadly similar slopes above the transition.
+Although the standalone and combined results also agree in their spectral indices, the difference between their spectra near the knee and the displacement of the fitted break remain unresolved.
+Understanding these differences, together with measurements of mass composition and anisotropy, is needed to clarify the physical origin of the second knee.
 
 \begin{figure}
     \centering
