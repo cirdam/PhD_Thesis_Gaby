@@ -266,7 +266,11 @@ The exposure factor $\mathcal{L}_{\mathrm{exp}}$ allows the fitted \sd{433} expo
 \noindent where $\delta\mathcal E_{433}=\widehat{\mathcal E}_{433}-\mathcal E_{433}$ and $\sigma_{\mathcal E}$ is the $3\%$ uncertainty assigned to the \sd{433}exposure~\cite{PierreAuger:2010:TriggerAperture}.
 The Gaussian term penalizes deviations of the fitted exposure from its nominal value.
 Because the \sd{433} energy scale is calibrated against the \sd{750}, the relative calibration is allowed to vary through shifts in $A$ and $B$.
-These shifts are defined as $\delta A\equiv\widehat A-A$ and $\delta B\equiv\widehat B-B$,  where $A$ and $B$ are the nominal calibration parameters and $\widehat A$ and $\widehat B$ their corresponding fitted values.
+These shifts are defined as
+\begin{align}
+\delta A\equiv\widehat A-A && \delta B\equiv\widehat B-B,
+\end{align}
+where $A$ and $B$ are the nominal calibration parameters and $\widehat A$ and $\widehat B$ their corresponding fitted values.
 The systematic uncertainties and correlation of $A$ and $B$ are incorporated through the bivariate Gaussian likelihood,
 \begin{align}
 \mathcal L_{AB}(\delta A,\delta B)
