@@ -53,12 +53,12 @@
 %     \label{fig:t1t2t3}
 % \end{figure}
 
-% The \gls{tot}, \gls{totd} and \gls{mops} triggers are automatically promoted to the next level station trigger, T2. 
+% The \gls{tot}, \gls{totd} and \gls{mops} triggers are automatically promoted to the next level station trigger, T2.
 % The \gls{th}-T1 trigger is requird to have a signal higher than  $3.2\,I_{\text{VEM}}^{\text{peak}}$ to be promoted to the T2 level.
 % With the T2 the station level trigger frequency is reduced to ~\SI{20}{\Hz}, which is compatible with the bandwidth of the communication system.
 % The \gls{cdas} analyzes the trigger kind and timestamp to find temporal and spatial correlation between  triggered stations.
-% To form the next trigger level, the T3, two possible configurations are allowed. 
-% The central detector should have a \gls{tot} and be surrounded 
+% To form the next trigger level, the T3, two possible configurations are allowed.
+% The central detector should have a \gls{tot} and be surrounded
 % Once a T3 is formed, all traces from the detectors with a T2 level trigger and T1 for stations with a T1 closer than \SI{30}{\micro\s} of the T3 are stored in CDAS.
 
 % Preliminary draft.
@@ -102,6 +102,7 @@ This trigger is independent of the \gls{vem} calibration and is based on the sig
 It counts the number of positive steps within a \SI{3}{\micro\s} sliding window, where a positive step is defined as an increase in signal amplitude in consecutive bins.
 To be counted, the step must be larger than the typical noise level and smaller than the amplitude expected from a vertical muon.
 If more than four such positive-step instances are found, a \gls{mops} trigger is issued.
+The \gls{mops} and \gls{mops} triggers are collectively referred as the Gen. II triggers.
 
 \begin{figure}
     \centering
@@ -136,7 +137,7 @@ The compactness is described by the number of crowns over which the triggered st
 A crown is a way of counting hexagons outward from a central station.
 
 The first configuration, \textit{ToT2C1\&3C2}, requires a coincidence of at least three nearby stations passing any combination of \gls{tot}, \gls{totd}, and \gls{mops} triggers.
-These stations must be in a compact pattern, such that one station has another one in the first crown and a third one in the second crown. 
+These stations must be in a compact pattern, such that one station has another one in the first crown and a third one in the second crown.
 Since the \gls{tot} trigger has a very low background rate, this T3 mode has a low contamination and is highly efficient for showers with zenith angle below \SI{60}{\degree}.
 
 The second T3 configuration, denoted \textit{2C1\&3C2\&4C4}, is more permissive.
@@ -365,7 +366,7 @@ After establishing the full-efficiency threshold and identifying the periods of 
 % Above the full-efficiency threshold, the detection probability can be considered independent of the primary energy and mass, and the detector aperture is obtained by integrating its effective projected area over solid angle.
 The fiducial area associated with one active 6T5 hexagon is given by \cref{eq:6T5_area}.
 Acceptance describes the ability of the array to collect particles from different directions. For a flat collecting surface, the area seen from an arrival direction is its projected area, \(S_{\mathrm{hex}}\cos\theta\).
-The acceptance of an elemental hexagon in a acceptance cone  delimited by the zenith angles $\theta_{\min}$ and $\theta_{\max}$ is found by integration that projected area over all accepted directions, 
+The acceptance of an elemental hexagon in a acceptance cone  delimited by the zenith angles $\theta_{\min}$ and $\theta_{\max}$ is found by integration that projected area over all accepted directions,
 
 \begin{align}
     A_{\mathrm{6T5}}
