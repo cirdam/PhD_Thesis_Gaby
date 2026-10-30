@@ -28,7 +28,7 @@ The geometrical reconstruction uses the positions and signal start times of the 
 Its purpose is to determine the unit vector along the shower axis, $\hat{a}$, whose components are the direction cosines from which the zenith angle, $\theta$, and the azimuth angle, $\phi$, are obtained. 
 
 The reconstruction begins with a plane-front fit to the station start times, which provides an initial estimate of the arrival direction.
-The signal-weighted barycentre of the participating stations is used as the initial estimate of the core position.
+The signal-weighted barycenter of the participating stations is used as the initial estimate of the core position.
 These estimates are subsequently refined using a curved description of the shower front.
 
 In the \Offline reconstruction, the leading particles of the shower, which define the extreme shower front, are approximated by a sphere expanding at the speed of light from a virtual origin $\vec{x}_0$ at time $t_0$.
@@ -59,7 +59,7 @@ For events with at least five participating stations, the radius of curvature is
 For events with lower station multiplicity, the number of degrees of freedom is insufficient to constrain the curvature, and $R_{0}$ is fixed according to a parametrization obtained from higher-multiplicity events.
 
 The left panel of \cref{fig:sd433_event_footprint_ldf} illustrates the geometrical reconstruction of an \sd{433} event.
-The marker size is proportional to the station signal, while the colour scale represents its start time, progressing from earlier signals in blue to later signals in green.
+The marker size is proportional to the station signal, while the color scale represents its start time, progressing from earlier signals in blue to later signals in green.
 The black line indicates the reconstructed arrival direction projected onto the ground, and the cross marks the reconstructed core position.
 
 \subsection{Lateral distribution function}
@@ -71,7 +71,7 @@ As a consequence, the \gls{ldf} slope exhibits variations on an event-by-event b
 Instead, the reconstruction is based on an \textit{average} LDF slope, $\langle S(r)\rangle$, and the expected signal at a fixed reference distance, $r_\text{opt}$, is adopted as the shower size.
 The optimal distance of \qty{300}{m} for the \sd{433} is determined by fitting the LDF and identifying the distance at which the reconstructed shower size is minimally dependent on the assumed LDF slope, following the method described in Ref.~\cite{Newton:2007:OptimalDistance}.
 The dependence of the optimal distance on the assumed LDF shape, the primary energy, and the zenith angle remains at approximately the 5\% level~\cite{PierreAuger:2020:SDReconstruction}.
-The LDF is described using an empirically-chosen model based on a modified \gls{nkg} function,
+The LDF is described using an empirically chosen model based on a modified \gls{nkg} function,
 \begin{align}
   \langle S(r)\rangle =
     S(r_\text{opt})
@@ -173,7 +173,7 @@ For this array, the zenith angle range $0^\circ\leq\theta<45^\circ$ is divided i
 Within each interval, events are ranked by decreasing $S(300)$.
 Events at the same rank $N$ correspond approximately to the same primary energy, and the variation of their corresponding $S(300)$ in each bin with zenith angle determines the attenuation curve at that intensity.
 Six intensity cuts, $N\in\{100,\,200,\,500,\,1000,\,2000,\,5000\}$, are used to determine the attenuation at different shower sizes.
-The statistical uncertainty of $S_N$ is estimated from the Poisson fluctuations of $N$ as,
+The statistical uncertainty of $S_N$ is estimated from the Poisson fluctuations of $N$ as
 \begin{align}
     \sigma_{S_N}
     =
@@ -251,7 +251,7 @@ The corrected shower size $S_{30}$ is used as the estimator of the cosmic-ray en
 
 With the attenuation in the atmosphere corrected, the shower size $S_{30}$ can be calibrated in terms of the primary energy.
 The other two surface-detector arrays, the \sd{750} and \sd{1500}, are calibrated using events detected simultaneously by the \gls{sd} and \gls{fd}.
-However, because of the distance between the \sd{433} and the nearest \gls{fd} site, Cohihueco, the \gls{heat} telescopes cannot observe showers falling within the \sd{433} area.
+However, because of the distance between the \sd{433} and the nearest \gls{fd} site, Coihueco, the \gls{heat} telescopes cannot observe showers falling within the \sd{433} area.
 The \sd{433} energy scale is therefore obtained through an \gls{sd}-\gls{sd} calibration using events detected in coincidence with the \sd{750}.
 This introduces an additional complication because the \sd{750} calibration relation must be extrapolated by approximately two to three energy bins below the range in which that array is fully efficient, as discussed in \cref{subsec:sd750_efficiency}.
 The finite resolutions of both arrays, their correlation, and the event selection must consequently be included in the calibration fit.

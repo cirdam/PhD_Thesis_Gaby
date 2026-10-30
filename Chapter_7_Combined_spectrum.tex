@@ -38,7 +38,7 @@ The \sd{750} efficiency was previously estimated using a limited sample of hybri
 Because the \sd{433} is nested within the \sd{750}, the efficiency can also be independently estimated from the fraction of \sd{433} events also detected by the \sd{750}.
 %Although the reconstructed energy scales of the two arrays are related, this does not prevent the determination of the full-efficiency threshold, which is the main objective of this study.
 % These data are used to parameterize the \sd{750} efficiency below the threshold, where its effect enters through the forward-folding procedure and has only a minor influence on the resulting spectrum.
-Using periods during which both arrays were active, the \sd{750} efficiency is estimated as,
+Using periods during which both arrays were active, the \sd{750} efficiency is estimated as
 \begin{align}
     \varepsilon(E_i)=\frac{k_i}{n_i},
 \end{align}
@@ -67,7 +67,7 @@ To parameterize the efficiency, a binomial likelihood fit was used, where for ea
     (1-\varepsilon_i)^{n_i-k_i},
 \end{align}
 \noindent where $\varepsilon_i=\varepsilon(E_i;\mu,\sigma)$ is a model for the efficiency evaluated at the bin center.
-Following Ref.~\cite{PierreAuger:2021:InfillSpectrum}, the efficiency is modeled as,
+Following Ref.~\cite{PierreAuger:2021:InfillSpectrum}, the efficiency is modeled as
 \begin{align}
     \varepsilon(E)
     =
@@ -97,7 +97,7 @@ For the \sd{750}, the bias is modeled as
     \label{eq:sd750_bias}
 \end{align}
 \noindent where $x=\lg(E/\mathrm{eV})$.
-The best-fit parameters are,
+The best-fit parameters are
 \begin{align*}
     \begin{gathered}
         b_0 = -3 \pm 1, \qquad
@@ -355,7 +355,7 @@ Because the exposure-only fit uses one fewer free parameter and avoids the energ
 
 %The likelihood fit is performed using the event distributions of the two arrays separately.
 The \sd{433} and \sd{750} data are combined to produce a single flux estimator in each energy bin.
-This combination, based on a maximum likelihood method~\cite{PierreAuger:2025:Declination}, is,
+This combination, based on a maximum likelihood method~\cite{PierreAuger:2025:Declination}, is
 \begin{align}
     J_i^{\mathrm{comb}}=
     \frac{n_i^{433}c_i^{433}+n_i^{750}c_i^{750}}

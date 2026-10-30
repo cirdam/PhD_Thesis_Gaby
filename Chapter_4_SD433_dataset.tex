@@ -145,7 +145,7 @@ It requires a four-fold coincidence of T2 stations, independently of their trigg
 In this case, one triggered station must have another in the first crown, a third one in the second crown, and the fourth may be as far as the fourth crown.
 This configuration is particularly relevant for more inclined showers, whose triggered stations can be spread over a wider area on the ground.
 
-The T1, T2, and T3 selection are performed online and the data are stored to be reconstructed later, where the next two trigger levels are applied.
+The T1, T2, and T3 selections are performed online and the data are stored to be reconstructed later, where the next two trigger levels are applied.
 The physical trigger, T4, is designed to reject accidental coincidences and retain physically originated showers.
 For vertical showers, two T4 criteria are used.
 
@@ -156,7 +156,7 @@ The second T4 criterion, denoted \textit{4C1}, requires four nearby triggered st
 As in the 3ToT case, their times must be compatible with a plane shower front moving at the speed of light.
 This criterion complements the 3ToT selection and improves the efficiency for events that are not selected by the more restrictive \gls{tot}-based condition.
 
-To ensure reliable reconstruction, the 6T5 fiducial quality trigger requires the station with the highest signal to be surrounded by six active neighbouring stations.
+To ensure reliable reconstruction, the 6T5 fiducial quality trigger requires the station with the highest signal to be surrounded by six active neighboring stations.
 This defines a regular hexagonal fiducial region containing the shower-core positions for which the highest-signal station is the closest detector, while excluding events near the boundary of the active array.
 For a station spacing $d=\SI{433}{\m}$, the area of this hexagon is
 \begin{align}
@@ -257,7 +257,7 @@ This feature is no longer apparent from $\lg(E/\mathrm{eV})=16.8$ onward, for wh
 \end{figure}
 
 To quantify the uniformity of the core distribution, the observed bin occupancies were compared with a uniform expectation using the Poisson deviance.
-For a sample containing $N$ events distributed among $N_{\mathrm{bin}}$ accepted bins, the expected occupancy under the uniform hypothesis is,
+For a sample containing $N$ events distributed among $N_{\mathrm{bin}}$ accepted bins, the expected occupancy under the uniform hypothesis is
 \begin{align}
     \nu=\frac{N}{N_{\mathrm{bin}}}.
 \end{align}
@@ -340,7 +340,7 @@ After normalization by the number of active hexagons, the rate has a mean of $6.
 Although the surface detector has a duty cycle close to $100\%$, communication and electronics failures can produce periods of unstable data acquisition.
 These periods are identified from unexpectedly long time intervals between successive 6T5 events.
 %Assuming that the events follow a Poisson process, their expected rate is proportional to the active area.
-The probability of observing a time interval longer than $T$ is,
+The probability of observing a time interval longer than $T$ is
 \begin{align}
     P(t>T)=\exp(-F\,A \,T),
 \end{align}
@@ -381,7 +381,7 @@ The acceptance of an elemental hexagon in an acceptance cone delimited by the ze
     \right).
 \end{align}
 \noindent For the zenith-angle range used in this work, $\theta_{\min}=0^\circ$ and $\theta_{\max}=40^\circ$, the acceptance per active hexagon is $A_{\mathrm{6T5}}=\SI{0.211}{\km\squared\sr}$.
-The acceptance for the array containing $N_{\mathrm{hex}}$ active hexagons is,
+The acceptance for the array containing $N_{\mathrm{hex}}$ active hexagons is
 \begin{align}
     \frac{\mathrm{d}\exposuresym}{\mathrm{d}t}
     =N_{\mathrm{hex}}(t)A_{\mathrm{6T5}}.
@@ -397,7 +397,7 @@ The accumulated exposure is obtained by integrating this acceptance over the sel
 
 The upper panel of \cref{fig:exposure} shows the daily mean number of active hexagons calculated from the minute-based T2Life information.
 Its evolution reflects both changes in the array configuration and temporary detector downtime.
-Their maximum corresponds to all 7 hexagons of the \sd{433} in good working order.
+Its maximum corresponds to all 7 hexagons of the \sd{433} in good working order.
 The lower panel shows the accumulated exposure contributed by each hexagon and their sum after excluding the bad-acquisition periods.
 
 The total accumulated exposure for $\theta<40^\circ$ is \SDFourThreeThreeExposure.
