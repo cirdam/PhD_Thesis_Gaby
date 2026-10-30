@@ -31,7 +31,7 @@ The raw flux in reconstructed-energy bin $i$ is estimated as
     \label{eq:raw_flux}
 \end{align}
 where $N_i$ is the number of events in the bin, $\Delta E_i$ is the bin width, and $\exposuresym$ is the accumulated exposure.
-As determined in \cref{sec:exposure}, the exposure is \SDFourThreeThreeExposure$\pm0.09$ and is energy-independent above the full-efficiency threshold.
+As determined in \cref{sec:exposure}, the exposure is \SDFourThreeThreeExposure{} and is energy-independent above the full-efficiency threshold.
 A logarithmic bin width of $\Delta\lg(E/\mathrm{eV})=0.1$ is used up to $\lg(E/\mathrm{eV})=18.1$, chosen to be compatible with the energy resolution described in \cref{sec:res_and_bias}.
 Above this energy, a coarser binning of $\Delta\lg(E/\mathrm{eV})=0.3$ is adopted to increase the number of events per bin and thereby reduce the statistical uncertainties.
 This spectrum is referred to as the \textit{raw spectrum} because no correction has yet been applied for event migrations between energy bins caused by the finite resolution and bias of the detector.
@@ -143,7 +143,7 @@ For this purpose, the Poisson deviance,
             \frac{n_i}{\nu_i(\mathbf{s})}
         \right)
     \right],
-    \label{eq:poisson_deviance}
+    \label{eq:poisson_deviance2}
 \end{align}
 is minimized with respect to $\mathbf{s}$.
 It should be noted that the migration matrix in \cref{eq:migration_matrix} explicitly depends on the spectrum model $J(E_{\mathrm{true}}\mid\mathbf{s})$.
@@ -449,7 +449,7 @@ The analytical estimate of the systematic uncertainty obtained from the fitted \
 
 As a numerical cross-check, the reconstructed energy of every event is shifted by $\delta=\pm0.14$, and the complete forward-folding and unfolding procedures are repeated.
 The migration matrix is kept unchanged because the energy-scale shift does not modify the assumed detector resolution, bias, or efficiency.
-The corresponding unfolded spectra are shown in \cref{appendix_chapter_spectrum}.
+The corresponding unfolded spectra are shown in \cref{app:chap_spectrum}.
 
 The flux variations obtained with this procedure are also shown in \cref{fig:energy_systematic}.
 The forward-folding and analytical results agree over most of the energy range.
@@ -485,9 +485,9 @@ The contribution from the energy resolution is determined by varying the paramet
 The parameters $R_{\mathrm{sh}}$ and $R_0$ are shifted up and down by their respective $1\sigma$ uncertainties.
 For each of these two variations, the migration matrix is recalculated while keeping the other components of the detector response unchanged, and the spectrum is fitted again.
 The relative change in the fitted flux $\Delta J/J$ is calculated for each case and combined in quadrature to get the overall systematic uncertainty due to uncertainty in the energy resolution.
-The contribution from the energy resolution is shown in the left panel of \cref{fig:sd433_systematic_budget}.
+The contribution from the energy resolution is shown in the left panel of \cref{fig:systematic_budget}.
 Its magnitude is largest near the full-efficiency threshold, where it reaches approximately $1.1\%$, and decreases with energy.
-The resulting spectra and fitted parameters after shifting the resolution up and down are reported in \cref{appendix_chapter_spectrum}.
+The resulting spectra and fitted parameters after shifting the resolution up and down are reported in \cref{app:chap_spectrum}.
 
 The dependence of the detector response on the assumed mass composition is estimated using the bias and efficiency parametrizations obtained in \cref{sec:res_and_bias} for pure proton and pure iron primaries.
 The contributions of the energy bias and the trigger efficiency are evaluated separately, following the same procedure used for the uncertainty of the energy resolution.
@@ -497,7 +497,7 @@ However, its contribution to $\Delta J/J$ reaches approximately $4.3\%$ near the
 The composition dependence of the efficiency produces a smaller contribution to the flux uncertainty, with a maximum of approximately $1.5\%$, and shifts the position of the second knee downward by
 $\Delta\lg(E_{01}/\mathrm{eV})=-0.03$.
 %
-The contributions from the energy bias and trigger efficiency are shown in the left panel of \cref{fig:sd433_systematic_budget}.
+The contributions from the energy bias and trigger efficiency are shown in the left panel of \cref{fig:systematic_budget}.
 
 \subsection{Calibration systematic}
 \label{subsec:calibration_systematic}
