@@ -1,3 +1,10 @@
+Figure sources for Chapter_3_Auger.tex
+
+The figures/chapter_auger folder contains only the five image files included
+directly by the chapter. Source components used to assemble the tank figure
+are documented below and retained in Git commit 4e6b84e; they are not needed
+to compile the chapter.
+
 Figure: fig:map_detector in Chapter_3_Auger.tex
 
 auger_array_map_rodriguez2026.png
@@ -66,8 +73,10 @@ auger_tank_schematic_and_photo.pdf
 Approved combined figure used by Chapter_3_Auger.tex as fig:tank.
 Left: the Kampert and Watson schematic credited above.
 Right: the original author-supplied photograph with the LaTeX crop and labels.
-Editable standalone source: auger_tank_schematic_and_photo.tex, which inputs
-auger_station_annotated.tex. Compile from the thesis repository root.
+Editable standalone source retained in Git commit 4e6b84e:
+figures/chapter_auger/auger_tank_schematic_and_photo.tex, which inputs
+auger_station_annotated.tex. Restore the four source components from that
+commit before rebuilding the figure from the thesis repository root.
 The caption, including 'Author is also shown for reference.', is kept in
 Chapter_3_Auger.tex, outside the figure PDF.
 
