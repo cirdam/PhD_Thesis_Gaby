@@ -82,14 +82,16 @@ Chapter_3_Auger.tex, outside the figure PDF.
 
 sd433_array_v2.pdf
 Figure: fig:sd433_array in Chapter_3_Auger.tex.
-Source: existing plot supplied from the author's local analysis project:
-/home/pbrichetto/projects/sdana/spectrum/sd433_array_v2.pdf
-Copied unchanged; the original PDF, PNG, SVG and plotting files are preserved.
-SHA-256: 21bca1c4b1f3420b673e216a85a514951afb141e0f4da4d64eb8cf45e38274c6
+Replotted from the author's station coordinates and names in:
+/home/pbrichetto/projects/sdana/spectrum/spectrum_utilities.py
+Adapted from /home/pbrichetto/projects/sdana/spectrum/array_plot.py.
+Reproducible plotting script:
+/home/pbrichetto/phd_thesis/local_thesis_helpers/plot_sd433_array.py
+Loads /home/pbrichetto/spectuls/spectuls/common/plot_style.mplstyle.
+Uses the completed 19-station SD-433 geometry and four nearby SD-750-only
+stations (5570, 4669, 4093, 5774) from the coordinate dictionaries.
 Blue: SD-433-only stations. Black: stations shared by SD-433 and SD-750.
-Grey: nearby SD-750-only stations. The beige shading marks the fiducial area.
-The saved figure does not display station names.
-Related source files: /home/pbrichetto/projects/sdana/spectrum/array_plot.py
-and /home/pbrichetto/projects/sdana/spectrum/spectrum_utilities.py.
-The current plotting script does not contain the final polygon-fill step;
-it is not an exact generator of the supplied saved figure.
+Grey: nearby SD-750-only stations. All 19 SD-433 station names are displayed,
+with their spelling preserved from statName and the numeric IDs omitted.
+The legend is at the upper right. No fiducial-area shading is included.
+The original analysis files and the earlier PDF, PNG and SVG are unchanged.
