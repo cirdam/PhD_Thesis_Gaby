@@ -1,6 +1,6 @@
 Figure sources for Chapter_3_Auger.tex
 
-The figures/chapter_auger folder contains only the five image files included
+The figures/chapter_auger folder contains only the image files included
 directly by the chapter. Source components used to assemble the tank figure
 are documented below and retained in Git commit 4e6b84e; they are not needed
 to compile the chapter.
@@ -95,3 +95,17 @@ Grey: nearby SD-750-only stations. All 19 SD-433 station names are displayed,
 with their spelling preserved from statName and the numeric IDs omitted.
 The legend is at the upper right. No fiducial-area shading is included.
 The original analysis files and the earlier PDF, PNG and SVG are unchanged.
+
+fd_telescope_schematic_auger2015.pdf
+Figure: fig:fd_telescope_schematic in Chapter_3_Auger.tex.
+Source: The Pierre Auger Collaboration, The Pierre Auger Cosmic Ray
+Observatory, Nuclear Instruments and Methods in Physics Research A 798
+(2015) 172-213, Figure 7, printed page 179 (PDF page 8).
+DOI: https://doi.org/10.1016/j.nima.2015.06.058
+Bibliography key: PierreAuger:2015:Observatory.
+Original PDF: /home/pbrichetto/bwSyncShare/Zotero/storage/5TC7D7JI/Pierre Auger Collaboration - 2015 - The Pierre Auger Cosmic Ray Observatory.pdf
+Extraction: pypdf, PDF page 8; crop rectangle (344, 309, 530, 490) points
+in the source page's bottom-left coordinate system, translated onto a
+186 x 181 point page. The original vector artwork and labels are retained.
+Only the schematic is included; the neighbouring photographs and original
+caption are outside the crop. The thesis caption credits Figure 7.

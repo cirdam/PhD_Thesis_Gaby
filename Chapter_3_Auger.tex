@@ -133,6 +133,48 @@ The deployment, event selection, trigger efficiency and exposure of the \sd{433}
     \label{fig:sd433_array}
 \end{figure}
 
+\section{The fluorescence detector}
+\label{sec:auger_fd}
+
+Complementary to the \gls{sd}, the fluorescence detector provides a quasi-calorimetric estimate of the energy of primary cosmic rays during clear, moonless nights.
+These observing conditions limit its duty cycle to approximately $15\%$.
+Each \gls{fd} site consists of six telescopes overlooking the \gls{sd}, providing $180^\circ$ of horizontal coverage.
+Each telescope has a $30^\circ\times30^\circ$ field of view and uses Schmidt optics, as shown in \cref{fig:fd_telescope_schematic}.
+Light enters through a 2.2\,m diameter aperture, passing through a UV filter to reduce background light.
+A glass corrector ring at the window reduces optical aberrations, and the spherical mirror focuses the light onto the camera.
+
+The camera consists of 440 \gls{pmt}s arranged in a $22\times20$ array.
+Each \gls{pmt} covers approximately $1.5^\circ$ of the sky.
+As the shower crosses the field of view, the fluorescence light produces a track across the camera.
+The signals collected by the pixels are used to estimate the light intensity and timing along the track~\cite{PierreAuger:2015:Observatory}.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.65\textwidth]{figures/chapter_auger/fd_telescope_schematic_auger2015.pdf}
+    \caption[Schematic of a fluorescence telescope]{Schematic of a fluorescence telescope, showing the camera, segmented mirror, UV filter and aperture system.
+    Reproduced from Fig.~7 of Ref.~\cite{PierreAuger:2015:Observatory}.}
+    \label{fig:fd_telescope_schematic}
+\end{figure}
+
+Several calibrations are performed over time to ensure stable operation of the detector.
+Absolute calibrations have used a drum source and, more recently, a moving point source scanned across the aperture~\cite{Schaeffer:2023:XYScanner}.
+Relative calibrations use internal light sources to monitor changes in the response.
+
+The shower geometry is determined from the observed track and the arrival times of the light.
+The deposited energy is then measured as a function of atmospheric depth.
+This requires accounting for atmospheric attenuation and contributions from direct and scattered Cherenkov light.
+Integrating the energy-deposit profile gives a calorimetric estimate of the energy, while the position of its maximum, $\Xmax$, provides information about the primary mass.
+A correction for invisible energy is also included when estimating the primary energy~\cite{PierreAuger:2015:Observatory}.
+
+Three \gls{heat} telescopes were added later near the Coihueco site to lower the energy threshold of the \gls{fd}.
+These telescopes use the same optical system and cameras as the standard \gls{fd} telescopes, but can be tilted upward by approximately $30^\circ$.
+This allows them to detect lower-energy showers, which produce less fluorescence light and must therefore be observed from closer distances.
+Their shower maximum can appear above the field of view of the standard \gls{fd} telescopes.
+In the upward mode, \gls{heat} covers elevations of approximately $30^\circ$--$60^\circ$.
+In the downward mode, its field of view overlaps with that of the Coihueco telescopes, allowing cross-calibration.
+This extends observations of showers detected in common with the \sd{750} towards lower energies~\cite{PierreAuger:2015:Observatory}.
+However, too few suitable events are observed in common with the \sd{433} to perform a direct energy calibration of this array with the fluorescence telescopes~\cite{Silli:2021:Thesis}.
+
 \section{Reconstruction software}
 \label{sec:auger_reconstruction_software}
 % Place this section after the detector descriptions as the chapter is developed.
