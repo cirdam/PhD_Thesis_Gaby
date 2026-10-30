@@ -1,0 +1,18 @@
+% Standalone figure source. Compile from the thesis repository root.
+\documentclass[11pt,border=2pt]{standalone}
+\usepackage{graphicx}
+\usepackage{tikz}
+\begin{document}
+\begin{minipage}{154.12mm}
+    \setlength{\textwidth}{\linewidth}
+    \centering
+    \begin{minipage}[c]{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/chapter_auger/auger_tank_cutaway_kampert2012.png}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.51\textwidth}
+        \centering
+        \input{figures/chapter_auger/auger_station_annotated.tex}
+    \end{minipage}
+\end{minipage}
+\end{document}

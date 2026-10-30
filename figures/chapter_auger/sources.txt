@@ -1,0 +1,72 @@
+Figure: fig:map_detector in Chapter_3_Auger.tex
+
+auger_array_map_rodriguez2026.png
+Source: Ezequiel Enrique Rodriguez, Search for PeV Photons with Machine Learning
+in the AugerPrime Era, PhD thesis, UNSAM - KIT, 2026.
+Figure 4.8, printed page 44 (PDF page 60).
+Bibliography key: Rodriguez:2026:Thesis.
+Original PDF: /home/pbrichetto/bwSyncShare/Zotero/storage/3QEA4GN4/Rodriguez - 2026 - Search for PeV Photons with Machine Learning in the AugerPrime Era.pdf
+Extraction: Poppler pdftoppm, PDF page 60 scaled to 4200 pixels along its
+longest edge; crop x=375, y=375, width=2220, height=1200 pixels.
+Map content and embedded insets retained without modification.
+Credit in the thesis caption identifies the immediate source; authorship of
+the underlying basemap and embedded photograph has not been independently verified.
+
+auger_station_and_fd.jpeg
+Source: photograph supplied by the thesis author on 2026-10-29.
+Original file: /home/pbrichetto/Downloads/WhatsApp Image 2026-10-29 at 19.23.09.jpeg
+Original image copied unchanged, 3024 x 4032 pixels, 72 dpi.
+Photographer not independently identified; caption credits provision by the author.
+Display only: LaTeX trims 350 bp from the bottom and 1100 bp from the top
+to emphasize the detector and building. Original pixels remain in the file.
+The photograph shows AugerPrime instrumentation and is used to illustrate the
+observatory, rather than to specify the detector configuration of the analysis.
+
+sd_muon_calibration_bertou2006.png
+Figure: fig:sd_muon_calibration in Chapter_3_Auger.tex.
+Source: X. Bertou et al. (Pierre Auger Collaboration), Calibration of the surface
+array of the Pierre Auger Observatory, Nuclear Instruments and Methods in
+Physics Research A 568 (2006) 839-846, Figure 1.
+DOI: https://doi.org/10.1016/j.nima.2006.07.066
+Source PDF: https://arxiv.org/pdf/2102.01656 (PDF page 3, downloaded 2026-10-29).
+Bibliography key: Bertou:2006:Calibration.
+Extraction: pdftoppm, page 3 scaled to 5400 pixels along its longest edge;
+crop x=810, y=240, width=2190, height=1050 pixels.
+Adaptation consists of extracting the two plots and replacing the original
+caption with a thesis caption; plotted data, axes and legends are unchanged.
+Both distributions sum the three PMTs; their charge conversion factor is about
+1.09. The individual-PMT factor 1.03 +/- 0.02 is distinguished in the chapter text.
+
+auger_tank_cutaway_kampert2012.png
+Figure: fig:tank in Chapter_3_Auger.tex.
+Source: K.-H. Kampert and A. A. Watson, Extensive Air Showers and Ultra
+High-Energy Cosmic Rays: A Historical Review, EPJ H 37 (2012) 359-412.
+DOI: https://doi.org/10.1140/epjh/e2012-30013-x
+Original figure: Fig. 5, right-hand panel; arXiv:1207.4827 PDF page 14.
+This is also the source of the schematic reproduced in Rodriguez Fig. 4.2.
+Extraction: pdftoppm, page 14, scale-to 7200, x=1800, y=760, W=1480, H=1480.
+Original artwork is unchanged, including its spelling 'Tyvec liner'.
+Bibliography key: Kampert:2006:EAS (the existing Zotero citation key; publication year 2012).
+
+auger_station_reference.jpeg and auger_station_annotated.tex
+Figure: fig:tank in Chapter_3_Auger.tex.
+Original photograph supplied by the thesis author:
+/home/pbrichetto/Downloads/WhatsApp Image 2026-10-29 at 19.23.40.jpeg
+Original JPEG copied unchanged. Crop and five editable labels are applied
+only in LaTeX. Crop rectangle: x=260..2850, y=700..3900 in the 3024x4032 source.
+Solar-panel label points to the solar-panel assembly mounted on the WCD, not the separate
+AMIGA panel. The circular radio-detector antenna is deliberately unlabelled.
+The electronics label points to the yellow protective cover; the GPS label
+points to the white antenna atop the smaller mast; communications to the Yagi.
+The photo includes the author; photographer identity has not been established.
+A built-in image-editing preview was generated during layout exploration;
+it is NOT used in the thesis. The final artwork uses the original JPEG pixels.
+
+auger_tank_schematic_and_photo.pdf
+Approved combined figure used by Chapter_3_Auger.tex as fig:tank.
+Left: the Kampert and Watson schematic credited above.
+Right: the original author-supplied photograph with the LaTeX crop and labels.
+Editable standalone source: auger_tank_schematic_and_photo.tex, which inputs
+auger_station_annotated.tex. Compile from the thesis repository root.
+The caption, including 'Author is also shown for reference.', is kept in
+Chapter_3_Auger.tex, outside the figure PDF.
