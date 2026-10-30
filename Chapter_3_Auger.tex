@@ -4,6 +4,7 @@
 \chapter{The Pierre Auger Observatory}
 \label{chapter:auger}
 
+
 The Pierre Auger Observatory was designed to study different observables of the \gls{uhecr} including the energy spectrum, mass composition and arrival directions based on a hybrid detection technique and then upgraded to transition to a multi-hybrid era of cosmic rays detection and increase the energy range towards lower energies.
 
 Located in the Pampa Amarilla, between the Malargüe and San Rafael departments, the Pierre Auger Observatory is the largest cosmic ray observatory in the world by surface.
@@ -22,9 +23,35 @@ Using the hybrid calibration allows for a much increased dataset when using the 
 The densest of the \gls{sd} arrays, the \sd{433}, which is subject of this thesis, brings up the additional challenge of not having events detected simultaneously by the \gls{fd}.
 Because of this, an indirect energy calibration muy be performed using the 750\,m array, the \sd{750}.
 
+\section{The surface detector}
+
+The \gls{sd} samples the particles originated in the \gls{eas} when reaching the ground using \gls{wcd}s.
+When charged particles traverse the water inside of one of the \gls{wcd}, emits Cherenkov light which is collected using thee \gls{pmt}s that overlook the inside of the tank.
+Both the muonic and electromagnetic components of the shower produce the light inside the water.
+Each of the \gls{wcd}s consists of a polyethilene cylindric tank of 3.6\,m in diameter and 1.55\,m height, giving a surface of $\SI{10}{\m\squared}$. 
+Inside each tank, a Tyvek reflective liner contains $~\SI{12000}{\liter}$ of hyper pure water with three windows where three large \gls{pmt}s overlook the water.
+In \cref{fig:tank} a schematic of the vertical cutout of a \gls{wcd} is shown together with a picture describing the outer elements.
+Each tank has its own self powered electronic for the station-level trigger and performance diagnostic autonomously.
+Because of this, a solar panel and a battery are used to supply power in the field.
+Communication with \gls{cdas}, in the city of Malargüe, is carried out using a radio connected to the nearest \gls{fd} site and the time is obtained with a GPS beacon.
+
+The \gls{pmt} signal is digitized as a time trace and the different trigger algorithms use the structure and integrated signal to detect where particles from a \gls{eas} are traversing the detector.
+When time and space correlated signals of three or more detectors can be established, an event level trigger can be issued and the signals and status of relevant signals are acquired.
+However, a common calibration unit is needed to compare the signal of the different \gls{wcd}.
+Because of this, the atmospheric muons that constantly traverse the detector provide a useful and ever-present calibration reference.
+The \gls{vem} is defined as the average integrated charge, $Q_{\mathrm{VEM}}$, produced by a muon that crosses the detector vertically through its center.
+The muon peaks in these distributions define $Q_{\mathrm{VEM}}^{\mathrm{peak}}$ and $I_{\mathrm{VEM}}^{\mathrm{peak}}$, respectively.
+The charge provides a reference for integrated shower signals in VEM, while the pulse height provides a reference for setting uniform signal thresholds.
+
+The background sample includes muons with different directions and crossing through different parts of the tanks, so the peak of the charge-histogram does not coincide exactly with $Q_{\mathrm{VEM}}$.
+However, this is accounted for through previous measurements done in the laboratory using an external muon telescope that selected vertical, central muons.
+For individual PMTs, $Q_{\mathrm{VEM}}^{\mathrm{peak}}/Q_{\mathrm{VEM}} = 1.03 \pm 0.02$, with the difference arising from the distribution of track lengths, photoelectron statistics, and light-collection effects.
+These calibration quantities  are regularly tracked to find changes in the detector response to maintain a common signal scale between stations.
 
 
 
+
+\section{Reconstruction algorithm}
 There are two different codes to reconstruct the events, \Offline and Herald, each one used for different data based on their degree of development and functionality for each detector type.
 We used \Offline for the \sd{433} events while we reuse the \sd{750} events reconstructed using Herald published in \cite{xxx}.
 
