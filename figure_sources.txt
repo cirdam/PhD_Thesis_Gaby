@@ -109,3 +109,19 @@ in the source page's bottom-left coordinate system, translated onto a
 186 x 181 point page. The original vector artwork and labels are retained.
 Only the schematic is included; the neighbouring photographs and original
 caption are outside the crop. The thesis caption credits Figure 7.
+
+augerprime_station_umd_rodriguez2026.pdf
+Figure: fig:augerprime_station in Chapter_3_Auger.tex.
+Artwork: Pierre Auger Collaboration render, as identified by the thesis author.
+Extraction source (not an authorship attribution): Ezequiel Rodriguez,
+Search for PeV Photons with Machine Learning in the AugerPrime Era (2026),
+Fig. 4.11, printed page 47 (PDF page 63).
+The original figure caption was checked visually and contains no source
+citation or separate artist credit. It does not by itself establish authorship.
+No bibliographic citation is attached to this schematic in the thesis caption,
+as requested by the author.
+Extraction PDF: /home/pbrichetto/bwSyncShare/Zotero/storage/3QEA4GN4/Rodriguez - 2026 - Search for PeV Photons with Machine Learning in the AugerPrime Era.pdf
+Asset supplied in the chapter figure folder; its PDF metadata identifies
+an extraction preserving the original embedded image and transparency
+without resampling. The asset was included unchanged at 0.75 text width.
+The caption describes the SSD, radio antenna and three buried UMD modules.
