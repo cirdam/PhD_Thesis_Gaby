@@ -70,3 +70,17 @@ Editable standalone source: auger_tank_schematic_and_photo.tex, which inputs
 auger_station_annotated.tex. Compile from the thesis repository root.
 The caption, including 'Author is also shown for reference.', is kept in
 Chapter_3_Auger.tex, outside the figure PDF.
+
+sd433_array_v2.pdf
+Figure: fig:sd433_array in Chapter_3_Auger.tex.
+Source: existing plot supplied from the author's local analysis project:
+/home/pbrichetto/projects/sdana/spectrum/sd433_array_v2.pdf
+Copied unchanged; the original PDF, PNG, SVG and plotting files are preserved.
+SHA-256: 21bca1c4b1f3420b673e216a85a514951afb141e0f4da4d64eb8cf45e38274c6
+Blue: SD-433-only stations. Black: stations shared by SD-433 and SD-750.
+Grey: nearby SD-750-only stations. The beige shading marks the fiducial area.
+The saved figure does not display station names.
+Related source files: /home/pbrichetto/projects/sdana/spectrum/array_plot.py
+and /home/pbrichetto/projects/sdana/spectrum/spectrum_utilities.py.
+The current plotting script does not contain the final polygon-fill step;
+it is not an exact generator of the supplied saved figure.
