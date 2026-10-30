@@ -45,7 +45,7 @@ The fit minimizes the squared differences between the measured and predicted sta
 where $t_i$ and $\sigma_{t_i}$ are the start time measured by station $i$ and its uncertainty, respectively.
 
 % The core position is refined together with the lateral distribution of the station signals.
-Once core position is determined, the reconstructed shower direction is given by
+Once the core position is determined, the reconstructed shower direction is given by
 \begin{align}
     \hat{a}
     =
@@ -65,7 +65,7 @@ The black line indicates the reconstructed arrival direction projected onto the 
 \subsection{Lateral distribution function}
 \label{subsec:ldf}
 
-The shower size is then estimated by modeling the fall-off of the signal $S(r)$ with the distance $r$ to the shower axis using a \gls{ldf} ~\cite{Silli:2021:PerformanceSD433}.
+The shower size is then estimated by modeling the fall-off of the signal $S(r)$ with the distance $r$ to the shower axis using a \gls{ldf}~\cite{Silli:2021:PerformanceSD433}.
 Intrinsic shower-to-shower fluctuations produce variations in the longitudinal development, such that individual events may be sampled at different stages of their development.
 As a consequence, the \gls{ldf} slope exhibits variations on an event-by-event basis. 
 Instead, the reconstruction is based on an \textit{average} LDF slope, $\langle S(r)\rangle$, and the expected signal at a fixed reference distance, $r_\text{opt}$, is adopted as the shower size.
@@ -106,7 +106,7 @@ The coefficients that govern the dependence on the zenith angle, $a(\theta)$ and
     \label{eq:beta_parameterization}
 \end{align}
 
-The parameterization describes the slopes fitted for individual events with an average with a deviation of about $2\%$ over the considered range of shower sizes and zenith angles~\cite{Silli:2021:PerformanceSD433}.
+The parameterization describes the slopes fitted for individual events with an average deviation of about $2\%$ over the considered range of shower sizes and zenith angles~\cite{Silli:2021:PerformanceSD433}.
 Once determined, this parameterization was fixed in the reconstruction of the complete data set to determine the shower size $S(300)$ and the core position $\vec{x}_{\mathrm{c}}$ simultaneously through a maximum-likelihood fit.
 The likelihood accounts for the measured signals in the triggered stations and for active stations that did not trigger.
 Although no signal trace is available for these non-triggered stations, their presence constrains the fit, disfavoring an LDF predicting a signal above the trigger threshold at their positions.
@@ -166,7 +166,7 @@ which is normalized such that $f_{\text{CIC}}(30^\circ,S_{30})=1$.
 
 \subsection{The Constant-intensity cut method}
 \label{subsec:cic_method}
-To determine the attenuation function, the \gls{cic} method based on the isotropy of arrival directions of the cosmic rays, is used.
+To determine the attenuation function, the \gls{cic} method based on the isotropy of arrival directions of the cosmic rays is used.
 % The large-scale dipolar anisotropy reported by the Pierre Auger Observatory becomes significant above $8\,\text{EeV}$~\cite{PierreAuger:2017:LargeScaleAnisotropy}, while below this energy the flux can be considered isotropic.
 The events measured with the \sd{433} are binned in equal-width intervals of $\sin^2\theta$, which have equal exposure.
 For this array, the zenith angle range $0^\circ\leq\theta<45^\circ$ is divided into nine such intervals.
@@ -180,7 +180,7 @@ The statistical uncertainty of $S_N$ is estimated from the Poisson fluctuations 
     \frac{S_{N-\sqrt{N}}-S_{N+\sqrt{N}}}{2},
 \end{align}
 
-\noindent where $S_{N-\sqrt{N}}$ and $S_{N+\sqrt{N}}$ are the shower sizes of the events in order $N-\sqrt{N}$ and $N+\sqrt{N}$ respectively.
+\noindent where $S_{N-\sqrt{N}}$ and $S_{N+\sqrt{N}}$ are the shower sizes of the events in order $N-\sqrt{N}$ and $N+\sqrt{N}$, respectively.
 
 The data of all cuts are fitted with a third-degree polynomial in the variable $x=\sin^2\theta-\sin^2\theta_{\text{ref}}$,
 \begin{align}
@@ -250,7 +250,7 @@ The corrected shower size $S_{30}$ is used as the estimator of the cosmic-ray en
 \label{sec:calibration}
 
 With the attenuation in the atmosphere corrected, the shower size $S_{30}$ can be calibrated in terms of the primary energy.
-The other two surface-detector arrays, the \sd{750} and \sd{1500}, are calibrated  using events detected simultaneously by the \gls{sd} and \gls{fd}.
+The other two surface-detector arrays, the \sd{750} and \sd{1500}, are calibrated using events detected simultaneously by the \gls{sd} and \gls{fd}.
 However, because of the distance between the \sd{433} and the nearest \gls{fd} site, Cohihueco, the \gls{heat} telescopes cannot observe showers falling within the \sd{433} area.
 The \sd{433} energy scale is therefore obtained through an \gls{sd}-\gls{sd} calibration using events detected in coincidence with the \sd{750}.
 This introduces an additional complication because the \sd{750} calibration relation must be extrapolated by approximately two to three energy bins below the range in which that array is fully efficient, as discussed in \cref{sec:sd750_efficiency}.
@@ -327,11 +327,11 @@ The $S_{30}$ resolution is estimated from \sd{750} assuming the same shower-to-s
     },
 \end{align}
 
-where $\sigma_{\mathrm{det}}^{\mathrm{SD-433}}=0.12$. The factor $B_0$, reflecting the change from energy to shower size, was set to $1.0$ the value obtained from the calibration.  
+where $\sigma_{\mathrm{det}}^{\mathrm{SD-433}}=0.12$. The factor $B_0$, reflecting the change from energy to shower size, was set to $1.0$, the value obtained from the calibration.
 
 Because both arrays sample the same shower, their shower-to-shower fluctuations are fully correlated.
 An additional detector correlation arises from the \gls{wcd}s shared by the two arrays.
-We consider these two contributions to model the correlation between the shower size measured by the \sd{433} and the energy measured by the \sd{750} with the approximated model, 
+We consider these two contributions to model the correlation between the shower size measured by the \sd{433} and the energy measured by the \sd{750} with the approximate model,
 
 \begin{align}
     \rho
@@ -407,8 +407,8 @@ The likelihood averages these contributions using the measured size distribution
 This follows the bootstrap approach in~\cite{Dembinski:2013:Unfolding}, adapted to use a histogram of shower sizes in place of a sample of energies.
 
 
-The calibration of the \sd{750} was done with events with an energy measured by the FD above a given threshold. The other option, i.e. cutting on the shower size measured by the \sd{750}, was not applied as the FD has a better resolution than the \sd{750}. This criteria minimizes the fluctuations of sub-threshold events in the set of events selected for the calibration.
-The opposite situation occurs in the \sd{433}, the calibrated detector has better resolution than the calibrator. Following the same principle of selection based on the the variable with better resolution, the event selection is applied to $S_{30}$ to minimize migration effects.
+The calibration of the \sd{750} was done using events with energy measured by the FD above a given threshold. The other option, i.e., cutting on the shower size measured by the \sd{750}, was not applied, as the FD has a better resolution than the \sd{750}. This criterion minimizes the fluctuations of sub-threshold events in the set of events selected for the calibration.
+The opposite situation occurs in the \sd{433}: the calibrated detector has better resolution than the calibrator. Following the same principle of selection based on the variable with better resolution, the event selection is applied to $S_{30}$ to minimize migration effects.
 
 The cut $S_{30}>30\,\mathrm{VEM}$ roughly corresponds to the full-efficiency threshold of the \sd{750}, leaving \num{5980} available events for the calibration.
 However, events below the cut are still indirectly used and account for migrations across the threshold.
@@ -507,7 +507,7 @@ The bias and relative resolution parameterizations are shown in \cref{fig:sd433_
 \section{Summary}
 \label{sec:energy_reconstruction_summary}
 
-In this chapter we presented the energy reconstruction of the events recorded with the \sd{433}.
+In this chapter, we presented the energy reconstruction of the events recorded with the \sd{433}.
 After reconstructing the shower geometry, the shower size $S(300)$ is obtained by modeling the decrease of the signal with the distance to the shower core.
 From the reconstructed $S(300)$, the attenuation function is determined to correct for the different zenith angles of the showers.
 The zenith-independent shower size $S_{30}$ is then obtained by iteratively applying the shower-size-dependent correction $f_{\mathrm{CIC}}(\theta,S_{30})$.

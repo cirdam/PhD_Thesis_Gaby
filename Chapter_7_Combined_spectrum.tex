@@ -22,7 +22,7 @@ The measurement revealed a turn-down close to its lower energy boundary and cove
 Because the break energy was close to the analysis threshold and the transition extended over a broad energy range, the low-energy side of the feature could not be fully characterized.
 In particular, the second-knee energy and the spectral index below the break were only inferred indirectly.
 
-The \sd{750} Phase I dataset used in this analysis spans January 2014, following the introduction of the Gen.~II triggers \gls{totd} and \gls{mops}, to 29 November 2021, when the transition to the upgraded electronics began.
+The \sd{750} Phase I dataset used in this analysis spans from January 2014, following the introduction of the Gen.~II triggers \gls{totd} and \gls{mops}, to 29 November 2021, when the transition to the upgraded electronics began.
 This adds more than three years of data relative to the dataset used for the spectrum published in 2021.
 The shower geometry is reconstructed as described in \cref{subsec:geometry_ldf}, using Herald because the Observer reconstruction was not updated for the \sd{750}.
 The events reconstructed with Herald for the \sd{750} spectrum paper~\cite{PierreAuger:2021:InfillSpectrum} were used.
@@ -66,7 +66,7 @@ To parameterize the efficiency, a binomial likelihood fit was used, where for ea
     \varepsilon_i^{k_i}
     (1-\varepsilon_i)^{n_i-k_i},
 \end{align}
-\noindent where is a model for the efficiency evaluated at the bin center $\varepsilon_i=\varepsilon(E_i;\mu,\sigma)$.
+\noindent where $\varepsilon_i=\varepsilon(E_i;\mu,\sigma)$ is a model for the efficiency evaluated at the bin center.
 Following Ref.~\cite{PierreAuger:2021:InfillSpectrum}, the efficiency is modeled as,
 \begin{align}
     \varepsilon(E)
@@ -82,7 +82,7 @@ Following Ref.~\cite{PierreAuger:2021:InfillSpectrum}, the efficiency is modeled
 \noindent where $\mu$ determines the position of the transition and $\sigma$ its width.
 The best-fit values for these parameters are $\mu=16.74\pm0.01$ and $\sigma=0.250\pm0.001$, with a correlation between them of $\rho_{\mu,\sigma}=0.38$.
 The fitted curve is shown as a solid line in \cref{fig:sd750_efficiency}, while the dashed line shows the result from Ref.~\cite{PierreAuger:2021:InfillSpectrum}.
-Simulations overestimate \sd{750} efficiency below the full efficiency threshold. Therefore, in this work, we increased the \sd{750} energy threshold from which the spectrum is reported from $\lg(E/\mathrm{eV})=17.0$ to $\lg(E/\mathrm{eV})=17.2$.
+Simulations overestimate \sd{750} efficiency below the full-efficiency threshold. Therefore, in this work, we increased the \sd{750} energy threshold from which the spectrum is reported from $\lg(E/\mathrm{eV})=17.0$ to $\lg(E/\mathrm{eV})=17.2$.
 
 
 The \sd{750} energy bias and resolution are required to construct the migration matrix used to fit the spectrum.
@@ -152,7 +152,7 @@ The updated flux differs by approximately $5\%$ over most of the energy range, p
 This produces an approximately energy-independent normalization shift, which is more visible in the $E^3$-scaled representation in the right panel.
 The smaller energy-dependent difference arises from the updated energy calibration.
 When the same fit conditions are applied, the fitted spectral parameters remain compatible with the published result, as shown in \cref{appendix:chapter_combined}.
-The updated \sd{750} dataset was used to calibrated the \sd{433}.
+The updated \sd{750} dataset was used to calibrate the \sd{433}.
 
 \begin{figure}
     \centering
@@ -161,7 +161,7 @@ The updated \sd{750} dataset was used to calibrated the \sd{433}.
     \label{fig:sd750_raw_spectrum}
 \end{figure}
 
-The spectral model is fitted to the \sd{750} data applying the same method applied to the \sd{433} using the \sd{750} migration matrix shown in \cref{fig:sd750_migration_matrix}.
+The spectral model is fitted to the \sd{750} dataset using the same procedure as for \sd{433}, employing the \sd{750} migration matrix shown in \cref{fig:sd750_migration_matrix}.
 Due to the larger collecting area of the \sd{750}, the measured energy range extends to higher energy, covering the ankle, a hardening of the cosmic-ray spectrum near $4\,\mathrm{EeV}$~\cite{PierreAuger:2021:InfillSpectrum}.
 The flux is also modeled with a power-law function with smooth transitions extended to cover the ankle,
 \begin{align}
@@ -182,7 +182,7 @@ The flux is also modeled with a power-law function with smooth transitions exten
 \end{align}
 \noindent where $j=i+1$.
 The parameters $E_{01}$ and $E_{12}$ give the positions of the second knee and ankle, while $\omega_{01}$ and $\omega_{12}$ determine their transition widths.
-The indices $\gamma_0$, $\gamma_1$, and $\gamma_2$ correspond the three intervening power-law regimes.
+The indices $\gamma_0$, $\gamma_1$, and $\gamma_2$ correspond to the three intervening power-law regimes.
 The ankle transition is fixed to $\omega_{12}=0.05$ in the fit.
 
 Because the \sd{750} full-efficiency threshold, $\lg(E/\mathrm{eV})=17.2$,  lies close to the second knee, the \sd{750} data cannot constrain all spectral parameters simultaneously.
@@ -192,7 +192,7 @@ The unfolded spectrum and best-fit model are shown in \cref{fig:sd750_unfolded_s
 The fit gives $D^2=18.1$ for 17 degrees of freedom, corresponding to a $p$-value of $0.39$.
 The spectral index $\gamma_1$ is compatible with both the 2021 published result and the \sd{433} measurement presented in the previous chapter.
 The ankle energy is also compatible with the published result, while the spectral index after the ankle $\gamma_2$ remains loosely constrained due to limited statistics at the highest energies.
-The raw \sd{750} was corrected using correction factors derived as in the fit of the \sd{433} data to obtain a corresponding unfolded spectrum.
+The raw \sd{750} spectrum was adjusted using correction factors derived as in the fit of the \sd{433} data to obtain a corresponding unfolded spectrum.
 
 \begin{figure}
     \centering
@@ -256,7 +256,7 @@ It relies on a simultaneous fit of the \sd{433} and \sd{750} spectra with a comm
     \mathcal{L}_{AB},
 \end{align}
 \noindent where $\mathbf{s}$ denotes the spectral parameters and $\mathcal{L}_{\mathrm{SD\text{-}433}}$ and $\mathcal{L}_{\mathrm{SD\text{-}750}}$ are the likelihoods of the two arrays defined in \cref{sec:unfolded_spectrum}.
-The exposure factor $\mathcal{L}_{\mathrm{exp}}$ allows the fitted \sd{433} exposure $\widehat{\mathcal E}_{433}$ to vary around its nominal value $\mathcal E_{433}$ ,
+The exposure factor $\mathcal{L}_{\mathrm{exp}}$ allows the fitted \sd{433} exposure $\widehat{\mathcal E}_{433}$ to vary around its nominal value $\mathcal E_{433}$,
 % \begin{align}
 %     \mathcal{L}(\delta\mathcal{E}_{\text{SD-433}})=\frac{1}{\sigma_{\mathcal{E}_{\text{SD-433}}}\sqrt{2\pi}}\exp\left(
 %     -\frac{\mathcal{E}_{\text{SD-433}}-\delta\mathcal{E}}{\sigma_{\mathcal{E}_{\text{SD-433}}}}
@@ -275,7 +275,7 @@ The exposure factor $\mathcal{L}_{\mathrm{exp}}$ allows the fitted \sd{433} expo
 \right],
 \end{align}
 
-\noindent where $\delta\mathcal E_{433}=\widehat{\mathcal E}_{433}-\mathcal E_{433}$ and $\sigma_{\mathcal E}$ is the $3\%$ uncertainty assigned to the \sd{433}exposure~\cite{PierreAuger:2010:TriggerAperture}.
+\noindent where $\delta\mathcal E_{433}=\widehat{\mathcal E}_{433}-\mathcal E_{433}$ and $\sigma_{\mathcal E}$ is the $3\%$ uncertainty assigned to the \sd{433} exposure~\cite{PierreAuger:2010:TriggerAperture}.
 The Gaussian term penalizes deviations of the fitted exposure from its nominal value.
 The calibration factor $ \mathcal{L}_{AB}$ considers the shifts in the parameters $A$ and $B$ of the calibration of the \sd{433} energy against the \sd{750}.
 These shifts are defined as  $\delta A\equiv\widehat A-A$ and  $\delta B\equiv\widehat B-B$ respectively. 
@@ -300,7 +300,7 @@ This term constrains the calibration shifts according to their uncertainties whi
 Variations in the \sd{433} exposure and in the calibration normalization $A$ both affect the relative flux normalization equally.
 Therefore, two alternative fits are performed to separate these effects.
 In the first option, an exposure-only fit, the spectral parameters and $\delta\mathcal E_{433}$ are fitted while the calibration parameters are fixed to their nominal values, i.e. $\delta A=\delta B=0$.
-The second alternative, a calibration-variation fit, the spectral parameters, $\delta A$, and $\delta B$ are fitted with the exposure fixed to its nominal value, $\delta\mathcal E_{433}=0$.
+In the second alternative, a calibration-variation fit, the spectral parameters, $\delta A$, and $\delta B$ are fitted with the exposure fixed to its nominal value, $\delta\mathcal E_{433}=0$.
 The spectral parameters vary in both fits except for the ankle width which is fixed to $\omega_{12}=0.05$.
 The results of both fits are summarized in \cref{table:combined_parameters_single}.
 
@@ -375,7 +375,7 @@ The combined spectrum is therefore presented as work in progress.
 Once these issues are resolved, the combined and \sd{433}-only fits are expected to yield consistent second-knee positions.
 
 
-\subsection{Stability with the \sd{750} limit energies}
+\subsection{Stability with the \sd{750} energy limits}
 
 To test the stability of the combined spectrum, we scanned the energies chosen as fit boundaries.
 The lower limit of the \sd{750} fit range was varied from $\lg(E/\mathrm{eV})=17.0$ to $17.5$, while the upper limit was held fixed at $19.4$.

@@ -33,7 +33,7 @@
 
 % The \gls{tot} trigger requires a signal above $0.2\,I_{\text{VEM}}^{\text{peak}}$ in at least two \gls{pmt}s for at least 13 time bins within a \SI{3}{\micro\s} window.
 % This trigger is designed for moderately inclined, lower-energy showers, in which the particles arriving at the \gls{wcd} are spread over time, as well as for higher-energy showers with distant cores.
-% A detailed discussion of the original triggers is given in Ref.~\cite{PierreAuger:2011TriggerAndApperture}.
+% A detailed discussion of the original triggers is given in Ref.~\cite{PierreAuger:2010:TriggerAperture}.
 
 % In 2014, two new trigger modes were introduced.
 % These triggers target lower-energy showers detected by the denser \sd{433} and \sd{750} arrays and are more sensitive to the electromagnetic component of the shower.
@@ -81,7 +81,7 @@ To discriminate signals produced by an \gls{eas}, initiated by the interaction o
 This hierarchy begins at the level of individual stations and continues up to the selection of physical events and quality requirements at the array level.
 A schematic summary of the trigger chain is shown in \cref{fig:t1t2t3}.
 
-Originally, two T1 trigger modes were implemented at the station level: \gls{th}-T1, and \gls{tot}.
+Originally, two T1 trigger modes were implemented at the station level: \gls{th}-T1 and \gls{tot}.
 The \gls{th}-T1 trigger requires a signal larger than $1.75\,I_{\text{VEM}}^{\text{peak}}$ in each of the three \gls{pmt}s.
 This trigger is designed to select large signals that are not necessarily spread in time and is particularly sensitive to inclined showers with a stronger muonic component.
 
@@ -102,7 +102,7 @@ This trigger is independent of the \gls{vem} calibration and is based on the sig
 It counts the number of positive steps within a \SI{3}{\micro\s} sliding window, where a positive step is defined as an increase in signal amplitude in consecutive bins.
 To be counted, the step must be larger than the typical noise level and smaller than the amplitude expected from a vertical muon.
 If more than four such positive-step instances are found, a \gls{mops} trigger is issued.
-The \gls{mops} and \gls{mops} triggers are collectively referred as the Gen. II triggers.
+The \gls{totd} and \gls{mops} triggers are collectively referred to as the Gen. II triggers.
 
 \begin{figure}
     \centering
@@ -145,8 +145,8 @@ It requires a four-fold coincidence of T2 stations, independently of their trigg
 In this case, one triggered station must have another in the first crown, a third one in the second crown, and the fourth may be as far as the fourth crown.
 This configuration is particularly relevant for more inclined showers, whose triggered stations can be spread over a wider area on the ground.
 
-The T1, T2, and T3 selection are performed online and the data is stored to be reconstructed later, where the next two trigger levels are applied.
-The physical trigger, T4,is designed to reject accidental coincidences and retain physically originated showers.
+The T1, T2, and T3 selection are performed online and the data are stored to be reconstructed later, where the next two trigger levels are applied.
+The physical trigger, T4, is designed to reject accidental coincidences and retain physically originated showers.
 For vertical showers, two T4 criteria are used.
 
 The first T4 criterion, denoted \textit{3ToT}, originally required three nearby stations having a \gls{tot} trigger in a non-aligned pattern, but was later updated to also include combinations of the \gls{totd} and \gls{mops} triggers.
@@ -213,7 +213,7 @@ This simulation-based result motivates the data-driven validations described bel
 \end{figure}
 
 The simulation-based efficiency result was cross-checked using two tests applied to reconstructed data.
-These tests are dependent of the core and energy reconstruction procedures, since both require reconstructed event observables and calibrated energies.
+These tests are dependent on the core and energy reconstruction procedures, since both require reconstructed event observables and calibrated energies.
 Nevertheless, they probe two distinct signatures expected above full efficiency: the uniformity of the arrival directions in $\sin^2\theta$ and the uniform distribution of reconstructed shower cores within the fiducial 6T5 area.
 Together, they provide data-driven validation of the threshold inferred from simulations.
 
@@ -288,7 +288,7 @@ This result supports the use of $\lg(E/\mathrm{eV})=16.8$ as the lower boundary 
 \end{figure}
 
 The simulation-based efficiency determination and the two data-driven validations therefore support the adoption of $\lg(E/\mathrm{eV})=16.8$, corresponding to $\SI{0.063}{\exa\eV}$, as the full-efficiency threshold for the \sd{433} dataset.
-Above this threshold, the exposure can be calculated from the geometric aperture of the array given that the efficiency factor in this calculation is unity
+Above this threshold, the exposure can be calculated from the geometric aperture of the array given that the efficiency factor in this calculation is unity.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -310,7 +310,7 @@ The main stages relevant to the dataset used in this work are summarized below~\
     \item December 2021: the electronics upgrade for Phase II began.
 \end{itemize}
 
-The status of non-triggered stations was not included in the event records in the origina array.
+The status of non-triggered stations was not included in the event records in the original array.
 Consequently, the 6T5 trigger could not be evaluated, resulting in a substantial deficit of events satisfying this quality requirement.
 Although the earlier data were subsequently recovered using monitoring information~\cite{GAP:Roncoroni:2021:Recovery}, the dataset used in this work begins on 1 July 2018, when silent stations were included in the events.
 Restricting the analysis to this period ensures that the 6T5 trigger is evaluated directly from the detector-status information included in the acquired event records and provides a homogeneous dataset throughout the analysis.
@@ -330,7 +330,7 @@ The increase in the total event rate observed in 2019 results from the addition 
 To separate changes in the array size from variations in its operational stability, the event rate is normalized by the number of active hexagons at each time, as shown in \cref{fig:event_rate}.
 For a stable detector configuration, the normalized rate is expected to remain approximately constant, so significant deviations can be used to identify changes in the acquisition conditions.
 
-The operational status of each station is recorded every second and indicate whether a station is capable of acquiring data in the so-called T2Life flags.
+The operational status of each station is recorded every second and indicates whether a station is capable of acquiring data in the so-called T2Life flags.
 A hexagon is considered active when its central station and all six stations in its first crown are tagged as alive.
 The instantaneous array configuration can therefore be evaluated with a time resolution of one second~\cite{GAP:Gonzalez:2022:Exposure}.
 % For the exposure calculation, this information is summarized in one-minute intervals, within which the number of active hexagons is treated as constant.
@@ -366,7 +366,7 @@ After establishing the full-efficiency threshold and identifying the periods of 
 % Above the full-efficiency threshold, the detection probability can be considered independent of the primary energy and mass, and the detector aperture is obtained by integrating its effective projected area over solid angle.
 The fiducial area associated with one active 6T5 hexagon is given by \cref{eq:6T5_area}.
 Acceptance describes the ability of the array to collect particles from different directions. For a flat collecting surface, the area seen from an arrival direction is its projected area, \(S_{\mathrm{hex}}\cos\theta\).
-The acceptance of an elemental hexagon in a acceptance cone  delimited by the zenith angles $\theta_{\min}$ and $\theta_{\max}$ is found by integration that projected area over all accepted directions,
+The acceptance of an elemental hexagon in an acceptance cone delimited by the zenith angles $\theta_{\min}$ and $\theta_{\max}$ is found by integrating that projected area over all accepted directions,
 
 \begin{align}
     A_{\mathrm{6T5}}
