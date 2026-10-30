@@ -51,6 +51,37 @@ These calibration quantities  are regularly tracked to find changes in the detec
 
 
 
+\section{The three surface-detector arrays}
+\label{sec:auger_surface_arrays}
+
+The three arrays of the surface detector use the same \gls{wcd}s, with stations arranged on triangular grids of different spacing.
+At lower primary energies, the particle density at ground decreases, and a denser array is needed to sample a shower.
+The denser arrays extend the measurement towards lower energies, where the larger cosmic-ray flux allows sufficient statistics to be collected over a smaller area.
+
+The \sd{1500} was the first array of the Observatory, covering approximately \SI{3000}{\km\squared} with about 1600 detectors.
+The large covered area allows the measurement of the low cosmic-ray flux at the highest energies, including the ankle and the suppression of the spectrum~\cite{PierreAuger:2020:Spectrum,PierreAuger:2025:Declination}.
+For showers with zenith angles below $60^\circ$, the array is fully efficient above \SI{2.5}{\exa\eV}~\cite{PierreAuger:2020:Spectrum}.
+
+The \sd{750} was deployed in the north-western part of the \sd{1500}, near the Coihueco \gls{fd} site and the \gls{heat} telescopes, to extend the observations to lower energies.
+Its 71 stations cover approximately \SI{27}{\km\squared}~\cite{Silli:2021:Thesis}.
+The published \sd{750} spectrum extends down to \SI{100}{\peta\eV} for zenith angles below $40^\circ$.
+Its proximity to the fluorescence telescopes also allows hybrid detection of lower-energy showers, which are used for the energy calibration~\cite{PierreAuger:2021:InfillSpectrum}.
+
+The \sd{433}, the subject of this thesis, is the densest array, with 19 stations nested within the \sd{750}.
+It started as a single hexagon around the Tina Turner station, and the seven-hexagon configuration shown in \cref{fig:sd433_array} was completed in May 2019~\cite{Silli:2021:PerformanceSD433}.
+It extends the spectral measurement below the second knee, allowing this feature to be studied on both sides in combination with the \sd{750}.
+The deployment, event selection, trigger efficiency and exposure of the \sd{433} are described in \cref{chap:sd433_dataset}.
+
+\begin{figure}[tbp]
+    \centering
+    \fbox{\parbox[c][5cm][c]{0.85\linewidth}{\centering
+        Placeholder: layout of the \sd{433} array
+    }}
+    \caption{Layout of the \sd{433} array in its seven-hexagon configuration.}
+    \label{fig:sd433_array}
+    % Add the figure source and credit when the image is selected.
+\end{figure}
+
 \section{Reconstruction algorithm}
 There are two different codes to reconstruct the events, \Offline and Herald, each one used for different data based on their degree of development and functionality for each detector type.
 We used \Offline for the \sd{433} events while we reuse the \sd{750} events reconstructed using Herald published in \cite{xxx}.
