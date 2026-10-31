@@ -30,7 +30,7 @@ For nuclei, the observed arrival direction generally differs from the direction 
 In an air shower, the incident cosmic ray is the primary particle, while the particles produced in the atmospheric cascade are secondaries.
 For a primary nucleus, $Z$ denotes its charge number and $A$ its mass number.
 Unless stated otherwise, $E$ is the total energy per particle, rather than the energy per nucleon.
-In the PeV--EeV range the distinction between kinetic and total energy is negligible.
+In the PeV-EeV range the distinction between kinetic and total energy is negligible.
 For an isotropic flux, the differential intensity $J(E)$ describes the number of particles crossing an area perpendicular to their direction of motion:
 \begin{align}
     \mathrm{d}N &= J(E)\,\mathrm{d}E\,\mathrm{d}A\,\mathrm{d}\Omega\,\mathrm{d}t .
@@ -63,7 +63,7 @@ Changing their relative contributions can produce curvature even when each compo
 Conversely, a prominent break in one species can be diluted by the others.
 This relation is useful when comparing an all-particle measurement with models formulated in terms of separate elemental or source populations.
 
-\begin{figure}[tbp]
+\begin{figure}
     \centering
     \includegraphics[width=0.95\linewidth]{\subfix{figures/chapter_cosmic_rays/pdg_spectrum.pdf}}
     \caption[The cosmic-ray spectrum over a broad energy range]{Cosmic-ray intensity multiplied by the square of the kinetic energy per particle, as compiled by the Particle Data Group.
@@ -93,97 +93,98 @@ The same caution is essential when interpreting the second knee.
 \section{Acceleration mechanisms}
 \label{sec:cr_acceleration}
 
-The approximately power-law form of the cosmic-ray spectrum can arise from repeated acceleration of the primaries accompanied by escape.
+The approximately power-law form of the cosmic-ray spectrum can arise from repeated acceleration of the primaries accompanied by escape mechanism.
+There are two major candidates for the accelerations, diffusive shock acceleration (also known as first order Fermi acceleration) and eleastic magnetic scattering on a magnetic cloud (second order Fermi acceleration).
 In diffusive shock acceleration, particles scatter on magnetic irregularities on either side of a shock and cross repeatedly between the upstream and downstream flows.
 Each return cycle produces an average energy gain, while some particles escape downstream.
 In the ideal limit of a strong, nonrelativistic shock, this balance gives a differential source spectrum proportional to $E^{-2}$.
 Propagation subsequently modifies this spectrum before it reaches Earth.
 Supernova-remnant shocks are an important Galactic environment in which this mechanism can operate~\cite{Longair:2011:HighEnergyAstrohphysics,grupenAstroparticlePhysics2020}.
 
-Particles can also gain energy through scattering from randomly moving magnetic irregularities, a process known as second-order Fermi acceleration.
-Its average fractional energy gain is quadratic in the scattering-centre speed divided by $c$, whereas shock acceleration is first order in the flow speed.
-Stochastic acceleration can contribute to the reacceleration of an existing particle population~\cite{Longair:2011:HighEnergyAstrohphysics}.
+Particles can also gain energy through scattering from randomly moving magnetic irregularities from a moving gas cloud.
+Its average fractional energy gain is quadratic in the cloud speed, whereas shock acceleration is first order in the flow speed.
+This acceleration mechanism can contribute to the reacceleration of an existing particle population~\cite{Longair:2011:HighEnergyAstrohphysics}.
 
 An accelerator must confine particles long enough for repeated energy gains to occur.
-Magnetic confinement depends on the rigidity, $\mathcal{R}=pc/(Ze)$, where $p$ is the momentum and $Ze$ the particle charge.
-For an ultrarelativistic particle moving perpendicular to a magnetic field $B$, the Larmor radius is $r_{\mathrm L}\simeq E/(ZeBc)$.
-Requiring this radius to be smaller than the characteristic size $L$ of the accelerating region gives the Hillas criterion,
+Magnetic confinement of a particle depends on its rigidity
 \begin{align}
-    r_{\mathrm L}&\lesssim L, &
+    R=\frac{E}{Ze}
+\end{align}, where $Ze$ the particle charge.
+For an ultrarelativistic particle moving perpendicular to a magnetic field $B$, this determines the Larmor radius,
+\begin{align}
+    r_{\mathrm L}=\frac{E}{ZeBc}=R/Bc
+\end{align}
+Requiring this radius to be smaller than the characteristic size $L$ of the accelerating region gives the Hillas criterion, $r_{\mathrm L}&\lesssim L$,
+\begin{align}
     E_{\max}&\lesssim ZeBcL .
     \label{eq:cr_hillas}
 \end{align}
-Particles with larger gyroradii cannot be effectively confined within that region.
-Stronger magnetic fields and larger source sizes therefore allow confinement to higher energies.
-This is a necessary condition: reaching the corresponding energy also requires acceleration to outpace escape and energy losses within the source lifetime~\cite{Longair:2011:HighEnergyAstrohphysics}.
+Particles with giroradii larger than this cannot be effectively confined within that region and cannot absorb the maximum energy.
+Stronger magnetic fields and larger source sizes, therefore allow confinement to higher energies.
+Reaching this energy also requires acceleration to outpace escape and energy losses within the source ~\cite{Longair:2011:HighEnergyAstrohphysics}.
 
 The Hillas diagram in Fig.~\ref{fig:cr_hillas} plots candidate sources by their characteristic size and magnetic-field strength on logarithmic axes.
-Its diagonal line represents a constant field--size product for a specified particle charge and energy.
-In the figure shown here, the line indicates the approximate requirement for $10^{20}\,\mathrm{eV}$ protons at a characteristic acceleration speed close to $c$.
-Sources above the line satisfy this size--field requirement, although their acceleration efficiency and losses can impose stronger limits.
+The diagonal line represents a constant the relation between the size and intensity of magnetic field required to accelerate a proton at $10^{20}\,\mathrm{eV}$.
+Sources above the line satisfy this requirement, although their acceleration efficiency and losses can impose stronger limits. Since the rigidity scale with the number of protons, $E_{\max,Z}\simeq Z E_{\max,p}$.
+Heavy nuclei can therefore reach higher total energies than protons in the same environment. 
+This charge dependence can link the  mass dependent depletion of galactic acceleration mechanisms to the sequence of elemental steepenings discussed in Section~\ref{sec:cr_transition} in relation to the second knee.
 
-For nuclei sharing a common maximum rigidity, $E_{\max,Z}\simeq Z E_{\max,p}$.
-Heavy nuclei can therefore reach higher total energies than protons in the same environment.
-This charge dependence connects acceleration limits to the sequence of elemental steepenings discussed in Section~\ref{sec:cr_transition} in relation to the second knee.
-
-\begin{figure}[tbp]
+\begin{figure}
     \centering
     \includegraphics[width=0.60\linewidth]{\subfix{figures/chapter_cosmic_rays/longair_hillas.pdf}}
     \caption[Hillas diagram of candidate accelerator environments]{Hillas diagram showing characteristic magnetic fields and sizes of astrophysical environments.
-    Both axes use base-ten logarithms, with field strength in gauss and size in parsecs; crosses indicate representative source conditions.
-    The diagonal gives the approximate $10^{20}\,\mathrm{eV}$ proton requirement for a characteristic speed close to $c$.
-    More generally, the attainable scale is of order $E_{\max}\sim Ze\beta BcL$, with $\beta=u/c$; a suitable field--size product is necessary but does not ensure efficient acceleration.
-    Reproduced from Fig.~17.10 of Ref.~\cite{Longair:2011:HighEnergyAstrohphysics}.}
+    The diagonal gives the approximate $10^{20}\,\mathrm{eV}$ requirement for a proton/
+    Taken from Ref. ~\cite{Longair:2011:HighEnergyAstrohphysics}.}
     \label{fig:cr_hillas}
 \end{figure}
 
 \section{Propagation and arrival directions}
 \label{sec:cr_propagation}
 
-Propagation modifies the injected spectrum before it is observed.
-In the Galaxy, scattering by magnetic irregularities can produce diffusive transport.
-The \emph{leaky-box model} describes this confinement in a spatially averaged way: sources continuously inject particles into a Galactic reservoir, from which they escape with a mean residence time $\tau_{\mathrm{esc}}(\mathcal{R})$~\cite{Longair:2011:HighEnergyAstrohphysics}.
-For stable primary nuclei, neglecting energy losses and nuclear fragmentation, the balance between injection and escape is
+Through their propagation in the interstellar and intergalactic medium, the spectral shape of cosmic rays changes
+Inside the galaxy the diffusive transport produced by the irregularities in the magnetic field can be used to explain these changes.
+The \emph{leaky-box model} describes the confinement inside the galaxy in a spatially averaged way.
+Thesources continuously inject particles into a Galactic reservoir, from which they escape with a mean residence time $\tau_{\mathrm{esc}}(R)$~\cite{Longair:2011:HighEnergyAstrohphysics}.
+For primary nuclei, neglecting energy losses and nuclear fragmentation, the balance between injection and escape is given by
 \begin{align}
-    \frac{\partial n(\mathcal{R},t)}{\partial t}
-    &= Q(\mathcal{R},t)-\frac{n(\mathcal{R},t)}{\tau_{\mathrm{esc}}(\mathcal{R})},
+    \frac{\partial n(R,t)}{\partial t}
+    &= Q(R,t)-\frac{n(R,t)}{\tau_{\mathrm{esc}}(R)},
     \label{eq:cr_leaky_box}
 \end{align}
 where $n$ is the differential number density per unit rigidity and $Q$ the injection rate per unit volume and rigidity.
 In a stationary state, injection balances escape, giving
 \begin{align}
-    n(\mathcal{R})&=Q(\mathcal{R})\tau_{\mathrm{esc}}(\mathcal{R}), &
-    \tau_{\mathrm{esc}}&\sim\frac{H^2}{D(\mathcal{R})},
-    \label{eq:cr_transport}
+    n(R)&=Q(R)\tau_{\mathrm{esc}}(R), 
+\label{eq:cr_transport}
 \end{align}
-where the second relation connects the effective escape time to diffusion through a region of characteristic size $H$, with diffusion coefficient $D$~\cite{Longair:2011:HighEnergyAstrohphysics}.
+\noindent with $\tau_{\mathrm{esc}}\sim H^2/D(R)$. The effective escape time $\tau_{\mathrm{esc}}$ is estimated with the characteristic size of the region, $H$ and with diffusion coefficient $D$.
 
-If $Q\propto\mathcal{R}^{-\alpha}$ and $D\propto\mathcal{R}^{\delta}$, then $\tau_{\mathrm{esc}}\propto\mathcal{R}^{-\delta}$.
-For a fixed ultrarelativistic nuclear species, energy is proportional to rigidity and the intensity has the same spectral index as the number density, so
+If $Q\propto R^{-\alpha}$ and $D\propto R^{\delta}$, then $\tau_{\mathrm{esc}}\propto R^{-\delta}$.
+For a fixed ultrarelativistic particle, the energy is proportional to the rigidity and the intensity has the same spectral index as the number density, so
 \begin{align}
     J(E)&\propto E^{-(\alpha+\delta)}, &
     \gamma&=\alpha+\delta .
     \label{eq:cr_propagated_index}
 \end{align}
 For $\delta>0$, particles of higher rigidity escape faster and are less abundant in the confined population, steepening the spectrum relative to that injected by the sources~\cite{PDG:2025:CosmicRays}.
-This provides the connection between an acceleration spectrum near $E^{-2}$ and the steeper spectrum measured at Earth.
-For illustration, $\alpha=2.2$ and $\delta=0.5$ give $\gamma=2.7$, close to the broad all-particle slope below the knee.
-The ideal strong-shock value $\alpha=2$ would instead require $\delta=0.7$ to produce the same slope.
-The leaky-box model therefore does not impose a universal steepening by one power of energy.
-The index near three above the knee also includes the steepening at that feature; a change in the rigidity dependence of escape can generate a spectral break even if the injection law remains unchanged~\cite{PDG:2025:CosmicRays}.
+This provides a connection between a production spectrum proportional to $E^{-2}$ and the steeper $\gamma\sim3$ measured at Earth.
+% For illustration, $\alpha=2.2$ and $\delta=0.5$ can yield $\gamma=2.7$, close to the broad all-particle slope below the knee.
+The ideal strong-shock value $\alpha=2$ would  require $\delta=0.7$ to produce the measured slope around the knee.
+The leaky-box model therefore does not impose a universal steepening by one power of energy. %Is this a direct conclusion?
+The index near three above the knee also includes a steepening that can be related to a change in escape time due to the change of rigidity, even if the injection law remains unchanged.
 
 Nuclear abundances provide a way to test this transport picture independently of the primary spectrum.
-Some species are produced largely through fragmentation of heavier nuclei during propagation through interstellar matter.
-Their abundance relative to primary species, such as the boron-to-carbon ratio, carries information about the matter traversed and its energy dependence.
-Radioactive secondaries also constrain propagation times.
-These measurements support the importance of Galactic transport, although extending a diffusion law inferred at lower rigidities into the knee region requires assumptions about the magnetic turbulence~\cite{PDG:2025:CosmicRays,Longair:2011:HighEnergyAstrohphysics}.
-The simple stationary expression in Eq.~\ref{eq:cr_transport} is a physical guide, rather than a complete description of every energy range.
+Some species are produced largely by spallation of heavier nuclei during propagation.
+Their relative abundance to primary species, such as the boron-to-carbon ratio, carries information about the matter traversed and its energy dependence.
+Radioactive disintegration also restricts propagation times of the heavier species.
+These measurements support the importance of Galactic transport in the observed flux, although extending a diffusion law inferred at lower rigidities into the knee region requires assumptions about the magnetic turbulence
+The simple stationary expression in ~\cref{eq:cr_transport} is a physical guide, rather than a complete description of every energy range.
 
 The near-isotropy of charged cosmic rays is consistent with substantial magnetic scattering, but the residual anisotropy retains information about spatial gradients and nearby sources.
-It is consequently an independent constraint on source and transport models.
-Calculations of Galactic propagation show, for example, that the allowed light Galactic contribution near an EeV depends on both the magnetic-field assumptions and the measured anisotropy limits~\cite{Giacinti:2012:AnisotropyTransition}.
-At higher energies, the large-scale dipole observed by Auger above $8\,\mathrm{EeV}$ supports an extragalactic origin of that population~\cite{PierreAuger:2017:LargeScaleAnisotropy}.
-It does not establish where the transition began at lower energies.
+Consequently, it is an independent constraint on source and transport models.
+Estimations of Galactic propagation show that the allowed light Galactic contribution near an EeV depends on both the magnetic-field assumptions and the measured anisotropy limits~\cite{Giacinti:2012:AnisotropyTransition}. %this is kinda confusing
+At higher energies, the large-scale in the direction far from the galactic center observed by the Pierre Auger Observatory above $8\,\mathrm{EeV}$ supports an extragalactic origin of that population~\cite{PierreAuger:2017:LargeScaleAnisotropy}.
+However, tt does not establish where this transition begins at lower energies.
 
 \section{Extensive air showers}
 \label{sec:cr_eas}
@@ -194,14 +195,14 @@ An extensive air shower develops through successive interactions and decays, dis
 The secondary particles spread laterally as the shower propagates, allowing a single primary to be detected by an array of separated stations.
 
 The first nuclear interaction produces secondary hadrons that continue the cascade.
-Neutral pions feed the electromagnetic component through their decay into photons, which generate electron--positron pairs; the electrons and positrons emit further photons through bremsstrahlung.
+Neutral pions feed the electromagnetic component through their decay into photons, which generate electron-positron pairs; the electrons and positrons emit further photons through bremsstrahlung.
 Charged pions can interact again or decay into muons and neutrinos.
 The competition between decay and interaction depends on energy and atmospheric density, with decay becoming more important as the cascade loses energy.
 Kaons and other hadrons also contribute.
 Energetic muons penetrate much farther than the electromagnetic component, while neutrinos carry away energy that is largely unobserved~\cite{grupenAstroparticlePhysics2020}.
 Figure~\ref{fig:cr_shower} summarizes these coupled branches.
 
-\begin{figure}[tbp]
+\begin{figure}
     \centering
     \includegraphics[height=0.78\textheight]{\subfix{figures/chapter_cosmic_rays/grupen_air_shower.pdf}}
     \caption[Components of an atmospheric particle cascade]{Atmospheric development of a proton-initiated cascade, showing its electromagnetic, hadronic, muonic and neutrino components.
@@ -251,7 +252,7 @@ Thus increasing energy produces a larger shower whose maximum occurs deeper in t
 The linear scaling of particle number and logarithmic scaling of depth are the useful predictions; equal energy sharing and a fixed branching interval are simplifying assumptions.
 Figure~\ref{fig:cr_heitler_em} shows the corresponding branching construction.
 
-\begin{figure}[tbp]
+\begin{figure}
     \centering
     \includegraphics[width=0.46\linewidth]{\subfix{figures/chapter_cosmic_rays/ulrich_heitler_em.pdf}}
     \caption[Electromagnetic Heitler cascade]{Equal-energy branching in the electromagnetic Heitler model.
@@ -261,9 +262,9 @@ Figure~\ref{fig:cr_heitler_em} shows the corresponding branching construction.
     \label{fig:cr_heitler_em}
 \end{figure}
 
-\subsection{Hadronic development: the Heitler--Matthews picture}
+\subsection{Hadronic development: the Heitler-Matthews picture}
 
-The Heitler--Matthews model extends this reasoning to a hadronic cascade~\cite{Matthews:2005:Heitler,Ulrich:2011:HadronicShowers}.
+The Heitler-Matthews model extends this reasoning to a hadronic cascade~\cite{Matthews:2005:Heitler,Ulrich:2011:HadronicShowers}.
 In a simplified version, each interaction produces $n_{\mathrm{tot}}$ pions sharing the available energy, of which $n_{\mathrm{ch}}$ are charged.
 Neutral pions feed electromagnetic subshowers, while charged pions continue interacting until their energies reach a characteristic decay scale $\xi_\pi$.
 Approximating each surviving charged pion as producing one muon gives
@@ -286,10 +287,10 @@ Each resulting subshower then develops according to Eq.~\ref{eq:cr_heitler_depth
 A deeper first interaction shifts this development deeper, while a larger multiplicity lowers the subshower energies and shortens their development to maximum.
 The maximum of a complete hadronic shower, however, combines contributions from successive generations, including energy carried deeper by leading particles; the first-generation picture is therefore only a qualitative guide~\cite{Ulrich:2011:HadronicShowers}.
 
-\begin{figure}[tbp]
+\begin{figure}
     \centering
     \includegraphics[width=0.46\linewidth]{\subfix{figures/chapter_cosmic_rays/ulrich_heitler_hadronic.pdf}}
-    \caption[Hadronic Heitler--Matthews cascade]{Pion branching in the hadronic extension of the Heitler model.
+    \caption[Hadronic Heitler-Matthews cascade]{Pion branching in the hadronic extension of the Heitler model.
     Solid black lines denote charged pions and dotted blue lines neutral pions; only a representative continuing branch is expanded.
     The original symbol $\lambda_{\mathrm I}$ denotes the hadronic interaction length expressed in atmospheric depth.
     As in the preceding figure, the original level labels start at $n=1$, whereas $n_{\mathrm{gen}}$ counts completed interactions.
@@ -322,7 +323,7 @@ Different primary masses can therefore produce overlapping observable distributi
 The mean and width of an observed distribution contain complementary information, but their interpretation must also account for a possible mixture of masses: fluctuations between species contribute in addition to fluctuations within each species~\cite{Longair:2011:HighEnergyAstrohphysics}.
 This is why population-level composition studies use distributions or several moments instead of assigning a unique mass from a single average shower relation.
 
-\begin{figure}[tbp]
+\begin{figure}
     \centering
     \includegraphics[width=\linewidth]{\subfix{figures/chapter_cosmic_rays/pdg_xmax.pdf}}
     \caption[Composition-sensitive shower observables]{Mean depth of shower maximum (upper panel) and its standard deviation (lower panel), compared with proton and iron predictions from SIBYLL~2.3c, EPOS-LHC and QGSJET-II.04.
@@ -370,7 +371,7 @@ Finite energy resolution causes migration between bins.
 For a steep spectrum, the greater abundance of lower-energy showers makes upward migration especially important, so the effect cannot generally be neglected near a threshold or a spectral break~\cite{PierreAuger:2020:Spectrum}.
 An uncertainty in the absolute energy scale is different from this event-by-event resolution: it moves the spectrum coherently and affects the inferred feature energies.
 
-\section{The second knee and the Galactic--extragalactic transition}
+\section{The second knee and the Galactic-extragalactic transition}
 \label{sec:cr_transition}
 
 The interval between the first knee and the ankle is not described completely by two sharp breaks.
@@ -399,7 +400,7 @@ This arithmetic explains why the end of a Galactic heavy component is often disc
 It does not determine the break of the summed spectrum, which depends on the relative abundances, the shapes of the elemental spectra and any additional populations.
 Figure~\ref{fig:cr_peters} illustrates this distinction without fitting experimental data.
 
-\begin{figure}[tbp]
+\begin{figure}
     \centering
     \includegraphics[width=\linewidth]{\subfix{figures/chapter_cosmic_rays/peters_cycle.pdf}}
     \caption[Illustrative rigidity-ordered elemental steepenings]{Original schematic of rigidity-ordered breaks, motivated by the framework discussed in Ref.~\cite{Mollerach:2019:GalacticScenario}.
@@ -419,7 +420,7 @@ The associated iron scale and transition energy are outcomes of that model and i
 
 An additional Galactic population provides a different possibility.
 If some sources reach larger rigidities than the population responsible for the first knee, the Galactic spectrum can extend beyond a simple extrapolation of its iron break.
-Thoudam and collaborators explored this option using an additional component associated with supernovae in Wolf--Rayet winds.
+Thoudam and collaborators explored this option using an additional component associated with supernovae in Wolf-Rayet winds.
 Their scenario contains substantial helium and CNO contributions around and above the second knee~\cite{Thoudam:2016:SecondGalacticComponent}.
 It illustrates why a steepening in the all-particle spectrum cannot be equated with an iron cutoff without independent composition information.
 
