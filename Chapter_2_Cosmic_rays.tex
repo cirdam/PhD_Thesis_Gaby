@@ -93,104 +93,38 @@ The same caution is essential when interpreting the second knee.
 \section{Acceleration mechanisms}
 \label{sec:cr_acceleration}
 
-Magnetic deflection is governed by rigidity,
+The approximately power-law form of the cosmic-ray spectrum can arise from repeated acceleration accompanied by escape.
+In diffusive shock acceleration, particles scatter on magnetic irregularities on either side of a shock and cross repeatedly between the upstream and downstream flows.
+Each return cycle produces an average energy gain, while some particles escape downstream.
+In the ideal limit of a strong, nonrelativistic shock, this balance gives a differential source spectrum proportional to $E^{-2}$.
+Propagation subsequently modifies this spectrum before it reaches Earth.
+Supernova-remnant shocks are an important Galactic environment in which this mechanism can operate~\cite{Longair:2011:HighEnergyAstrohphysics,grupenAstroparticlePhysics2020}.
+
+Particles can also gain energy through scattering from randomly moving magnetic irregularities, a process known as second-order Fermi acceleration.
+Its average fractional energy gain is quadratic in the scattering-centre speed divided by $c$, whereas shock acceleration is first order in the flow speed.
+Stochastic acceleration can contribute to the reacceleration of an existing particle population~\cite{Longair:2011:HighEnergyAstrohphysics}.
+
+An accelerator must confine particles long enough for repeated energy gains to occur.
+Magnetic confinement depends on the rigidity, $\mathcal{R}=pc/(Ze)$, where $p$ is the momentum and $Ze$ the particle charge.
+For an ultrarelativistic particle moving perpendicular to a magnetic field $B$, the Larmor radius is $r_{\mathrm L}\simeq E/(ZeBc)$.
+Requiring this radius to be smaller than the characteristic size $L$ of the accelerating region gives the Hillas criterion,
 \begin{align}
-    \mathcal{R}&=\frac{pc}{Ze}, &
-    r_{\mathrm{L}}&=\frac{p}{ZeB}=\frac{\mathcal{R}}{cB},
-    \label{eq:cr_rigidity}
+    r_{\mathrm L}&\lesssim L, &
+    E_{\max}&\lesssim ZeBcL .
+    \label{eq:cr_hillas}
 \end{align}
-where $p$ is the momentum, $e$ is the positive elementary charge and rigidity is measured in volts.
-The expression for the Larmor radius assumes motion perpendicular to a uniform magnetic field of strength $B$, in SI units.
-For ultrarelativistic nuclei, $pc\simeq E$.
-At equal total energy, nuclei of larger charge have smaller gyroradii and are generally more strongly deflected.
-The characteristic scale is $r_{\mathrm{L}}\simeq1.08\,\mathrm{pc}\,(E/\mathrm{PeV})/[Z(B/\mu\mathrm{G})]$.
-Thus the same energy does not imply the same confinement or propagation regime for protons and iron nuclei~\cite{PDG:2025:CosmicRays,Longair:2011:HighEnergyAstrohphysics}.
+Particles with larger gyroradii cannot be effectively confined within that region.
+Stronger magnetic fields and larger source sizes therefore allow confinement to higher energies.
+This is a necessary condition: reaching the corresponding energy also requires acceleration to outpace escape and energy losses within the source lifetime~\cite{Longair:2011:HighEnergyAstrohphysics}.
 
-A magnetic field changes a particle's direction but does no work through the magnetic Lorentz force alone.
-Acceleration requires an electric field, which can arise from the motion of magnetized plasma.
-In the Fermi mechanisms, particles scatter from moving magnetic irregularities: scattering can be approximately elastic in the local plasma frame while changing the particle energy in the source frame.
-Repeated fractional gains increase the energy multiplicatively, while escape reduces the number of particles remaining in the accelerator.
-Their competition naturally produces a power-law distribution~\cite{Longair:2011:HighEnergyAstrohphysics}.
+The Hillas diagram in Fig.~\ref{fig:cr_hillas} plots candidate sources by their characteristic size and magnetic-field strength on logarithmic axes.
+Its diagonal line represents a constant field--size product for a specified particle charge and energy.
+In the figure shown here, the line indicates the approximate requirement for $10^{20}\,\mathrm{eV}$ protons at a characteristic acceleration speed close to $c$.
+Sources above the line satisfy this size--field requirement, although their acceleration efficiency and losses can impose stronger limits.
 
-\subsection{First-order Fermi acceleration at shocks}
-
-Diffusive shock acceleration operates when particles scatter on both sides of a shock and repeatedly cross between the upstream and downstream flows.
-In the shock rest frame, the upstream plasma approaches with speed $u_1$ and the compressed downstream plasma recedes with speed $u_2<u_1$.
-The flows converge relative to one another, so a particle completing a return cycle gains energy on average.
-For relativistic particles, approximately isotropic scattering and a nonrelativistic shock, the mean fractional gain per full cycle is
-\begin{align}
-    \left\langle\frac{\Delta E}{E}\right\rangle
-    \simeq\frac{4(u_1-u_2)}{3c} .
-    \label{eq:cr_fermi_first}
-\end{align}
-The gain is first order in the flow speed divided by $c$, hence the name first-order Fermi acceleration~\cite{Longair:2011:HighEnergyAstrohphysics}.
-Scattering enables repeated returns across a single shock.
-
-Some particles are advected downstream and do not return.
-Balancing this escape against the energy gain gives, in the ideal test-particle limit, a differential accelerated spectrum
-\begin{align}
-    Q_E(E)&\propto E^{-\alpha}, &
-    \alpha&=\frac{r+2}{r-1}, &
-    r&=\frac{u_1}{u_2}=\frac{\rho_2}{\rho_1},
-    \label{eq:cr_shock_slope}
-\end{align}
-where $r$ is the compression ratio and $\rho_1$ and $\rho_2$ are the upstream and downstream mass densities.
-A strong shock in an ideal monatomic gas has $r=4$, giving $\alpha=2$.
-This is an ideal acceleration spectrum, not the observed spectrum at Earth.
-The result changes when accelerated particles modify the shock, the scattering assumptions fail, or the shock is relativistic~\cite{Longair:2011:HighEnergyAstrohphysics}.
-Young supernova-remnant shocks provide an important Galactic setting, converting part of the expanding ejecta's kinetic energy into nonthermal particles~\cite{grupenAstroparticlePhysics2020}.
-Figure~\ref{fig:cr_fermi} shows the flow and particle scattering in the reference frames used to describe this mechanism.
-
-\begin{figure}[tbp]
-    \centering
-    \includegraphics[width=0.9\linewidth]{\subfix{figures/chapter_cosmic_rays/longair_shock_acceleration.pdf}}
-    \caption[Reference frames for diffusive shock acceleration]{A strong shock viewed in different reference frames: (a) the shock moving into stationary upstream gas; (b) the shock at rest; (c) the upstream rest frame; and (d) the downstream rest frame.
-    Scattering approximately isotropizes the energetic particles in the local plasma frame.
-    The original symbols $v_1$ and $v_2$ correspond to $u_1$ and $u_2$ in the text; the illustrated compression ratio is four.
-    Reproduced from Fig.~17.3 of Ref.~\cite{Longair:2011:HighEnergyAstrohphysics}.}
-    \label{fig:cr_fermi}
-\end{figure}
-
-\subsection{Second-order Fermi acceleration}
-
-In a turbulent plasma, scattering centres move in different directions rather than forming two systematically converging flows.
-Particles can gain energy in head-on encounters and lose it when overtaking a receding centre.
-Averaging over the encounters gives a positive gain of order $(u/c)^2$, where $u$ is a characteristic scattering-centre speed.
-For comparable nonrelativistic speeds and scattering conditions, this is smaller per encounter than the first-order shock gain.
-Nevertheless, sustained scattering by magnetic turbulence can accelerate or reaccelerate particles.
-The resulting spectrum depends on the competition among acceleration, escape and losses, without a universal compression-ratio prediction~\cite{Longair:2011:HighEnergyAstrohphysics}.
-The head-on and overtaking encounter geometries are illustrated in Fig.~\ref{fig:cr_fermi_stochastic}.
-
-\begin{figure}[tbp]
-    \centering
-    \includegraphics[width=0.52\linewidth]{\subfix{figures/chapter_cosmic_rays/longair_stochastic_acceleration.pdf}}
-    \caption[Encounters in second-order Fermi acceleration]{Magnetic-mirror encounters in Fermi's stochastic acceleration picture: (a) a head-on encounter and (b) an overtaking encounter.
-    The original diagram denotes the cloud speed by $V$ and the particle speed by $v$; $V$ corresponds to the characteristic scattering-centre speed $u$ in the text.
-    Averaging over moving scattering centres gives the second-order mean gain discussed above.
-    Reproduced from Fig.~17.1 of Ref.~\cite{Longair:2011:HighEnergyAstrohphysics}.}
-    \label{fig:cr_fermi_stochastic}
-\end{figure}
-
-\subsection{Maximum energy and candidate sources}
-
-An accelerator must retain particles long enough for them to gain energy.
-Requiring a gyroradius smaller than a characteristic source size $L$ gives the Hillas confinement condition $E\lesssim ZeBcL$.
-For acceleration associated with a nonrelativistic flow of speed $u$, the characteristic attainable scale can instead be of order $ZeBuL$, with an additional factor $u/c$ relative to the bare confinement bound.
-Neither estimate guarantees that the corresponding energy is reached.
-The acceleration time must also be shorter than the source lifetime and the relevant escape or energy-loss times.
-Magnetic-field amplification and efficient scattering can therefore be crucial to whether supernova remnants accelerate nuclei into the knee region~\cite{Longair:2011:HighEnergyAstrohphysics}.
-
-Other candidate environments include stellar winds, pulsars, active galactic nuclei and their jets.
-Depending on the environment, acceleration may involve shocks, turbulence, large-scale electric potentials or magnetic reconnection.
-The energy reservoir and acceleration mechanism must be distinguished from the source class: the presence of a jet or a strong magnetic field alone does not specify a particle spectrum~\cite{PDG:2025:CosmicRays}.
-Under a common limiting rigidity, the maximum energy scales approximately with $Z$.
-This connects the acceleration problem to charge-ordered spectral breaks, while differences among sources can broaden their combined decline.
-
-Figure~\ref{fig:cr_hillas} places representative source environments in the magnetic-field--size plane.
-Its diagonal illustrates the requirement for ultrahigh-energy protons; the second knee probes lower energies and a composition-dependent requirement.
-At $100\,\mathrm{PeV}$, a proton has a rigidity of $100\,\mathrm{PV}$, whereas an iron nucleus requires only about $3.8\,\mathrm{PV}$, where $1\,\mathrm{PV}=10^{15}\,\mathrm{V}$.
-Thus, sources unable to accelerate protons to the second-knee region may still contribute heavier nuclei there.
-This charge dependence provides the connection between source constraints and the sequence of elemental breaks discussed in Section~\ref{sec:cr_transition}; it does not establish a unique source population.
+For nuclei sharing a common maximum rigidity, $E_{\max,Z}\simeq Z E_{\max,p}$.
+Heavy nuclei can therefore reach higher total energies than protons in the same environment.
+This charge dependence connects acceleration limits to the sequence of elemental steepenings discussed in Section~\ref{sec:cr_transition} in relation to the second knee.
 
 \begin{figure}[tbp]
     \centering
