@@ -4,9 +4,15 @@
 \chapter{Cosmic rays}
 \label{chapter:cr}
 
+Cosmic rays are high-energy charged particles that arrive to earth from outside the Solar System and even the Milky Way.
+They consist mostly of protons and heavier atomic nuclei but electrons, positrons and antiprotons can be found. These particles are accelerated at some of the highest known energies in the universe.~\cite{PDG:2025:CosmicRays}.
 Cosmic rays are high-energy particles of extraterrestrial origin that reach the Earth's atmosphere.
-The charged component consists mainly of protons and heavier atomic nuclei, together with smaller populations of electrons, positrons and antiprotons~\cite{PDG:2025:CosmicRays}.
-This thesis concerns the nuclear component and its energy spectrum.
+
+Since their discovery by Victor Hess in 1912, Cosmic rays have been key in the development of pre-accelerator particle physics and their astrophyisical sources reamain a mistery even one hundred years later.
+However, the energy, mass composition and arrival directions are the clues to study the processes that generates them and their propagation through space.
+At the highest observed energies a direct detection becomes unfeasible due to the low cross-section and indirect techniques based on the interaction between the primary cosmic ray and the atoms in Earth's atmosphere must be used.
+
+In this chapter the main observables associated to cosmic rays are presented, together with the phyiscs of the detection methods before focusing on the topic of this thesis, the cosmic-ray flux, via the energy spectrum and its features, in particular the softening called the \textit{second knee}.
 
 Their observed energies, composition and arrival directions reflect both the processes that accelerated them and their subsequent propagation through space.
 At sufficiently high energies, these properties are inferred from the cascades of particles produced when cosmic rays interact in the atmosphere.
@@ -15,7 +21,7 @@ This chapter introduces these observables, the underlying physics and the method
 \section{Cosmic rays and their observable properties}
 \label{sec:cr_observables}
 
-The energy spectrum describes how the cosmic-ray intensity varies with particle energy, while the mass composition specifies the relative contributions of different nuclear species at a given energy.
+The energy spectrum describes how the cosmic-ray flux varies with energy, while the mass composition specifies the relative contributions of different nuclear species at a given energy.
 The arrival-direction distribution describes how that intensity varies across the sky.
 Photons and neutrinos provide complementary information about particle acceleration and interactions, but are not included in this nuclear all-particle flux.
 Unlike charged particles, these neutral messengers are not deflected by magnetic fields.
@@ -25,26 +31,25 @@ In an air shower, the incident cosmic ray is the primary particle, while the par
 For a primary nucleus, $Z$ denotes its charge number and $A$ its mass number.
 Unless stated otherwise, $E$ is the total energy per particle, rather than the energy per nucleon.
 In the PeV--EeV range the distinction between kinetic and total energy is negligible.
-The units used below are $1\,\mathrm{PeV}=10^{15}\,\mathrm{eV}$ and $1\,\mathrm{EeV}=10^{18}\,\mathrm{eV}$.
 For an isotropic flux, the differential intensity $J(E)$ describes the number of particles crossing an area perpendicular to their direction of motion:
 \begin{align}
-    \mathrm{d}N &= J(E)\,\mathrm{d}E\,\mathrm{d}A_{\perp}\,\mathrm{d}\Omega\,\mathrm{d}t .
+    \mathrm{d}N &= J(E)\,\mathrm{d}E\,\mathrm{d}A\,\mathrm{d}\Omega\,\mathrm{d}t .
     \label{eq:cr_intensity}
 \end{align}
-Its units may be written as $\mathrm{m^{-2}\,s^{-1}\,sr^{-1}\,eV^{-1}}$.
+% Its units may be written as $\mathrm{m^{-2}\,s^{-1}\,sr^{-1}\,eV^{-1}}$.
 An integrated intensity above a threshold is obtained by integrating $J(E)$ over energy; it is a different quantity from the differential spectrum~\cite{PDG:2025:CosmicRays}.
 
-Over restricted energy intervals the intensity is approximately a power law.
-Using the positive-index convention adopted throughout this thesis,
+The cosmic-ray flux can be modeled approximately with a power law,
 \begin{align}
     J(E)&\propto E^{-\gamma}, &
     \gamma(E)&=-\frac{\mathrm{d}\ln J}{\mathrm{d}\ln E} .
     \label{eq:cr_index}
 \end{align}
-A steepening corresponds to an increase in $\gamma$, whereas a hardening corresponds to a decrease.
-Multiplying the intensity by $E^k$ makes departures from a power law easier to see: a spectrum with index $\gamma=k$ becomes horizontal.
-This presentation changes neither the underlying measurement nor the position of an intrinsically defined break, although it changes its visual prominence.
-Figure~\ref{fig:cr_spectrum} uses an $E^2$ weighting, while the spectral results later in this thesis are often displayed as $E^3J(E)$.
+\noindent where the slope of the power law, $\gamma$, also denominated spectral index is approximately around 3 in the whole energy range.
+However, at different energies changes in the spectral index are observed.
+These features in the spectrum are denominated via a, now rather complex, analogy with the human leg.
+It is also customary to multiply the flux by $E^k$ making a spectrum with $\gamma=k$ horizontal and helping to notice departures from a power law regime.
+~\ref{fig:cr_spectrum} uses an $E^2$ weighting, while the spectral results later in this thesis are often displayed as $E^3J(E)$.
 
 The all-particle intensity is the sum of the intensities of the contributing nuclear species.
 For components $i$ described using the same energy variable, the definitions above imply
