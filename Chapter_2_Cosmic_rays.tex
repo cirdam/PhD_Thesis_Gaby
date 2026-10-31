@@ -140,18 +140,37 @@ This charge dependence connects acceleration limits to the sequence of elemental
 \section{Propagation and arrival directions}
 \label{sec:cr_propagation}
 
-Propagation modifies this injected spectrum before it is observed.
+Propagation modifies the injected spectrum before it is observed.
 In the Galaxy, scattering by magnetic irregularities can produce diffusive transport.
-In a simplified stationary, escape-dominated description, neglecting losses and nuclear fragmentation,
+The \emph{leaky-box model} describes this confinement in a spatially averaged way: sources continuously inject particles into a Galactic reservoir, from which they escape with a mean residence time $\tau_{\mathrm{esc}}(\mathcal{R})$~\cite{Longair:2011:HighEnergyAstrohphysics}.
+For stable primary nuclei, neglecting energy losses and nuclear fragmentation, the balance between injection and escape is
 \begin{align}
-    n(\mathcal{R})&\propto Q(\mathcal{R})\tau_{\mathrm{esc}}(\mathcal{R}), &
+    \frac{\partial n(\mathcal{R},t)}{\partial t}
+    &= Q(\mathcal{R},t)-\frac{n(\mathcal{R},t)}{\tau_{\mathrm{esc}}(\mathcal{R})},
+    \label{eq:cr_leaky_box}
+\end{align}
+where $n$ is the differential number density per unit rigidity and $Q$ the injection rate per unit volume and rigidity.
+In a stationary state, injection balances escape, giving
+\begin{align}
+    n(\mathcal{R})&=Q(\mathcal{R})\tau_{\mathrm{esc}}(\mathcal{R}), &
     \tau_{\mathrm{esc}}&\sim\frac{H^2}{D(\mathcal{R})},
     \label{eq:cr_transport}
 \end{align}
-where $n$ is the differential density, $Q$ the injection rate, $H$ a characteristic confinement scale and $D$ the diffusion coefficient.
-If $Q\propto\mathcal{R}^{-\alpha}$ and $D\propto\mathcal{R}^{\delta}$, the observed rigidity spectrum is proportional to $\mathcal{R}^{-(\alpha+\delta)}$.
-The observed slope therefore need not equal the acceleration slope.
-A change in the rigidity dependence of escape can generate a spectral break even if the injection law remains unchanged~\cite{PDG:2025:CosmicRays}.
+where the second relation connects the effective escape time to diffusion through a region of characteristic size $H$, with diffusion coefficient $D$~\cite{Longair:2011:HighEnergyAstrohphysics}.
+
+If $Q\propto\mathcal{R}^{-\alpha}$ and $D\propto\mathcal{R}^{\delta}$, then $\tau_{\mathrm{esc}}\propto\mathcal{R}^{-\delta}$.
+For a fixed ultrarelativistic nuclear species, energy is proportional to rigidity and the intensity has the same spectral index as the number density, so
+\begin{align}
+    J(E)&\propto E^{-(\alpha+\delta)}, &
+    \gamma&=\alpha+\delta .
+    \label{eq:cr_propagated_index}
+\end{align}
+For $\delta>0$, particles of higher rigidity escape faster and are less abundant in the confined population, steepening the spectrum relative to that injected by the sources~\cite{PDG:2025:CosmicRays}.
+This provides the connection between an acceleration spectrum near $E^{-2}$ and the steeper spectrum measured at Earth.
+For illustration, $\alpha=2.2$ and $\delta=0.5$ give $\gamma=2.7$, close to the broad all-particle slope below the knee.
+The ideal strong-shock value $\alpha=2$ would instead require $\delta=0.7$ to produce the same slope.
+The leaky-box model therefore does not impose a universal steepening by one power of energy.
+The index near three above the knee also includes the steepening at that feature; a change in the rigidity dependence of escape can generate a spectral break even if the injection law remains unchanged~\cite{PDG:2025:CosmicRays}.
 
 Nuclear abundances provide a way to test this transport picture independently of the primary spectrum.
 Some species are produced largely through fragmentation of heavier nuclei during propagation through interstellar matter.
