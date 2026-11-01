@@ -4,34 +4,34 @@
 \chapter{Cosmic rays}
 \label{chapter:cr}
 
-Cosmic rays are high-energy charged particles that arrive to earth from outside the Solar System and even the Milky Way.
-They consist mostly of protons and heavier atomic nuclei but electrons, positrons and antiprotons can be found. These particles are accelerated at some of the highest known energies in the universe.~\cite{PDG:2025:CosmicRays}.
+Cosmic rays are high-energy charged particles that arrive at Earth from outside the Solar System and even the Milky Way.
+They consist mostly of protons and heavier atomic nuclei, but electrons, positrons, and antiprotons can be found. These particles are accelerated at some of the highest known energies in the universe~\cite{PDG:2025:CosmicRays}.
 Cosmic rays are high-energy particles of extraterrestrial origin that reach the Earth's atmosphere.
 
-Since their discovery by Victor Hess in 1912, Cosmic rays have been key in the development of pre-accelerator particle physics and their astrophyisical sources reamain a mistery even one hundred years later.
-However, the energy, mass composition and arrival directions are the clues to study the processes that generates them and their propagation through space.
+Since their discovery by Victor Hess in 1912, cosmic rays have been key to the development of pre-accelerator particle physics, and their astrophysical sources remain a mystery even one hundred years later.
+However, the energy, mass composition and arrival directions are the clues to study the processes that generate them and their propagation through space.
 At the highest observed energies, direct detection becomes impractical because the low flux requires a large collecting area, while calorimetric measurements also require a substantial detector mass to contain the showers.
 Indirect techniques instead use the atmosphere as a target and detect the secondary particles or radiation produced by the primary cosmic ray.
 
-In this chapter the main observables associated to cosmic rays are presented, together with the phyiscs of the detection methods before focusing on the topic of this thesis, the cosmic-ray flux, via the energy spectrum and its features, in particular the softening called the \textit{second knee}.
+In this chapter, the main observables associated with cosmic rays are presented, together with the physics of the detection methods before focusing on the topic of this thesis, the cosmic-ray flux, via the energy spectrum and its features, in particular the softening called the \textit{second knee}.
 
 Their observed energies, composition and arrival directions reflect both the processes that accelerated them and their subsequent propagation through space.
 At sufficiently high energies, these properties are inferred from the cascades of particles produced when cosmic rays interact in the atmosphere.
 This chapter introduces these observables, the underlying physics and the methods of detection, before focusing on the second knee and its relevance to the transition between Galactic and extragalactic cosmic rays.
 
-\section{Cosmic rays and their observable properties}
+\section{Cosmic ray properties}
 \label{sec:cr_observables}
 
 The energy spectrum describes how the cosmic-ray flux varies with energy, while the mass composition specifies the relative contributions of different nuclear species at a given energy.
 The arrival-direction distribution describes how that intensity varies across the sky.
 Photons and neutrinos provide complementary information about particle acceleration and interactions, but are not included in this nuclear all-particle flux.
 Unlike charged particles, these neutral messengers are not deflected by magnetic fields.
-For nuclei, the observed arrival direction generally differs from the direction of the source, and the source population must instead be constrained through the combined information contained in the energy spectrum, mass composition and angular distribution~\cite{PDG:2025:CosmicRays}.
+For nuclei, the observed arrival direction generally differs from the direction of the source, and the source population must instead be constrained through the combined information contained in the energy spectrum, mass composition, and angular distribution~\cite{PDG:2025:CosmicRays}.
 
 In an air shower, the incident cosmic ray is the primary particle, while the particles produced in the atmospheric cascade are secondaries.
 For a primary nucleus, $Z$ denotes its charge number and $A$ its mass number.
 Unless stated otherwise, $E$ is the total energy per particle, rather than the energy per nucleon.
-In the PeV-EeV range the distinction between kinetic and total energy is negligible.
+In the PeV-EeV range, the distinction between kinetic and total energy is negligible.
 For an isotropic flux, the differential intensity $J(E)$ describes the number of particles crossing an area perpendicular to their direction of motion:
 \begin{align}
     \mathrm{d}N &= J(E)\,\mathrm{d}E\,\mathrm{d}A\,\mathrm{d}\Omega\,\mathrm{d}t .
@@ -46,14 +46,14 @@ The cosmic-ray flux can be modeled approximately with a power law,
     \gamma(E)&=-\frac{\mathrm{d}\ln J}{\mathrm{d}\ln E} .
     \label{eq:cr_index}
 \end{align}
-\noindent where the slope of the power law, $\gamma$, also denominated spectral index is approximately around 3 in the whole energy range.
-However, at different energies changes in the spectral index are observed.
-These features in the spectrum are denominated via a, now rather complex, analogy with the human leg.
-It is also customary to multiply the flux by $E^k$ making a spectrum with $\gamma=k$ horizontal and helping to notice departures from a power law regime.
-~\ref{fig:cr_spectrum} uses an $E^2$ weighting, while the spectral results later in this thesis are often displayed as $E^3J(E)$.
+\noindent where the slope of the power law, $\gamma$, also called the spectral index, is approximately 3 over the full energy range.
+However, at different energies, changes in the spectral index are observed.
+These features in the spectrum are named through a now rather complex analogy with the human leg.
+It is also customary to multiply the flux by $E^k$, making a spectrum with $\gamma=k$ horizontal and making it easier to notice departures from a power-law regime.
+Figure~\cref{fig:cr_spectrum} uses an $E^2$ weighting, while the spectral results later in this thesis are often displayed as $E^3J(E)$.
 
 The all-particle intensity is the sum of the intensities of the contributing nuclear species.
-For components $i$ described using the same energy variable, the definitions above imply
+For components $i$ described using the same energy variable, the definitions above imply:
 \begin{align}
     J(E)&=\sum_i J_i(E), &
     \gamma(E)&=\sum_i\frac{J_i(E)}{J(E)}\,\gamma_i(E) .
@@ -75,18 +75,18 @@ This relation is useful when comparing an all-particle measurement with models f
     \label{fig:cr_spectrum}
 \end{figure}
 
-\section{Structure of the energy spectrum}
+\section{The energy spectrum}
 \label{sec:cr_spectrum}
 
 The steep decline of the flux is accompanied by several changes in slope.
-The knee at a few PeV marks a steepening from an index near $2.7$ to one near $3$.
+The knee at a few PeV marks a steepening from an index of about $2.7$ to about $3$.
 A further steepening, conventionally called the second knee, occurs around $10^{17}\,\mathrm{eV}$, above which the index is approximately $3.3$.
-These values provide orientation rather than a universal fit to all datasets~\cite{PDG:2025:CosmicRays}.
+These values are meant as guidance rather than a universal fit to all datasets~\cite{PDG:2025:CosmicRays}.
 At higher energies, the ankle is a hardening near $5\,\mathrm{EeV}$.
-The Pierre Auger Observatory also resolves a steepening above the ankle, commonly termed the instep, before the strong suppression of the flux at several tens of EeV~\cite{PierreAuger:2020:Spectrum}.
+The Pierre Auger Observatory also resolves a steepening above the ankle (commonly termed the instep), followed by the strong suppression of the flux at several tens of EeV~\cite{PierreAuger:2020:Spectrum}.
 
 At the highest energies, interactions during propagation further complicate the relation between a spectral break and a source population.
-Protons lose energy through pair production and photopion production on background radiation, while nuclei can undergo photodisintegration.
+Protons lose energy through pair production and photopion production on background radiation, while nuclei lose energy through photodisintegration.
 The observed suppression can also depend on the maximum rigidity attainable at the sources.
 Consequently, even a well-measured change of slope does not by itself identify its physical cause~\cite{Aloisio:2012:Transition,PDG:2025:CosmicRays}.
 The same caution is essential when interpreting the second knee.
@@ -94,20 +94,20 @@ The same caution is essential when interpreting the second knee.
 \section{Acceleration mechanisms}
 \label{sec:cr_acceleration}
 
-The approximately power-law form of the cosmic-ray spectrum can arise from repeated acceleration of the primaries accompanied by escape mechanism.
-There are two major candidates for the accelerations, diffusive shock acceleration (also known as first order Fermi acceleration) and eleastic magnetic scattering on a magnetic cloud (second order Fermi acceleration).
+The approximately power-law form of the cosmic-ray spectrum can arise from repeated acceleration of the primaries accompanied by an escape mechanism.
+There are two major candidates for acceleration: diffusive shock acceleration (also known as first-order Fermi acceleration) and elastic magnetic scattering on a moving magnetic cloud (second-order Fermi acceleration).
 In diffusive shock acceleration, particles scatter on magnetic irregularities on either side of a shock and cross repeatedly between the upstream and downstream flows.
 Each return cycle produces an average energy gain, while some particles escape downstream.
 In the ideal limit of a strong, nonrelativistic shock, this balance gives a differential source spectrum proportional to $E^{-2}$.
 Propagation subsequently modifies this spectrum before it reaches Earth.
 Supernova-remnant shocks are an important Galactic environment in which this mechanism can operate~\cite{Longair:2011:HighEnergyAstrohphysics,grupenAstroparticlePhysics2020}.
 
-Particles can also gain energy through scattering from randomly moving magnetic irregularities from a moving gas cloud.
+Particles can also gain energy through scattering from randomly moving magnetic irregularities in a gas cloud.
 Its average fractional energy gain is quadratic in the cloud speed, whereas shock acceleration is first order in the flow speed.
 This acceleration mechanism can contribute to the reacceleration of an existing particle population~\cite{Longair:2011:HighEnergyAstrohphysics}.
 
 An accelerator must confine particles long enough for repeated energy gains to occur.
-The Magnetic confinement of a particle depends on its rigidity,
+The magnetic confinement of a particle depends on its rigidity,
 \begin{align}
     R=\frac{pc}{Ze}\simeq\frac{E}{Ze},
 \end{align} where $p$ is the particle momentum, $Ze$ is its charge, and the approximation applies in the ultrarelativistic limit.
@@ -115,39 +115,39 @@ For an ultrarelativistic particle moving perpendicular to a magnetic field $B$, 
 \begin{align}
     r_{\mathrm L}=\frac{E}{ZeBc}=R/Bc
 \end{align}
-Requiring this radius to be smaller than the characteristic size $L$ of the accelerating region gives the Hillas criterion, for $r_{\mathrm L}<L$ a maximum energy is obtained,
+Requiring this radius to be smaller than the characteristic size $L$ of the accelerating region gives the Hillas criterion. For $r_{\mathrm L}<L$, a maximum energy is obtained:
 \begin{align}
     E_{\max}&\lesssim ZeBcL .
     \label{eq:cr_hillas}
 \end{align}
 Particles with gyroradii larger than the source size cannot be effectively confined for repeated acceleration.
-Stronger magnetic fields and larger source sizes, therefore allow confinement to higher energies.
+Stronger magnetic fields and larger source sizes therefore allow confinement to higher energies.
 Reaching this energy also requires the acceleration time to be shorter than the escape and energy-loss times and the duration of the acceleration phase~\cite{Longair:2011:HighEnergyAstrohphysics}.
 
-The Hillas diagram in Fig.~\ref{fig:cr_hillas} plots candidate sources by their characteristic size and magnetic-field strength on logarithmic axes.
-The diagonal line represents a constant the relation between the size and intensity of magnetic field required to accelerate a proton at $10^{20}\,\mathrm{eV}$.
+The Hillas diagram in~\cref{fig:cr_hillas} plots candidate sources by their characteristic size and magnetic-field strength on logarithmic axes.
+The diagonal line represents the constant relation between the size and the strength of the magnetic field required to accelerate a proton at $10^{20}\,\mathrm{eV}$.
 Sources above the line satisfy this requirement, although their acceleration efficiency and losses can impose stronger limits.
 At fixed energy, rigidity decreases as the charge number $Z$ increases.
 For a common maximum rigidity, the maximum energy therefore scales as $E_{\max,Z}\simeq Z E_{\max,p}$.
-Heavy nuclei can therefore reach higher total energies than protons in the same environment. 
-This charge dependence can link the  mass dependent depletion of galactic acceleration mechanisms to the sequence of elemental steepenings discussed in Section~\ref{sec:cr_transition} in relation to the second knee.
+Heavy nuclei can therefore reach higher total energies than protons in the same environment.
+This charge dependence can link the mass-dependent depletion of Galactic acceleration mechanisms to the sequence of elemental steepenings discussed in~\cref{sec:cr_transition} in relation to the second knee.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.60\linewidth]{\subfix{figures/chapter_cosmic_rays/longair_hillas.pdf}}
     \caption[Hillas diagram of candidate accelerator environments]{Hillas diagram showing characteristic magnetic fields and sizes of astrophysical environments.
-    The diagonal gives the approximate $10^{20}\,\mathrm{eV}$ requirement for a proton/
-    Taken from Ref. ~\cite{Longair:2011:HighEnergyAstrohphysics}.}
+    The diagonal gives the approximate $10^{20}\,\mathrm{eV}$ requirement for a proton.
+    Taken from Ref.~\cite{Longair:2011:HighEnergyAstrohphysics}.}
     \label{fig:cr_hillas}
 \end{figure}
 
 \section{Propagation and arrival directions}
 \label{sec:cr_propagation}
 
-Through their propagation in the interstellar and intergalactic medium, the spectral shape of cosmic rays changes
-Inside the galaxy the diffusive transport produced by the irregularities in the magnetic field can be used to explain these changes.
+Through their propagation in the interstellar and intergalactic medium, the spectral shape of cosmic rays changes.
+Inside the Galaxy, the diffusive transport produced by the irregularities in the magnetic field can be used to explain these changes.
 The \emph{leaky-box model} describes the confinement inside the galaxy in a spatially averaged way.
-Thesources continuously inject particles into a Galactic reservoir, from which they escape with a mean residence time $\tau_{\mathrm{esc}}(R)$~\cite{Longair:2011:HighEnergyAstrohphysics}.
+The sources continuously inject particles into a Galactic reservoir, from which they escape with a mean residence time $\tau_{\mathrm{esc}}(R)$~\cite{Longair:2011:HighEnergyAstrohphysics}.
 For primary nuclei, neglecting energy losses and nuclear fragmentation, the balance between injection and escape is given by
 \begin{align}
     \frac{\partial n(R,t)}{\partial t}
@@ -160,7 +160,7 @@ In a stationary state, injection balances escape, giving
     n(R)&=Q(R)\tau_{\mathrm{esc}}(R), 
 \label{eq:cr_transport}
 \end{align}
-\noindent with $\tau_{\mathrm{esc}}\sim H^2/D(R)$. The effective escape time $\tau_{\mathrm{esc}}$ is estimated with the characteristic size of the region, $H$ and with diffusion coefficient $D$.
+\noindent with $\tau_{\mathrm{esc}}\sim H^2/D(R)$. The effective escape time $\tau_{\mathrm{esc}}$ is estimated from the characteristic size of the region, $H$, and the diffusion coefficient, $D$.
 
 If $Q\propto R^{-\alpha}$ and $D\propto R^{\delta}$, then $\tau_{\mathrm{esc}}\propto R^{-\delta}$.
 For a fixed ultrarelativistic particle, the energy is proportional to the rigidity and the intensity has the same spectral index as the number density, so
@@ -172,7 +172,7 @@ For a fixed ultrarelativistic particle, the energy is proportional to the rigidi
 For $\delta>0$, particles of higher rigidity escape faster and are less abundant in the confined population, steepening the spectrum relative to that injected by the sources~\cite{PDG:2025:CosmicRays}.
 This provides a connection between a production spectrum proportional to $E^{-2}$ and the steeper $\gamma\sim3$ measured at Earth.
 % For illustration, $\alpha=2.2$ and $\delta=0.5$ can yield $\gamma=2.7$, close to the broad all-particle slope below the knee.
-The ideal strong-shock value $\alpha=2$ would  require $\delta=0.7$ to produce the measured slope around the knee.
+The ideal strong-shock value $\alpha=2$ would require $\delta=0.7$ to produce the measured slope around the knee.
 The leaky-box model therefore does not impose a universal steepening by one power of energy. %Is this a direct conclusion?
 The index near three above the knee also includes a steepening that can be related to a change in escape time due to the change of rigidity, even if the injection law remains unchanged.
 
@@ -180,35 +180,35 @@ Nuclear abundances provide a way to test this transport picture independently of
 Some species are produced largely by spallation of heavier nuclei during propagation.
 Their relative abundance to primary species, such as the boron-to-carbon ratio, carries information about the matter traversed and its energy dependence.
 Radioactive disintegration also restricts propagation times of the heavier species.
-These measurements support the importance of Galactic transport in the observed flux, although extending a diffusion law inferred at lower rigidities into the knee region requires assumptions about the magnetic turbulence
-The simple stationary expression in ~\cref{eq:cr_transport} is a physical guide, rather than a complete description of every energy range.
+These measurements support the importance of Galactic transport in the observed flux, although extending a diffusion law inferred at lower rigidities into the knee region requires assumptions about the magnetic turbulence.
+The simple stationary expression in~\cref{eq:cr_transport} is a physical guide, rather than a complete description of every energy range.
 
 The near-isotropy of charged cosmic rays is consistent with substantial magnetic scattering, but the residual anisotropy retains information about spatial gradients and nearby sources.
 Consequently, it is an independent constraint on source and transport models.
 Estimations of Galactic propagation show that the allowed light Galactic contribution near an EeV depends on both the magnetic-field assumptions and the measured anisotropy limits~\cite{Giacinti:2012:AnisotropyTransition}. %this is kinda confusing
-At higher energies, the large-scale in the direction far from the galactic center observed by the Pierre Auger Observatory above $8\,\mathrm{EeV}$ supports an extragalactic origin of that population~\cite{PierreAuger:2017:LargeScaleAnisotropy}.
-However, tt does not establish where this transition begins at lower energies.
+At higher energies, the large-scale anisotropy in the direction far from the Galactic center observed by the Pierre Auger Observatory above $8\,\mathrm{EeV}$ supports an extragalactic origin of that population~\cite{PierreAuger:2017:LargeScaleAnisotropy}.
+However, it does not establish where this transition begins at lower energies.
 
 \section{Extensive air showers}
 \label{sec:cr_eas}
 
 At the energies of the second knee, the flux is too small for the collecting areas of direct space-borne or balloon instruments to provide the required exposure.
-Measurements instead use the atmosphere as a target and observe the secondary paricle cascade initiated by the primary cosmic ray.
+Measurements instead use the atmosphere as a target and observe the secondary particle cascade initiated by the primary cosmic ray.
 An extensive air shower develops through successive interactions and decays, distributing the primary energy among electromagnetic particles, hadrons, muons and neutrinos~\cite{Longair:2011:HighEnergyAstrohphysics}.
 Secondary particles spread as the shower propagates and the single primary can be reconstructed with data from different detectors.
 
-The first nuclear interaction produces secondary hadrons that continue the cascade, mainly charged and netutral pions, $\pi^{^+_-}$ and $\pi^0$ respectively but kaons and other hadrons can also contribute..
+The first nuclear interaction produces secondary hadrons that continue the cascade, mainly charged and neutral pions, $\pi^{\pm}$ and $\pi^0$, respectively, but kaons and other hadrons can also contribute.
 Neutral pions feed the electromagnetic component through their decay into photons, which generate electron-positron pairs that emit further photons through bremsstrahlung.
 Charged pions can interact again to decay into muons and neutrinos.
 
 The competition between decay and interaction depends on energy and atmospheric density, with decay becoming more important as the cascade loses energy.
-Energetic muons penetrate much farther than the electromagnetic component, while neutrinos carry away energy that is largely unobserved~\cite{grupenAstroparticlePhysics2020} and there is a highly concentrated hadronic component.
-In \cref{fig:cr_shower} a schematic of an \gls{eas} is presented and the different mechanisms are shown.
+Energetic muons penetrate much farther than the electromagnetic component, while neutrinos carry away energy that is largely unobserved~\cite{grupenAstroparticlePhysics2020}, and there is a highly concentrated hadronic component.
+In \cref{fig:cr_shower}, a schematic of an \gls{eas} is presented and the different mechanisms are shown.
 
 \begin{figure}
     \centering
     \includegraphics[height=0.78\textheight]{\subfix{figures/chapter_cosmic_rays/grupen_air_shower.pdf}}
-    \caption[Components of an atmospheric particle cascade]{Atmospheric development of a  cosmic ray initiated \gls{eas}, showing the electromagnetic, hadronic, muonic and neutrino components.
+    \caption[Components of an atmospheric particle cascade]{Atmospheric development of a cosmic ray initiated \gls{eas}, showing the electromagnetic, hadronic, muonic and neutrino components.
     The drawing also illustrates the penetration through the atmosphere and ground of the different components. Taken from Ref.~\cite{grupenAstroparticlePhysics2020}.}
     \label{fig:cr_shower}
 \end{figure}
@@ -218,7 +218,7 @@ Shower development is described by the atmospheric mass traversed per unit area 
     X(s)=\int_{\mathrm{top}}^{s}\rho(s')\,\mathrm{d}s',
     \label{eq:cr_depth}
 \end{align}
-to account for the changing density of the of the atmosphere.
+to account for the changing density of the atmosphere.
 Since the particle number initially grows, reaches a maximum and then decreases as the energy per particle falls and losses dominate over multiplication, the depth of maximum, $X_{\max}$, characterizes this longitudinal development.
 Showers with different directions traverse different depths, changing the sampled particle density at ground.
 
@@ -227,7 +227,7 @@ The intersection of the axis with the ground defines the core, and the angle bet
 Particles arrive within a shower front of finite thickness and curvature rather than an ideal plane.
 These spatial and temporal structures explain why a ground array needs both measured signals and arrival times to reconstruct an event~\cite{grupenAstroparticlePhysics2020}.
 
-To understsand the main energy dependence  an electromagnetic cascade model can be used.
+To understand the main energy dependence, an electromagnetic cascade model can be used.
 For an electromagnetic cascade initiated with energy $E_0$, equal energy sharing at each branching gives $N=2^n$ particles after $n$ generations, each with energy $E_0/2^n$.
 Particle production ends when a critical energy $E_{\mathrm{c}}$ is reached, below which ionization losses dominate for electrons.
 Accordingly,
@@ -246,18 +246,16 @@ Consequently,
 where $X_{\mathrm{start}}$ is the depth at which this electromagnetic cascade begins~\cite{Longair:2011:HighEnergyAstrohphysics}.
 Thus, increasing energy produces a larger shower whose maximum occurs deeper in the atmosphere.
 % The linear scaling of particle number and logarithmic scaling of depth are the useful predictions; equal energy sharing and a fixed branching interval are simplifying assumptions.
-Figure~\ref{fig:cr_heitler_em} shows the corresponding branching construction for the electromagnetic shower.
+~\cref{fig:cr_heitler_em} shows the corresponding branching construction for the electromagnetic shower.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.46\linewidth]{\subfix{figures/chapter_cosmic_rays/ulrich_heitler_em.pdf}}
     \caption[Electromagnetic Heitler cascade]{Equal-energy branching in the electromagnetic Heitler model.
-    It is important to note that $\lambda_{\mathrm e}=X_0\ln2$ ..
+    It is important to note that $\lambda_{\mathrm e}=X_0\ln2$.
     Reproduced from Ref.~\cite{Ulrich:2011:HadronicShowers}.}
     \label{fig:cr_heitler_em}
 \end{figure}
-
-\subsection{Hadronic development: the Heitler-Matthews picture}
 
 The Heitler-Matthews model extends this reasoning to a hadronic cascade~\cite{Matthews:2005:Heitler,Ulrich:2011:HadronicShowers} where $n_{\mathrm{tot}}$ pions equally sharing the available energy, of which $n_{\mathrm{ch}}$ are charged.
 Neutral pions feed the electromagnetic part of the shower, while charged pions continue to interact until their energies reach a characteristic decay energy $\xi_\pi$ where production finishes.
@@ -275,7 +273,7 @@ Real showers also involve leading particles, unequal energy sharing, energy-depe
 
 The electromagnetic branch also connects hadronic interactions to $X_{\max}$.
 If the first interaction occurs at depth $X_\mathrm{start}$, approximating $\pi^+$, $\pi^-$ and $\pi^0$ equal energy sharing, initial photon energies of $E/(2n_{\mathrm{tot}})$ are expected.
-Then each resulting subshower develops according to Eq.~\ref{eq:cr_heitler_depth}.
+Then each resulting subshower develops according to ~\cref{eq:cr_heitler_depth}.
 A deeper first interaction shifts this development deeper, while a larger multiplicity lowers the subshower energies and shortens their development to maximum.
 The maximum of a complete hadronic shower combines contributions from successive generations, including energy carried deeper by the leading particles~\cite{Ulrich:2011:HadronicShowers}.
 
@@ -298,8 +296,8 @@ The cascade scalings then imply, approximately,
     \label{eq:cr_superposition}
 \end{align}
 and the muon number $N_\mu(E,A)\simeq A^{1-\beta}\left(\frac{E}{\xi_\pi}\right)^\beta$.
-As a consequence, on average, when having the same energy, a heavier primary tends to develop a shallower maximum and produce more muons.
-The elongation rate $D_{10}=\mathrm{d}\langle X_{\max}\rangle/\mathrm{d}\lg(E/\mathrm{eV})$ measures how the mean maximum changes with energy..
+As a consequence, on average, for the same energy, a heavier primary tends to develop a shallower maximum and produces more muons.
+The elongation rate $D_{10}=\mathrm{d}\langle X_{\max}\rangle/\mathrm{d}\lg(E/\mathrm{eV})$ measures how the mean maximum changes with energy.
 For a changing mixture, the evolution of the primary mass contributes to this change.
 
 Fluctuations are an intrinsic part of this inference, rather than merely a detector effect.
@@ -325,54 +323,52 @@ The inferred composition must therefore be distinguished from the measured $X_{\
 % Analyses of Auger distributions demonstrate that the inferred mass fractions depend on the interaction model~\cite{PierreAuger:2014:Composition}.
 Combining longitudinal development with muon measurements and arrival directions provides more restrictive tests than interpreting any one observable separately.
 
-\section{From air showers to an energy spectrum}
+\section{From air showers to the energy spectrum}
 \label{sec:cr_detection}
 
-The ground detection of cosmic rays can be tackled via a 
-A surface array samples the lateral distribution of secondary particles at a particular observation depth.
-Relative signal times constrain the arrival direction; the spatial distribution of signals constrains the shower core and a shower-size estimator.
-The measured size depends on primary energy, mass, shower fluctuations and the amount of atmosphere traversed.
-An attenuation correction and an energy calibration are therefore needed before a collection of ground signals can be interpreted as a primary-energy distribution~\cite{Longair:2011:HighEnergyAstrohphysics}.
+The ground detection of cosmic rays can be tackled via a surface array, which samples the lateral distribution of secondary particles at a particular observation depth.
+Relative signal times constrain the arrival direction, the spatial distribution of signals constrains the shower core, and a shower-size estimator.
+The measured size depends on primary energy, mass, shower fluctuations, and the amount of atmosphere traversed.
+Therefore, an attenuation correction and an energy calibration are needed before a collection of ground signals can be interpreted as a primary-energy distribution~\cite{Longair:2011:HighEnergyAstrohphysics}.
 % These reconstruction steps are developed for SD-433 in Chapter~5.
 
 Atmospheric fluorescence provides a complementary measurement of the longitudinal energy deposit.
-When the nitrogen molecules in the atmosphere are excited by the shower, they emit an amount of light proportional to the energy deposited by charged particles, $E_\mathrm{dep}$.
-After accounting for different sources of systematic uncertainty, the calorimetric energy is obtained
+When nitrogen molecules in the atmosphere are excited by the shower, they emit an amount of light proportional to the energy deposited by charged particles $E_\mathrm{dep}$.
+After accounting for different sources of systematic uncertainty, the calorimetric energy is obtained:
 \begin{align}
     E_{\mathrm{cal}}=\int\frac{\mathrm{d}E_{\mathrm{dep}}}{\mathrm{d}X}\,\mathrm{d}X.
     \label{eq:cr_calorimetry}
 \end{align}
-Then an invisible-energy correction is applied to account for energy carried by neutrinos and penetrating muons that is not deposited in the atmosphere, $E=E_{\mathrm{cal}}+E_{\mathrm{inv}}$ 
+Then an invisible-energy correction is applied to account for energy carried by neutrinos and penetrating muons that is not deposited in the atmosphere, $E=E_{\mathrm{cal}}+E_{\mathrm{inv}}$.
 
-Fluorescence observations have a restricted duty cycle because moonless clear nights required.
+Fluorescence observations have a restricted duty cycle because moonless, clear nights are required.
 In contrast, surface detectors collect data almost continuously.
-The latest observatories combine these measurements in a hybrid mode relying in their strengths by using  jointly observed showers to calibrate the surface detector estimator against the fluorescence energy, and using this calibration to the larger dataset~\cite{PierreAuger:2015:Observatory}.
-This reduces direct reliance on shower simulations for the energy assignment, and the mass composition distribution is present in the dataset although it does not remove uncertainties in fluorescence yield, atmospheric transmission, calibration or invisible energy.
+The latest observatories combine these measurements in a hybrid mode relying on their strengths by using jointly observed showers to calibrate the surface detector estimator against the fluorescence energy, and applying this calibration to the larger dataset~\cite{PierreAuger:2015:Observatory}.
+This reduces direct reliance on shower simulations for the energy assignment, and the mass composition distribution is present in the dataset, although it does not remove uncertainties in fluorescence yield, atmospheric transmission, calibration or invisible energy.
 
-Also, to construct the energy spectrum, the event counts must be related to the exposure, including the effective collecting area, solid-angle coverage, operating time and detection efficiency.
+To construct the energy spectrum, the event counts must be related to the exposure, including the effective detector area, solid-angle coverage, operating time, and detection efficiency.
 The finite energy resolution can also cause migration between bins.
 For a steep spectrum, the greater abundance of lower-energy showers makes upward migration especially important, so the effect cannot generally be neglected near a threshold or a spectral break~\cite{PierreAuger:2020:Spectrum}.
 
-\section{The second knee and the Galactic-extragalactic transition}
+\section{The second knee}
 \label{sec:cr_transition}
 
 The second knee is a steepening of the all-particle spectrum observed around $10^{17}\,\mathrm{eV}$, in the region where the contribution of Galactic sources is expected to decline~\cite{Aloisio:2012:Transition}.
 Its interpretation depends on which nuclei dominate the flux and on whether another source population already contributes at these energies.
-A measurement of the position, change in spectral index and width can provide information about the end of the Galactic contribution to the spectrum and its possible overlap with an extragalactic component.
+A measurement of the position, change in spectral index, and width can provide information about the end of the Galactic contribution to the spectrum and its possible overlap with an extragalactic component.
 
 Several structures are measured between the knee and the ankle.
 TALE measured a hardening around $10^{16.2}\,\mathrm{eV}$ followed by a steepening near $10^{17.1}\,\mathrm{eV}$~\cite{TALE:2018:SecondKnee}.
 The former is often called the low-energy ankle to distinguish it from the ankle at a few EeV.
-KASCADE-Grande found a steepening in its heavy-enriched component around $8\times10^{16}\,\mathrm{eV}$ and a hardening in its light-enriched component around $10^{17.08}\,\mathrm{eV}$~\cite{KASKADE:2011Kneelike,KASCADEGrande:2013:LightAnkle} altnough the mass composition measurement rely on shower observables inferred from hadronic interaction models.
-However, it suggest that the second-knee region involves a change in the relative contributions of different mass groups, whose individual features need not coincide with the break in the all-particle spectrum.
+KASCADE-Grande found a steepening in its heavy-enriched component around $8\times10^{16}\,\mathrm{eV}$ and a hardening in its light-enriched component around $10^{17.08}\,\mathrm{eV}$~\cite{KASKADE:2011Kneelike,KASCADEGrande:2013:LightAnkle}, although the mass composition measurements rely on shower observables inferred from hadronic interaction models.
+However, it suggests that the second-knee region involves a change in the relative contributions of different mass groups, whose individual features need not coincide with the break in the all-particle spectrum.
 
 A natural connection between the knee and the second knee follows from a rigidity-dependent sequence of elemental breaks, known as a Peters cycle.
-For a common break rigidity, a nucleus of charge $Z$ steepens at $E_{\mathrm{b},Z}= Z E_{\mathrm{b,p}}$
-where $E_{\mathrm{b,p}}$ is the proton break energy.
+For a common break rigidity, a nucleus with charge $Z$ steepens at $E_{\mathrm{b},Z}=Z E_{\mathrm{b,p}}$, where $E_{\mathrm{b,p}}$ is the proton break energy.
 If the knee at $3\,\mathrm{PeV}$ is the proton break, it would place the iron break at $78\,\mathrm{PeV}$, close to the second-knee region.
 Such a sequence can arise from a limit on the acceleration rigidity or from a change in rigidity-dependent Galactic escape.
 As the lighter components steepen, the remaining Galactic flux becomes heavier.
-Figure~\ref{fig:cr_peters} illustrates how these elemental breaks combine in the all-particle spectrum.
+\cref{fig:cr_peters} illustrates how these elemental breaks combine in the all-particle spectrum.
 
 \begin{figure}
     \centering
@@ -385,8 +381,8 @@ The sum shows how elemental structures are blended in the all-particle spectrum.
 \end{figure}
 
 In the scenario described by Mollerach and Roulet, the second knee is associated with the steepening of the Galactic iron component, while an extragalactic contribution becomes dominant around $10^{17}\,\mathrm{eV}$~\cite{Mollerach:2019:GalacticScenario}.
-Their fits use both the spectrum and measurements of $X_{\max}$, and depend on the hadronic interaction model used to interpret the composition.
-The agreement between an iron break and the second-knee energy is therefore part of a physical interpretation, rather than a direct identification of the particles responsible for the observed steepening.
+Their fits use both the spectrum and measurements of $X_{\max}$ and depend on the hadronic interaction model used to interpret the composition.
+The agreement between an iron break and the second knee energy is therefore part of a physical interpretation, rather than a direct identification of the particles responsible for the observed steepening.
 
 The Galactic contribution could also extend to higher energies through a second population of sources.
 Thoudam and collaborators considered supernova explosions in Wolf-Rayet winds in addition to the population responsible for the first knee~\cite{Thoudam:2016:SecondGalacticComponent}.
@@ -395,12 +391,12 @@ The contrast with an iron-dominated interpretation makes composition measurement
 
 Propagation can also shape the onset of the extragalactic flux.
 At sufficiently low rigidity, the diffusion time from the nearest sources may exceed the time available for propagation, suppressing their contribution at Earth.
-This magnetic-horizon effect depends on the extragalactic magnetic field, the source spacing and their emission history~\cite{Lemoine:2005:MagneticHorizon}.
-The transition need not coincide with the ankle either: in the proton-dip scenario, the ankle is produced by pair-production losses of extragalactic protons on the cosmic microwave background, after extragalactic particles have already become dominant~\cite{Aloisio:2012:Transition}.
-The observed second knee, the end of the Galactic flux and the energy at which the Galactic and extragalactic intensities are equal are consequently distinct quantities.
+This magnetic-horizon effect depends on the extragalactic magnetic field, the source spacing, and their emission history~\cite{Lemoine:2005:MagneticHorizon}.
+The transition need not coincide with the ankle: in the proton-dip scenario, the ankle is produced by pair-production losses of extragalactic protons on the cosmic microwave background, after extragalactic particles have already become dominant~\cite{Aloisio:2012:Transition}.
+The observed second knee, the end of the Galactic flux and the energy at which the Galactic and extragalactic intensities are equal are therefore distinct quantities.
 
-The shape of the second knee helps constrain these interpretations.
-Charge ordering spreads the elemental breaks over energy, while differences among source populations can further modify the shape of their sum.
+The shape of the second knee helps to constrain these interpretations.
+Charge ordering spreads the elemental breaks over energy, whereas differences among source populations can further modify the shape of their sum.
 An emerging harder component can reduce the steepening produced by a declining Galactic component and eventually cause a hardening.
 
 The width of the observed break therefore reflects the combined spectra and cannot be identified directly with the cutoff width of a single element.
