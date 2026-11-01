@@ -106,20 +106,20 @@ Its average fractional energy gain is quadratic in the cloud speed, whereas shoc
 This acceleration mechanism can contribute to the reacceleration of an existing particle population~\cite{Longair:2011:HighEnergyAstrohphysics}.
 
 An accelerator must confine particles long enough for repeated energy gains to occur.
-Magnetic confinement of a particle depends on its rigidity
+The Magnetic confinement of a particle depends on its rigidity,
 \begin{align}
-    R=\frac{E}{Ze}
-\end{align}, where $Ze$ the particle charge.
+    R=\frac{E}{Ze},
+\end{align} where $Ze$ the particle charge.
 For an ultrarelativistic particle moving perpendicular to a magnetic field $B$, this determines the Larmor radius,
 \begin{align}
     r_{\mathrm L}=\frac{E}{ZeBc}=R/Bc
 \end{align}
-Requiring this radius to be smaller than the characteristic size $L$ of the accelerating region gives the Hillas criterion, $r_{\mathrm L}&\lesssim L$,
+Requiring this radius to be smaller than the characteristic size $L$ of the accelerating region gives the Hillas criterion, for $r_{\mathrm L}<L$ a maximum energy is obtained,
 \begin{align}
     E_{\max}&\lesssim ZeBcL .
     \label{eq:cr_hillas}
 \end{align}
-Particles with giroradii larger than this cannot be effectively confined within that region and cannot absorb the maximum energy.
+Particles with gyroradii larger than this cannot be effectively confined within that region and cannot absorb the maximum energy.
 Stronger magnetic fields and larger source sizes, therefore allow confinement to higher energies.
 Reaching this energy also requires acceleration to outpace escape and energy losses within the source ~\cite{Longair:2011:HighEnergyAstrohphysics}.
 
@@ -190,83 +190,74 @@ However, tt does not establish where this transition begins at lower energies.
 \label{sec:cr_eas}
 
 At the energies of the second knee, the flux is too small for the collecting areas of direct space-borne or balloon instruments to provide the required exposure.
-Measurements instead use the atmosphere as a target and observe the secondary cascade initiated by the primary particle.
+Measurements instead use the atmosphere as a target and observe the secondary paricle cascade initiated by the primary cosmic ray.
 An extensive air shower develops through successive interactions and decays, distributing the primary energy among electromagnetic particles, hadrons, muons and neutrinos~\cite{Longair:2011:HighEnergyAstrohphysics}.
-The secondary particles spread laterally as the shower propagates, allowing a single primary to be detected by an array of separated stations.
+Secondary particles spread as the shower propagates and the single primary can be reconstructed with data from different detectors.
 
-The first nuclear interaction produces secondary hadrons that continue the cascade.
-Neutral pions feed the electromagnetic component through their decay into photons, which generate electron-positron pairs; the electrons and positrons emit further photons through bremsstrahlung.
-Charged pions can interact again or decay into muons and neutrinos.
+The first nuclear interaction produces secondary hadrons that continue the cascade, mainly charged and netutral pions, $\pi^{^+_-}$ and $\pi^0$ respectively but kaons and other hadrons can also contribute..
+Neutral pions feed the electromagnetic component through their decay into photons, which generate electron-positron pairs which annihilate and emit further photons through bremsstrahlung.
+Charged pions can interact again to decay into muons and neutrinos.
+
 The competition between decay and interaction depends on energy and atmospheric density, with decay becoming more important as the cascade loses energy.
-Kaons and other hadrons also contribute.
-Energetic muons penetrate much farther than the electromagnetic component, while neutrinos carry away energy that is largely unobserved~\cite{grupenAstroparticlePhysics2020}.
-Figure~\ref{fig:cr_shower} summarizes these coupled branches.
+Energetic muons penetrate much farther than the electromagnetic component, while neutrinos carry away energy that is largely unobserved~\cite{grupenAstroparticlePhysics2020} and there is a highly concentrated hadronic component.
+In \cref{fig:cr_shower} a schematic of an \gls{eas} is presented and the different mechanisms are shown.
 
 \begin{figure}
     \centering
     \includegraphics[height=0.78\textheight]{\subfix{figures/chapter_cosmic_rays/grupen_air_shower.pdf}}
-    \caption[Components of an atmospheric particle cascade]{Atmospheric development of a proton-initiated cascade, showing its electromagnetic, hadronic, muonic and neutrino components.
-    Neutral-pion decays feed electromagnetic cascades, while charged-meson and muon decays generate the leptonic branches.
-    The drawing illustrates physical processes and penetration through the atmosphere and ground; it is not a simulated event.
-    Reproduced from Fig.~7.4 of Ref.~\cite{grupenAstroparticlePhysics2020}.}
+    \caption[Components of an atmospheric particle cascade]{Atmospheric development of a  cosmic ray initiated \gls{eas}, showing the electromagnetic, hadronic, muonic and neutrino components.
+    The drawing also illustrates the penetration through the atmosphere and ground of the different components. Taken from Ref.~\cite{grupenAstroparticlePhysics2020}.}
     \label{fig:cr_shower}
 \end{figure}
 
-Shower development is conveniently described by the slant depth,
+Shower development is described by the atmospheric mass traversed per unit area along the shower axis, the slant depth,
 \begin{align}
     X(s)=\int_{\mathrm{top}}^{s}\rho(s')\,\mathrm{d}s',
     \label{eq:cr_depth}
 \end{align}
-the atmospheric mass traversed per unit area along the shower axis, usually expressed in $\mathrm{g\,cm^{-2}}$.
-This variable accounts for the changing density more directly than geometrical altitude.
-The particle number initially grows, reaches a maximum and then decreases as the energy per particle falls and losses dominate over multiplication.
-The depth of maximum, $X_{\max}$, characterizes this longitudinal development.
-For a fixed observation site, showers with different directions traverse different depths before reaching the ground, which changes the sampled particle densities.
+to account for the changing density of the of the atmosphere.
+Since the particle number initially grows, reaches a maximum and then decreases as the energy per particle falls and losses dominate over multiplication, the depth of maximum, $X_{\max}$, characterizes this longitudinal development.
+Showers with different directions traverse different depths, changing the sampled particle density at ground.
 
-The longitudinal profile is only one part of the shower geometry.
-Transverse momenta in hadronic interactions and multiple scattering of electrons spread particles away from the axis, producing a lateral distribution whose shape differs among shower components.
+The transverse momenta in the hadronic interactions and multiple scattering of electrons spread particles away from the axis, producing a lateral distribution whose shape differs among the shower components.
 The intersection of the axis with the ground defines the core, and the angle between the axis and the vertical is the zenith angle.
 Particles arrive within a shower front of finite thickness and curvature rather than an ideal plane.
 These spatial and temporal structures explain why a ground array needs both measured signals and arrival times to reconstruct an event~\cite{grupenAstroparticlePhysics2020}.
 
-\subsection{Electromagnetic development: the Heitler picture}
-
-The main energy dependence can be understood through a simple electromagnetic cascade model.
-For an electromagnetic cascade initiated with energy $E_0$, equal energy sharing at each branching gives $2^n$ particles after $n$ generations, each with energy $E_0/2^n$.
-Multiplication ends when this reaches the critical energy $E_{\mathrm{c}}$, below which ionization losses dominate for electrons.
-The model gives
+To understsand the main energy dependence  an electromagnetic cascade model can be used.
+For an electromagnetic cascade initiated with energy $E_0$, equal energy sharing at each branching gives $N=2^n$ particles after $n$ generations, each with energy $E_0/2^n$.
+Particle production ends when a critical energy $E_{\mathrm{c}}$ is reached, below which ionization losses dominate for electrons.
+Accordingly,
 \begin{align}
     n_{\max}&\simeq\frac{\ln(E_0/E_{\mathrm{c}})}{\ln 2}, &
     N_{\max}&\simeq\frac{E_0}{E_{\mathrm{c}}} .
     \label{eq:cr_heitler}
 \end{align}
-Writing $X_0$ for the radiation length in units of atmospheric depth, the equal-splitting construction uses a branching interval $X_0\ln2$.
-It consequently gives
+Defining $X_0$ for the radiation length in units of atmospheric depth, the equal-splitting construction uses a branching interval $X_0\ln2$.
+Consequently,
 \begin{align}
     X_{\max}^{\mathrm{em}}-X_{\mathrm{start}}
     \simeq X_0\ln\!\left(\frac{E_0}{E_{\mathrm{c}}}\right),
     \label{eq:cr_heitler_depth}
 \end{align}
 where $X_{\mathrm{start}}$ is the depth at which this electromagnetic cascade begins~\cite{Longair:2011:HighEnergyAstrohphysics}.
-Thus increasing energy produces a larger shower whose maximum occurs deeper in the atmosphere.
-The linear scaling of particle number and logarithmic scaling of depth are the useful predictions; equal energy sharing and a fixed branching interval are simplifying assumptions.
-Figure~\ref{fig:cr_heitler_em} shows the corresponding branching construction.
+Thus, increasing energy produces a larger shower whose maximum occurs deeper in the atmosphere.
+% The linear scaling of particle number and logarithmic scaling of depth are the useful predictions; equal energy sharing and a fixed branching interval are simplifying assumptions.
+Figure~\ref{fig:cr_heitler_em} shows the corresponding branching construction for the electromagnetic shower.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.46\linewidth]{\subfix{figures/chapter_cosmic_rays/ulrich_heitler_em.pdf}}
     \caption[Electromagnetic Heitler cascade]{Equal-energy branching in the electromagnetic Heitler model.
-    The splitting depth denoted by $\lambda_{\mathrm e}$ in the original figure is $X_0\ln2$ in the notation of the text.
-    The source's level labels begin at $n=1$, whereas $n$ in Eq.~\ref{eq:cr_heitler} counts completed branchings.
-    Reproduced from Fig.~3 of Ref.~\cite{Ulrich:2011:HadronicShowers}.}
+    It is important to note that $\lambda_{\mathrm e}=X_0\ln2$ ..
+    Reproduced from Ref.~\cite{Ulrich:2011:HadronicShowers}.}
     \label{fig:cr_heitler_em}
 \end{figure}
 
 \subsection{Hadronic development: the Heitler-Matthews picture}
 
-The Heitler-Matthews model extends this reasoning to a hadronic cascade~\cite{Matthews:2005:Heitler,Ulrich:2011:HadronicShowers}.
-In a simplified version, each interaction produces $n_{\mathrm{tot}}$ pions sharing the available energy, of which $n_{\mathrm{ch}}$ are charged.
-Neutral pions feed electromagnetic subshowers, while charged pions continue interacting until their energies reach a characteristic decay scale $\xi_\pi$.
+The Heitler-Matthews model extends this reasoning to a hadronic cascade~\cite{Matthews:2005:Heitler,Ulrich:2011:HadronicShowers} where $n_{\mathrm{tot}}$ pions equally sharing the available energy, of which $n_{\mathrm{ch}}$ are charged.
+Neutral pions feed the electromagnetic part of the shower, while charged pions continue to interact until their energies reach a characteristic decay energy $\xi_\pi$ where production finishes.
 Approximating each surviving charged pion as producing one muon gives
 \begin{align}
     n_{\mathrm{gen}}&\simeq\frac{\ln(E/\xi_\pi)}{\ln n_{\mathrm{tot}}}, &
@@ -276,105 +267,93 @@ Approximating each surviving charged pion as producing one muon gives
     \label{eq:cr_matthews_muons}
 \end{align}
 The sublinear growth reflects the energy transferred into the electromagnetic component at successive interactions.
-Here the multiplicities are held constant and $\xi_\pi$ is an effective model scale, not a universal atmospheric threshold.
+Here, the multiplicities are held constant and $\xi_\pi$ is an effective model scale.
 Real showers also involve leading particles, unequal energy sharing, energy-dependent interactions and muon propagation losses.
-The model explains trends rather than predicting a detector's measured muon signal.
-Figure~\ref{fig:cr_heitler} shows the charged and neutral branches of this idealized pion cascade.
 
 The electromagnetic branch also connects hadronic interactions to $X_{\max}$.
-If the first collision occurs at depth $X_1$, approximating both pion production and neutral-pion decay by equal energy sharing gives initial photon energies of $E/(2n_{\mathrm{tot}})$.
-Each resulting subshower then develops according to Eq.~\ref{eq:cr_heitler_depth}, with $X_{\mathrm{start}}=X_1$.
+If the first interaction occurs at depth $X_\mathrm{start}$, approximating $\pi^+$, $\pi^-$ and $\pi^0$ equal energy sharing, initial photon energies of $E/(2n_{\mathrm{tot}})$ are expected.
+Then each resulting subshower develops according to Eq.~\ref{eq:cr_heitler_depth}.
 A deeper first interaction shifts this development deeper, while a larger multiplicity lowers the subshower energies and shortens their development to maximum.
-The maximum of a complete hadronic shower, however, combines contributions from successive generations, including energy carried deeper by leading particles; the first-generation picture is therefore only a qualitative guide~\cite{Ulrich:2011:HadronicShowers}.
+The maximum of a complete hadronic shower combines contributions from successive generations, including energy carried deeper by the leading particles~\cite{Ulrich:2011:HadronicShowers}.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.46\linewidth]{\subfix{figures/chapter_cosmic_rays/ulrich_heitler_hadronic.pdf}}
     \caption[Hadronic Heitler-Matthews cascade]{Pion branching in the hadronic extension of the Heitler model.
-    Solid black lines denote charged pions and dotted blue lines neutral pions; only a representative continuing branch is expanded.
+    Solid black lines denote charged pions and dotted blue lines neutral pions. Only one representative branch is expanded.
     The original symbol $\lambda_{\mathrm I}$ denotes the hadronic interaction length expressed in atmospheric depth.
     As in the preceding figure, the original level labels start at $n=1$, whereas $n_{\mathrm{gen}}$ counts completed interactions.
-    Neutral pions transfer energy to electromagnetic subshowers; the later charged-pion decays that produce muons are discussed in the text but are not drawn here.
-    Reproduced from Fig.~4 of Ref.~\cite{Ulrich:2011:HadronicShowers}.}
+    Taken from Ref.~\cite{Ulrich:2011:HadronicShowers}.}
     \label{fig:cr_heitler}
 \end{figure}
 
-\subsection{Mass dependence and the elongation rate}
-
-Mass sensitivity follows partly from the energy per nucleon.
+The mass sensitivity of the shower development follows partly from the energy per nucleon.
 In the superposition approximation, a nucleus of energy $E$ and mass number $A$ is treated as $A$ nucleons of energy $E/A$.
 The cascade scalings then imply, approximately,
 \begin{align}
-    \langle X_{\max}\rangle_A(E)&\simeq\langle X_{\max}\rangle_{\mathrm p}(E/A), &
-    N_\mu(E,A)&\simeq A^{1-\beta}\left(\frac{E}{\xi_\pi}\right)^\beta .
+    \langle X_{\max}\rangle_A(E)\simeq\langle X_{\max}\rangle_{\mathrm p}(E/A),
     \label{eq:cr_superposition}
 \end{align}
-At fixed total energy, a heavier primary therefore tends to develop a shallower maximum and produce more muons~\cite{PDG:2025:CosmicRays}.
-The elongation rate $D_{10}=\mathrm{d}\langle X_{\max}\rangle/\mathrm{d}\lg(E/\mathrm{eV})$ measures how the mean maximum changes with energy.
-Even at fixed composition, it depends on the interaction length and the energy dependence of particle production.
-For a changing mixture, the evolution of the masses contributes as well.
-An observed change in elongation rate cannot therefore be interpreted using the electromagnetic radiation length alone.
-Nuclear interaction physics and overlapping subshowers also limit the accuracy of the superposition approximation~\cite{PierreAuger:2013:XmaxInterpretation}.
-Neither observable identifies the primary mass uniquely on an event-by-event basis.
+and the muon number $N_\mu(E,A)\simeq A^{1-\beta}\left(\frac{E}{\xi_\pi}\right)^\beta$.
+As a consequence, on average, when having the same energy, a heavier primary tends to develop a shallower maximum and produce more muons.
+The elongation rate $D_{10}=\mathrm{d}\langle X_{\max}\rangle/\mathrm{d}\lg(E/\mathrm{eV})$ measures how the mean maximum changes with energy..
+For a changing mixture, the evolution of the primary mass contributes to this change.
 
 Fluctuations are an intrinsic part of this inference, rather than merely a detector effect.
 The first-interaction depth varies from shower to shower, as do the multiplicity and energy sharing in the subsequent collisions.
 Different primary masses can therefore produce overlapping observable distributions.
 The mean and width of an observed distribution contain complementary information, but their interpretation must also account for a possible mixture of masses: fluctuations between species contribute in addition to fluctuations within each species~\cite{Longair:2011:HighEnergyAstrohphysics}.
-This is why population-level composition studies use distributions or several moments instead of assigning a unique mass from a single average shower relation.
+This is why population-level composition studies use distributions and several moments instead of assigning a unique mass from a single average shower relation.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{\subfix{figures/chapter_cosmic_rays/pdg_xmax.pdf}}
-    \caption[Composition-sensitive shower observables]{Mean depth of shower maximum (upper panel) and its standard deviation (lower panel), compared with proton and iron predictions from SIBYLL~2.3c, EPOS-LHC and QGSJET-II.04.
+    \caption[Composition-sensitive shower observables]{Mean depth of shower maximum (upper panel) and its standard deviation (lower panel), compared with proton and iron predictions from different hadronic interaction models.
     The compilation includes measurements from the Pierre Auger Observatory, Telescope Array, Yakutsk and Tunka using the techniques identified in the original figure.
     The separation of the proton and iron predictions illustrates mass sensitivity; the differences among predictions illustrate interaction-model dependence.
-    Reproduced from Fig.~30.8 of Ref.~\cite{PDG:2025:CosmicRays}, under CC BY 4.0.}
+    Reproduced from Ref.~\cite{PDG:2025:CosmicRays}.}
     \label{fig:cr_xmax}
 \end{figure}
 
-Figure~\ref{fig:cr_xmax} shows how measured shower quantities are compared with simulated primary hypotheses.
+~\cref{fig:cr_xmax} shows how measurements are compared with simulations for different primary masses using different hadronic interaction models.
 Converting their distributions into elemental fractions requires an interaction model and a description of detector acceptance and resolution.
-Hadronic models extrapolate particle production into regions of energy and phase space that are incompletely constrained by accelerator data.
+However, hadronic models extrapolate particle production into regions that are not directly constrained by accelerator data.
 The inferred composition must therefore be distinguished from the measured $X_{\max}$ distribution itself.
-Analyses of Auger distributions demonstrate that the inferred mass fractions depend on the interaction model~\cite{PierreAuger:2014:Composition}.
+% Analyses of Auger distributions demonstrate that the inferred mass fractions depend on the interaction model~\cite{PierreAuger:2014:Composition}.
 Combining longitudinal development with muon measurements and arrival directions provides more restrictive tests than interpreting any one observable separately.
 
 \section{From air showers to an energy spectrum}
 \label{sec:cr_detection}
 
+The ground detection of cosmic rays can be tackled via a 
 A surface array samples the lateral distribution of secondary particles at a particular observation depth.
 Relative signal times constrain the arrival direction; the spatial distribution of signals constrains the shower core and a shower-size estimator.
 The measured size depends on primary energy, mass, shower fluctuations and the amount of atmosphere traversed.
 An attenuation correction and an energy calibration are therefore needed before a collection of ground signals can be interpreted as a primary-energy distribution~\cite{Longair:2011:HighEnergyAstrohphysics}.
-These reconstruction steps are developed for SD-433 in Chapter~5.
+% These reconstruction steps are developed for SD-433 in Chapter~5.
 
 Atmospheric fluorescence provides a complementary measurement of the longitudinal energy deposit.
-Excited nitrogen molecules emit light approximately in proportion to the energy deposited by charged shower particles.
-After accounting for geometry, atmospheric transmission and the light yield, the calorimetric energy is obtained from
+When the nitrogen molecules in the atmosphere are excited by the shower, they emit an amount of light proportional to the energy deposited by charged particles, $E_\mathrm{dep}$.
+After accounting for different sources of systematic uncertainty, the calorimetric energy is obtained
 \begin{align}
-    E_{\mathrm{cal}}=\int\frac{\mathrm{d}E_{\mathrm{dep}}}{\mathrm{d}X}\,\mathrm{d}X,
-    \qquad E=E_{\mathrm{cal}}+E_{\mathrm{inv}} .
+    E_{\mathrm{cal}}=\int\frac{\mathrm{d}E_{\mathrm{dep}}}{\mathrm{d}X}\,\mathrm{d}X.
     \label{eq:cr_calorimetry}
 \end{align}
-The invisible-energy term accounts mainly for energy carried by neutrinos and penetrating muons that is not deposited in the atmosphere.
-Fluorescence must be distinguished from atmospheric Cherenkov radiation, which is strongly directional, and from Cherenkov light produced inside a water detector by particles crossing it~\cite{PDG:2025:CosmicRays}.
+Then an invisible-energy correction is applied to account for energy carried by neutrinos and penetrating muons that is not deposited in the atmosphere, $E=E_{\mathrm{cal}}+E_{\mathrm{inv}}$ 
 
-Fluorescence observations have a restricted duty cycle because suitable darkness and atmospheric conditions are required.
-Surface arrays collect data almost continuously.
-Hybrid measurements combine their strengths by using suitable jointly observed showers to calibrate a ground estimator against the fluorescence energy, then applying that calibration to the larger surface dataset~\cite{PierreAuger:2015:Observatory}.
-This reduces reliance on shower simulations for the energy assignment, but does not remove uncertainties in fluorescence yield, atmospheric transmission, calibration or invisible energy.
+Fluorescence observations have a restricted duty cycle because moonless clear nights required.
+In contrast, surface detectors collect data almost continuously.
+The latest observatories combine these measurements in a hybrid mode relying in their strengths by using  jointly observed showers to calibrate the surface detector estimator against the fluorescence energy, and using this calibration to the larger dataset~\cite{PierreAuger:2015:Observatory}.
+This reduces direct reliance on shower simulations for the energy assignment, and the mass composition distribution is present in the dataset although it does not remove uncertainties in fluorescence yield, atmospheric transmission, calibration or invisible energy.
 
-An energy histogram is still not an incident spectrum.
-The event counts must be related to the exposure, including the effective collecting area, solid-angle coverage, operating time and detection efficiency.
-Finite energy resolution causes migration between bins.
+Also, to construct the energy spectrum, the event counts must be related to the exposure, including the effective collecting area, solid-angle coverage, operating time and detection efficiency.
+The finite energy resolution can also cause migration between bins.
 For a steep spectrum, the greater abundance of lower-energy showers makes upward migration especially important, so the effect cannot generally be neglected near a threshold or a spectral break~\cite{PierreAuger:2020:Spectrum}.
-An uncertainty in the absolute energy scale is different from this event-by-event resolution: it moves the spectrum coherently and affects the inferred feature energies.
 
 \section{The second knee and the Galactic-extragalactic transition}
 \label{sec:cr_transition}
 
-The interval between the first knee and the ankle is not described completely by two sharp breaks.
+The interval between the  knee and the ankle in the cosmic ray spectrum is not described completely by two sharp breaks.
 For example, the TALE spectrum contains a hardening around $10^{16.2}\,\mathrm{eV}$ and a steepening near $10^{17.1}\,\mathrm{eV}$~\cite{TALE:2018:SecondKnee}.
 This lower-energy hardening must be distinguished from the familiar EeV ankle.
 Moreover, an all-particle feature and a feature in a selected mass group need not occur at the same energy.
