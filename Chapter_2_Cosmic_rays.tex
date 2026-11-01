@@ -10,7 +10,8 @@ Cosmic rays are high-energy particles of extraterrestrial origin that reach the 
 
 Since their discovery by Victor Hess in 1912, Cosmic rays have been key in the development of pre-accelerator particle physics and their astrophyisical sources reamain a mistery even one hundred years later.
 However, the energy, mass composition and arrival directions are the clues to study the processes that generates them and their propagation through space.
-At the highest observed energies a direct detection becomes unfeasible due to the low cross-section and indirect techniques based on the interaction between the primary cosmic ray and the atoms in Earth's atmosphere must be used.
+At the highest observed energies, direct detection becomes impractical because the low flux requires a large collecting area, while calorimetric measurements also require a substantial detector mass to contain the showers.
+Indirect techniques instead use the atmosphere as a target and detect the secondary particles or radiation produced by the primary cosmic ray.
 
 In this chapter the main observables associated to cosmic rays are presented, together with the phyiscs of the detection methods before focusing on the topic of this thesis, the cosmic-ray flux, via the energy spectrum and its features, in particular the softening called the \textit{second knee}.
 
@@ -108,8 +109,8 @@ This acceleration mechanism can contribute to the reacceleration of an existing 
 An accelerator must confine particles long enough for repeated energy gains to occur.
 The Magnetic confinement of a particle depends on its rigidity,
 \begin{align}
-    R=\frac{E}{Ze},
-\end{align} where $Ze$ the particle charge.
+    R=\frac{pc}{Ze}\simeq\frac{E}{Ze},
+\end{align} where $p$ is the particle momentum, $Ze$ is its charge, and the approximation applies in the ultrarelativistic limit.
 For an ultrarelativistic particle moving perpendicular to a magnetic field $B$, this determines the Larmor radius,
 \begin{align}
     r_{\mathrm L}=\frac{E}{ZeBc}=R/Bc
@@ -119,13 +120,15 @@ Requiring this radius to be smaller than the characteristic size $L$ of the acce
     E_{\max}&\lesssim ZeBcL .
     \label{eq:cr_hillas}
 \end{align}
-Particles with gyroradii larger than this cannot be effectively confined within that region and cannot absorb the maximum energy.
+Particles with gyroradii larger than the source size cannot be effectively confined for repeated acceleration.
 Stronger magnetic fields and larger source sizes, therefore allow confinement to higher energies.
-Reaching this energy also requires acceleration to outpace escape and energy losses within the source ~\cite{Longair:2011:HighEnergyAstrohphysics}.
+Reaching this energy also requires the acceleration time to be shorter than the escape and energy-loss times and the duration of the acceleration phase~\cite{Longair:2011:HighEnergyAstrohphysics}.
 
 The Hillas diagram in Fig.~\ref{fig:cr_hillas} plots candidate sources by their characteristic size and magnetic-field strength on logarithmic axes.
 The diagonal line represents a constant the relation between the size and intensity of magnetic field required to accelerate a proton at $10^{20}\,\mathrm{eV}$.
-Sources above the line satisfy this requirement, although their acceleration efficiency and losses can impose stronger limits. Since the rigidity scale with the number of protons, $E_{\max,Z}\simeq Z E_{\max,p}$.
+Sources above the line satisfy this requirement, although their acceleration efficiency and losses can impose stronger limits.
+At fixed energy, rigidity decreases as the charge number $Z$ increases.
+For a common maximum rigidity, the maximum energy therefore scales as $E_{\max,Z}\simeq Z E_{\max,p}$.
 Heavy nuclei can therefore reach higher total energies than protons in the same environment. 
 This charge dependence can link the  mass dependent depletion of galactic acceleration mechanisms to the sequence of elemental steepenings discussed in Section~\ref{sec:cr_transition} in relation to the second knee.
 
@@ -195,7 +198,7 @@ An extensive air shower develops through successive interactions and decays, dis
 Secondary particles spread as the shower propagates and the single primary can be reconstructed with data from different detectors.
 
 The first nuclear interaction produces secondary hadrons that continue the cascade, mainly charged and netutral pions, $\pi^{^+_-}$ and $\pi^0$ respectively but kaons and other hadrons can also contribute..
-Neutral pions feed the electromagnetic component through their decay into photons, which generate electron-positron pairs which annihilate and emit further photons through bremsstrahlung.
+Neutral pions feed the electromagnetic component through their decay into photons, which generate electron-positron pairs that emit further photons through bremsstrahlung.
 Charged pions can interact again to decay into muons and neutrinos.
 
 The competition between decay and interaction depends on energy and atmospheric density, with decay becoming more important as the cascade loses energy.
@@ -353,78 +356,55 @@ For a steep spectrum, the greater abundance of lower-energy showers makes upward
 \section{The second knee and the Galactic-extragalactic transition}
 \label{sec:cr_transition}
 
-The interval between the  knee and the ankle in the cosmic ray spectrum is not described completely by two sharp breaks.
-For example, the TALE spectrum contains a hardening around $10^{16.2}\,\mathrm{eV}$ and a steepening near $10^{17.1}\,\mathrm{eV}$~\cite{TALE:2018:SecondKnee}.
-This lower-energy hardening must be distinguished from the familiar EeV ankle.
-Moreover, an all-particle feature and a feature in a selected mass group need not occur at the same energy.
-KASCADE-Grande observed a steepening of its heavy-enriched component around $8\times10^{16}\,\mathrm{eV}$, and subsequently reported a hardening of its light-enriched component around $10^{17.08}\,\mathrm{eV}$~\cite{KASKADE:2011Kneelike,KASCADEGrande:2013:LightAnkle}.
-These are classifications based on shower observables and simulations, not direct identifications of individual iron nuclei or protons.
+The second knee is a steepening of the all-particle spectrum observed around $10^{17}\,\mathrm{eV}$, in the region where the contribution of Galactic sources is expected to decline~\cite{Aloisio:2012:Transition}.
+Its interpretation depends on which nuclei dominate the flux and on whether another source population already contributes at these energies.
+A measurement of the position, change in spectral index and width can provide information about the end of the Galactic contribution to the spectrum and its possible overlap with an extragalactic component.
 
-Differences among reported second-knee energies must be considered together with the energy scales, accessible intervals and spectral parametrizations of the measurements.
-A smooth transition has no unique sharp boundary.
-Its fitted position, change in index and width describe different aspects of the shape, and become correlated if the data do not constrain both sides of the transition.
-The published SD-750 measurement, for instance, extends down to $100\,\mathrm{PeV}$ but does not fully resolve the low-energy side of the turn-down.
-Its fitted break position and low-energy index are treated as parameters needed for the unfolding rather than as direct measurements of the second knee~\cite{PierreAuger:2021:InfillSpectrum}.
-The lower-energy reach of SD-433 is therefore particularly relevant to measuring the spectrum before the steepening.
-The quantitative comparison among experiments, and the results obtained in this work, are reserved for Chapter~8.
+Several structures are measured between the knee and the ankle.
+TALE measured a hardening around $10^{16.2}\,\mathrm{eV}$ followed by a steepening near $10^{17.1}\,\mathrm{eV}$~\cite{TALE:2018:SecondKnee}.
+The former is often called the low-energy ankle to distinguish it from the ankle at a few EeV.
+KASCADE-Grande found a steepening in its heavy-enriched component around $8\times10^{16}\,\mathrm{eV}$ and a hardening in its light-enriched component around $10^{17.08}\,\mathrm{eV}$~\cite{KASKADE:2011Kneelike,KASCADEGrande:2013:LightAnkle} altnough the mass composition measurement rely on shower observables inferred from hadronic interaction models.
+However, it suggest that the second-knee region involves a change in the relative contributions of different mass groups, whose individual features need not coincide with the break in the all-particle spectrum.
 
-A rigidity-dependent break produces a sequence of elemental steepenings often called a Peters cycle.
-If the proton component steepens at $E_{\mathrm{b,p}}$, nuclei sharing the same break rigidity steepen at
-\begin{align}
-    E_{\mathrm{b},Z}\simeq Z E_{\mathrm{b,p}} .
-    \label{eq:cr_peters}
-\end{align}
-For an illustrative proton scale of $3\,\mathrm{PeV}$, the corresponding iron scale is $78\,\mathrm{PeV}$.
-This arithmetic explains why the end of a Galactic heavy component is often discussed in connection with the second knee~\cite{Mollerach:2019:GalacticScenario}.
-It does not determine the break of the summed spectrum, which depends on the relative abundances, the shapes of the elemental spectra and any additional populations.
-Figure~\ref{fig:cr_peters} illustrates this distinction without fitting experimental data.
+A natural connection between the knee and the second knee follows from a rigidity-dependent sequence of elemental breaks, known as a Peters cycle.
+For a common break rigidity, a nucleus of charge $Z$ steepens at $E_{\mathrm{b},Z}= Z E_{\mathrm{b,p}}$
+where $E_{\mathrm{b,p}}$ is the proton break energy.
+If the knee at $3\,\mathrm{PeV}$ is the proton break, it would place the iron break at $78\,\mathrm{PeV}$, close to the second-knee region.
+Such a sequence can arise from a limit on the acceleration rigidity or from a change in rigidity-dependent Galactic escape.
+As the lighter components steepen, the remaining Galactic flux becomes heavier.
+Figure~\ref{fig:cr_peters} illustrates how these elemental breaks combine in the all-particle spectrum.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{\subfix{figures/chapter_cosmic_rays/peters_cycle.pdf}}
-    \caption[Illustrative rigidity-ordered elemental steepenings]{Original schematic of rigidity-ordered breaks, motivated by the framework discussed in Ref.~\cite{Mollerach:2019:GalacticScenario}.
+    \caption[Illustrative rigidity-ordered elemental steepenings]{Schematic of rigidity-ordered breaks, motivated by the framework discussed in Ref.~\cite{Mollerach:2019:GalacticScenario}.
     The curves follow $J_Z\propto w_Z E^{-2.7}[1+(E/E_{\mathrm{b},Z})^4]^{-0.5/4}$, with $E_{\mathrm{b},Z}=Z\times3\,\mathrm{PeV}$ and arbitrary weights $w_Z=(0.35,0.30,0.15,0.10,0.10)$ for H, He, N (representing CNO), Si and Fe.
-    The plotted quantity is proportional to $E^{2.7}J$ in arbitrary units.
-    Neither the normalizations nor the break shapes are inferred from data; the sum demonstrates how elemental structures are blended in an all-particle measurement.}
+The plotted quantity is scaled by $E^{2.7}J$ to enhance the transition.
+The sum shows how elemental structures are blended in the all-particle spectrum.}
     \label{fig:cr_peters}
 \end{figure}
 
-Two mechanisms can lead to such charge ordering.
-The sources may approach a maximum acceleration rigidity, or Galactic confinement may become less effective above a characteristic rigidity.
-The former possibility connects the elemental sequence to the source requirements illustrated in Fig.~\ref{fig:cr_hillas}.
-Both can suppress the light components first and leave a progressively heavier residual Galactic population.
-Their consequences for arrival directions and for the detailed elemental spectra need not be the same.
-In the model of Mollerach and Roulet, a sequence of Galactic elemental breaks together with an emerging extragalactic contribution accounts for the knee region and a transition near $10^{17}\,\mathrm{eV}$~\cite{Mollerach:2019:GalacticScenario}.
-The associated iron scale and transition energy are outcomes of that model and its fitted composition assumptions.
+In the scenario described by Mollerach and Roulet, the second knee is associated with the steepening of the Galactic iron component, while an extragalactic contribution becomes dominant around $10^{17}\,\mathrm{eV}$~\cite{Mollerach:2019:GalacticScenario}.
+Their fits use both the spectrum and measurements of $X_{\max}$, and depend on the hadronic interaction model used to interpret the composition.
+The agreement between an iron break and the second-knee energy is therefore part of a physical interpretation, rather than a direct identification of the particles responsible for the observed steepening.
 
-An additional Galactic population provides a different possibility.
-If some sources reach larger rigidities than the population responsible for the first knee, the Galactic spectrum can extend beyond a simple extrapolation of its iron break.
-Thoudam and collaborators explored this option using an additional component associated with supernovae in Wolf-Rayet winds.
-Their scenario contains substantial helium and CNO contributions around and above the second knee~\cite{Thoudam:2016:SecondGalacticComponent}.
-It illustrates why a steepening in the all-particle spectrum cannot be equated with an iron cutoff without independent composition information.
+The Galactic contribution could also extend to higher energies through a second population of sources.
+Thoudam and collaborators considered supernova explosions in Wolf-Rayet winds in addition to the population responsible for the first knee~\cite{Thoudam:2016:SecondGalacticComponent}.
+In this scenario, the second knee is associated with the cutoff of the additional Galactic component, and the composition around and above it contains substantial helium and CNO contributions.
+The contrast with an iron-dominated interpretation makes composition measurements particularly valuable in this region.
 
-The appearance of an extragalactic component is also affected by propagation.
-If low-rigidity particles diffuse too slowly to reach the observer from the available sources within the available time, their flux is suppressed.
-This magnetic-horizon effect depends on the field properties, source spacing and source history.
-It can shape the low-energy onset of an extragalactic contribution even when the injected spectrum extends to lower energies~\cite{Lemoine:2005:MagneticHorizon}.
-The observed second-knee position, the end of a particular Galactic component and the energy at which Galactic and extragalactic intensities become equal are therefore distinct quantities.
+Propagation can also shape the onset of the extragalactic flux.
+At sufficiently low rigidity, the diffusion time from the nearest sources may exceed the time available for propagation, suppressing their contribution at Earth.
+This magnetic-horizon effect depends on the extragalactic magnetic field, the source spacing and their emission history~\cite{Lemoine:2005:MagneticHorizon}.
+The transition need not coincide with the ankle either: in the proton-dip scenario, the ankle is produced by pair-production losses of extragalactic protons on the cosmic microwave background, after extragalactic particles have already become dominant~\cite{Aloisio:2012:Transition}.
+The observed second knee, the end of the Galactic flux and the energy at which the Galactic and extragalactic intensities are equal are consequently distinct quantities.
 
-Historically, the ankle has been interpreted either as the crossover itself or as a feature within an already extragalactic spectrum.
-In the proton-dip picture, pair production on the cosmic microwave background modifies the extragalactic proton spectrum, allowing the transition to occur below the ankle.
-Mixed-composition scenarios introduce further possibilities through nuclear interactions and different source mixtures~\cite{Aloisio:2012:Transition}.
-For this thesis, the relevant point is the range of physical explanations that can produce a smooth change in the all-particle slope.
-The break position and width constrain these explanations, but cannot select one without composition and anisotropy measurements.
+The shape of the second knee helps constrain these interpretations.
+Charge ordering spreads the elemental breaks over energy, while differences among source populations can further modify the shape of their sum.
+An emerging harder component can reduce the steepening produced by a declining Galactic component and eventually cause a hardening.
 
-In particular, a broad all-particle transition does not necessarily imply a broad cutoff for every element.
-Charge ordering alone spreads elemental features over energy, and a distribution of source properties or overlap with a harder component can broaden the sum further.
-Equation~\ref{eq:cr_mixture} makes the role of that overlap explicit: a hard component changes the local slope as its fractional contribution grows.
-Measuring the slopes sufficiently far from the transition is consequently as important as locating its central energy.
-For a joint measurement, additional energy coverage is useful only if the relative calibration and the correlations between datasets are controlled.
+The width of the observed break therefore reflects the combined spectra and cannot be identified directly with the cutoff width of a single element.
 
-Around the second knee, a denser ground array detects showers with smaller particle densities, while a larger array supplies more exposure at higher energies.
-This complementarity is exploited by SD-433 and SD-750.
-The SD-433 energy scale is transferred from SD-750 through coincident events; SD-750 is calibrated using fluorescence measurements.
-The common scale connects measurements on both sides of the second knee, with correlated calibration uncertainties.
-The following chapters describe the apparatus, datasets and reconstruction used to measure the spectral shape.
+This work measures the energy of the second knee and the spectral indices below and above the break using a surface detector whose energy scale is calibrated through calorimetric fluorescence measurements.
 
 \end{document}
