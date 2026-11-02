@@ -14,46 +14,35 @@ Indirect techniques instead use the atmosphere as a target and detect the second
 
 In this chapter, the main observables associated with cosmic rays are presented, together with the physics of the detection methods before focusing on the topic of this thesis, the cosmic-ray flux, via the energy spectrum and its features, in particular the softening called the \textit{second knee}.
 
-% \section{Cosmic ray spectrum}
-% \label{sec:cr_observables}
+\section{The energy spectrum}
+\label{sec:cr_spectrum}
 
-The energy spectrum describes how the cosmic-ray flux varies with energy/
-Although photons and neutrinos provide complementary information about particle acceleration and interactions, but are not included in thes nuclear all-particle flux.
-% Unlike charged particles, these neutral messengers are not deflected by magnetic fields.
-% For nuclei, the observed arrival direction generally differs from the direction of the source, and the source population must instead be constrained through the combined information contained in the energy spectrum, mass composition, and angular distribution~\cite{PDG:2025:CosmicRays}.
+The energy spectrum describes how the cosmic-ray flux varies with energy.
+It provides information about the processes that accelerate cosmic rays and modify their distribution during propagation to Earth.
+The measured spectrum combines the effects of acceleration and propagation with the contributions of the different nuclear species that comprise it.
 
-% In an air shower, the incident cosmic ray is the primary particle, while the particles produced in the atmospheric cascade are secondaries.
-% For a primary nucleus, $Z$ denotes its charge number and $A$ its mass number.
-For an isotropic flux, the differential intensity $J(E)$ describes the number of particles crossing an area perpendicular to their direction of motion:
+For an isotropic flux, the differential intensity $J(E)$ is defined through
 \begin{align}
     \mathrm{d}N &= J(E)\,\mathrm{d}E\,\mathrm{d}A\,\mathrm{d}\Omega\,\mathrm{d}t .
     \label{eq:cr_intensity}
 \end{align}
-% Its units may be written as $\mathrm{m^{-2}\,s^{-1}\,sr^{-1}\,eV^{-1}}$
+\noindent where $\mathrm{d}N$ is the number of particles in an energy interval $\mathrm{d}E$ crossing an area $\mathrm{d}A$, perpendicular to their direction of motion, within a solid angle $\mathrm{d}\Omega$ during a time $\mathrm{d}t$.
+The \textit{all-particle} intensity refers to the combined contributions of protons and heavier nuclei.
 
-The cosmic-ray flux can be modeled approximately with a power law,
+A characteristic property of the spectrum is its steep decline with increasing energy.
+Over broad energy intervals, this behaviour can be approximated by a power law,
 \begin{align}
-    J(E)&\propto E^{-\gamma},
+    J(E) &\propto E^{-\gamma},
     \label{eq:cr_index}
 \end{align}
-\noindent where the slope of the power law, $\gamma$, also called the spectral index, is approximately 3 over the full energy range with.
-However, at different energies, changes in the spectral index are observed.
-These features in the spectrum are historically named through a now rather complex analogy with the human leg.
-The first features to be discovered where denominated the \textit{knee} and the \texti{ankle} but as measurements improved new features like second knee or low energy ankle started to appear.
-It is also customary to multiply the flux by $E^k$, making a spectrum with $\gamma=k$ horizontal to help noticing departures from a power-law regime.
-% Figure~\cref{fig:cr_spectrum} uses an $E^2$ weighting, while the spectral results later in this thesis are often displayed as $E^3J(E)$.
+where $\gamma$ is the spectral index, defined locally as $\gamma(E)=-\mathrm{d}\ln J(E)/\mathrm{d}\ln E$.
+A power law appears as a straight line with slope $-\gamma$ on logarithmic axes, so a larger index corresponds to a more rapidly decreasing intensity.
 
-The all-particle intensity is the sum of the intensities of the contributing nuclear species.
-For components $i$ described using the same energy variable, the definitions above imply:
-\begin{align}
-    J(E)&=\sum_i J_i(E), &
-    \gamma(E)&=\sum_i\frac{J_i(E)}{J(E)}\,\gamma_i(E) .
-    \label{eq:cr_mixture}
-\end{align}
-The local slope of a mixture is therefore an intensity-weighted average of its component slopes.
-Changing their relative contributions can produce curvature even when each component is individually simple.
-Conversely, a prominent break in one species can be diluted by the others.
-This relation is useful when comparing an all-particle measurement with models formulated in terms of separate elemental or source populations.
+However, a single index does not describe the full measured spectrum and successive energy intervals exhibit different slopes, with transitions between them forming its features.
+An increase in $\gamma$ is called a steepening or softening, while a decrease is called a hardening.
+
+Because the intensity spans many orders of magnitude, changes in slope can be difficult to distinguish.
+It is therefore customary to multiply the flux by $E^k$, making a spectrum with $\gamma=k$ horizontal to help notice departures from a power-law regime.
 
 \begin{figure}
     \centering
@@ -66,21 +55,40 @@ This relation is useful when comparing an all-particle measurement with models f
     \label{fig:cr_spectrum}
 \end{figure}
 
-\section{The energy spectrum}
-\label{sec:cr_spectrum}
+These features in the spectrum are historically named through a now rather complex analogy with the human leg.
+The first features to be discovered were named the \textit{knee} and the \textit{ankle} but, as measurements improved, new features like the second knee or the low-energy ankle started to appear.
 
-The steep decline of the flux is accompanied by several changes in slope.
 The knee at a few PeV marks a steepening from an index of about $2.7$ to about $3$.
 A further steepening, conventionally called the second knee, occurs around $10^{17}\,\mathrm{eV}$, above which the index is approximately $3.3$.
-These values are meant as guidance rather than a universal fit to all datasets~\cite{PDG:2025:CosmicRays}.
+
 At higher energies, the ankle is a hardening near $5\,\mathrm{EeV}$.
 The Pierre Auger Observatory also resolves a steepening above the ankle (named the instep), followed by the strong suppression of the flux at several tens of EeV~\cite{PierreAuger:2020:Spectrum}.
 
+The values quoted here provide a broad description of the spectrum.
+The fitted indices and positions of the breaks depend on the measurement and the parameterisation used to describe it~\cite{PDG:2025:CosmicRays}.
+
+The compilation in \cref{fig:cr_spectrum} shows the cosmic-ray spectrum over a broad energy range, with the intensity multiplied by $E^2$.
+The neutrino and photon fluxes are shown for reference, although they do not contribute to the all-particle flux.
+Individual measurements of different nuclear species are also included in the energy ranges where they are available.
+In the all-particle spectrum, the knee, second knee and ankle can be identified.
+
+The all-particle intensity is the sum of the intensities of the contributing nuclear species.
+For components $i$, these definitions imply:
+\begin{align}
+    J(E)&=\sum_i J_i(E), &
+    \gamma(E)&=\sum_i\frac{J_i(E)}{J(E)}\,\gamma_i(E) .
+    \label{eq:cr_mixture}
+\end{align}
+where $\gamma_i(E)$ is the local index of species $i$.
+The local slope of a mixture is therefore an intensity-weighted average of its component slopes.
+Changing their relative contributions can produce curvature even when each component is individually simple.
+Conversely, a prominent break in one species can be diluted by the others.
+The observed shape thus depends on both the individual spectra and their relative abundances.
+
 At the highest energies, interactions during propagation further complicate the relation between a spectral break and a source population.
 Protons lose energy through pair production and photopion production on background radiation, while nuclei lose energy through photodisintegration.
-The observed suppression can also depend on the maximum rigidity attainable at the sources.
-Consequently, even a well-measured change of slope does not by itself identify its physical cause~\cite{Aloisio:2012:Transition,PDG:2025:CosmicRays}.
-The same caution is essential when interpreting the second knee.
+The observed suppression can also depend on the maximum energy attainable at the sources.
+Consequently, even a well-measured change of slope does not by itself identify its physical cause~\cite{Aloisio:2012:Transition}.
 
 \section{Acceleration mechanisms}
 \label{sec:cr_acceleration}
