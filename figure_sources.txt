@@ -125,3 +125,30 @@ Asset supplied in the chapter figure folder; its PDF metadata identifies
 an extraction preserving the original embedded image and transparency
 without resampling. The asset was included unchanged at 0.75 text width.
 The caption describes the SSD, radio antenna and three buried UMD modules.
+
+
+Supplementary figures added 2026-10-31 (thesis Git base 26831c4).
+SD-433: sd433_power_law_test.pdf, sd433_energy_scale_unfolded_spectra.pdf,
+sd433_resolution_unfolded_spectra.pdf, sd433_resolution_fit_parameters.pdf.
+Source analysis: /home/pbrichetto/phd_thesis/energy_systematic_icrc2025_test7_omega005
+and /home/pbrichetto/phd_thesis/other_systematics_icrc2025_test7_omega005.
+The power-law test refits frozen counts and response; systematic plots reuse archived results.
+Data, fitted parameters, scripts and hashed source provenance are in
+figures/chapter_spectrum/supplementary_analysis/{powerlaw,sd433}/.
+
+SD-750: sd750_epjc2021_parameter_comparison.pdf.
+Controlled refit of the frozen updated SD-750 sample with the fixed shape parameters
+from PierreAuger:2021:InfillSpectrum, Table 6; updated response and fit interval retained.
+This is an auxiliary check and does not replace the nominal or combined fit.
+Fit results, script, helper snapshot and hashed provenance are in
+figures/chapter_combined/supplementary_analysis/sd750/.
+
+All figures load the project plot style, omit grids and use unconnected data markers.
+Reproduction uses /home/pbrichetto/sdana/.venv/bin/python and the local analysis
+paths recorded in each manifest. Run each script from its containing directory;
+SD-750 supports --plot-only to redraw the saved fit without repeating it.
+
+Figure A.1 display revision: the points use the archived nominal unfolded
+spectrum and statistical errors; smooth curves are the intrinsic best-fit
+power-law and broken-power-law functions. The likelihood and quoted deviance
+remain those of the fit to measured counts after response folding.

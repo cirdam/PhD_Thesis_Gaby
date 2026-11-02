@@ -1,5 +1,10 @@
 \chapter{Supplementary material for \cref{chapter:sd750_combined_spectrum}}
 \label{appendix:chapter_combined}
+\chaptermark{SD-750 supplementary material}
+
+\section{Effect of the updated energy calibration}
+
+\Cref{fig:sd750_flux_difference_calibration} separates the change associated with the updated calibration from the remaining difference between the updated and published raw spectra.
 
 \begin{figure}[htbp]
     \centering
@@ -12,3 +17,47 @@
     Statistical uncertainties are not shown.}
     \label{fig:sd750_flux_difference_calibration}
 \end{figure}
+
+\clearpage
+\section{Comparison with the published spectral parameters}
+\label{app:sd750_published_comparison}
+
+For this comparison, the updated \sd{750} sample is refitted with the fixed shape parameters used in Table~6 of \cite{PierreAuger:2021:InfillSpectrum}: $\gamma_0=2.64$, $E_{01}=1.24\times10^{17}\,\mathrm{eV}$ and $\omega_{12}=0.05$.
+The parameters $J_0$, $\omega_{01}$, $\gamma_1$, $E_{12}$ and $\gamma_2$ remain free.
+The updated event selection, exposure and detector response are retained, together with the fit interval $17.2<\lg(E/\mathrm{eV})<19.5$ and bins of width $\Delta\lg(E/\mathrm{eV})=0.1$.
+This check therefore shares the published fixed shape parameters, but does not reproduce the earlier dataset or all its fit conditions: the published spectrum starts at $\lg(E/\mathrm{eV})=17.0$ and uses an exposure of $105\pm4\,\mathrm{km^2\,sr\,yr}$.
+The comparison refit gives $D/\mathrm{dof}=\SDSevenFiftyComparisonDeviance/\SDSevenFiftyComparisonDof$, with $p=\SDSevenFiftyComparisonPValue$.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{figures/chapter_combined/sd750_epjc2021_parameter_comparison.pdf}
+    \caption[SD-750 spectral parameters compared with the 2021 result]{Spectral parameters from a refit of the updated \sd{750} sample using the published fixed shape parameters, compared with Table~6 of \cite{PierreAuger:2021:InfillSpectrum}.
+    The updated data selection, exposure, response and fit interval are retained.
+    Error bars show statistical uncertainties only.
+    The normalization $J_0$ is expressed in units of $10^{-13}\,\mathrm{km^{-2}\,sr^{-1}\,yr^{-1}\,eV^{-1}}$; both models use the reference energy $10^{17}\,\mathrm{eV}$.}
+    \label{fig:sd750_published_parameter_comparison}
+\end{figure}
+
+The fitted parameters are listed in \cref{tab:sd750_published_parameter_comparison}.
+The largest visible changes occur in $J_0$ and $\omega_{01}$, whose one-standard-deviation statistical intervals do not overlap with the published intervals.
+Their shifts are smaller than the corresponding published systematic uncertainties.
+Because the samples overlap and the analysis conditions differ, this comparison is not an independent statistical test of agreement.
+
+\begin{table}[htbp]
+    \centering
+    \caption[SD-750 comparison-fit parameters]{Parameters of the updated-sample comparison fit and the published \sd{750} fit.
+    Updated uncertainties are statistical; the published statistical and systematic uncertainties are quoted separately from Table~6 of \cite{PierreAuger:2021:InfillSpectrum}.
+    The normalization unit is $10^{-13}\,\mathrm{km^{-2}\,sr^{-1}\,yr^{-1}\,eV^{-1}}$.}
+    \label{tab:sd750_published_parameter_comparison}
+    \begin{tabular}{lcc}
+        \hline
+        Parameter & Updated (stat.) & Published (stat., syst.) \\
+        \hline
+        $J_0$ & $1.009\pm0.024$ & $1.09\pm0.04\pm0.28$ \\
+        $\omega_{01}$ & $0.345\pm0.044$ & $0.49\pm0.07\pm0.34$ \\
+        $\gamma_1$ & $3.341\pm0.014$ & $3.34\pm0.02\pm0.09$ \\
+        $E_{12}/\mathrm{EeV}$ & $4.49\pm0.85$ & $3.9\pm0.8\pm1.1$ \\
+        $\gamma_2$ & $2.71\pm0.18$ & $2.6\pm0.2\pm0.1$ \\
+        \hline
+    \end{tabular}
+\end{table}

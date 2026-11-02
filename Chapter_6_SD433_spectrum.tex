@@ -271,7 +271,7 @@ To test for the presence of a knee-like structure in the spectrum, the data are 
     \right)^{-\gamma},
 \end{align}
 where the normalization $J_0$ and spectral index $\gamma$ are free parameters.
-The resulting fit, shown in \cref{app:chap_spectrum}, yields a Poisson deviance of
+The resulting fit, shown in \cref{fig:sd433_powerlaw_fit}, yields a Poisson deviance of
 $D/\mathrm{dof}=\SDFourThreeThreePowerLawDeviance/\SDFourThreeThreePowerLawDof$,
 corresponding to a $p$-value of $\SDFourThreeThreePowerLawPValue$.
 The simple-power-law hypothesis is therefore rejected, providing strong evidence for a change in the spectral slope within the measured energy range.
@@ -449,7 +449,7 @@ The analytical estimate of the systematic uncertainty obtained from the fitted \
 
 As a numerical cross-check, the reconstructed energy of every event is shifted by $\delta=\pm0.14$, and the complete forward-folding and unfolding procedures are repeated.
 The migration matrix is kept unchanged because the energy-scale shift does not modify the assumed detector resolution, bias, or efficiency.
-The corresponding unfolded spectra are shown in \cref{app:chap_spectrum}.
+The corresponding unfolded spectra are shown in \cref{fig:sd433_energy_scale_spectra}.
 
 The flux variations obtained with this procedure are also shown in \cref{fig:energy_systematic}.
 The forward-folding and analytical results agree over most of the energy range.
@@ -482,12 +482,12 @@ A conservative symmetric systematic uncertainty of $\Delta\lg(E_{01}/\mathrm{eV}
 
 The systematic uncertainties associated with the detector response are evaluated by varying independently the energy resolution, bias, and efficiency, within their respective uncertainties.
 The contribution from the energy resolution is determined by varying the parameters of the resolution model defined in \cref{eq:resolution_sigma}, following the procedure in \cite{PierreAuger:2021:InfillSpectrum}.
-The parameters $R_{\mathrm{sh}}$ and $R_0$ are shifted up and down by their respective $1\sigma$ uncertainties.
+The parameters $R_{\mathrm{sh}}$ and $R_0$ are shifted simultaneously up and down by their respective $1\sigma$ uncertainties.
 For each of these two variations, the migration matrix is recalculated while keeping the other components of the detector response unchanged, and the spectrum is fitted again.
-The relative change in the fitted flux $\Delta J/J$ is calculated for each case and combined in quadrature to get the overall systematic uncertainty due to uncertainty in the energy resolution.
+The relative change in the fitted flux $\Delta J/J$ is calculated for each case, and the root mean square of the two variations is used as the systematic uncertainty due to the energy resolution.
 The contribution from the energy resolution is shown in the left panel of \cref{fig:systematic_budget}.
 Its magnitude is largest near the full-efficiency threshold, where it reaches approximately $1.1\%$, and decreases with energy.
-The resulting spectra and fitted parameters after shifting the resolution up and down are reported in \cref{app:chap_spectrum}.
+The resulting spectra and fitted parameters after shifting the resolution up and down are reported in \cref{fig:sd433_resolution_spectra,fig:sd433_resolution_fit_parameters}.
 
 The dependence of the detector response on the assumed mass composition is estimated using the bias and efficiency parametrizations obtained in \cref{sec:res_and_bias} for pure proton and pure iron primaries.
 The contributions of the energy bias and the trigger efficiency are evaluated separately, following the same procedure used for the uncertainty of the energy resolution.
