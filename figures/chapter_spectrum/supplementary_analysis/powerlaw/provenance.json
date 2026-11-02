@@ -1,0 +1,51 @@
+{
+  "operation": "Display intrinsic best-fit spectra with archived nominal unfolded data; preserve original forward-folded count-space fit",
+  "inputs": {
+    "/home/pbrichetto/phd_thesis/other_systematics_icrc2025_test7_omega005/nominal_spectrum.csv": "6380e8e93d406c863937600ca4bb9de004116c774c8567ad6c3e4c295e72b8fa",
+    "/home/pbrichetto/phd_thesis/other_systematics_icrc2025_test7_omega005/nominal_fit_parameters.csv": "d85b9e605108fc2602d500370179bd322d7f89f8870ca8122ec1dd6c993fdf4b",
+    "/home/pbrichetto/phd_thesis/other_systematics_icrc2025_test7_omega005/nominal_migration_matrix.npy": "f7f9e8be989cbf97c38c9faeb33cd39a3885a46def2560bafd057af6136ff74c",
+    "/home/pbrichetto/phd_thesis/other_systematics_icrc2025_test7_omega005/run_manifest.json": "3da99a830e0b3bedab14f45cbd9365b733a8db0204f0fda6b21dc68b4042bf40"
+  },
+  "script_sha256": "0956d729e37bc88030e6746b4d2ecaddfc554cf67ad85ab8a59c44360f83fbcf",
+  "style_sha256": "f50df9eac31c0acd8d22556d8fa0772717c590f1a4e0a2eae03a6c44a5dc862a",
+  "command": "/home/pbrichetto/sdana/.venv/bin/python /home/pbrichetto/.codex/.chatgpt-projects/g-p-6a87643333a881919f8838f0f78a19cc/output/supplementary/nov1-preview3/powerlaw/make_powerlaw_figure.py",
+  "exposure_km2_sr_yr": 2.847,
+  "fit_lg_energy_range": [
+    16.8,
+    18.5
+  ],
+  "true_lg_energy_range": [
+    16.0,
+    20.0
+  ],
+  "true_lg_bin_width": 0.01,
+  "reconstructed_lg_bin_width": 0.1,
+  "matrix_cutoff": 0.001,
+  "nominal_deviance_reconstructed": 12.33220062609399,
+  "nominal_deviance_archived": 12.332200626097263,
+  "statistical_errors": "Unchanged archived asymmetric nominal unfolded-flux statistical errors",
+  "display": "Single log-flux panel, no residual panel or titles; legend labels Power law, Broken power law, SD-433 unfolded. Numerical fit unchanged.",
+  "flux_axis_scale": "logarithmic; single flux panel with no residual panel",
+  "residual_data": "Retained unchanged in the numerical CSV for provenance; no residuals are displayed in this preview",
+  "likelihood": "Poisson deviance evaluated from observed counts and forward-folded expected counts, unchanged from the original test",
+  "outputs": {
+    "sd433_power_law_test.pdf": "074efa985aa80bfff2243c3fc4e1617777a4c1ae14a4a7d980c5a88e1ce2e71b",
+    "sd433_power_law_test.png": "31be69d38f34d3fc483cd6296626b6fab9e8556cd38c91e67a9fca02e2876c9c",
+    "fit_parameters.csv": "f4a107c7ab6a1fa44946e1c87cda284cc9a829a88f94fd3d3261eeac0edd5252",
+    "binned_comparison.csv": "a83c2a969a24af70c3f3f11b8330d07210e6b344e53417d0b4ba87aa322c53d1",
+    "intrinsic_fit_curves.csv": "02479e3f6bc3fa81a75cee689e9008ae599999a29a3895c18e224112c92f58a4"
+  },
+  "fit": {
+    "model": "single_power_law",
+    "J_0": 0.905342320174814,
+    "J_0_error": 0.004901530926888886,
+    "gamma": 3.08386462556265,
+    "gamma_error": 0.0112788189219577,
+    "deviance": 41.11657771979457,
+    "dof": 15,
+    "pvalue": 0.0003069637985548028,
+    "valid": true,
+    "accurate_covariance": true
+  },
+  "style": "Exact project mplstyle typography and LaTeX settings without font overrides; grid off."
+}

@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-10-01T18:07:53.244501+00:00",
+  "dataset": "/home/pbrichetto/sd433/icrc-2025_test7/paper_dataset/calibration/output/sd433_icrc2025-test7_recalibrated.csv",
+  "dataset_sha256": "04cc23a097355a8218c2d0713892090ec6b115c5dc0f5257387f52d35a649992",
+  "plot_style": "/home/pbrichetto/spectuls/spectuls/common/plot_style.mplstyle",
+  "methodology": "energy_systematic.ipynb with dataset-required selection updates",
+  "omega_01_fixed": 0.05,
+  "energy_shift": 0.14,
+  "exposure_km2_sr_yr": 2.847,
+  "zenith_range_deg": [
+    0.0,
+    40.0
+  ],
+  "fit_range_open_lg_eV": [
+    16.8,
+    18.5
+  ],
+  "energy_cut_applied_after_shift": true,
+  "response_same_for_all_shifts": true,
+  "selection": [
+    "GPS window",
+    "6T5",
+    "T4",
+    "not bad period",
+    "SD-433 hottest",
+    "0 <= zenith < 40 deg"
+  ]
+}

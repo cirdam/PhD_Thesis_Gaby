@@ -152,3 +152,21 @@ Figure A.1 display revision: the points use the archived nominal unfolded
 spectrum and statistical errors; smooth curves are the intrinsic best-fit
 power-law and broken-power-law functions. The likelihood and quoted deviance
 remain those of the fit to measured counts after response folding.
+
+Approved supplementary display revision (2026-11-01):
+A.1: single logarithmic flux panel with intrinsic curves and nominal unfolded
+points; legend Power law, Broken power law, SD-433 unfolded. No residual panel.
+A.2 and A.3: logarithmic flux axes; signed fractional-difference axes remain linear.
+A.1--A.4 and B.1 use the thesis mplstyle typography and LaTeX rendering.
+No plot titles; descriptions belong to captions. Numerical fit/data values unchanged.
+
+B.1: energy shift at fixed shower size and intrinsic differential-flux change
+at fixed numerical energy, using the published 2021 spectral model and the
+exact calibration transformation and Jacobian. Calibration coefficients:
+2021 A=13.2 PeV, B=1.002; updated A=13.2912 PeV, B=0.9985676.
+Equations: eq:sd750_cal, eq:change_of_variables, eq:calibration_flux_transformation.
+No sample, exposure, or bad-period comparison is included in this figure.
+Generator, tabulated curves and validation/provenance:
+figures/chapter_combined/supplementary_analysis/calibration_effect/.
+The generator's sd750_calibration_energy_flux.pdf is installed as
+figures/chapter_combined/sd750_flux_difference_calibration.pdf.

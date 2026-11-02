@@ -1,0 +1,2 @@
+model,J_0,J_0_error,gamma,gamma_error,deviance,dof,pvalue,valid,accurate_covariance
+single_power_law,0.905342320174814,0.004901530926888886,3.08386462556265,0.0112788189219577,41.11657771979457,15,0.0003069637985548028,True,True

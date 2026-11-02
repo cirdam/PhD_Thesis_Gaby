@@ -4,17 +4,18 @@
 
 \section{Effect of the updated energy calibration}
 
-\Cref{fig:sd750_flux_difference_calibration} separates the change associated with the updated calibration from the remaining difference between the updated and published raw spectra.
+\Cref{fig:sd750_flux_difference_calibration} shows the relative energy shift induced by the updated \sd{750} calibration and the corresponding analytical change in the flux.
+The energy shift follows from the calibration relation in \cref{eq:sd750_cal}, evaluated at the same shower size for the two calibrations.
+The flux transformation uses \cref{eq:change_of_variables,eq:calibration_flux_transformation}, including the Jacobian for the energy-dependent change of scale.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{figures/chapter_combined/sd750_flux_difference_calibration.pdf}
-    \caption{Relative difference between the updated raw \sd{750} spectrum and the spectrum published in 2021~\cite{PierreAuger:2021:InfillSpectrum} (green squares).
-    The gray crosses show the difference obtained when the current event sample is assigned energies using the 2021 calibration relation, keeping its selection, exposure and energy bins unchanged.
-    The red circles show the contribution from the calibration change, calculated as the difference between the two versions of the current spectrum.
-    All differences are divided by the published raw flux, so the green values are the sum of the gray and red values.
-    The calibration relations are evaluated at their nominal parameter values.
-    Statistical uncertainties are not shown.}
+    \caption[Energy and flux shifts from the updated SD-750 calibration]{Effect of the updated \sd{750} energy calibration.
+    Left: relative change in energy at fixed $S_{35}$, plotted against the energy assigned by the 2021 calibration.
+    Right: relative change in the differential flux at the same numerical energy, obtained by applying the change-of-variables relation to the published spectral model~\cite{PierreAuger:2021:InfillSpectrum}.
+    The calibration parameters are evaluated at their nominal values and the energy-dependent Jacobian is included.
+    These curves describe only the calibration change.}
     \label{fig:sd750_flux_difference_calibration}
 \end{figure}
 
