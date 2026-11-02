@@ -295,11 +295,13 @@
 \printglossary[type=\acronymtype, title=Acronyms,toctitle=Acronyms]
 
 % List of Tables
+\cleardoublepage
 \phantomsection % To correctly anchor hyperlinks
 \addcontentsline{toc}{chapter}{\listtablename} % Add "List of Tables" to TOC
 \listoftables
 
 % List of Figures
+\cleardoublepage
 \phantomsection % To correctly anchor hyperlinks
 \addcontentsline{toc}{chapter}{\listfigurename} % Add "List of Figures" to TOC
 \listoffigures
@@ -307,6 +309,7 @@
 \begin{appendix}
 \subfile{appendix_chap_spectrum}
 \subfile{appendix_chap_combined}
+\subfile{appendix_ai_use}
 \end{appendix}
 
 %\input erklaerung

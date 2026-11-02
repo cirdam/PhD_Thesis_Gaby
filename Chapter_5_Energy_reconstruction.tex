@@ -17,7 +17,6 @@ The shower reconstruction proceeds in two stages.
 First, the relative start times of the signals measured by the participating stations are used to determine the arrival direction of the shower.
 The recorded signals are then fitted as a function of the perpendicular distance to the shower axis using an empirical \gls{ldf} to model the decrease in the signal with the distance to the core.
 Analogously to the other \gls{sd} arrays, the value of this function at the reference distance of \SI{300}{\m}, denoted by $S(300)$, provides the ground-level shower-size estimator used for the \sd{433}~\cite{Silli:2021:PerformanceSD433}.
-% Because the core position affects the station distances entering the \gls{ldf}, the geometry and shower size are finally determined in a combined fit initialized with the results of the separate reconstructions.
 A detailed description of the event-reconstruction procedure used for the surface detector can be found in Ref.~\cite{PierreAuger:2020:SDReconstruction}.
 Here, the main elements relevant to the reconstruction of the \sd{433} events are summarized, with particular emphasis on the steps implemented for the present analysis.
 
@@ -68,7 +67,7 @@ The black line indicates the reconstructed arrival direction projected onto the 
 The shower size is then estimated by modeling the fall-off of the signal $S(r)$ with the distance $r$ to the shower axis using a \gls{ldf}~\cite{Silli:2021:PerformanceSD433}.
 Intrinsic shower-to-shower fluctuations produce variations in the longitudinal development, such that individual events may be sampled at different stages of their development.
 As a consequence, the \gls{ldf} slope exhibits variations on an event-by-event basis. 
-Instead, the reconstruction is based on an \textit{average} LDF slope, $\langle S(r)\rangle$, and the expected signal at a fixed reference distance, $r_\text{opt}$, is adopted as the shower size.
+Instead, the reconstruction is based on an \textit{average} LDF, $\langle S(r)\rangle$, and the expected signal at a fixed reference distance, $r_\text{opt}$, is adopted as the shower size.
 The optimal distance of \qty{300}{m} for the \sd{433} is determined by fitting the LDF and identifying the distance at which the reconstructed shower size is minimally dependent on the assumed LDF slope, following the method described in Ref.~\cite{Newton:2007:OptimalDistance}.
 The dependence of the optimal distance on the assumed LDF shape, the primary energy, and the zenith angle remains at approximately the 5\% level~\cite{PierreAuger:2020:SDReconstruction}.
 The LDF is described using an empirically chosen model based on a modified \gls{nkg} function,
@@ -267,19 +266,17 @@ Its energies are recalculated using the updated ICRC 2025 calibration based on t
 
 The \sd{750} energy calibration is described by the power law
 \begin{align}
-    E^{\text{SD-750}}
+    E_{750}
     =
-    A^{\text{SD-750}}
+    A_{750}
     \left(
-        \frac{S^{\text{SD-750}}_{35}}{S_0^{\text{SD-750}}}
-    \right)^{B^{\text{SD-750}}},
+        \frac{S_{35}}{S_0}
+    \right)^{B_{750}},
     \label{eq:sd750_cal}
 \end{align}
-\noindent where $S^{\text{SD-750}}_{35}$ is the shower-size estimator corrected for atmospheric attenuation. 
-The parameters $A^{\text{SD-750}}$ and  $B^{\text{SD-750}}$ respectively set the normalization and the slope of the calibration.
-The values applied in this work are $A^{\text{SD-750}}=13.3\,\mathrm{PeV}$, $B^{\text{SD-750}}=1.00$, and $S_0^{\text{SD-750}}=1\,\mathrm{VEM}$.
-% After recalibrating the \sd{750} events, the two datasets are matched by their event identifiers, yielding \num{37505} coincident events.
-
+\noindent where $S_{35}$ is the \sd{750} shower-size estimator corrected for atmospheric attenuation.
+The parameters $A_{750}$ and $B_{750}$ set the normalization and slope of the calibration, respectively.
+The values used in this work are $A_{750}=13.3\,\mathrm{PeV}$, $B_{750}=1.00$, and $S_0=1\,\mathrm{VEM}$.
 % TODO: Describe the SD-750 reference energy scale, the construction of the
 % 37,505-event coincidence sample, the resolution model, and the S30 > 30 VEM
 % calibration threshold that leaves 5,980 events for the fit.
@@ -303,16 +300,16 @@ The finite resolutions of both $S_{30}$ and the \sd{750} reference energy are in
 Unlike an \gls{sd}-\gls{fd} calibration, the two shower size and energy measurements are correlated because both arrays observe the same shower footprint and share some of the \gls{wcd}s.
 For the \sd{750} resolution, the parameterization from Ref.~\cite{PierreAuger:2021:InfillSpectrum} is adopted,
 \begin{align}
-    \frac{\sigma_{\mathrm{SD-750}}}{E}
+    \frac{\sigma_{E}}{E_{750}}
     =
     \sqrt{
         \sigma_{\mathrm{sh}}^2
         +
-        \left(\sigma_{\mathrm{det}}^{\mathrm{SD-750}}\right)^2
-        \frac{E_0}{E}
+        \left(\sigma_{\mathrm{det},750}\right)^2
+        \frac{E_0}{E_{750}}
     },
 \end{align}
-where $\sigma_{\mathrm{sh}}=0.09$ describes the energy-independent shower-to-shower fluctuations and $\sigma_{\mathrm{det}}^{\mathrm{SD-750}}=0.21$ parametrizes the detector contribution. A reference energy $E_0=100\,\mathrm{PeV}$ was chosen.
+where $\sigma_{\mathrm{sh}}=0.09$ describes the energy-independent shower-to-shower fluctuations and $\sigma_{\mathrm{det},750}=0.21$ parametrizes the detector contribution. A reference energy $E_0=100\,\mathrm{PeV}$ was chosen.
 
 The $S_{30}$ resolution is estimated from \sd{750} assuming the same shower-to-shower fluctuations and detector contribution improved by a factor 3 given the increased detector density,
 \begin{align}
@@ -346,7 +343,7 @@ We consider these two contributions to model the correlation between the shower 
             \frac{\sigma_{S}}{S_{30}}
         \right)
         \left(
-            \frac{\sigma_{E}}{E^{\mathrm{SD-750}}}
+            \frac{\sigma_{E}}{E_{750}}
         \right)
     }{
         \displaystyle
@@ -354,7 +351,7 @@ We consider these two contributions to model the correlation between the shower 
             \frac{\sigma_{S}}{S_{30}}
         \right)
         \left(
-            \frac{\sigma_{E}}{E^{\mathrm{SD-750}}}
+            \frac{\sigma_{E}}{E_{750}}
         \right)
     },
 \end{align}
@@ -362,7 +359,7 @@ We consider these two contributions to model the correlation between the shower 
 where $\rho_{\mathrm{det}}=0.33$ is the fraction of \sd{433} detectors that are also in the \sd{750}.
 
 
-For the $i$\-th event, the minimization performed to fit the calibration includes a quadratic term considering the resolutions of $S_{30}$ and $E^{\text{SD-750}}$ and their correlations,  
+For the $i$\-th event, the minimization performed to fit the calibration includes a quadratic term considering the resolutions of $S_{30}$ and $E_{750}$ and their correlations,
 
 \begin{align}
     Q_i(s\mid A,B)
@@ -376,7 +373,7 @@ For the $i$\-th event, the minimization performed to fit the calibration include
         +
         \left(
             \frac{
-                E_i^{\mathrm{SD-750}}
+                E_{750,i}
                 -
                 E_{\mathrm{cal}}(s\mid A,B)
             }{\sigma_{E,i}}
@@ -390,7 +387,7 @@ For the $i$\-th event, the minimization performed to fit the calibration include
         \right)
         \left(
             \frac{
-                E_i^{\mathrm{SD-750}}
+                E_{750,i}
                 -
                 E_{\mathrm{cal}}(s\mid A,B)
             }{\sigma_{E,i}}
@@ -514,7 +511,7 @@ The zenith-independent shower size $S_{30}$ is then obtained by iteratively appl
 Using the events detected in common with the \sd{750} we then developed the energy calibration for the \sd{433}.
 The likelihood formalism was introduced to take into account the finite resolution both of \sd{433} shower size and the \sd{750} energy.
 An empirical shower-size distribution is included to account for the preferential migration from low to high energies produced by the steep cosmic ray spectrum.
-Minimizing the log-likelihood yields the calibration parameters $A=(149.49\pm0.34)\,\mathrm{PeV}$ and $B=0.963\pm0.002$.
+Minimizing the negative log-likelihood yields the calibration parameters $A=(149.49\pm0.34)\,\mathrm{PeV}$ and $B=0.963\pm0.002$.
 The mean difference between the calibrated \sd{433} energy and the \sd{750} reference energy remains below $3\%$ throughout the fitted energy range and decreases with increasing energy.
 Finally, the calibrated \sd{433} energy forms the basis of the cosmic ray spectrum measurement presented in the next chapter.
 % TODO: Summarize the continuous reconstruction chain from the Offline

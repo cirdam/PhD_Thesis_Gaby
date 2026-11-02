@@ -223,14 +223,14 @@ The raw \sd{750} spectrum was adjusted using correction factors derived as in th
 
 % Comparison of \sd{433} and \sd{750} spectra
 The \sd{433} and \sd{750} unfolded spectra and their corresponding fits are shown in \cref{fig:sd433_sd750_spectra}.
-Although the two spectra agree at the low-energy end, the \sd{750} spectrum exceeds the \sd{433} spectrum for $\lg(E/\mathrm{eV})$ between $17.5$ and $17.8$.
+Although the two spectra agree at the low-energy end, the \sd{433} spectrum exceeds the \sd{750} spectrum for $\lg(E/\mathrm{eV})$ between $17.5$ and $17.8$.
 The origin of this discrepancy will be investigated before the second-knee measurement is submitted for publication in a journal article.
 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.82\linewidth]{figures/chapter_combined/sd433_sd750_combined_spectrum.pdf}
-    \caption{Unfolded spectra measured with the \sd{433} and \sd{750}. Statistical uncertainties are shown.}
+    \includegraphics[width=0.82\linewidth]{figures/chapter_combined/sd433_sd750_separate_fits.pdf}
+    \caption{Unfolded spectra measured with the \sd{433} and \sd{750}, together with their corresponding best-fit models. The vertical dotted line marks the second-knee position from the standalone \sd{433} fit, which is fixed in the \sd{750} fit. Statistical uncertainties are shown.}
     \label{fig:sd433_sd750_spectra}
 \end{figure}
 
@@ -362,6 +362,8 @@ This combination, based on a maximum likelihood method~\cite{PierreAuger:2025:De
     {\Delta E_i\,\mathcal E_{\mathrm{eff},i}},
 \end{align}
 \noindent where $n_i^x$ is the number of events measured by array $x$ in bin $i$, and $c_i^x$ is the corresponding correction factor calculated from the fitted spectrum and detector-response matrix.
+The effective exposure $\mathcal E_{\mathrm{eff},i}$ equals $\widehat{\mathcal E}_{433}+\mathcal E_{750}$ in bins where both arrays contribute.
+Where only one array contributes, it equals that array's exposure.
 Below the threshold energy of the \sd{750}, $\lg(E/\mathrm{eV})=17.2$, only the \sd{433} data and exposure are used.
 
 % Comparison with standalone measurements
