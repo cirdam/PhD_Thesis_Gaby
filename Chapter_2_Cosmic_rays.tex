@@ -6,51 +6,42 @@
 
 Cosmic rays are high-energy charged particles that arrive at Earth from outside the Solar System and even the Milky Way.
 They consist mostly of protons and heavier atomic nuclei, but electrons, positrons, and antiprotons can be found. These particles are accelerated at some of the highest known energies in the universe~\cite{PDG:2025:CosmicRays}.
-Cosmic rays are high-energy particles of extraterrestrial origin that reach the Earth's atmosphere.
 
 Since their discovery by Victor Hess in 1912, cosmic rays have been key to the development of pre-accelerator particle physics, and their astrophysical sources remain a mystery even one hundred years later.
-However, the energy, mass composition and arrival directions are the clues to study the processes that generate them and their propagation through space.
-At the highest observed energies, direct detection becomes impractical because the low flux requires a large collecting area, while calorimetric measurements also require a substantial detector mass to contain the showers.
-Indirect techniques instead use the atmosphere as a target and detect the secondary particles or radiation produced by the primary cosmic ray.
+However, the energy, mass composition, and arrival directions are clues to study the processes that generate them and their propagation through space.
+At the highest observed energies, direct detection with satellites becomes impractical because the low flux requires a large collecting area and calorimetric measurements also require a substantial detector mass to contain the showers.
+Indirect techniques instead use the atmosphere as a target and detect the secondary particles produced by the primary cosmic ray.
 
 In this chapter, the main observables associated with cosmic rays are presented, together with the physics of the detection methods before focusing on the topic of this thesis, the cosmic-ray flux, via the energy spectrum and its features, in particular the softening called the \textit{second knee}.
 
-Their observed energies, composition and arrival directions reflect both the processes that accelerated them and their subsequent propagation through space.
-At sufficiently high energies, these properties are inferred from the cascades of particles produced when cosmic rays interact in the atmosphere.
-This chapter introduces these observables, the underlying physics and the methods of detection, before focusing on the second knee and its relevance to the transition between Galactic and extragalactic cosmic rays.
+% \section{Cosmic ray spectrum}
+% \label{sec:cr_observables}
 
-\section{Cosmic ray properties}
-\label{sec:cr_observables}
+The energy spectrum describes how the cosmic-ray flux varies with energy/
+Although photons and neutrinos provide complementary information about particle acceleration and interactions, but are not included in thes nuclear all-particle flux.
+% Unlike charged particles, these neutral messengers are not deflected by magnetic fields.
+% For nuclei, the observed arrival direction generally differs from the direction of the source, and the source population must instead be constrained through the combined information contained in the energy spectrum, mass composition, and angular distribution~\cite{PDG:2025:CosmicRays}.
 
-The energy spectrum describes how the cosmic-ray flux varies with energy, while the mass composition specifies the relative contributions of different nuclear species at a given energy.
-The arrival-direction distribution describes how that intensity varies across the sky.
-Photons and neutrinos provide complementary information about particle acceleration and interactions, but are not included in this nuclear all-particle flux.
-Unlike charged particles, these neutral messengers are not deflected by magnetic fields.
-For nuclei, the observed arrival direction generally differs from the direction of the source, and the source population must instead be constrained through the combined information contained in the energy spectrum, mass composition, and angular distribution~\cite{PDG:2025:CosmicRays}.
-
-In an air shower, the incident cosmic ray is the primary particle, while the particles produced in the atmospheric cascade are secondaries.
-For a primary nucleus, $Z$ denotes its charge number and $A$ its mass number.
-Unless stated otherwise, $E$ is the total energy per particle, rather than the energy per nucleon.
-In the PeV-EeV range, the distinction between kinetic and total energy is negligible.
+% In an air shower, the incident cosmic ray is the primary particle, while the particles produced in the atmospheric cascade are secondaries.
+% For a primary nucleus, $Z$ denotes its charge number and $A$ its mass number.
 For an isotropic flux, the differential intensity $J(E)$ describes the number of particles crossing an area perpendicular to their direction of motion:
 \begin{align}
     \mathrm{d}N &= J(E)\,\mathrm{d}E\,\mathrm{d}A\,\mathrm{d}\Omega\,\mathrm{d}t .
     \label{eq:cr_intensity}
 \end{align}
-% Its units may be written as $\mathrm{m^{-2}\,s^{-1}\,sr^{-1}\,eV^{-1}}$.
-An integrated intensity above a threshold is obtained by integrating $J(E)$ over energy; it is a different quantity from the differential spectrum~\cite{PDG:2025:CosmicRays}.
+% Its units may be written as $\mathrm{m^{-2}\,s^{-1}\,sr^{-1}\,eV^{-1}}$
 
 The cosmic-ray flux can be modeled approximately with a power law,
 \begin{align}
-    J(E)&\propto E^{-\gamma}, &
-    \gamma(E)&=-\frac{\mathrm{d}\ln J}{\mathrm{d}\ln E} .
+    J(E)&\propto E^{-\gamma},
     \label{eq:cr_index}
 \end{align}
-\noindent where the slope of the power law, $\gamma$, also called the spectral index, is approximately 3 over the full energy range.
+\noindent where the slope of the power law, $\gamma$, also called the spectral index, is approximately 3 over the full energy range with.
 However, at different energies, changes in the spectral index are observed.
-These features in the spectrum are named through a now rather complex analogy with the human leg.
-It is also customary to multiply the flux by $E^k$, making a spectrum with $\gamma=k$ horizontal and making it easier to notice departures from a power-law regime.
-Figure~\cref{fig:cr_spectrum} uses an $E^2$ weighting, while the spectral results later in this thesis are often displayed as $E^3J(E)$.
+These features in the spectrum are historically named through a now rather complex analogy with the human leg.
+The first features to be discovered where denominated the \textit{knee} and the \texti{ankle} but as measurements improved new features like second knee or low energy ankle started to appear.
+It is also customary to multiply the flux by $E^k$, making a spectrum with $\gamma=k$ horizontal to help noticing departures from a power-law regime.
+% Figure~\cref{fig:cr_spectrum} uses an $E^2$ weighting, while the spectral results later in this thesis are often displayed as $E^3J(E)$.
 
 The all-particle intensity is the sum of the intensities of the contributing nuclear species.
 For components $i$ described using the same energy variable, the definitions above imply:
@@ -83,7 +74,7 @@ The knee at a few PeV marks a steepening from an index of about $2.7$ to about $
 A further steepening, conventionally called the second knee, occurs around $10^{17}\,\mathrm{eV}$, above which the index is approximately $3.3$.
 These values are meant as guidance rather than a universal fit to all datasets~\cite{PDG:2025:CosmicRays}.
 At higher energies, the ankle is a hardening near $5\,\mathrm{EeV}$.
-The Pierre Auger Observatory also resolves a steepening above the ankle (commonly termed the instep), followed by the strong suppression of the flux at several tens of EeV~\cite{PierreAuger:2020:Spectrum}.
+The Pierre Auger Observatory also resolves a steepening above the ankle (named the instep), followed by the strong suppression of the flux at several tens of EeV~\cite{PierreAuger:2020:Spectrum}.
 
 At the highest energies, interactions during propagation further complicate the relation between a spectral break and a source population.
 Protons lose energy through pair production and photopion production on background radiation, while nuclei lose energy through photodisintegration.

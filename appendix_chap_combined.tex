@@ -1,20 +1,22 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
 \chapter{Supplementary material for \cref{chapter:sd750_combined_spectrum}}
 \label{appendix:chapter_combined}
 \chaptermark{SD-750 supplementary material}
 
 \section{Effect of the updated energy calibration}
 
-\Cref{fig:sd750_flux_difference_calibration} shows the relative energy shift induced by the updated \sd{750} calibration and the corresponding analytical change in the flux.
+\Cref{fig:sd750_flux_difference_calibration} shows the relative energy shift introduce by the updated \sd{750} calibration and the corresponding analytical change in the flux.
 The energy shift follows from the calibration relation in \cref{eq:sd750_cal}, evaluated at the same shower size for the two calibrations.
-The flux transformation uses \cref{eq:change_of_variables,eq:calibration_flux_transformation}, including the Jacobian for the energy-dependent change of scale.
+The flux transformation uses \cref{eq:change_of_variables,eq:calibration_flux_transformation}, including the Jacobian for the energy-dependent change of scale and the combined spectrum from EPJC 2021 as a reference.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{figures/chapter_combined/sd750_flux_difference_calibration.pdf}
-    \caption[Energy and flux shifts from the updated SD-750 calibration]{Effect of the updated \sd{750} energy calibration.
+    \caption{Effect of the updated \sd{750} energy calibration.
     Left: relative change in energy at fixed $S_{35}$, plotted against the energy assigned by the 2021 calibration.
-    Right: relative change in the differential flux at the same numerical energy, obtained by applying the change-of-variables relation to the published spectral model~\cite{PierreAuger:2021:InfillSpectrum}.
-    The calibration parameters are evaluated at their nominal values and the energy-dependent Jacobian is included.
+    Right: relative change in the differential flux as a function of energy obtained by applying the change-of-variables relation to the published spectral model~\cite{PierreAuger:2021:InfillSpectrum}.
     These curves describe only the calibration change.}
     \label{fig:sd750_flux_difference_calibration}
 \end{figure}
@@ -23,9 +25,9 @@ The flux transformation uses \cref{eq:change_of_variables,eq:calibration_flux_tr
 \section{Comparison with the published spectral parameters}
 \label{app:sd750_published_comparison}
 
-For this comparison, the updated \sd{750} sample is refitted with the fixed shape parameters used in Table~6 of \cite{PierreAuger:2021:InfillSpectrum}: $\gamma_0=2.64$, $E_{01}=1.24\times10^{17}\,\mathrm{eV}$ and $\omega_{12}=0.05$.
+For this comparison, the updated \sd{750} sample is fitted with the fixed shape parameters used in Table~6 of \cite{PierreAuger:2021:InfillSpectrum}: $\gamma_0=2.64$, $E_{01}=1.24\times10^{17}\,\mathrm{eV}$ and $\omega_{12}=0.05$.
 The parameters $J_0$, $\omega_{01}$, $\gamma_1$, $E_{12}$ and $\gamma_2$ remain free.
-The updated event selection, exposure and detector response are retained, together with the fit interval $17.2<\lg(E/\mathrm{eV})<19.5$ and bins of width $\Delta\lg(E/\mathrm{eV})=0.1$.
+The updated event selection, exposure and detector response are used, together with the fit interval $17.2<\lg(E/\mathrm{eV})<19.5$.
 This check therefore shares the published fixed shape parameters, but does not reproduce the earlier dataset or all its fit conditions: the published spectrum starts at $\lg(E/\mathrm{eV})=17.0$ and uses an exposure of $105\pm4\,\mathrm{km^2\,sr\,yr}$.
 The comparison refit gives $D/\mathrm{dof}=\SDSevenFiftyComparisonDeviance/\SDSevenFiftyComparisonDof$, with $p=\SDSevenFiftyComparisonPValue$.
 
@@ -62,3 +64,6 @@ Because the samples overlap and the analysis conditions differ, this comparison 
         \hline
     \end{tabular}
 \end{table}
+
+
+\end{document}
