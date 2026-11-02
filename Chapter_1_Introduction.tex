@@ -5,31 +5,31 @@
 \label{chapter:intro}
 
 The origin of cosmic rays and the processes that accelerate them remain central questions in astroparticle physics.
-Their energy spectrum, mass composition, and arrival directions provide valuable information about the possible sources and the propagation through space.
-The energy spectrum can be described by a sequence of power laws, with changes in slope.
-These changes provide some of the ways to study the limits to particle acceleration, changes in propagation, etc.
+Their energy spectrum, mass composition, and arrival directions provide valuable information about the possible sources and their propagation through space.
+The energy spectrum can be described by a sequence of power laws with changes in slope.
+These changes provide some of the ways to study the limits to particle acceleration, changes in propagation, and related effects.
 As a consequence, measuring these features is an essential step towards understanding how the observed cosmic-ray flux is produced.
 
 This thesis focuses on the measurement of the \emph{second knee}, a steepening of the energy spectrum in the region between the knee and the ankle.
 This feature may provide significant information about the decline of the Galactic cosmic-ray contribution and the possible emergence of an extragalactic component.
-Different interpretations associate the second knee with a rigidity-dependent sequence of elemental cutoffs, an additional Galactic source population, or the overlap of Galactic and extragalactic contributions~\cite{Aloisio:2012:Transition,Mollerach:2019:GalacticScenario,Thoudam:2016:SecondGalacticComponent}.
+Different interpretations associate the second knee with a rigidity-dependent sequence of elemental cutoffs, an additional Galactic source population, or the overlap of Galactic and extragalactic contributions.
 Therefore, the energy of the break, the spectral indices on either side, and the width of the transition provide experimental constraints on these scenarios.
 
 At these energies, cosmic rays are measured indirectly through the extensive air showers they produce in the atmosphere.
-The Pierre Auger Observatory combines a surface detector, which sample shower particles reaching the ground, with a fluorescence detector, which observe the longitudinal energy deposit in the atmosphere~\cite{PierreAuger:2015:Observatory}.
+The Pierre Auger Observatory combines a surface detector, which samples shower particles reaching the ground, with a fluorescence detector, which observes the longitudinal energy deposit in the atmosphere.
 This combination connects the nearly continuous operation of the surface detector to a calorimetric energy scale.
-Recently, new detectors were included to broaden the study of cosmic rays with measurement of mass composition at lower energies, starting a multi-hybrid era of detection.
-Two denser surface arrays were deployed nested to extend the measurements towards lower energies.
-This work focuses on \sd{433} a triangular array of detector spaced 433\,m to provide access to lower energies, below the second knee.
+Recently, new detectors were included to broaden the study of cosmic rays by measuring mass composition at lower energies, starting a multi-hybrid era of detection.
+Two denser surface arrays were deployed in a nested configuration to extend the measurements towards lower energies.
+This work focuses on \sd{433}, a triangular array of detectors spaced 433\,m to provide access to lower energies, below the second knee.
 
 This lower-energy extension is crucial for determining the position of the second knee and the change in the spectral index associated with it.
-In the published \sd{750} measurement, the second knee lies close to the lower boundary of the measured energy range, limiting the direct measurement of this feature ~\cite{PierreAuger:2021:InfillSpectrum}.
-Therefore, \sd{433} offers the opportunity to characterize the feature using a surface-detector measurement that spans both sides of the break and with an inhered fluorescence energy scale through the \sd{750}.
+In the published \sd{750} measurement, the second knee lies close to the lower boundary of the measured energy range, limiting the direct measurement of this feature.
+Therefore, \sd{433} offers the opportunity to characterize the feature using a surface-detector measurement that spans both sides of the break and with an inherited fluorescence energy scale through the \sd{750}.
 
-The principal objective of this thesis is to measure the cosmic-ray energy spectrum with the \sd{433}, determine the energy of the second knee, and the spectral indices below and above it.
-For this, the analysis uses data recorded between July 2018 and December 2021  using events with zenith angles below $40^\circ$ and energies above $63\,\mathrm{PeV}$.
+The principal objective of this thesis is to measure the cosmic-ray energy spectrum with the \sd{433}, determine the energy of the second knee, and determine the spectral indices below and above it.
+For this, the analysis uses data recorded between July 2018 and December 2021 using events with zenith angles below $40^\circ$ and energies above $63\,\mathrm{PeV}$.
 A further objective is to explore the combination of the \sd{433} measurement with an updated \sd{750} spectrum.
-The two arrays provide complementary strengths, the \sd{433} can reach energies below the second knee, while the larger area of the \sd{750} provides greater statistics above it and extends the measurement through the ankle.
+The two arrays provide complementary strengths: the \sd{433} can reach energies below the second knee, while the larger area of the \sd{750} provides greater statistics above it and extends the measurement through the ankle.
 % The dataset is defined through studies of the trigger efficiency, event selection, and operational stability of the array, from which the exposure is determined.
 % The energy reconstruction accounts for the zenith-angle attenuation of the measured shower size and uses events observed by both arrays to calibrate the \sd{433} against the \sd{750} energy scale.
 % The spectrum is then inferred using a forward-folding procedure that incorporates detection efficiency, energy bias, and finite resolution into the prediction of the observed event distribution.
@@ -37,15 +37,18 @@ The two arrays provide complementary strengths, the \sd{433} can reach energies 
 We begin this work by introducing the background to cosmic rays in \Cref{chapter:cr}.
 Here, cosmic-ray observables, theoretical models for acceleration and propagation mechanisms, and extensive air showers that provide the context for the measurement are presented.
 It concludes with a discussion of the second knee and its possible relation to the transition between Galactic and extragalactic cosmic rays.
-Next, in \Cref{chapter:auger} the Pierre Auger Observatory is described, focusing on its hybrid detection principle, the surface detector and its arrays finishing with a discussion about the reconstruction frameworks used in this work.
-\Cref{chap:sd433_dataset} defines the \sd{433} dataset, explaining the different trigger algorithms and  the efficiency studies to determine the full efficiency threshold for the array to enable the geometrical calculation of the exposure. Then, the array stability is discussed to derive the exposure used for the flux measurement.
+Next, in \Cref{chapter:auger}, the Pierre Auger Observatory is described, focusing on its hybrid detection principle, the surface detector and its arrays, and finishing with a discussion of the reconstruction frameworks used in this work.
+\Cref{chap:sd433_dataset} defines the \sd{433} dataset, explaining the different trigger algorithms and the efficiency studies to determine the full-efficiency threshold for the array and enable the geometrical calculation of the exposure. The array stability is then discussed to derive the exposure used for the flux measurement.
 In \Cref{chapter:reconstruction} the primary energy reconstruction is developed, from the determination of shower size and the correction for zenith-angle attenuation to the calibration with coincident \sd{750} events and the characterization of energy resolution and bias.
 Then \Cref{chapter:SD433_Spectrum} presents the measurement of the energy spectrum with the \sd{433}.
-It describes raw spectrum and the forward-folding method to determine the second-knee position and change in the spectral index.
-The the robustness of the result and its systematic uncertainties are also evaluated.
+It describes the raw spectrum and the forward-folding method to determine the second-knee position and change in the spectral index.
+The robustness of the result and its systematic uncertainties are also evaluated.
 \Cref{chapter:sd750_combined_spectrum} presents the updated \sd{750} spectrum and the preliminary combination of the two measurements, including tests of the stability of the combined fit.
 
 \Cref{chapter:comparison} compares the results with previous measurements from the Pierre Auger Observatory and other experiments, and discusses their implications and limitations for the physical interpretation of the second knee.
-Finally, \cref{chapter:summary} summarizes the main findings and outlines prospects for improving the spectrum measurement and complementing it with composition and anisotropy studies.
-
+Finally, \cref{chapter:summary} brings together the main results of this thesis and discusses future prospects.
+The \sd{433} measurement locates the second knee at $(2.8\pm0.5_{\mathrm{stat}}\pm0.7_{\mathrm{syst}})\times10^{17},\mathrm{eV}$, with the spectral index increasing from $3.04\pm0.02_{\mathrm{stat}}\pm0.09_{\mathrm{syst}}$ below the break to $3.34\pm0.08_{\mathrm{stat}}\pm0.11_{\mathrm{syst}}$ above it.
+The preliminary combination with the \sd{750} spectrum extends the measurement through the ankle and provides greater sensitivity to the transition width.
+Nevertheless, differences between the spectra near the second knee require further study.
+The chapter also outlines prospects for improving these measurements and interpreting the second knee together with composition and anisotropy observations.
 \end{document}
